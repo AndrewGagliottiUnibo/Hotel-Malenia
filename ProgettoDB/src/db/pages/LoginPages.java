@@ -4,14 +4,12 @@ import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -58,7 +56,7 @@ public class LoginPages {
 		panel.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
+		textField_1 = new JPasswordField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(356, 320, 303, 20);
 		panel.add(textField_1);
@@ -66,30 +64,23 @@ public class LoginPages {
 		JButton loginBtn = new JButton("Login");
 		loginBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Username = code.getText();
-				String Password1 = password.getText();
+				String Username = textField.getText();
+				String Password1 = textField_1.getText();
 
 				if (Username.equals("Receptionist1") && Password1.equals("Receptionist1")) {
 					JOptionPane.showMessageDialog(null, "Login Successful");
 				}
-				if (Username.equals("Dirigente1") && Password1.equals("Dirigente1")) {
+				else if (Username.equals("Dirigente1") && Password1.equals("Dirigente1")) {
 					JOptionPane.showMessageDialog(null, "Login Successful");
 				}	
-				else
-					JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
+				else {
+					JOptionPane.showMessageDialog(null, "Errore in fase di login");		
+				}
 			}
 		});
 		loginBtn.setForeground(Color.ORANGE);
 		loginBtn.setBackground(Color.DARK_GRAY);
 		loginBtn.setBounds(722, 422, 89, 23);
 		panel.add(loginBtn);
-		this.initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-
 	}
 }
