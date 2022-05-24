@@ -136,5 +136,12 @@ public class EntertaimentServicePages {
 		occupationSection.setBackground(Color.DARK_GRAY);
 		occupationSection.setBounds(408, 21, 283, 28);
 		panel.add(occupationSection);
+		
+		JButton logout = new JButton("Logout");
+		logout.setBackground(Color.DARK_GRAY);
+		logout.setForeground(Color.ORANGE);
+		logout.setFont(new Font("Verdana", Font.BOLD, 12));
+		logout.setBounds(28, 432, 89, 23);
+		panel.add(logout);
 	}
 }
