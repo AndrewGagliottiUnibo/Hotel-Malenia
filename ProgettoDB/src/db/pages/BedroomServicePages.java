@@ -22,6 +22,12 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
 import java.awt.Canvas;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.awt.event.ActionEvent;
 
 public class BedroomServicePages {
 
@@ -85,6 +91,24 @@ public class BedroomServicePages {
 		panel.setLayout(gbl_panel);
 		
 		JButton requestRoomToBeCleared = new JButton("Vedi camere da pulire");
+		requestRoomToBeCleared.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Connection myConn = null;
+				 Statement myStmt = null;
+				 ResultSet myRs = null;
+				
+				try {
+					myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
+					System.out.println("Database connected");
+					// 2. Create a statement
+					myStmt = myConn.createStatement();
+					myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+				}
+				catch (Exception exc) {
+					exc.printStackTrace();
+				}
+			}
+		});
 		requestRoomToBeCleared.setFont(new Font("Verdana", Font.BOLD, 12));
 		requestRoomToBeCleared.setForeground(Color.BLACK);
 		requestRoomToBeCleared.setBackground(Color.WHITE);
@@ -113,6 +137,12 @@ public class BedroomServicePages {
 		textField.setColumns(10);
 		
 		JButton reportRoomButton = new JButton("Invia");
+		reportRoomButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		reportRoomButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		reportRoomButton.setBackground(Color.WHITE);
 		reportRoomButton.setForeground(Color.BLACK);
@@ -123,6 +153,13 @@ public class BedroomServicePages {
 		panel.add(reportRoomButton, gbc_reportRoomButton);
 		
 		JButton exitButton = new JButton("Logout");
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				LoginPages login = new LoginPages();
+				login.frame.setVisible(true);
+			}
+		});
 		exitButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		exitButton.setForeground(Color.ORANGE);
 		exitButton.setBackground(Color.DARK_GRAY);

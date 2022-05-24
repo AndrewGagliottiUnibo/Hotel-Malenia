@@ -5,12 +5,15 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LoginPages {
 
@@ -61,6 +64,21 @@ public class LoginPages {
 		panel.add(textField_1);
 		
 		JButton loginBtn = new JButton("Login");
+		loginBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String Username = code.getText();
+				String Password1 = password.getText();
+
+				if (Username.equals("Receptionist1") && Password1.equals("Receptionist1")) {
+					JOptionPane.showMessageDialog(null, "Login Successful");
+				}
+				if (Username.equals("Dirigente1") && Password1.equals("Dirigente1")) {
+					JOptionPane.showMessageDialog(null, "Login Successful");
+				}	
+				else
+					JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
+			}
+		});
 		loginBtn.setForeground(Color.ORANGE);
 		loginBtn.setBackground(Color.DARK_GRAY);
 		loginBtn.setBounds(722, 422, 89, 23);
