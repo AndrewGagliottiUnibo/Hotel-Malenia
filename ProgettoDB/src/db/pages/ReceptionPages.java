@@ -56,41 +56,41 @@ public class ReceptionPages {
 		txtBenvenutoreceptionist.setForeground(Color.RED);
 		txtBenvenutoreceptionist.setBackground(Color.DARK_GRAY);
 		txtBenvenutoreceptionist.setHorizontalAlignment(SwingConstants.CENTER);
-		txtBenvenutoreceptionist.setText("BENVENUTO @RECEPTIONIST");
+		txtBenvenutoreceptionist.setText("Benvenuto Receptionist");
 		txtBenvenutoreceptionist.setFont(new Font("Verdana", Font.PLAIN, 18));
 		txtBenvenutoreceptionist.setBounds(0, 0, 929, 43);
 		frame.getContentPane().add(txtBenvenutoreceptionist);
 		txtBenvenutoreceptionist.setColumns(10);
 		
-		JButton btnNewButton = new JButton("INSERISCI PRENOTAZIONE");
+		JButton btnNewButton = new JButton("Inserisci prenotazione");
 		btnNewButton.setBackground(Color.DARK_GRAY);
 		btnNewButton.setForeground(Color.ORANGE);
 		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 12));
 		btnNewButton.setBounds(10, 92, 385, 93);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_2 = new JButton("LOGOUT");
+		JButton btnNewButton_2 = new JButton("Logout");
 		btnNewButton_2.setForeground(Color.ORANGE);
 		btnNewButton_2.setBackground(Color.DARK_GRAY);
 		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 12));
 		btnNewButton_2.setBounds(0, 455, 929, 34);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		JButton btnCanellaPrenotazione = new JButton("CANCELLA PRENOTAZIONE");
+		JButton btnCanellaPrenotazione = new JButton("Cancella prenotazione");
 		btnCanellaPrenotazione.setBackground(Color.DARK_GRAY);
 		btnCanellaPrenotazione.setForeground(Color.ORANGE);
 		btnCanellaPrenotazione.setFont(new Font("Verdana", Font.PLAIN, 12));
 		btnCanellaPrenotazione.setBounds(10, 209, 385, 93);
 		frame.getContentPane().add(btnCanellaPrenotazione);
 		
-		JButton btnRegistraCliente = new JButton("REGISTRA CLIENTE");
+		JButton btnRegistraCliente = new JButton("Registra cliente");
 		btnRegistraCliente.setBackground(Color.DARK_GRAY);
 		btnRegistraCliente.setForeground(Color.ORANGE);
 		btnRegistraCliente.setFont(new Font("Verdana", Font.PLAIN, 12));
 		btnRegistraCliente.setBounds(534, 209, 385, 93);
 		frame.getContentPane().add(btnRegistraCliente);
 		
-		JButton btnVisualizzaResoconto = new JButton("VISUALIZZA SCHEDE");
+		JButton btnVisualizzaResoconto = new JButton("Visualizza schede");
 		btnVisualizzaResoconto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -101,7 +101,7 @@ public class ReceptionPages {
 		btnVisualizzaResoconto.setBounds(534, 92, 385, 93);
 		frame.getContentPane().add(btnVisualizzaResoconto);
 		
-		JButton btnClientiInStruttura = new JButton("CLIENTI IN STRUTTURA");
+		JButton btnClientiInStruttura = new JButton("Clienti in struttura");
 		btnClientiInStruttura.setForeground(Color.ORANGE);
 		btnClientiInStruttura.setFont(new Font("Verdana", Font.PLAIN, 12));
 		btnClientiInStruttura.setBackground(Color.DARK_GRAY);
