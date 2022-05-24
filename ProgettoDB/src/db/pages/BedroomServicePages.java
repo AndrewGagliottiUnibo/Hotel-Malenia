@@ -85,8 +85,9 @@ public class BedroomServicePages {
 		panel.setLayout(gbl_panel);
 		
 		JButton requestRoomToBeCleared = new JButton("Vedi camere da pulire");
-		requestRoomToBeCleared.setForeground(Color.ORANGE);
-		requestRoomToBeCleared.setBackground(Color.DARK_GRAY);
+		requestRoomToBeCleared.setFont(new Font("Verdana", Font.BOLD, 12));
+		requestRoomToBeCleared.setForeground(Color.BLACK);
+		requestRoomToBeCleared.setBackground(Color.WHITE);
 		GridBagConstraints gbc_requestRoomToBeCleared = new GridBagConstraints();
 		gbc_requestRoomToBeCleared.weighty = 0.3;
 		gbc_requestRoomToBeCleared.insets = new Insets(0, 0, 5, 0);
@@ -112,8 +113,9 @@ public class BedroomServicePages {
 		textField.setColumns(10);
 		
 		JButton reportRoomButton = new JButton("Invia");
-		reportRoomButton.setBackground(Color.DARK_GRAY);
-		reportRoomButton.setForeground(Color.ORANGE);
+		reportRoomButton.setFont(new Font("Verdana", Font.BOLD, 12));
+		reportRoomButton.setBackground(Color.WHITE);
+		reportRoomButton.setForeground(Color.BLACK);
 		GridBagConstraints gbc_reportRoomButton = new GridBagConstraints();
 		gbc_reportRoomButton.insets = new Insets(0, 0, 5, 0);
 		gbc_reportRoomButton.gridx = 0;
@@ -121,6 +123,7 @@ public class BedroomServicePages {
 		panel.add(reportRoomButton, gbc_reportRoomButton);
 		
 		JButton exitButton = new JButton("Logout");
+		exitButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		exitButton.setForeground(Color.ORANGE);
 		exitButton.setBackground(Color.DARK_GRAY);
 		GridBagConstraints gbc_exitButton = new GridBagConstraints();

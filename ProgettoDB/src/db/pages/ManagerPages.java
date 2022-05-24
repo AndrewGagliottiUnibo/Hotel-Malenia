@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class ManagerPages {
 
@@ -43,6 +45,7 @@ public class ManagerPages {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.getContentPane().setForeground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 945, 528);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,36 +56,43 @@ public class ManagerPages {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("Listini");
-		btnNewButton_1.setForeground(Color.ORANGE);
-		btnNewButton_1.setBackground(Color.DARK_GRAY);
-		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(575, 287, 344, 92);
-		panel.add(btnNewButton_1);
+		JButton btnVisualizzaResoconto = new JButton("Visualizza schede");
+		btnVisualizzaResoconto.setForeground(Color.ORANGE);
+		btnVisualizzaResoconto.setFont(new Font("Verdana", Font.BOLD, 12));
+		btnVisualizzaResoconto.setBackground(Color.DARK_GRAY);
+		btnVisualizzaResoconto.setBounds(276, 38, 385, 93);
+		panel.add(btnVisualizzaResoconto);
 		
-		JButton btnNewButton_1_1 = new JButton("Soggiorni");
-		btnNewButton_1_1.addActionListener(new ActionListener() {
+		JButton btnListini = new JButton("Listini");
+		btnListini.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1_1.setForeground(Color.ORANGE);
-		btnNewButton_1_1.setFont(new Font("Verdana", Font.PLAIN, 12));
-		btnNewButton_1_1.setBackground(Color.DARK_GRAY);
-		btnNewButton_1_1.setBounds(575, 32, 344, 92);
-		panel.add(btnNewButton_1_1);
+		btnListini.setForeground(Color.ORANGE);
+		btnListini.setFont(new Font("Verdana", Font.BOLD, 12));
+		btnListini.setBackground(Color.DARK_GRAY);
+		btnListini.setBounds(276, 157, 385, 93);
+		panel.add(btnListini);
 		
-		JButton btnNewButton_1_2 = new JButton("Visualizzare scheda");
-		btnNewButton_1_2.setForeground(Color.ORANGE);
-		btnNewButton_1_2.setFont(new Font("Verdana", Font.PLAIN, 12));
-		btnNewButton_1_2.setBackground(Color.DARK_GRAY);
-		btnNewButton_1_2.setBounds(10, 32, 344, 92);
-		panel.add(btnNewButton_1_2);
+		JButton btnCredenziali = new JButton("Credenziali");
+		btnCredenziali.setForeground(Color.ORANGE);
+		btnCredenziali.setFont(new Font("Verdana", Font.BOLD, 12));
+		btnCredenziali.setBackground(Color.DARK_GRAY);
+		btnCredenziali.setBounds(276, 276, 385, 93);
+		panel.add(btnCredenziali);
 		
-		JButton btnNewButton_1_3 = new JButton("Servizi");
-		btnNewButton_1_3.setForeground(Color.ORANGE);
-		btnNewButton_1_3.setFont(new Font("Verdana", Font.PLAIN, 12));
-		btnNewButton_1_3.setBackground(Color.DARK_GRAY);
-		btnNewButton_1_3.setBounds(10, 287, 344, 92);
-		panel.add(btnNewButton_1_3);
+		JButton logout = new JButton("Logout");
+		logout.setFont(new Font("Tahoma", Font.BOLD, 11));
+		logout.setForeground(Color.ORANGE);
+		logout.setBackground(Color.DARK_GRAY);
+		logout.setBounds(830, 432, 89, 23);
+		panel.add(logout);
+		
+		JLabel lblNewLabel = new JLabel("Manager");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBackground(Color.DARK_GRAY);
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 18));
+		frame.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
 	}
 }

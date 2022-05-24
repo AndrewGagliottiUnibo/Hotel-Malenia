@@ -81,23 +81,23 @@ public class RestaurantPages {
 		panel.add(textArea);
 		
 		JButton lunch = new JButton("Pranzo");
-		lunch.setForeground(Color.ORANGE);
+		lunch.setForeground(Color.BLACK);
 		lunch.setFont(new Font("Verdana", Font.BOLD, 12));
-		lunch.setBackground(Color.DARK_GRAY);
+		lunch.setBackground(Color.WHITE);
 		lunch.setBounds(203, 0, 89, 23);
 		panel.add(lunch);
 		
 		JButton breakfast = new JButton("Colazione");
-		breakfast.setBackground(Color.DARK_GRAY);
-		breakfast.setForeground(Color.ORANGE);
+		breakfast.setBackground(Color.WHITE);
+		breakfast.setForeground(Color.BLACK);
 		breakfast.setFont(new Font("Verdana", Font.BOLD, 12));
 		breakfast.setBounds(0, 0, 119, 23);
 		panel.add(breakfast);
 		
 		JButton dinner = new JButton("Cena");
-		dinner.setForeground(Color.ORANGE);
+		dinner.setForeground(Color.BLACK);
 		dinner.setFont(new Font("Verdana", Font.BOLD, 12));
-		dinner.setBackground(Color.DARK_GRAY);
+		dinner.setBackground(Color.WHITE);
 		dinner.setBounds(418, 0, 89, 23);
 		panel.add(dinner);
 		
