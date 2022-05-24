@@ -202,6 +202,7 @@ public class RestaurantPages {
 		panel.add(btnAnalcolico);
 		
 		JTextArea newBuy = new JTextArea();
+		newBuy.setEditable(false);
 		newBuy.setBackground(Color.BLACK);
 		newBuy.setForeground(Color.PINK);
 		newBuy.setBounds(605, 312, 187, 22);
