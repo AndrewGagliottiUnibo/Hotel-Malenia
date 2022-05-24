@@ -209,6 +209,13 @@ public class RestaurantPages {
 		panel.add(newBuy);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				LoginPages login = new LoginPages();
+				login.frame.setVisible(true);
+			}
+		});
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBackground(Color.DARK_GRAY);

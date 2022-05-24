@@ -7,15 +7,25 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Window;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class ManagerPages {
+import com.mysql.cj.protocol.Resultset;
 
+import db.connections.Database_Conn;
+
+public class ManagerPages {
 	private JFrame frame;
+	JFrame caller = null;
+	Database_Conn j;
 
 	/**
 	 * Launch the application.
@@ -57,6 +67,25 @@ public class ManagerPages {
 		panel.setLayout(null);
 		
 		JButton btnVisualizzaResoconto = new JButton("Visualizza schede");
+		btnVisualizzaResoconto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Connection myConn = null;
+				 Statement myStmt = null;
+				 ResultSet myRs = null;
+				
+				try {
+					myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
+					System.out.println("Database connected");
+					// 2. Create a statement
+					myStmt = myConn.createStatement();
+					myRs = myStmt.executeQuery("SELECT * FROM SCHEDE");
+				}
+				catch (Exception exc) {
+					exc.printStackTrace();
+				}
+				
+			}
+		});
 		btnVisualizzaResoconto.setForeground(Color.ORANGE);
 		btnVisualizzaResoconto.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnVisualizzaResoconto.setBackground(Color.DARK_GRAY);
@@ -66,6 +95,20 @@ public class ManagerPages {
 		JButton btnListini = new JButton("Listini");
 		btnListini.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Connection myConn = null;
+				 Statement myStmt = null;
+				 ResultSet myRs = null;
+				
+				try {
+					myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
+					System.out.println("Database connected");
+					// 2. Create a statement
+					myStmt = myConn.createStatement();
+					myRs = myStmt.executeQuery("SELECT * FROM LISTINI");
+				}
+				catch (Exception exc) {
+					exc.printStackTrace();
+				}
 			}
 		});
 		btnListini.setForeground(Color.ORANGE);
@@ -82,6 +125,14 @@ public class ManagerPages {
 		panel.add(btnCredenziali);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				LoginPages login = new LoginPages();
+				login.frame.setVisible(true);
+				
+			}
+		});
 		logout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
