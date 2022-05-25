@@ -17,10 +17,16 @@ import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.ScrollPane;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.AbstractListModel;
+import javax.swing.JTextField;
 
 public class ClientsCardView {
 
 	private JFrame frame;
+	private JTable table;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -76,8 +82,140 @@ public class ClientsCardView {
 		specificCardView.setFont(new Font("Verdana", Font.BOLD, 12));
 		specificCardView.setForeground(Color.ORANGE);
 		specificCardView.setBackground(Color.DARK_GRAY);
-		specificCardView.setBounds(727, 11, 129, 23);
+		specificCardView.setBounds(727, 58, 129, 23);
 		cardsView.add(specificCardView);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 11, 713, 444);
+		cardsView.add(panel);
+		panel.setLayout(null);
+		
+		table = new JTable();
+		table.setForeground(Color.BLACK);
+		table.setBackground(Color.LIGHT_GRAY);
+		table.setFont(new Font("Verdana", Font.BOLD, 12));
+		table.setBounds(0, 21, 700, 423);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"", null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"Codice", "Stanza", "Cognome", "Soggiorno", "Data inizio", "Data fine", "Resoconto"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, false, false, false, false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		panel.add(table);
+		
+		JLabel codeLabel = new JLabel("Codice");
+		codeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		codeLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		codeLabel.setBounds(0, 0, 99, 20);
+		panel.add(codeLabel);
+		
+		JLabel roomLabel = new JLabel("Stanza");
+		roomLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		roomLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		roomLabel.setBounds(100, 0, 99, 20);
+		panel.add(roomLabel);
+		
+		JLabel surnameLabel = new JLabel("Cognome");
+		surnameLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		surnameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		surnameLabel.setBounds(200, 0, 99, 20);
+		panel.add(surnameLabel);
+		
+		JLabel endLabel = new JLabel("Fine");
+		endLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		endLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		endLabel.setBounds(501, 0, 99, 20);
+		panel.add(endLabel);
+		
+		JLabel beginLabel = new JLabel("Inizio");
+		beginLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		beginLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		beginLabel.setBounds(401, 0, 99, 20);
+		panel.add(beginLabel);
+		
+		JLabel moneyLabel = new JLabel("Resoconto");
+		moneyLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		moneyLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		moneyLabel.setBounds(601, 0, 99, 20);
+		panel.add(moneyLabel);
+		
+		JLabel typeLabel = new JLabel("Soggiorno");
+		typeLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		typeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		typeLabel.setBounds(302, 0, 99, 20);
+		panel.add(typeLabel);
+		
+		JScrollBar scrollBar = new JScrollBar();
+		scrollBar.setBounds(701, 0, 12, 444);
+		panel.add(scrollBar);
+		
+		JLabel codeLabelForShow = new JLabel("Inserisci codice");
+		codeLabelForShow.setForeground(Color.ORANGE);
+		codeLabelForShow.setBackground(Color.DARK_GRAY);
+		codeLabelForShow.setFont(new Font("Verdana", Font.BOLD, 12));
+		codeLabelForShow.setBounds(727, 11, 129, 23);
+		cardsView.add(codeLabelForShow);
+		
+		textField = new JTextField();
+		textField.setForeground(Color.PINK);
+		textField.setBackground(Color.BLACK);
+		textField.setFont(new Font("Verdana", Font.BOLD, 12));
+		textField.setBounds(727, 33, 129, 20);
+		cardsView.add(textField);
+		textField.setColumns(10);
 		
 		JPanel filters = new JPanel();
 		filters.setBackground(Color.BLACK);
