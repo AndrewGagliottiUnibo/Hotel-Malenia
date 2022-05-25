@@ -89,7 +89,7 @@ public class ManagerPages {
 		btnVisualizzaResoconto.setForeground(Color.ORANGE);
 		btnVisualizzaResoconto.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnVisualizzaResoconto.setBackground(Color.DARK_GRAY);
-		btnVisualizzaResoconto.setBounds(276, 38, 385, 93);
+		btnVisualizzaResoconto.setBounds(276, 65, 385, 93);
 		panel.add(btnVisualizzaResoconto);
 		
 		JButton btnListini = new JButton("Listini");
@@ -114,15 +114,8 @@ public class ManagerPages {
 		btnListini.setForeground(Color.ORANGE);
 		btnListini.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnListini.setBackground(Color.DARK_GRAY);
-		btnListini.setBounds(276, 157, 385, 93);
+		btnListini.setBounds(276, 188, 385, 93);
 		panel.add(btnListini);
-		
-		JButton btnCredenziali = new JButton("Credenziali");
-		btnCredenziali.setForeground(Color.ORANGE);
-		btnCredenziali.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnCredenziali.setBackground(Color.DARK_GRAY);
-		btnCredenziali.setBounds(276, 276, 385, 93);
-		panel.add(btnCredenziali);
 		
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(new ActionListener() {
