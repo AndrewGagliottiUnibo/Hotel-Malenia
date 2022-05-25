@@ -24,6 +24,7 @@ public class LoginPages {
 	 */
 	public LoginPages() {
 		frame = new JFrame();
+		frame.setTitle("Hotel Malenia - Login");
 		frame.setBackground(Color.YELLOW);
 		frame.setBounds(100, 100, 945, 528);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,13 +72,13 @@ public class LoginPages {
 					JOptionPane.showMessageDialog(null, "Login Successful");
 					frame.dispose();
 					ReceptionPages rec = new ReceptionPages();
-					rec.frame.setVisible(true);
+					rec.frmHotelMalenia.setVisible(true);
 				}
 				else if (Username.equals("Dirigente1") && Password1.equals("Dirigente1")) {
 					JOptionPane.showMessageDialog(null, "Login Successful");
 					frame.dispose();
 					ManagerPages man = new ManagerPages();
-					man.frame.setVisible(true);
+					man.frmHotelMalenia.setVisible(true);
 				}	
 				else {
 					JOptionPane.showMessageDialog(null, "Errore in fase di login");		

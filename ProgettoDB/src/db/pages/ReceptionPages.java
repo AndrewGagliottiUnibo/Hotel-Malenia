@@ -3,8 +3,6 @@ package db.pages;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -19,7 +17,7 @@ import javax.swing.SwingConstants;
 
 public class ReceptionPages {
 
-	static JFrame frame;
+	public JFrame frmHotelMalenia;
 	private JTextField txtBenvenutoreceptionist;
 
 	/**
@@ -30,7 +28,7 @@ public class ReceptionPages {
 			public void run() {
 				try {
 					ReceptionPages window = new ReceptionPages();
-					window.frame.setVisible(true);
+					window.frmHotelMalenia.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,12 +47,13 @@ public class ReceptionPages {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setResizable(false);
-		frame.getContentPane().setBackground(Color.DARK_GRAY);
-		frame.setBounds(100, 100, 945, 528);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmHotelMalenia = new JFrame();
+		frmHotelMalenia.setTitle("Hotel Malenia - Reception");
+		frmHotelMalenia.setResizable(false);
+		frmHotelMalenia.getContentPane().setBackground(Color.DARK_GRAY);
+		frmHotelMalenia.setBounds(100, 100, 945, 528);
+		frmHotelMalenia.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmHotelMalenia.getContentPane().setLayout(null);
 
 		txtBenvenutoreceptionist = new JTextField();
 		txtBenvenutoreceptionist.setForeground(Color.RED);
@@ -63,7 +62,7 @@ public class ReceptionPages {
 		txtBenvenutoreceptionist.setText("Receptionist");
 		txtBenvenutoreceptionist.setFont(new Font("Verdana", Font.BOLD, 18));
 		txtBenvenutoreceptionist.setBounds(0, 0, 929, 43);
-		frame.getContentPane().add(txtBenvenutoreceptionist);
+		frmHotelMalenia.getContentPane().add(txtBenvenutoreceptionist);
 		txtBenvenutoreceptionist.setColumns(10);
 
 		JButton preno = new JButton("Prenotazione");
@@ -96,22 +95,22 @@ public class ReceptionPages {
 		preno.setBackground(Color.DARK_GRAY);
 		preno.setForeground(Color.ORANGE);
 		preno.setFont(new Font("Verdana", Font.BOLD, 12));
-		preno.setBounds(272, 54, 385, 75);
-		frame.getContentPane().add(preno);
+		preno.setBounds(272, 75, 385, 75);
+		frmHotelMalenia.getContentPane().add(preno);
 
-		JButton btnNewButton_2 = new JButton("Logout");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton logout = new JButton("Logout");
+		logout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				frmHotelMalenia.dispose();
 				LoginPages login = new LoginPages();
 				login.frame.setVisible(true);
 			}
 		});
-		btnNewButton_2.setForeground(Color.ORANGE);
-		btnNewButton_2.setBackground(Color.DARK_GRAY);
-		btnNewButton_2.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnNewButton_2.setBounds(744, 428, 156, 34);
-		frame.getContentPane().add(btnNewButton_2);
+		logout.setForeground(Color.ORANGE);
+		logout.setBackground(Color.DARK_GRAY);
+		logout.setFont(new Font("Verdana", Font.BOLD, 12));
+		logout.setBounds(744, 428, 156, 34);
+		frmHotelMalenia.getContentPane().add(logout);
 
 		JButton btnRegistraCliente = new JButton("Registra cliente");
 		btnRegistraCliente.addActionListener(new ActionListener() {
@@ -145,39 +144,8 @@ public class ReceptionPages {
 		btnRegistraCliente.setBackground(Color.DARK_GRAY);
 		btnRegistraCliente.setForeground(Color.ORANGE);
 		btnRegistraCliente.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnRegistraCliente.setBounds(272, 226, 385, 75);
-		frame.getContentPane().add(btnRegistraCliente);
-
-		JButton btnVisualizzaResoconto = new JButton("Visualizza prenotazione");
-		btnVisualizzaResoconto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Connection myConn = null;
-				Statement myStmt = null;
-				ResultSet myRs = null;
-
-				try {
-					myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-							"dariostudente");
-					System.out.println("Database connected");
-					// 2. Create a statement
-					myStmt = myConn.createStatement();
-					myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = ?"
-							+ "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE,"
-							+ "PRENOTAZIONE WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda" + "AND\n"
-							+ "REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
-							+ "ORDER BY SCHEDA.data DESC, SCHEDA.ora DESC");
-
-				} catch (Exception exc) {
-					exc.printStackTrace();
-				}
-
-			}
-		});
-		btnVisualizzaResoconto.setBackground(Color.DARK_GRAY);
-		btnVisualizzaResoconto.setForeground(Color.ORANGE);
-		btnVisualizzaResoconto.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnVisualizzaResoconto.setBounds(272, 140, 385, 75);
-		frame.getContentPane().add(btnVisualizzaResoconto);
+		btnRegistraCliente.setBounds(272, 161, 385, 75);
+		frmHotelMalenia.getContentPane().add(btnRegistraCliente);
 
 		JButton btnClientiInStruttura = new JButton("Clienti in struttura");
 		btnClientiInStruttura.addActionListener(new ActionListener() {
@@ -203,7 +171,7 @@ public class ReceptionPages {
 		btnClientiInStruttura.setForeground(Color.ORANGE);
 		btnClientiInStruttura.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnClientiInStruttura.setBackground(Color.DARK_GRAY);
-		btnClientiInStruttura.setBounds(272, 312, 385, 75);
-		frame.getContentPane().add(btnClientiInStruttura);
+		btnClientiInStruttura.setBounds(272, 247, 385, 75);
+		frmHotelMalenia.getContentPane().add(btnClientiInStruttura);
 	}
 }

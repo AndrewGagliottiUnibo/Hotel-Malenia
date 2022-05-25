@@ -48,6 +48,7 @@ public class EntertaimentServicePages {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Hotel Malenia - Servizio Intrattenimento");
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 945, 528);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

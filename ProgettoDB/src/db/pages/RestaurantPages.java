@@ -9,13 +9,9 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
-import java.awt.GridBagLayout;
 import javax.swing.JButton;
-import java.awt.GridBagConstraints;
 import javax.swing.JTextArea;
-import java.awt.Insets;
 import javax.swing.JTextField;
-import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -54,6 +50,7 @@ public class RestaurantPages {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Hotel Malenia - Ristorante");
 		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 945, 528);

@@ -13,13 +13,9 @@ import javax.swing.JButton;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import java.awt.ScrollPane;
 import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
-import javax.swing.AbstractListModel;
 import javax.swing.JTextField;
 
 public class ClientsCardView {
@@ -56,6 +52,7 @@ public class ClientsCardView {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Schede clienti");
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 945, 528);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

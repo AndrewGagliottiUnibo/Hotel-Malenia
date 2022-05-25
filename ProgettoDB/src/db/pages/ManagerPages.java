@@ -23,7 +23,7 @@ import com.mysql.cj.protocol.Resultset;
 import db.connections.Database_Conn;
 
 public class ManagerPages {
-	JFrame frame;
+	public JFrame frmHotelMalenia;
 	JFrame caller = null;
 	Database_Conn j;
 
@@ -35,7 +35,7 @@ public class ManagerPages {
 			public void run() {
 				try {
 					ManagerPages window = new ManagerPages();
-					window.frame.setVisible(true);
+					window.frmHotelMalenia.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -54,16 +54,17 @@ public class ManagerPages {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.DARK_GRAY);
-		frame.getContentPane().setForeground(Color.DARK_GRAY);
-		frame.setBounds(100, 100, 945, 528);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmHotelMalenia = new JFrame();
+		frmHotelMalenia.setTitle("Hotel Malenia - Manager");
+		frmHotelMalenia.getContentPane().setBackground(Color.DARK_GRAY);
+		frmHotelMalenia.getContentPane().setForeground(Color.DARK_GRAY);
+		frmHotelMalenia.setBounds(100, 100, 945, 528);
+		frmHotelMalenia.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
 		panel.setForeground(Color.DARK_GRAY);
-		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		frmHotelMalenia.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
 		JButton btnVisualizzaResoconto = new JButton("Visualizza schede");
@@ -120,7 +121,7 @@ public class ManagerPages {
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				frmHotelMalenia.dispose();
 				LoginPages login = new LoginPages();
 				login.frame.setVisible(true);
 				
@@ -137,6 +138,6 @@ public class ManagerPages {
 		lblNewLabel.setBackground(Color.DARK_GRAY);
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 18));
-		frame.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
+		frmHotelMalenia.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
 	}
 }
