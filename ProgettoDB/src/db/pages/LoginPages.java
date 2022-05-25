@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 
 public class LoginPages {
 
-	JFrame frame;
+	 JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	
@@ -69,9 +69,15 @@ public class LoginPages {
 
 				if (Username.equals("Receptionist1") && Password1.equals("Receptionist1")) {
 					JOptionPane.showMessageDialog(null, "Login Successful");
+					frame.dispose();
+					ReceptionPages rec = new ReceptionPages();
+					rec.frame.setVisible(true);
 				}
 				else if (Username.equals("Dirigente1") && Password1.equals("Dirigente1")) {
 					JOptionPane.showMessageDialog(null, "Login Successful");
+					frame.dispose();
+					ManagerPages man = new ManagerPages();
+					man.frame.setVisible(true);
 				}	
 				else {
 					JOptionPane.showMessageDialog(null, "Errore in fase di login");		

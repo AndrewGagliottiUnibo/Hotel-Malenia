@@ -23,7 +23,7 @@ import com.mysql.cj.protocol.Resultset;
 import db.connections.Database_Conn;
 
 public class ManagerPages {
-	private JFrame frame;
+	JFrame frame;
 	JFrame caller = null;
 	Database_Conn j;
 

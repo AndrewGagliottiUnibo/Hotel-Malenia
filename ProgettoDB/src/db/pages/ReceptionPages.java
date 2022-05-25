@@ -19,7 +19,7 @@ import javax.swing.SwingConstants;
 
 public class ReceptionPages {
 
-	private JFrame frame;
+	static JFrame frame;
 	private JTextField txtBenvenutoreceptionist;
 
 	/**
