@@ -4,11 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -16,7 +14,7 @@ import javax.swing.JTable;
 
 public class AllClientCards {
 
-	private JFrame frame;
+	private JFrame frmSchedeClienti;
 	private JTextField codeField;
 	private JTable table;
 
@@ -28,7 +26,7 @@ public class AllClientCards {
 			public void run() {
 				try {
 					AllClientCards window = new AllClientCards();
-					window.frame.setVisible(true);
+					window.frmSchedeClienti.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,11 +45,12 @@ public class AllClientCards {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.DARK_GRAY);
-		frame.setBounds(100, 100, 945, 528);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmSchedeClienti = new JFrame();
+		frmSchedeClienti.setTitle("Schede clienti");
+		frmSchedeClienti.getContentPane().setBackground(Color.DARK_GRAY);
+		frmSchedeClienti.setBounds(100, 100, 945, 528);
+		frmSchedeClienti.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmSchedeClienti.getContentPane().setLayout(null);
 		
 		JLabel cardsView = new JLabel("Visualizzazione schede clienti");
 		cardsView.setBounds(0, 0, 929, 23);
@@ -59,11 +58,11 @@ public class AllClientCards {
 		cardsView.setHorizontalAlignment(SwingConstants.CENTER);
 		cardsView.setForeground(Color.RED);
 		cardsView.setFont(new Font("Verdana", Font.BOLD, 18));
-		frame.getContentPane().add(cardsView);
+		frmSchedeClienti.getContentPane().add(cardsView);
 		
 		JScrollPane cardsViewScrollPane = new JScrollPane();
 		cardsViewScrollPane.setBounds(10, 34, 754, 444);
-		frame.getContentPane().add(cardsViewScrollPane);
+		frmSchedeClienti.getContentPane().add(cardsViewScrollPane);
 		
 		table = new JTable();
 		cardsViewScrollPane.setViewportView(table);
@@ -73,14 +72,14 @@ public class AllClientCards {
 		viewTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		viewTitle.setFont(new Font("Verdana", Font.BOLD, 12));
 		viewTitle.setBounds(774, 34, 145, 23);
-		frame.getContentPane().add(viewTitle);
+		frmSchedeClienti.getContentPane().add(viewTitle);
 		
 		codeField = new JTextField();
 		codeField.setBackground(Color.BLACK);
 		codeField.setForeground(Color.PINK);
 		codeField.setFont(new Font("Verdana", Font.BOLD, 12));
 		codeField.setBounds(774, 59, 145, 20);
-		frame.getContentPane().add(codeField);
+		frmSchedeClienti.getContentPane().add(codeField);
 		codeField.setColumns(10);
 		
 		JButton goToCard = new JButton("Vedi Scheda");
@@ -88,27 +87,27 @@ public class AllClientCards {
 		goToCard.setBackground(Color.DARK_GRAY);
 		goToCard.setFont(new Font("Verdana", Font.BOLD, 12));
 		goToCard.setBounds(774, 90, 145, 23);
-		frame.getContentPane().add(goToCard);
+		frmSchedeClienti.getContentPane().add(goToCard);
 		
 		JButton viewAllBtn = new JButton("Vedi tutte");
 		viewAllBtn.setForeground(Color.ORANGE);
 		viewAllBtn.setBackground(Color.DARK_GRAY);
 		viewAllBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 		viewAllBtn.setBounds(774, 184, 145, 23);
-		frame.getContentPane().add(viewAllBtn);
+		frmSchedeClienti.getContentPane().add(viewAllBtn);
 		
 		JButton viewActualBtn = new JButton("Vedi attuali");
 		viewActualBtn.setForeground(Color.ORANGE);
 		viewActualBtn.setBackground(Color.DARK_GRAY);
 		viewActualBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 		viewActualBtn.setBounds(774, 222, 145, 23);
-		frame.getContentPane().add(viewActualBtn);
+		frmSchedeClienti.getContentPane().add(viewActualBtn);
 		
 		JButton logout = new JButton("Logout");
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBounds(830, 455, 89, 23);
-		frame.getContentPane().add(logout);
+		frmSchedeClienti.getContentPane().add(logout);
 	}
 }
