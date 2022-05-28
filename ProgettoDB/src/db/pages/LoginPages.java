@@ -6,21 +6,17 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import db.logic.Logic;
 import db.logic.LogicsImpl;
-
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class LoginPages {
 
 	public JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField codeField;
+	private JTextField passwordField;
 	private Logic logic;
 	
 	/**
@@ -61,22 +57,22 @@ public class LoginPages {
 		code.setBounds(130, 217, 132, 42);
 		panel.add(code);
 		
-		textField = new JTextField();
-		textField.setBounds(356, 232, 303, 20);
-		panel.add(textField);
-		textField.setColumns(10);
+		codeField = new JTextField();
+		codeField.setBounds(356, 232, 303, 20);
+		panel.add(codeField);
+		codeField.setColumns(10);
 		
-		textField_1 = new JPasswordField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(356, 320, 303, 20);
-		panel.add(textField_1);
+		passwordField = new JPasswordField();
+		passwordField.setColumns(10);
+		passwordField.setBounds(356, 320, 303, 20);
+		panel.add(passwordField);
 		
 		/*
 		 * Button logic here
 		 */
 		JButton loginBtn = new JButton("Login");
 		loginBtn.addActionListener(e -> {
-			this.logic.login(textField.getText(), textField_1.getText());
+			this.logic.login(codeField.getText(), passwordField.getText());
 			frame.dispose();
 		});
 		

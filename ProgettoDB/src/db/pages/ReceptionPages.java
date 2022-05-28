@@ -1,7 +1,5 @@
 package db.pages;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -14,33 +12,21 @@ import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import db.logic.Logic;
 
 public class ReceptionPages {
 
 	public JFrame frmHotelMalenia;
 	private JTextField txtBenvenutoreceptionist;
+	private Logic logic;
 
 	/**
-	 * Launch the application.
+	 * Constructor.
+	 * @param logic of the application
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ReceptionPages window = new ReceptionPages();
-					window.frmHotelMalenia.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
-	public ReceptionPages() {
+	public ReceptionPages(final Logic logic) {
 		initialize();
+		this.logic = logic;
 	}
 
 	/**

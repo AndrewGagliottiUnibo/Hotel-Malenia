@@ -1,7 +1,5 @@
 package db.pages;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -10,44 +8,29 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import db.logic.Logic;
 import javax.swing.JLabel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.awt.event.ActionEvent;
 
 public class BedroomServicePages {
 
 	private JFrame frame;
 	private JTextField textField;
+	private Logic logic;
 
 	/**
-	 * Launch the application.
+	 * Constructor.
+	 * @param logic of the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BedroomServicePages window = new BedroomServicePages();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
-	public BedroomServicePages() {
-		initialize();
+	public BedroomServicePages(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**
@@ -83,26 +66,26 @@ public class BedroomServicePages {
 		gbl_panel.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
-		
+	
+		/*
+		 * Show rooms to be cleared.
+		 */
 		JButton requestRoomToBeCleared = new JButton("Vedi camere da pulire");
-		requestRoomToBeCleared.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Connection myConn = null;
-				 Statement myStmt = null;
-				 ResultSet myRs = null;
-				
-				try {
-					myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
-					System.out.println("Database connected");
-					// 2. Create a statement
-					myStmt = myConn.createStatement();
-					myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
-				}
-				catch (Exception exc) {
-					exc.printStackTrace();
-				}
-			}
+		requestRoomToBeCleared.addActionListener(e -> {
+			ResultSet result = this.logic.showRoomToBeCleaned();
+			 try {
+				 int row = result.getRow();
+				 
+				 while(result.next()) {
+					 for(int i = 0; i < row; i++) {
+						 //print
+					 }
+				 }
+			 } catch(Exception ecc) {
+				 ecc.printStackTrace();
+			 }
 		});
+		
 		requestRoomToBeCleared.setFont(new Font("Verdana", Font.BOLD, 12));
 		requestRoomToBeCleared.setForeground(Color.BLACK);
 		requestRoomToBeCleared.setBackground(Color.WHITE);
@@ -130,6 +113,9 @@ public class BedroomServicePages {
 		panel.add(textField, gbc_textField);
 		textField.setColumns(10);
 		
+		/*
+		 * Report room cleaned.
+		 */
 		JButton reportRoomButton = new JButton("Invia");
 		reportRoomButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -20,7 +20,7 @@ public class AllClientCards {
 	private JFrame frmSchedeClienti;
 	private JTextField codeField;
 	private JTable table;
-	private Logic mainPage;
+	private Logic logic;
 
 	/**
 	 * Launch the application.
