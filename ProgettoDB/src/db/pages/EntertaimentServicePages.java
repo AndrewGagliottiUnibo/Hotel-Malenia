@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import db.logic.Logic;
+
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -19,6 +22,7 @@ public class EntertaimentServicePages {
 
 	private JFrame frame;
 	private JTextField textField;
+	private Logic logic;
 
 	/**
 	 * Launch the application.
@@ -139,6 +143,11 @@ public class EntertaimentServicePages {
 		panel.add(occupationSection);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(e -> {
+			frame.dispose();
+			this.logic.logout();
+			
+		});
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));

@@ -15,11 +15,14 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+import db.logic.Logic;
+import db.logic.LogicsImpl;
+
 public class ReceptionPages {
 
 	public JFrame frmHotelMalenia;
 	private JTextField txtBenvenutoreceptionist;
-
+	private Logic logic; 
 	/**
 	 * Launch the application.
 	 */
@@ -99,12 +102,10 @@ public class ReceptionPages {
 		frmHotelMalenia.getContentPane().add(preno);
 
 		JButton logout = new JButton("Logout");
-		logout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmHotelMalenia.dispose();
-				LoginPages login = new LoginPages();
-				login.frame.setVisible(true);
-			}
+		logout.addActionListener(e -> {
+			frmHotelMalenia.dispose();
+			this.logic.logout();
+			
 		});
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
