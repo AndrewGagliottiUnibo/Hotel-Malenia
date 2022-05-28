@@ -29,14 +29,16 @@ public class LogicsImpl implements Logic {
 	private static final String CAM_PASSWORD = "CAM1";
 	private String code;
 	private String password;
+	static LoginPages mainPage;
 
 	/**
 	 * Constructor.
 	 */
-	public LogicsImpl() {
-		
+	public LogicsImpl(LoginPages mainPage) {
+		this.mainPage = mainPage;
+
 	}
-	
+
 	@Override
 	public void login(final String code, final String password) {
 		this.code = code;
@@ -66,10 +68,10 @@ public class LogicsImpl implements Logic {
 			JOptionPane.showMessageDialog(null, "Errore in fase di login");		
 		}
 	}
-	
+
 	@Override
 	public void logout() {
-		
+		this.mainPage.frame.setVisible(true);
 	}
 
 	@Override

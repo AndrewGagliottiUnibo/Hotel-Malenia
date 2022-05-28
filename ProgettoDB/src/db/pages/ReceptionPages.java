@@ -14,12 +14,15 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import db.logic.Logic;
 
+import db.logic.Logic;
+import db.logic.LogicsImpl;
+
 public class ReceptionPages {
 
 	public JFrame frmHotelMalenia;
 	private JTextField txtBenvenutoreceptionist;
-	private Logic logic;
-
+	private Logic logic; 
+	
 	/**
 	 * Constructor.
 	 * @param logic of the application
@@ -85,12 +88,10 @@ public class ReceptionPages {
 		frmHotelMalenia.getContentPane().add(preno);
 
 		JButton logout = new JButton("Logout");
-		logout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmHotelMalenia.dispose();
-				LoginPages login = new LoginPages();
-				login.frame.setVisible(true);
-			}
+		logout.addActionListener(e -> {
+			frmHotelMalenia.dispose();
+			this.logic.logout();
+			
 		});
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
@@ -113,7 +114,7 @@ public class ReceptionPages {
 					myStmt = myConn.createStatement();
 					myRs = myStmt.executeQuery("INSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, "
 							+ "resoconto, datiTariffa, durataSoggiorno, orarioCheckin, orarioCheckout) + "
-							+ "VALUES (?, ?, ’ ’, ?, ?, ?, ’ ’, ’ ’)");
+							+ "VALUES (?, ?, ï¿½ ï¿½, ?, ?, ?, ï¿½ ï¿½, ï¿½ ï¿½)");
 
 					myRs = myStmt.executeQuery(
 							"INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita, numeroTel, tipologiaSoggiorno) + "

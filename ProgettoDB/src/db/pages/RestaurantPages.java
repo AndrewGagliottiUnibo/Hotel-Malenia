@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import db.logic.Logic;
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
@@ -21,6 +24,7 @@ public class RestaurantPages {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private Logic logic;
 
 	/**
 	 * Launch the application.
@@ -206,12 +210,10 @@ public class RestaurantPages {
 		panel.add(newBuy);
 		
 		JButton logout = new JButton("Logout");
-		logout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				LoginPages login = new LoginPages();
-				login.frame.setVisible(true);
-			}
+		logout.addActionListener(e -> {
+			frame.dispose();
+			this.logic.logout();
+			
 		});
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));

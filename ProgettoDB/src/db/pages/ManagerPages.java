@@ -21,11 +21,13 @@ import javax.swing.SwingConstants;
 import com.mysql.cj.protocol.Resultset;
 
 import db.connections.Database_Conn;
+import db.logic.Logic;
 
 public class ManagerPages {
 	public JFrame frmHotelMalenia;
 	JFrame caller = null;
 	Database_Conn j;
+	private Logic logic;
 
 	/**
 	 * Launch the application.
@@ -119,13 +121,10 @@ public class ManagerPages {
 		panel.add(btnListini);
 		
 		JButton logout = new JButton("Logout");
-		logout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmHotelMalenia.dispose();
-				LoginPages login = new LoginPages();
-				login.frame.setVisible(true);
-				
-			}
+		logout.addActionListener(e -> {
+			frmHotelMalenia.dispose();
+			this.logic.logout();
+			
 		});
 		logout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		logout.setForeground(Color.ORANGE);
