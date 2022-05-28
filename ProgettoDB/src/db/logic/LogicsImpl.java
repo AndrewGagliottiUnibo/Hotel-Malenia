@@ -8,6 +8,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
+import db.pages.LoginPages;
 import db.pages.ManagerPages;
 import db.pages.ReceptionPages;
 import db.pages.RestaurantPages;
@@ -36,7 +37,6 @@ public class LogicsImpl implements Logic {
 	 */
 	public LogicsImpl(LoginPages mainPage) {
 		this.mainPage = mainPage;
-
 	}
 
 	@Override
@@ -44,23 +44,23 @@ public class LogicsImpl implements Logic {
 		this.code = code;
 		this.password = password;
 		
-		if (this.code == REC_CODE && this.password == REC_PASSWORD) {
+		if (this.code.equals(REC_CODE) && this.password.equals(REC_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			ReceptionPages rec = new ReceptionPages(this);
 			rec.frmHotelMalenia.setVisible(true);
-		} else if (this.code == DIR_CODE && this.password == DIR_PASSWORD) {
+		} else if (this.code.equals(DIR_CODE) && this.password.equals(DIR_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			ManagerPages man = new ManagerPages();
 			man.frmHotelMalenia.setVisible(true);
-		} else if (this.code == SAL_CODE && this.password == SAL_PASSWORD) {
+		} else if (this.code.equals(SAL_CODE) && this.password.equals(SAL_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			RestaurantPages res = new RestaurantPages();
 			//todo
-		} else if (this.code == SERV_CODE && this.password == SERV_PASSWORD) {
+		} else if (this.code.equals(SERV_CODE) && this.password.equals(SERV_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			EntertaimentServicePages ent = new EntertaimentServicePages();
 			//todo
-		} else if (this.code == CAM_CODE && this.password == CAM_PASSWORD) {
+		} else if (this.code.equals(CAM_CODE) && this.password.equals(CAM_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			BedroomServicePages bed = new BedroomServicePages(this);
 			//todo
