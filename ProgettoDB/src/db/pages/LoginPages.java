@@ -8,6 +8,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import db.logic.Logic;
+import db.logic.LogicsImpl;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -15,14 +18,20 @@ import java.awt.event.ActionEvent;
 
 public class LoginPages {
 
-	 JFrame frame;
+	public JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
+	private Logic logic;
 	
 	/**
 	 * Create the application.
 	 */
 	public LoginPages() {
+		
+		/**
+		 * Set the logic behind the GUIs
+		 */
+		this.logic = new LogicsImpl();
 		frame = new JFrame();
 		frame.setTitle("Hotel Malenia - Login");
 		frame.setBackground(Color.YELLOW);
@@ -62,29 +71,15 @@ public class LoginPages {
 		textField_1.setBounds(356, 320, 303, 20);
 		panel.add(textField_1);
 		
+		/*
+		 * Button logic here
+		 */
 		JButton loginBtn = new JButton("Login");
-		loginBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String Username = textField.getText();
-				String Password1 = textField_1.getText();
-
-				if (Username.equals("Receptionist1") && Password1.equals("Receptionist1")) {
-					JOptionPane.showMessageDialog(null, "Login Successful");
-					frame.dispose();
-					ReceptionPages rec = new ReceptionPages();
-					rec.frmHotelMalenia.setVisible(true);
-				}
-				else if (Username.equals("Dirigente1") && Password1.equals("Dirigente1")) {
-					JOptionPane.showMessageDialog(null, "Login Successful");
-					frame.dispose();
-					ManagerPages man = new ManagerPages();
-					man.frmHotelMalenia.setVisible(true);
-				}	
-				else {
-					JOptionPane.showMessageDialog(null, "Errore in fase di login");		
-				}
-			}
+		loginBtn.addActionListener(e -> {
+			this.logic.login(textField.getText(), textField_1.getText());
+			frame.dispose();
 		});
+		
 		loginBtn.setForeground(Color.ORANGE);
 		loginBtn.setBackground(Color.DARK_GRAY);
 		loginBtn.setBounds(722, 422, 89, 23);

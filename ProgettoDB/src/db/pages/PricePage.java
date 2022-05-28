@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class PricePage {
 
@@ -65,6 +66,21 @@ public class PricePage {
 		frmListini.getContentPane().add(scrollPane);
 		
 		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+			},
+			new String[] {
+				"Prodotto", "Valore"
+			}
+		));
+		table.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		scrollPane.setViewportView(table);
 		
 		JButton showPrices = new JButton("Vedi listini");

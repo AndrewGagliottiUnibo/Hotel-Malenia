@@ -3,6 +3,11 @@ package db.logic;
 public interface Logic {
 
 	/**
+	 * 
+	 */
+	public void login(String code, String password);
+	
+	/**
 	 * Let you return to the login page.
 	 */
 	public void logout();

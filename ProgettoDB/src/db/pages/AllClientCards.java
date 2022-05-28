@@ -11,12 +11,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import db.logic.Logic;
 
 public class AllClientCards {
 
 	private JFrame frmSchedeClienti;
 	private JTextField codeField;
 	private JTable table;
+	private Logic mainPage;
 
 	/**
 	 * Launch the application.
@@ -65,6 +69,19 @@ public class AllClientCards {
 		frmSchedeClienti.getContentPane().add(cardsViewScrollPane);
 		
 		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"Codice", "Stanza", "Cognome", "Soggiorno", "Inizio", "Fine", "Resoconto"
+			}
+		));
+		table.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		cardsViewScrollPane.setViewportView(table);
 		
 		JLabel viewTitle = new JLabel("Inserisci codice");
@@ -108,6 +125,9 @@ public class AllClientCards {
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBounds(830, 455, 89, 23);
+		logout.addActionListener(e -> {
+			
+		});
 		frmSchedeClienti.getContentPane().add(logout);
 	}
 }
