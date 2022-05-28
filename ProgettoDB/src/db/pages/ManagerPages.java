@@ -1,7 +1,5 @@
 package db.pages;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -13,13 +11,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-import java.awt.Window;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-
-import com.mysql.cj.protocol.Resultset;
-
 import db.connections.Database_Conn;
 import db.logic.Logic;
 
@@ -30,23 +24,7 @@ public class ManagerPages {
 	private Logic logic;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ManagerPages window = new ManagerPages();
-					window.frmHotelMalenia.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
+	 * Constructor.
 	 */
 	public ManagerPages() {
 		initialize();
