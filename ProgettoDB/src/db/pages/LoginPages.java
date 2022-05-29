@@ -14,7 +14,7 @@ import java.awt.Color;
 
 public class LoginPages {
 
-	public JFrame frame;
+	private JFrame frame;
 	private JTextField codeField;
 	private JTextField passwordField;
 	private Logic logic;
@@ -24,10 +24,14 @@ public class LoginPages {
 	 */
 	public LoginPages() {
 
-		/**
+		/*
 		 * Set the logic behind the GUIs
 		 */
 		this.logic = new LogicsImpl(this);
+		
+		/*
+		 * Set GUI parameters.
+		 */
 		frame = new JFrame();
 		frame.setTitle("Hotel Malenia - Login");
 		frame.setBackground(Color.YELLOW);
@@ -68,13 +72,14 @@ public class LoginPages {
 		panel.add(passwordField);
 		
 		/*
-		 * Button logic here
+		 * Button login
 		 */
 		JButton loginBtn = new JButton("Login");
 		loginBtn.addActionListener(e -> {
 			frame.setVisible(false);
 			this.logic.login(codeField.getText(), passwordField.getText());
-			
+			this.codeField.setText("");
+			this.passwordField.setText("");
 		});
 
 		loginBtn.setForeground(Color.ORANGE);
@@ -82,5 +87,11 @@ public class LoginPages {
 		loginBtn.setBounds(722, 422, 89, 23);
 		panel.add(loginBtn);
 	}
-
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frame;
+	}
 }

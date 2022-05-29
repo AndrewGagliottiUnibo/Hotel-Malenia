@@ -20,15 +20,13 @@ public class EntertaimentServicePages {
 	private JFrame frame;
 	private JTextField textField;
 	private Logic logic;
-
-	/**
-	 * Launch the application.
-	 */
+	
 	/**
 	 * Create the application.
 	 */
-	public EntertaimentServicePages() {
-		initialize();
+	public EntertaimentServicePages(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**
@@ -68,7 +66,7 @@ public class EntertaimentServicePages {
 		panel.add(textField);
 		textField.setColumns(10);
 		
-		JButton casinoEntrance = new JButton("Ingresso al casin\u00F2");
+		JButton casinoEntrance = new JButton("Ingresso al casino'");
 		casinoEntrance.setFont(new Font("Verdana", Font.BOLD, 12));
 		casinoEntrance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -111,19 +109,23 @@ public class EntertaimentServicePages {
 		showBeach.setBounds(409, 60, 120, 23);
 		panel.add(showBeach);
 		
-		JLabel occupationSection = new JLabel("Vedi prenotazioni (oggi)");
+		JLabel occupationSection = new JLabel("Vedi prenotazioni");
 		occupationSection.setForeground(Color.ORANGE);
 		occupationSection.setFont(new Font("Verdana", Font.BOLD, 12));
 		occupationSection.setBackground(Color.DARK_GRAY);
 		occupationSection.setBounds(408, 21, 283, 28);
 		panel.add(occupationSection);
 		
+		/*
+		 * Logout from application part
+		 */
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(e -> {
-			frame.dispose();
+			this.frame.dispose();
 			this.logic.logout();
 			
 		});
+		
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -140,5 +142,12 @@ public class EntertaimentServicePages {
 		textArea.setEditable(false);
 		textArea.setBackground(Color.BLACK);
 		scrollPane.setViewportView(textArea);
+	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frame;
 	}
 }

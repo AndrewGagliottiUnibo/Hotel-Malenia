@@ -8,6 +8,6 @@ public class Runner {
 		 * Call to db starting connection ???
 		 * -- TODO
 		 */
-		window.frame.setVisible(true);
+		window.getFrame().setVisible(true);
 	}
 }

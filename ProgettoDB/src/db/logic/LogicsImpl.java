@@ -31,7 +31,7 @@ public class LogicsImpl implements Logic {
 	private static final String CAM_PASSWORD = "CAM1";
 	private String code;
 	private String password;
-	static LoginPages mainPage;
+	private LoginPages mainPage;
 	Connection conn;
 
 	/**
@@ -49,31 +49,32 @@ public class LogicsImpl implements Logic {
 		if (this.code.equals(REC_CODE) && this.password.equals(REC_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			ReceptionPages rec = new ReceptionPages(this);
-			rec.frmHotelMalenia.setVisible(true);
+			rec.getFrame().setVisible(true);
 		} else if (this.code.equals(DIR_CODE) && this.password.equals(DIR_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
-			ManagerPages man = new ManagerPages();
-			man.frmHotelMalenia.setVisible(true);
+			ManagerPages man = new ManagerPages(this);
+			man.getFrame().setVisible(true);
 		} else if (this.code.equals(SAL_CODE) && this.password.equals(SAL_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			RestaurantPages res = new RestaurantPages(this);
-			// todo
+			res.getFrame().setVisible(true);
 		} else if (this.code.equals(SERV_CODE) && this.password.equals(SERV_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
-			EntertaimentServicePages ent = new EntertaimentServicePages();
-			// todo
+			EntertaimentServicePages ent = new EntertaimentServicePages(this);
+			ent.getFrame().setVisible(true);
 		} else if (this.code.equals(CAM_CODE) && this.password.equals(CAM_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			BedroomServicePages bed = new BedroomServicePages(this);
-			// todo
+			bed.getFrame().setVisible(true);
 		} else {
 			JOptionPane.showMessageDialog(null, "Errore in fase di login");
+			this.mainPage.getFrame().setVisible(true);
 		}
 	}
 
 	@Override
 	public void logout() {
-		this.mainPage.frame.setVisible(true);
+		this.mainPage.getFrame().setVisible(true);
 	}
 
 	@Override

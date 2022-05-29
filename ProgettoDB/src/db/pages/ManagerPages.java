@@ -14,20 +14,18 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import db.connections.Database_Conn;
 import db.logic.Logic;
 
 public class ManagerPages {
-	public JFrame frmHotelMalenia;
-	JFrame caller = null;
-	Database_Conn j;
+	private JFrame frmHotelMalenia;
 	private Logic logic;
 
 	/**
 	 * Constructor.
 	 */
-	public ManagerPages() {
-		initialize();
+	public ManagerPages(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**
@@ -98,12 +96,16 @@ public class ManagerPages {
 		btnListini.setBounds(276, 188, 385, 93);
 		panel.add(btnListini);
 		
+		/*
+		 * Logout from application part
+		 */
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(e -> {
-			frmHotelMalenia.dispose();
+			this.frmHotelMalenia.dispose();
 			this.logic.logout();
 			
 		});
+		
 		logout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
@@ -116,5 +118,12 @@ public class ManagerPages {
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 18));
 		frmHotelMalenia.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
+	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frmHotelMalenia;
 	}
 }

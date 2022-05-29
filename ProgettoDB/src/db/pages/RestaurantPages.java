@@ -132,4 +132,11 @@ public class RestaurantPages {
 		textArea.setBackground(Color.BLACK);
 		scrollPane.setViewportView(textArea);
 	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frame;
+	}
 }

@@ -17,7 +17,7 @@ import db.logic.Logic;
 
 public class ReceptionPages {
 
-	public JFrame frmHotelMalenia;
+	private JFrame frmHotelMalenia;
 	private JTextField txtBenvenutoreceptionist;
 	private Logic logic; 
 	
@@ -85,12 +85,16 @@ public class ReceptionPages {
 		preno.setBounds(272, 75, 385, 75);
 		frmHotelMalenia.getContentPane().add(preno);
 
+		/*
+		 * Logout from application part
+		 */
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(e -> {
-			frmHotelMalenia.dispose();
+			this.frmHotelMalenia.dispose();
 			this.logic.logout();
 			
 		});
+		
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -158,5 +162,12 @@ public class ReceptionPages {
 		btnClientiInStruttura.setBackground(Color.DARK_GRAY);
 		btnClientiInStruttura.setBounds(272, 247, 385, 75);
 		frmHotelMalenia.getContentPane().add(btnClientiInStruttura);
+	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frmHotelMalenia;
 	}
 }
