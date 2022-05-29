@@ -5,6 +5,11 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
@@ -229,6 +234,31 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(backButton);
 		
 		JButton registrationButton = new JButton("Registra");
+		registrationButton.addActionListener(e -> {
+			Connection myConn = null;
+			Statement myStmt = null;
+			ResultSet myRs = null;
+
+			try {
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+						"dariostudente");
+				System.out.println("Database connected");
+				// 2. Create a statement
+				myStmt = myConn.createStatement();
+				myRs = myStmt.executeQuery("INSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, "
+						+ "resoconto, datiTariffa, durataSoggiorno, orarioCheckin, orarioCheckout) + "
+						+ "VALUES (?, ?, � �, ?, ?, ?, � �, � �)");
+
+				myRs = myStmt.executeQuery(
+						"INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita, numeroTel, tipologiaSoggiorno) + "
+								+ "VALUES (?, ?, ?, ?, ?, ?)");
+				myRs = myStmt.executeQuery("INSERT INTO IDENTIFICAZIONE (codiceCliente, numeroScheda)"
+						+ "VALUES (?, SCHEDA.codScheda)");
+			} catch (Exception exc) {
+				exc.printStackTrace();
+			}
+		});
+		
 		registrationButton.setForeground(Color.MAGENTA);
 		registrationButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		registrationButton.setBackground(Color.DARK_GRAY);

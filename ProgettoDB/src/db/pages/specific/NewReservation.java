@@ -1,9 +1,12 @@
 package db.pages.specific;
 
-import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -16,22 +19,28 @@ public class NewReservation {
 	private JTextField dateField;
 	private JTextField timeField;
 	private JTextField parkingDaysField;
+	
+	Connection myConn = null;
+	Statement myStmt = null;
+	ResultSet myRs = null;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					NewReservation window = new NewReservation();
-					window.frmNuovaPrenotazione.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	try {
+//		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+//				"dariostudente");
+//		System.out.println("Database connected");
+//		// 2. Create a statement
+//		myStmt = myConn.createStatement();
+//		myRs = myStmt.executeQuery(
+//				"INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora)" + "VALUES (?, ?, ?)");
+//
+//		myRs = myStmt.executeQuery("INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata)"
+//				+ "VALUES (PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda)");
+//		myRs = myStmt.executeQuery("UPDATE SCHEDA" + "SET resoconto = resoconto + ?"
+//				+ "WHERE codScheda IN (SELECT schedaRegistrata" + "FROM REGISTRAZIONE"
+//				+ "WHERE schedaRegistrata = SCHEDA.codScheda)");
+//	} catch (Exception exc) {
+//		exc.printStackTrace();
+//	}
 
 	/**
 	 * Create the application.

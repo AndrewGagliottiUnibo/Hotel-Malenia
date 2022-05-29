@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
@@ -75,6 +77,13 @@ public class LogicsImpl implements Logic {
 	@Override
 	public void logout() {
 		this.mainPage.getFrame().setVisible(true);
+	}
+
+	@Override
+	public void goToSpecificPage(final String specificGUI, final JFrame frame) {
+		/*
+		 * --TODO
+		 */
 	}
 
 	@Override

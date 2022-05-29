@@ -3,6 +3,10 @@ package db.pages.specific;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
@@ -10,7 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 import db.logic.Logic;
 
 public class PricePage {
@@ -73,6 +76,22 @@ public class PricePage {
 		scrollPane.setViewportView(table);
 		
 		JButton showPrices = new JButton("Vedi listini");
+		showPrices.addActionListener(e -> {
+			Connection myConn = null;
+			 Statement myStmt = null;
+			 ResultSet myRs = null;
+			
+			try {
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
+				System.out.println("Database connected");
+				// 2. Create a statement
+				myStmt = myConn.createStatement();
+				myRs = myStmt.executeQuery("SELECT * FROM LISTINI");
+			}
+			catch (Exception exc) {
+				exc.printStackTrace();
+			}
+		});
 		showPrices.setForeground(Color.ORANGE);
 		showPrices.setBackground(Color.DARK_GRAY);
 		showPrices.setFont(new Font("Verdana", Font.BOLD, 12));

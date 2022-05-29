@@ -1,6 +1,7 @@
 package db.logic;
 
 import java.sql.ResultSet;
+import javax.swing.JFrame;
 
 public interface Logic {
 
@@ -15,6 +16,13 @@ public interface Logic {
 	 * Let you return to the login page.
 	 */
 	void logout();
+	
+	/**
+	 * Show a sub page of the application.
+	 * @param specificGUI
+	 * @param frame
+	 */
+	void goToSpecificPage(String specificGUI, JFrame frame);
 	
 	/**
 	 * BedroomService method: let you make a query where you recover

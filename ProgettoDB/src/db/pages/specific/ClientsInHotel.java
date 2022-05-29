@@ -6,6 +6,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -76,6 +81,23 @@ public class ClientsInHotel {
 		frmClientiInStruttura.getContentPane().add(logout);
 		
 		JButton showAllBtn = new JButton("Vedi");
+		showAllBtn.addActionListener(e -> {
+			Connection myConn = null;
+			Statement myStmt = null;
+			ResultSet myRs = null;
+
+			try {
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+						"dariostudente");
+				System.out.println("Database connected");
+				// 2. Create a statement
+				myStmt = myConn.createStatement();
+				myRs = myStmt.executeQuery("SELECT * FROM SCHEDA" + "WHERE numeroCamera IS NOT NULL");
+
+			} catch (Exception exc) {
+				exc.printStackTrace();
+			}
+		});
 		showAllBtn.setForeground(Color.ORANGE);
 		showAllBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 		showAllBtn.setBackground(Color.DARK_GRAY);
