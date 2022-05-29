@@ -13,12 +13,15 @@ import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import db.logic.Logic;
+
 public class PricePage {
 
 	private JFrame frmListini;
 	private JTextField productNameField;
 	private JTextField priceNameField;
 	private JTable table;
+	private Logic logic;
 
 	/**
 	 * Launch the application.
@@ -141,6 +144,11 @@ public class PricePage {
 		frmListini.getContentPane().add(comPenBtn);
 		
 		JButton logout = new JButton("Logout");
+				logout.addActionListener(e -> {
+					frmListini.dispose();
+					this.logic.logout();
+					
+				});
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
