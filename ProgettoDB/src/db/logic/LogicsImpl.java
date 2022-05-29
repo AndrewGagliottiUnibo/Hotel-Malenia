@@ -112,7 +112,17 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public ResultSet showRestaurantTables() {
-		// TODO Auto-generated method stub
+		Connection conn;
+		int recordNumber = 0;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			ResultSet pstmt = (ResultSet) conn
+					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = " );
+			recordNumber = pstmt.getInt(1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
