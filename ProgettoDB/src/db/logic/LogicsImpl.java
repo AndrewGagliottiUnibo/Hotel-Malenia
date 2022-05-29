@@ -57,7 +57,7 @@ public class LogicsImpl implements Logic {
 		} else if (this.code.equals(SAL_CODE) && this.password.equals(SAL_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			RestaurantPages res = new RestaurantPages(this);
-			//todo
+			// todo
 		} else if (this.code.equals(SERV_CODE) && this.password.equals(SERV_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			EntertaimentServicePages ent = new EntertaimentServicePages();
@@ -86,7 +86,7 @@ public class LogicsImpl implements Logic {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return false;
 
 	}
@@ -116,17 +116,33 @@ public class LogicsImpl implements Logic {
 		return null;
 	}
 
-
 	public int actualPrice(String s) {
 		Connection conn;
+		int recordNumber = 0;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn.prepareStatement("SELECT valoreMonetario FROM Listini WHERE"
-					+ "nome = " + s);
+			ResultSet pstmt = (ResultSet) conn
+					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = " + s);
+			recordNumber = pstmt.getInt(1);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return 0;
+		return recordNumber;
+	}
+
+	@Override
+	public boolean modifyPrice(int price, String nome) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt = conn
+					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 }
