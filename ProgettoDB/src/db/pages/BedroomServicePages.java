@@ -14,9 +14,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
-import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 
 public class BedroomServicePages {
@@ -72,8 +70,13 @@ public class BedroomServicePages {
 				 
 				 while(result.next()) {
 					 for(int i = 0; i < row; i++) {
-						 //print
-						 // -- TODO
+						 /*
+						  * Query di tutte le schede che contengono una camera non nulla
+						  * -- TODO
+						  * 
+						  * Il risultato della query va scritto nella textArea -> textArea
+						  * -- TODO
+						  */
 					 }
 				 }
 			 } catch(Exception ecc) {
@@ -82,8 +85,8 @@ public class BedroomServicePages {
 		});
 		
 		requestRoomToBeCleared.setFont(new Font("Verdana", Font.BOLD, 12));
-		requestRoomToBeCleared.setForeground(Color.BLACK);
-		requestRoomToBeCleared.setBackground(Color.WHITE);
+		requestRoomToBeCleared.setForeground(Color.ORANGE);
+		requestRoomToBeCleared.setBackground(Color.DARK_GRAY);
 		GridBagConstraints gbc_requestRoomToBeCleared = new GridBagConstraints();
 		gbc_requestRoomToBeCleared.weighty = 0.3;
 		gbc_requestRoomToBeCleared.insets = new Insets(0, 0, 5, 0);
@@ -112,20 +115,22 @@ public class BedroomServicePages {
 		 * Report room cleaned.
 		 */
 		JButton reportRoomButton = new JButton("Invia");
-		reportRoomButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
+		reportRoomButton.addActionListener(e -> {
+			textField.setText("");
 		});
+		
 		reportRoomButton.setFont(new Font("Verdana", Font.BOLD, 12));
-		reportRoomButton.setBackground(Color.WHITE);
-		reportRoomButton.setForeground(Color.BLACK);
+		reportRoomButton.setBackground(Color.DARK_GRAY);
+		reportRoomButton.setForeground(Color.ORANGE);
 		GridBagConstraints gbc_reportRoomButton = new GridBagConstraints();
 		gbc_reportRoomButton.insets = new Insets(0, 0, 5, 0);
 		gbc_reportRoomButton.gridx = 0;
 		gbc_reportRoomButton.gridy = 11;
 		panel.add(reportRoomButton, gbc_reportRoomButton);
 		
+		/*
+		 * Logout from application part
+		 */
 		JButton exitButton = new JButton("Logout");
 		exitButton.addActionListener(e -> {
 				frame.dispose();
@@ -144,6 +149,9 @@ public class BedroomServicePages {
 		JScrollPane scrollPane = new JScrollPane();
 		frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
+		/*
+		 * TextArea containing rooms to be cleaned
+		 */
 		JTextArea textArea = new JTextArea();
 		textArea.setForeground(Color.PINK);
 		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
