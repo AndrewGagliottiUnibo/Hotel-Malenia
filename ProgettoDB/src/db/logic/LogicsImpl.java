@@ -2,7 +2,9 @@ package db.logic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import db.pages.BedroomServicePages;
@@ -30,6 +32,7 @@ public class LogicsImpl implements Logic {
 	private String code;
 	private String password;
 	static LoginPages mainPage;
+	Connection conn;
 
 	/**
 	 * Constructor.
@@ -42,7 +45,7 @@ public class LogicsImpl implements Logic {
 	public void login(final String code, final String password) {
 		this.code = code;
 		this.password = password;
-		
+
 		if (this.code.equals(REC_CODE) && this.password.equals(REC_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			ReceptionPages rec = new ReceptionPages(this);
@@ -58,13 +61,13 @@ public class LogicsImpl implements Logic {
 		} else if (this.code.equals(SERV_CODE) && this.password.equals(SERV_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			EntertaimentServicePages ent = new EntertaimentServicePages();
-			//todo
+			// todo
 		} else if (this.code.equals(CAM_CODE) && this.password.equals(CAM_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			BedroomServicePages bed = new BedroomServicePages(this);
-			//todo
+			// todo
 		} else {
-			JOptionPane.showMessageDialog(null, "Errore in fase di login");		
+			JOptionPane.showMessageDialog(null, "Errore in fase di login");
 		}
 	}
 
@@ -74,8 +77,18 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public void reportCleanedRoom(int roomNumber) {
+	public boolean reportCleanedRoom(int roomNumber) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt = conn.prepareStatement("UPDATE Schede WHERE numeroCamera =" + roomNumber);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		return false;
+
 	}
 
 	@Override
@@ -83,9 +96,9 @@ public class LogicsImpl implements Logic {
 		Connection myConn = null;
 		Statement myStmt = null;
 		ResultSet myRs = null;
-		
+
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			System.out.println("Database connected");
 			// 2. Create a statement
 			myStmt = myConn.createStatement();
@@ -93,7 +106,7 @@ public class LogicsImpl implements Logic {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return myRs;
 	}
 
@@ -101,5 +114,19 @@ public class LogicsImpl implements Logic {
 	public ResultSet showRestaurantTables() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	public int actualPrice(String s) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt = conn.prepareStatement("SELECT valoreMonetario FROM Listini WHERE"
+					+ "nome = " + s);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
 	}
 }
