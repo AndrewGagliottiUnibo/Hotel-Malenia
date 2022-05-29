@@ -1,6 +1,5 @@
 package db.logic;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 
 public interface Logic {
@@ -17,31 +16,32 @@ public interface Logic {
 	 */
 	void logout();
 	
-	int actualPrice(String s); //mostra prezzo attuale 
-	/**
-	 * Restaurant method: due to the input argument, let you make a query
-	 * returning the indicated value
-	 */
-	ResultSet showRestaurantTables();
-	
-	boolean modifyPrice(int price,String nome); //modificare prezzi da parte del dirigente
-	/**
-	 * Restaurant method: due to the input argument, let you make a query
-	 * inserting a price into the DB -- TODO
-	 */
-	
-	
-	/**
-	 * BedroomService method: due to the input argument, let you make a query
-	 * where you report when a bedroom has been cleaned or not.
-	 * @param roomNumber
-	 */
-	boolean reportCleanedRoom(int roomNumber);
-	
-	
 	/**
 	 * BedroomService method: let you make a query where you recover
 	 * from the db all the rooms that must be cleaned.
 	 */
 	ResultSet showRoomToBeCleaned();
+	
+	/**
+	 * Restaurant method: due to the input argument, let you make a query
+	 * returning the indicated value.
+	 * @param one of the three restaurant services
+	 */
+	ResultSet showRestaurantTables(String service);
+	
+	/**
+	 * Show the actual price for a specific product.
+	 * @param s
+	 * @return
+	 */
+	int actualPrice(String s);
+	
+	/**
+	 * Modify the price in input.
+	 * @param price
+	 * @param nome
+	 * @return
+	 */
+	boolean modifyPrice(int price, String nome);
+	
 }

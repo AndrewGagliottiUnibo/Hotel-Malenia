@@ -49,9 +49,16 @@ public class RestaurantPages {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
+		/*
+		 * Shows people coming for lunch.
+		 */
 		JButton lunch = new JButton("Pranzo");
 		lunch.addActionListener(e -> {
-			this.logic.showRestaurantTables();
+			this.logic.showRestaurantTables("Pranzo");
+			/*
+			 * Aggiornamento textArea
+			 * -- TODO
+			 */
 		});
 		
 		lunch.setForeground(Color.ORANGE);
@@ -60,14 +67,36 @@ public class RestaurantPages {
 		lunch.setBounds(808, 68, 111, 23);
 		panel.add(lunch);
 		
+		/*
+		 * Shows people coming for breakfast.
+		 */
 		JButton breakfast = new JButton("Colazione");
+		breakfast.addActionListener(e -> {
+			this.logic.showRestaurantTables("Colazione");
+			/*
+			 * Aggiornamento textArea
+			 * -- TODO
+			 */
+		});
+		
 		breakfast.setBackground(Color.BLACK);
 		breakfast.setForeground(Color.ORANGE);
 		breakfast.setFont(new Font("Verdana", Font.BOLD, 12));
 		breakfast.setBounds(808, 34, 111, 23);
 		panel.add(breakfast);
 		
+		/*
+		 * Shows people coming for dinner.
+		 */
 		JButton dinner = new JButton("Cena");
+		dinner.addActionListener(e -> {
+			this.logic.showRestaurantTables("Cena");
+			/*
+			 * Aggiornamento textArea
+			 * -- TODO
+			 */
+		});
+		
 		dinner.setForeground(Color.ORANGE);
 		dinner.setFont(new Font("Verdana", Font.BOLD, 12));
 		dinner.setBackground(Color.BLACK);
@@ -93,6 +122,9 @@ public class RestaurantPages {
 		scrollPane.setBounds(10, 11, 792, 444);
 		panel.add(scrollPane);
 		
+		/*
+		 * TextArea to be updated when you require a particular set of clients to be shown.
+		 */
 		JTextArea textArea = new JTextArea();
 		textArea.setForeground(Color.PINK);
 		textArea.setFont(new Font("Verdana", Font.BOLD, 12));

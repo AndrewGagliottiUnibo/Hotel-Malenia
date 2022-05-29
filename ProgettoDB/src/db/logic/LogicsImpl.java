@@ -77,21 +77,6 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public boolean reportCleanedRoom(int roomNumber) {
-		Connection conn;
-		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn.prepareStatement("UPDATE Schede WHERE numeroCamera =" + roomNumber);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return false;
-
-	}
-
-	@Override
 	public ResultSet showRoomToBeCleaned() {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -111,7 +96,7 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public ResultSet showRestaurantTables() {
+	public ResultSet showRestaurantTables(final String service) {
 		Connection conn;
 		int recordNumber = 0;
 		try {
@@ -120,12 +105,12 @@ public class LogicsImpl implements Logic {
 					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = " );
 			recordNumber = pstmt.getInt(1);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 
+	@Override
 	public int actualPrice(String s) {
 		Connection conn;
 		int recordNumber = 0;
@@ -135,7 +120,6 @@ public class LogicsImpl implements Logic {
 					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = " + s);
 			recordNumber = pstmt.getInt(1);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return recordNumber;
@@ -149,7 +133,6 @@ public class LogicsImpl implements Logic {
 			PreparedStatement pstmt = conn
 					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
