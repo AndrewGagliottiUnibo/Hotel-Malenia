@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
 import javax.swing.JOptionPane;
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
@@ -54,7 +53,7 @@ public class LogicsImpl implements Logic {
 			man.frmHotelMalenia.setVisible(true);
 		} else if (this.code.equals(SAL_CODE) && this.password.equals(SAL_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
-			RestaurantPages res = new RestaurantPages();
+			RestaurantPages res = new RestaurantPages(this);
 			//todo
 		} else if (this.code.equals(SERV_CODE) && this.password.equals(SERV_PASSWORD)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
@@ -96,5 +95,11 @@ public class LogicsImpl implements Logic {
 		}
 		
 		return myRs;
+	}
+
+	@Override
+	public ResultSet showRestaurantTables() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

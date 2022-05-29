@@ -73,6 +73,7 @@ public class BedroomServicePages {
 				 while(result.next()) {
 					 for(int i = 0; i < row; i++) {
 						 //print
+						 // -- TODO
 					 }
 				 }
 			 } catch(Exception ecc) {

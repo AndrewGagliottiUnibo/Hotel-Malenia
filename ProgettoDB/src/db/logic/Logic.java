@@ -18,8 +18,9 @@ public interface Logic {
 	
 	/**
 	 * Restaurant method: due to the input argument, let you make a query
-	 * returning the indicated value -- TODO
+	 * returning the indicated value
 	 */
+	ResultSet showRestaurantTables();
 	
 	/**
 	 * Restaurant method: due to the input argument, let you make a query

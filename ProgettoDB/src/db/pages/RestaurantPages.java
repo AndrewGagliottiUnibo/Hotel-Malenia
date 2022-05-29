@@ -24,13 +24,11 @@ public class RestaurantPages {
 	private Logic logic;
 
 	/**
-	 * Launch the application.
+	 * Constructor
 	 */
-	/**
-	 * Create the application.
-	 */
-	public RestaurantPages() {
-		initialize();
+	public RestaurantPages(final Logic logic) {
+		this.initialize();
+		this.logic = logic;
 	}
 
 	/**
@@ -58,6 +56,10 @@ public class RestaurantPages {
 		panel.setLayout(null);
 		
 		JButton lunch = new JButton("Pranzo");
+		lunch.addActionListener(e -> {
+			this.logic.showRestaurantTables();
+		});
+		
 		lunch.setForeground(Color.BLACK);
 		lunch.setFont(new Font("Verdana", Font.BOLD, 12));
 		lunch.setBackground(Color.WHITE);
