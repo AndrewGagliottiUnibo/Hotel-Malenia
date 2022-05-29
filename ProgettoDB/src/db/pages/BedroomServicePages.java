@@ -114,7 +114,6 @@ public class BedroomServicePages {
 		reportRoomButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
 			}
 		});
 		reportRoomButton.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -127,13 +126,11 @@ public class BedroomServicePages {
 		panel.add(reportRoomButton, gbc_reportRoomButton);
 		
 		JButton exitButton = new JButton("Logout");
-		exitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		exitButton.addActionListener(e -> {
 				frame.dispose();
-				LoginPages login = new LoginPages();
-				login.frame.setVisible(true);
-			}
-		});
+				this.logic.logout();
+			});
+		
 		exitButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		exitButton.setForeground(Color.ORANGE);
 		exitButton.setBackground(Color.DARK_GRAY);
