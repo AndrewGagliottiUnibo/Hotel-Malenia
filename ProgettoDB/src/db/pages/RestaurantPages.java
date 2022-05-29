@@ -74,12 +74,15 @@ public class RestaurantPages {
 		dinner.setBounds(808, 102, 111, 23);
 		panel.add(dinner);
 		
+		/*
+		 * Logout from application part
+		 */
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(e -> {
 			frame.dispose();
 			this.logic.logout();
-			
 		});
+		
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBackground(Color.DARK_GRAY);
