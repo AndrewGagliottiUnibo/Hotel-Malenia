@@ -1,22 +1,19 @@
 package db.pages;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
-
 import db.logic.Logic;
-
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class EntertaimentServicePages {
 
@@ -99,14 +96,6 @@ public class EntertaimentServicePages {
 		showTerm.setBounds(799, 60, 120, 23);
 		panel.add(showTerm);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBackground(Color.BLACK);
-		textArea.setForeground(Color.PINK);
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
-		textArea.setBounds(408, 94, 511, 361);
-		panel.add(textArea);
-		
 		JButton showCasino = new JButton("Casin\u00F2");
 		showCasino.setFont(new Font("Verdana", Font.BOLD, 12));
 		showCasino.setBounds(669, 60, 120, 23);
@@ -140,5 +129,16 @@ public class EntertaimentServicePages {
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBounds(28, 432, 89, 23);
 		panel.add(logout);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(409, 95, 510, 360);
+		panel.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setForeground(Color.PINK);
+		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
+		textArea.setEditable(false);
+		textArea.setBackground(Color.BLACK);
+		scrollPane.setViewportView(textArea);
 	}
 }

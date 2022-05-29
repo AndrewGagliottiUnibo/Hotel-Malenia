@@ -13,9 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import db.logic.Logic;
-
 import db.logic.Logic;
-import db.logic.LogicsImpl;
 
 public class ReceptionPages {
 

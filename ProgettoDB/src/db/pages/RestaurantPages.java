@@ -1,22 +1,19 @@
 package db.pages;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-
 import db.logic.Logic;
-
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class RestaurantPages {
 
@@ -59,14 +56,6 @@ public class RestaurantPages {
 		panel.setBackground(Color.DARK_GRAY);
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
-		textArea.setEditable(false);
-		textArea.setForeground(Color.PINK);
-		textArea.setBackground(Color.BLACK);
-		textArea.setBounds(0, 27, 508, 439);
-		panel.add(textArea);
 		
 		JButton lunch = new JButton("Pranzo");
 		lunch.setForeground(Color.BLACK);
@@ -207,5 +196,16 @@ public class RestaurantPages {
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setBounds(812, 406, 89, 23);
 		panel.add(logout);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 34, 497, 421);
+		panel.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setForeground(Color.PINK);
+		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
+		textArea.setEditable(false);
+		textArea.setBackground(Color.BLACK);
+		scrollPane.setViewportView(textArea);
 	}
 }

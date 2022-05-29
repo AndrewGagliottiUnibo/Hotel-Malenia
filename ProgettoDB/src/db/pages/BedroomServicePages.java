@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class BedroomServicePages {
 
@@ -43,13 +44,6 @@ public class BedroomServicePages {
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 945, 528);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setEditable(false);
-		textArea.setForeground(Color.PINK);
-		textArea.setFont(new Font("Verdana", Font.BOLD, 15));
-		textArea.setBackground(Color.BLACK);
-		frame.getContentPane().add(textArea, BorderLayout.CENTER);
 		
 		JLabel role = new JLabel("Servizio pulizia delle camere");
 		role.setHorizontalAlignment(SwingConstants.CENTER);
@@ -148,5 +142,14 @@ public class BedroomServicePages {
 		gbc_exitButton.gridx = 0;
 		gbc_exitButton.gridy = 14;
 		panel.add(exitButton, gbc_exitButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setForeground(Color.PINK);
+		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
+		textArea.setBackground(Color.BLACK);
+		scrollPane.setViewportView(textArea);
 	}
 }
