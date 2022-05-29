@@ -1,4 +1,4 @@
-package db.pages;
+package db.pages.specific;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;

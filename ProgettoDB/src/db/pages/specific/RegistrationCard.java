@@ -1,4 +1,4 @@
-package db.pages;
+package db.pages.specific;
 
 import javax.swing.JFrame;
 import java.awt.Color;
