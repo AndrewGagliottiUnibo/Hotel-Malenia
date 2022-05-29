@@ -17,14 +17,14 @@ public interface Logic {
 	 */
 	void logout();
 	
-	int actualPrice(String s);
+	int actualPrice(String s); //mostra prezzo attuale 
 	/**
 	 * Restaurant method: due to the input argument, let you make a query
 	 * returning the indicated value
 	 */
 	ResultSet showRestaurantTables();
 	
-	boolean insertPrice(int price);
+	boolean modifyPrice(int price,String nome); //modificare prezzi da parte del dirigente
 	/**
 	 * Restaurant method: due to the input argument, let you make a query
 	 * inserting a price into the DB -- TODO
