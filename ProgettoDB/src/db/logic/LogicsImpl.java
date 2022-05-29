@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import db.pages.BedroomServicePages;
@@ -15,22 +14,41 @@ import db.pages.LoginPages;
 import db.pages.ManagerPages;
 import db.pages.ReceptionPages;
 import db.pages.RestaurantPages;
+import db.pages.specific.AllClientCards;
+import db.pages.specific.AllReservations;
+import db.pages.specific.ClientsInHotel;
+import db.pages.specific.PricePage;
+import db.pages.specific.RegistrationCard;
 
 public class LogicsImpl implements Logic {
 
 	/**
-	 * Static variable.
+	 * Codes.
 	 */
 	private static final String REC_CODE = "REC1";
 	private static final String DIR_CODE = "DIR1";
 	private static final String SAL_CODE = "SAL1";
 	private static final String SERV_CODE = "SERV1";
 	private static final String CAM_CODE = "CAM1";
+	
+	/**
+	 * Passwords.
+	 */
 	private static final String REC_PASSWORD = "REC1";
 	private static final String DIR_PASSWORD = "DIR1";
 	private static final String SAL_PASSWORD = "SAL1";
 	private static final String SERV_PASSWORD = "SERV1";
 	private static final String CAM_PASSWORD = "CAM1";
+	
+	/**
+	 * Specific views.
+	 */
+	private static final String ALL_RES = "AllReservations";
+	private static final String REG = "Registration";
+	private static final String CLI = "ClientsInHotel";
+	private static final String ALL_CARD = "AllCards";
+	private static final String PRI = "Prices";
+	
 	private String code;
 	private String password;
 	private LoginPages mainPage;
@@ -84,6 +102,20 @@ public class LogicsImpl implements Logic {
 		/*
 		 * --TODO
 		 */
+		if (specificGUI.equals(ALL_RES)) {
+			AllReservations allRes = new AllReservations();
+		} else if (specificGUI.equals(REG)) {
+			RegistrationCard reg = new RegistrationCard();
+		} else if (specificGUI.equals(CLI)) {
+			ClientsInHotel cli = new ClientsInHotel();
+		} else if (specificGUI.equals(ALL_CARD)) {
+			AllClientCards aCC = new AllClientCards();
+		} else if (specificGUI.equals(PRI)) {
+			PricePage pri = new PricePage();
+		} else {
+			JOptionPane.showMessageDialog(null, "Qualcosa è andato storto, chiudo l'applicativo");
+			System.exit(0);
+		}
 	}
 
 	@Override
