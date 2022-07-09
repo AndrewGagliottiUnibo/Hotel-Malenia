@@ -4,6 +4,9 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import db.logic.Logic;
+
 import java.awt.Font;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
@@ -32,12 +35,14 @@ public class ClientCard {
 	private JTextField resField;
 	private JLabel lblResoconto;
 	private JButton btnAggiorna;
+	private Logic logic;
 
 	/**
 	 * Create the application.
 	 */
-	public ClientCard(final String chosenClient) {
-		initialize();
+	public ClientCard(final String chosenClient, final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**
@@ -233,6 +238,10 @@ public class ClientCard {
 		frame.getContentPane().add(viewPreno);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(e -> {
+			this.frame.dispose();
+			this.logic.logout();
+		});
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBackground(Color.DARK_GRAY);

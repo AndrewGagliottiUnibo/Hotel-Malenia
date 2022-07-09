@@ -19,14 +19,13 @@ public class AllClientCards {
 	private JTable table;
 	private ClientCard chosenCard;
 	private Logic logic;
+	
 	/**
-	 * Launch the application.
+	 * Constructor.
 	 */
-	/**
-	 * Create the application.
-	 */
-	public AllClientCards() {
-		initialize();
+	public AllClientCards(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**
@@ -88,7 +87,7 @@ public class AllClientCards {
 			var chosenClient = this.codeField.getText();
 			
 			//Query here
-			this.chosenCard = new ClientCard(chosenClient);
+			this.chosenCard = new ClientCard(chosenClient, this.logic);
 			this.chosenCard.getFrame().setVisible(true);
 			this.frmSchedeClienti.dispose();
 			

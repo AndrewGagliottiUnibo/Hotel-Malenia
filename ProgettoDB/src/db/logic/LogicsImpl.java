@@ -103,19 +103,19 @@ public class LogicsImpl implements Logic {
 		 * --TODO
 		 */
 		if (specificGUI.equals(ALL_RES)) {
-			AllReservations allRes = new AllReservations();
+			AllReservations allRes = new AllReservations(this);
 			allRes.getFrame().setVisible(true);
 		} else if (specificGUI.equals(REG)) {
-			RegistrationCard reg = new RegistrationCard();
+			RegistrationCard reg = new RegistrationCard(this);
 			reg.getFrame().setVisible(true);
 		} else if (specificGUI.equals(CLI)) {
-			ClientsInHotel cli = new ClientsInHotel();
+			ClientsInHotel cli = new ClientsInHotel(this);
 			cli.getFrame().setVisible(true);
 		} else if (specificGUI.equals(ALL_CARD)) {
-			AllClientCards aCC = new AllClientCards();
+			AllClientCards aCC = new AllClientCards(this);
 			aCC.getFrame().setVisible(true);
 		} else if (specificGUI.equals(PRI)) {
-			PricePage pri = new PricePage();
+			PricePage pri = new PricePage(this);
 			pri.getFrame().setVisible(true);
 		} else {
 			JOptionPane.showMessageDialog(null, "Qualcosa è andato storto, chiudo l'applicativo");

@@ -25,14 +25,11 @@ public class PricePage {
 	private Logic logic;
 
 	/**
-	 * Launch the application.
+	 * Constructor.
 	 */
-
-	/**
-	 * Create the application.
-	 */
-	public PricePage() {
-		initialize();
+	public PricePage(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**
