@@ -35,11 +35,13 @@ public class ClientCard {
 	private JTextField resField;
 	private JLabel lblResoconto;
 	private Logic logic;
+	private String chosenClient;
 
 	/**
 	 * Create the application.
 	 */
 	public ClientCard(final String chosenClient, final Logic logic) {
+		this.chosenClient = chosenClient;
 		this.logic = logic;
 		this.initialize();
 	}
