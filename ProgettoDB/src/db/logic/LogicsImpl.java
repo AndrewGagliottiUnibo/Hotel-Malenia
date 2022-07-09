@@ -184,7 +184,7 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public boolean registerNewReservation(String nome, String cognome, int data, int nCamera) {
+	public boolean registerNewClient(String nome, String cognome, int data, int nCamera) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -246,8 +246,7 @@ public class LogicsImpl implements Logic {
 		return 1;
 	}
 
-
-	public boolean clientRegistration(int nCamera, String intolleranze , int orarioCheckin , int orarioCheckout) {
+	public boolean clientRegistration(int nCamera, String intolleranze, int orarioCheckin, int orarioCheckout) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -266,5 +265,72 @@ public class LogicsImpl implements Logic {
 		return true;
 
 	}
-}
 
+	@Override
+	public boolean visualClients(int nCamera) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = "
+					+ "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE,PRENOTAZIONE"
+					+ "WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda AND"
+					+ "REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
+					+ "ORDER BY SCHEDA.data DESC, SCHEDA.ora DESC");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+	}
+
+	public Boolean dataClient(int nCamera) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn
+					.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera = " + nCamera + "");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+	}
+
+	@Override
+	public boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
+					+ nCamera + "INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora)" + "VALUES (?, ?, ?)"
+					+ "INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata)"
+					+ "VALUES (PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda)"
+					+ "UPDATE SCHEDA SET resoconto = resoconto + ?"
+					+ "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE"
+					+ "WHERE schedaRegistrata = SCHEDA.codScheda");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean deleteReservation(int tipoPrenotazione) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn
+					.prepareStatement("DELETE FROM PRENOTAZIONE, REGISTRAZIONE WHERE PRENOTAZIONE.tipoPrenotazione = ?"
+							+ "AND REGISTRAZIONE.codPrenotazione = ? AND PRENOTAZIONE.tipoPrenotazione = REGISTRAZIONE.codPrenotazione"
+							+ "UPDATE SCHEDA SET resoconto = resoconto - ?"
+							+ "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+}
