@@ -107,6 +107,10 @@ public class AllReservations {
 		frmPrenotazioni.getContentPane().add(commitSpecificBtn);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(e -> {
+			this.frmPrenotazioni.dispose();
+			this.logic.logout();	
+		});
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);

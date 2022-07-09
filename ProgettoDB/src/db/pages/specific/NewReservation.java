@@ -176,18 +176,15 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(timeField);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(e -> {
+			this.frmNuovaPrenotazione.dispose();
+			this.logic.logout();	
+		});
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
-		logout.setBounds(830, 455, 89, 23);
+		logout.setBounds(710, 455, 209, 23);
 		frmNuovaPrenotazione.getContentPane().add(logout);
-		
-		JButton backBtn = new JButton("Indietro");
-		backBtn.setForeground(Color.ORANGE);
-		backBtn.setBackground(Color.DARK_GRAY);
-		backBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		backBtn.setBounds(731, 455, 89, 23);
-		frmNuovaPrenotazione.getContentPane().add(backBtn);
 		
 		JLabel classicReservationTitle = new JLabel("Prenotazioni classiche");
 		classicReservationTitle.setHorizontalAlignment(SwingConstants.CENTER);

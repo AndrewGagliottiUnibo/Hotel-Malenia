@@ -222,18 +222,15 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(lblTipoSoggiorno);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(e -> {
+			this.frmRegistraCliente.dispose();
+			this.logic.logout();	
+		});
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBackground(Color.DARK_GRAY);
-		logout.setBounds(830, 455, 89, 23);
+		logout.setBounds(734, 455, 185, 23);
 		frmRegistraCliente.getContentPane().add(logout);
-		
-		JButton backButton = new JButton("Indietro");
-		backButton.setForeground(Color.ORANGE);
-		backButton.setFont(new Font("Verdana", Font.BOLD, 12));
-		backButton.setBackground(Color.DARK_GRAY);
-		backButton.setBounds(734, 455, 89, 23);
-		frmRegistraCliente.getContentPane().add(backButton);
 		
 		JButton registrationButton = new JButton("Registra");
 		registrationButton.addActionListener(e -> {
