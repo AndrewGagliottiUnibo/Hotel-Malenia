@@ -90,6 +90,10 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(codeField);
 		
 		JButton breakfastPlus = new JButton("Colazione +");
+		breakfastPlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			//Query adding taking choice as input
+		});
 		breakfastPlus.setForeground(Color.ORANGE);
 		breakfastPlus.setBackground(Color.DARK_GRAY);
 		breakfastPlus.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -97,6 +101,10 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(breakfastPlus);
 		
 		JButton lunchPlus = new JButton("Pranzo +");
+		lunchPlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			//Query adding taking choice as input
+		});
 		lunchPlus.setForeground(Color.ORANGE);
 		lunchPlus.setBackground(Color.DARK_GRAY);
 		lunchPlus.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -104,6 +112,10 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(lunchPlus);
 		
 		JButton dinnerPlus = new JButton("Cena +");
+		dinnerPlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			//Query adding taking choice as input
+		});
 		dinnerPlus.setForeground(Color.ORANGE);
 		dinnerPlus.setBackground(Color.DARK_GRAY);
 		dinnerPlus.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -111,6 +123,11 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(dinnerPlus);
 		
 		JButton parkingPlus = new JButton("Parcheggio +");
+		parkingPlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			var days = this.parkingDaysField.getText();
+			//Query adding taking choice, days as input
+		});
 		parkingPlus.setForeground(Color.ORANGE);
 		parkingPlus.setBackground(Color.DARK_GRAY);
 		parkingPlus.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -118,6 +135,12 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(parkingPlus);
 		
 		JButton massagePlus = new JButton("Massaggio +");
+		massagePlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			var date = this.dateField.getText();
+			var time = this.timeField.getText();
+			//Query adding taking choice, date, time as input
+		});
 		massagePlus.setForeground(Color.ORANGE);
 		massagePlus.setBackground(Color.DARK_GRAY);
 		massagePlus.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -125,6 +148,12 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(massagePlus);
 		
 		JButton dirtPlus = new JButton("Fango +");
+		dirtPlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			var date = this.dateField.getText();
+			var time = this.timeField.getText();
+			//Query adding taking choice, date, time as input
+		});
 		dirtPlus.setForeground(Color.ORANGE);
 		dirtPlus.setBackground(Color.DARK_GRAY);
 		dirtPlus.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -132,6 +161,12 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(dirtPlus);
 		
 		JButton bathPlus = new JButton("Bagno +");
+		bathPlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			var date = this.dateField.getText();
+			var time = this.timeField.getText();
+			//Query adding taking choice, date, time as input
+		});
 		bathPlus.setForeground(Color.ORANGE);
 		bathPlus.setBackground(Color.DARK_GRAY);
 		bathPlus.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -139,6 +174,12 @@ public class NewReservation {
 		frmNuovaPrenotazione.getContentPane().add(bathPlus);
 		
 		JButton bubblePlus = new JButton("Idromassaggio +");
+		bubblePlus.addActionListener(e -> {
+			var client = this.codeField.getText();
+			var date = this.dateField.getText();
+			var time = this.timeField.getText();
+			//Query adding taking choice, date, time as input
+		});
 		bubblePlus.setForeground(Color.ORANGE);
 		bubblePlus.setBackground(Color.DARK_GRAY);
 		bubblePlus.setFont(new Font("Verdana", Font.BOLD, 12));
