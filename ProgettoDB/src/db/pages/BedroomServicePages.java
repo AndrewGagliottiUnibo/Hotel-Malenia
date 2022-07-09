@@ -22,6 +22,7 @@ public class BedroomServicePages {
 	private JFrame frame;
 	private JTextField textField;
 	private Logic logic;
+	private JTextArea textArea;
 
 	/**
 	 * Constructor.
@@ -70,13 +71,7 @@ public class BedroomServicePages {
 				 
 				 while(result.next()) {
 					 for(int i = 0; i < row; i++) {
-						 /*
-						  * Query di tutte le schede che contengono una camera non nulla
-						  * -- TODO
-						  * 
-						  * Il risultato della query va scritto nella textArea -> textArea
-						  * -- TODO
-						  */
+						 this.textArea.append("Camera: " + result.getString(i));
 					 }
 				 }
 			 } catch(Exception ecc) {
@@ -152,7 +147,7 @@ public class BedroomServicePages {
 		/*
 		 * TextArea containing rooms to be cleaned
 		 */
-		JTextArea textArea = new JTextArea();
+		this.textArea = new JTextArea();
 		textArea.setForeground(Color.PINK);
 		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
 		textArea.setBackground(Color.BLACK);
