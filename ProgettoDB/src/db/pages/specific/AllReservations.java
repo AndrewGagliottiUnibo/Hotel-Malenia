@@ -16,8 +16,8 @@ import db.logic.Logic;
 public class AllReservations {
 
 	private JFrame frmPrenotazioni;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField specificViewField;
+	private JTextField deleteField;
 	private JTable table;
 	private Logic logic;
 	
@@ -85,21 +85,31 @@ public class AllReservations {
 		frmPrenotazioni.getContentPane().add(viewSpecificLabel);
 		
 		JButton showAll = new JButton("Vedi prenotazioni");
+		showAll.addActionListener(e -> {
+			
+			//Query here for the table
+		});
 		showAll.setForeground(Color.ORANGE);
 		showAll.setFont(new Font("Verdana", Font.BOLD, 12));
 		showAll.setBackground(Color.DARK_GRAY);
 		showAll.setBounds(700, 26, 219, 23);
 		frmPrenotazioni.getContentPane().add(showAll);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Verdana", Font.BOLD, 12));
-		textField.setForeground(Color.PINK);
-		textField.setBackground(Color.BLACK);
-		textField.setBounds(700, 152, 219, 20);
-		frmPrenotazioni.getContentPane().add(textField);
-		textField.setColumns(10);
+		specificViewField = new JTextField();
+		specificViewField.setFont(new Font("Verdana", Font.BOLD, 12));
+		specificViewField.setForeground(Color.PINK);
+		specificViewField.setBackground(Color.BLACK);
+		specificViewField.setBounds(700, 152, 219, 20);
+		frmPrenotazioni.getContentPane().add(specificViewField);
+		specificViewField.setColumns(10);
 		
 		JButton commitSpecificBtn = new JButton("Vedi");
+		commitSpecificBtn.addActionListener(e -> {
+			var choice = this.specificViewField.getText();
+			
+			//Query with text cast to Integer.parseInt(choice);
+			//Update table
+		});
 		commitSpecificBtn.setForeground(Color.ORANGE);
 		commitSpecificBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 		commitSpecificBtn.setBackground(Color.DARK_GRAY);
@@ -124,15 +134,21 @@ public class AllReservations {
 		codeCardLabel.setBounds(700, 298, 219, 14);
 		frmPrenotazioni.getContentPane().add(codeCardLabel);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Verdana", Font.BOLD, 12));
-		textField_1.setForeground(Color.PINK);
-		textField_1.setBackground(Color.BLACK);
-		textField_1.setColumns(10);
-		textField_1.setBounds(700, 323, 219, 20);
-		frmPrenotazioni.getContentPane().add(textField_1);
+		deleteField = new JTextField();
+		deleteField.setFont(new Font("Verdana", Font.BOLD, 12));
+		deleteField.setForeground(Color.PINK);
+		deleteField.setBackground(Color.BLACK);
+		deleteField.setColumns(10);
+		deleteField.setBounds(700, 323, 219, 20);
+		frmPrenotazioni.getContentPane().add(deleteField);
 		
 		JButton deleteReservationBtn = new JButton("Cancella");
+		deleteReservationBtn.addActionListener(e -> {
+			var choice = this.deleteField.getText();
+			
+			//Query with text cast to Integer.parseInt(choice);
+			//Update table
+		});
 		deleteReservationBtn.setForeground(Color.ORANGE);
 		deleteReservationBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 		deleteReservationBtn.setBackground(Color.DARK_GRAY);

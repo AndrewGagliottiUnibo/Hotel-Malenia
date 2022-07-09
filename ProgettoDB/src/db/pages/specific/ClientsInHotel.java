@@ -24,6 +24,7 @@ public class ClientsInHotel {
 	private JFrame frmClientiInStruttura;
 	private JTable table;
 	private JTextField textField;
+	private ClientCard chosenCard;
 	private Logic logic;
 
 	/**
@@ -130,6 +131,14 @@ public class ClientsInHotel {
 		textField.setColumns(10);
 		
 		JButton btnScheda = new JButton("Scheda");
+		btnScheda.addActionListener(e -> {
+			var choice = this.textField.getText();
+			
+			//Query here
+			this.chosenCard = new ClientCard(choice, this.logic);
+			this.chosenCard.getFrame().setVisible(true);
+			this.frmClientiInStruttura.dispose();
+		});
 		btnScheda.setForeground(Color.ORANGE);
 		btnScheda.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnScheda.setBackground(Color.DARK_GRAY);

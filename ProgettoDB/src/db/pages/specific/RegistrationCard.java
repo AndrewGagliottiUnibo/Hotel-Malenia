@@ -4,15 +4,12 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
 import db.logic.Logic;
-
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
