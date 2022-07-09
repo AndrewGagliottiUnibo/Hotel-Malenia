@@ -17,6 +17,7 @@ public class AllClientCards {
 	private JFrame frmSchedeClienti;
 	private JTextField codeField;
 	private JTable table;
+	private ClientCard chosenCard;
 	private Logic logic;
 	/**
 	 * Launch the application.
@@ -83,6 +84,15 @@ public class AllClientCards {
 		codeField.setColumns(10);
 		
 		JButton goToCard = new JButton("Vedi Scheda");
+		goToCard.addActionListener(e -> {
+			var chosenClient = this.codeField.getText();
+			
+			//Query here
+			this.chosenCard = new ClientCard(chosenClient);
+			this.chosenCard.getFrame().setVisible(true);
+			this.frmSchedeClienti.dispose();
+			
+		});
 		goToCard.setForeground(Color.ORANGE);
 		goToCard.setBackground(Color.DARK_GRAY);
 		goToCard.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -90,6 +100,10 @@ public class AllClientCards {
 		frmSchedeClienti.getContentPane().add(goToCard);
 		
 		JButton viewAllBtn = new JButton("Vedi tutte");
+		viewAllBtn.addActionListener(e -> {
+			
+			//Query here
+		});
 		viewAllBtn.setForeground(Color.ORANGE);
 		viewAllBtn.setBackground(Color.DARK_GRAY);
 		viewAllBtn.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -97,6 +111,10 @@ public class AllClientCards {
 		frmSchedeClienti.getContentPane().add(viewAllBtn);
 		
 		JButton viewActualBtn = new JButton("Vedi attuali");
+		viewActualBtn.addActionListener(e -> {
+			
+			//Query here
+		});
 		viewActualBtn.setForeground(Color.ORANGE);
 		viewActualBtn.setBackground(Color.DARK_GRAY);
 		viewActualBtn.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -109,7 +127,8 @@ public class AllClientCards {
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBounds(830, 455, 89, 23);
 		logout.addActionListener(e -> {
-			
+			this.frmSchedeClienti.dispose();
+			this.logic.logout();
 		});
 		frmSchedeClienti.getContentPane().add(logout);
 	}

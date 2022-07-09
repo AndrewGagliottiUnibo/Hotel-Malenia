@@ -34,12 +34,9 @@ public class ClientCard {
 	private JButton btnAggiorna;
 
 	/**
-	 * Launch the application.
-	 */
-	/**
 	 * Create the application.
 	 */
-	public ClientCard() {
+	public ClientCard(final String chosenClient) {
 		initialize();
 	}
 
@@ -262,5 +259,12 @@ public class ClientCard {
 		btnAggiorna.setBackground(Color.DARK_GRAY);
 		btnAggiorna.setBounds(642, 257, 159, 23);
 		frame.getContentPane().add(btnAggiorna);
+	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frame;
 	}
 }
