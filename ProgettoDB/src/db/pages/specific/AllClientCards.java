@@ -18,7 +18,6 @@ public class AllClientCards {
 	private JTextField codeField;
 	private JTable table;
 	private Logic logic;
-
 	/**
 	 * Launch the application.
 	 */
