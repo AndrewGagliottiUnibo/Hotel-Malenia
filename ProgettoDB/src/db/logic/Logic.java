@@ -22,7 +22,7 @@ public interface Logic {
 	 * @param specificGUI
 	 * @param frame
 	 */
-	void goToSpecificPage(String specificGUI, JFrame frame);
+	void goToSpecificPage(String specificGUI, JFrame frame); 
 	
 	/**
 	 * BedroomService method: let you make a query where you recover
@@ -42,7 +42,7 @@ public interface Logic {
 	 * @param s
 	 * @return
 	 */
-	int actualPrice(String s);
+	int actualPrice(String s); 
 	
 	/**
 	 * Modify the price in input.
@@ -50,6 +50,13 @@ public interface Logic {
 	 * @param nome
 	 * @return
 	 */
-	boolean modifyPrice(int price, String nome);
+	boolean modifyPrice(int price, String nome); //query 11 pagina 9
+	
+	void registerNewReservation(String nome, String cognome, int data, int Ncamera); //query 1
+
+	void CheckoutClient(String nome, String cognome, int Ncamera); // query 2 
+	
+	boolean additionalCost(int Ncamera, int price); //query 6 
+	
 	
 }
