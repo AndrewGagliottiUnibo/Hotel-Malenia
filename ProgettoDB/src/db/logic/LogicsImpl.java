@@ -120,7 +120,7 @@ public class LogicsImpl implements Logic {
 		}
 	}
 
-	@Override
+	
 	public ResultSet showRoomToBeCleaned() {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -139,7 +139,6 @@ public class LogicsImpl implements Logic {
 		return myRs;
 	}
 
-	@Override
 	public ResultSet showRestaurantTables(final String service) {
 		Connection conn;
 		int recordNumber = 0;
@@ -154,8 +153,7 @@ public class LogicsImpl implements Logic {
 		return null;
 	}
 
-	@Override
-	public int actualPrice(String s) {
+	public ResultSet actualPrice(String s) {
 		Connection conn;
 		int recordNumber = 0;
 		try {
@@ -169,7 +167,6 @@ public class LogicsImpl implements Logic {
 		return recordNumber;
 	}
 
-	@Override
 	public boolean modifyPrice(int price, String nome) {
 		Connection conn;
 		try {
@@ -183,7 +180,6 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
-	@Override
 	public boolean registerNewClient(String nome, String cognome, int data, int nCamera) {
 		Connection conn;
 		try {
@@ -203,7 +199,6 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
-	@Override
 	public boolean CheckoutClient(int nCamera) {
 		Connection conn;
 		try {
@@ -233,8 +228,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
-	@Override
-	public boolean visualClients(int nCamera) {
+	public ResultSet visualClients(int nCamera) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -251,7 +245,7 @@ public class LogicsImpl implements Logic {
 
 	}
 
-	public boolean dataClient(int nCamera) {
+	public ResultSet dataClient(int nCamera) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -301,7 +295,7 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public boolean servicesUsedByClient(int nCamera) {
+	public ResultSet servicesUsedByClient(int nCamera) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -315,7 +309,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
-	public int totalAmount() {
+	public ResultSet totalAmount() {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -328,7 +322,7 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public boolean ReviewClient(int codCliente) {
+	public ResultSet ReviewClient(int codCliente) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -343,7 +337,7 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public boolean clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera) {
+	public ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");

@@ -72,13 +72,13 @@ public interface Logic {
 	
 	boolean servicesUsedByClient(int nCamera); //query 8
 	
-	int totalAmount(); //query 9
+	ResultSet totalAmount(); //query 9
 	
-	boolean clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera); //query 10
+	ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera); //query 10
 
 	boolean modifyPrice(int price, String nome); // query 11 
 	
-	boolean ReviewClient(int codCliente); //query 12
+	ResultSet ReviewClient(int codCliente); //query 12
 	
 
 	
