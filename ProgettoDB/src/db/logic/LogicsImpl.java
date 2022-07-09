@@ -234,19 +234,9 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public int totalAmount() {
-		Connection conn;
-		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return 0;
-		}
-		return 1;
-	}
+	
 
-	public boolean clientRegistration(int nCamera, String intolleranze, int orarioCheckin, int orarioCheckout) {
+	public boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -348,17 +338,17 @@ public class LogicsImpl implements Logic {
 		}
 		return true;
 	}
-
-	@Override
-	public boolean clientOverall() {
+	public int totalAmount() {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt0 = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+			PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return false;
+			return 0;
 		}
-		return true;
+		return 1;
 	}
+
+
 }

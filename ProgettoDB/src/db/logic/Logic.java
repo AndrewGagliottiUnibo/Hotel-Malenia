@@ -72,11 +72,11 @@ public interface Logic {
 	
 	boolean servicesUsedByClient(int nCamera); //query 8
 	
-	boolean clientOverall(); //query 9
+	int totalAmount(); //query 9
 
 	boolean modifyPrice(int price, String nome); // query 11 
 	
 
-	int totalAmount();
+	
 
 }
