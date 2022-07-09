@@ -52,11 +52,12 @@ public interface Logic {
 	 */
 	boolean modifyPrice(int price, String nome); //query 11 pagina 9
 	
-	void registerNewReservation(String nome, String cognome, int data, int Ncamera); //query 1
+	boolean registerNewReservation(String nome, String cognome, int data, int nCamera); //query 1
 
-	void CheckoutClient(String nome, String cognome, int Ncamera); // query 2 
+	boolean CheckoutClient(int nCamera); // query 2 
 	
-	boolean additionalCost(int Ncamera, int price); //query 6 
+	boolean additionalCost(int nCamera, int price); //query 6 
 	
+	int totalAmount();
 	
 }

@@ -30,7 +30,7 @@ public class LogicsImpl implements Logic {
 	private static final String SAL_CODE = "SAL1";
 	private static final String SERV_CODE = "SERV1";
 	private static final String CAM_CODE = "CAM1";
-	
+
 	/**
 	 * Passwords.
 	 */
@@ -39,7 +39,7 @@ public class LogicsImpl implements Logic {
 	private static final String SAL_PASSWORD = "SAL1";
 	private static final String SERV_PASSWORD = "SERV1";
 	private static final String CAM_PASSWORD = "CAM1";
-	
+
 	/**
 	 * Specific views.
 	 */
@@ -48,7 +48,7 @@ public class LogicsImpl implements Logic {
 	private static final String CLI = "ClientsInHotel";
 	private static final String ALL_CARD = "AllCards";
 	private static final String PRI = "Prices";
-	
+
 	private String code;
 	private String password;
 	private LoginPages mainPage;
@@ -113,7 +113,7 @@ public class LogicsImpl implements Logic {
 		} else if (specificGUI.equals(PRI)) {
 			PricePage pri = new PricePage();
 		} else {
-			JOptionPane.showMessageDialog(null, "Qualcosa è andato storto, chiudo l'applicativo");
+			JOptionPane.showMessageDialog(null, "Qualcosa ï¿½ andato storto, chiudo l'applicativo");
 			System.exit(0);
 		}
 	}
@@ -144,7 +144,7 @@ public class LogicsImpl implements Logic {
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			ResultSet pstmt = (ResultSet) conn
-					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = " );
+					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = ");
 			recordNumber = pstmt.getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -179,5 +179,68 @@ public class LogicsImpl implements Logic {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public boolean registerNewReservation(String nome, String cognome, int data, int nCamera) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
+					+ nCamera + "INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora) VALUES (?, ?, ?)");
+
+			PreparedStatement pstmt1 = conn
+					.prepareStatement("INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata) "
+							+ "VALUES (PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda)" + "UPDATE SCHEDA"
+							+ "SET resoconto = resoconto + ?" + "WHERE codScheda IN (SELECT schedaRegistrata"
+							+ "FROM REGISTRAZIONE" + "WHERE schedaRegistrata = SCHEDA.codScheda)");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean CheckoutClient(int nCamera) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt = conn.prepareStatement(
+					"UPDATE SCHEDA SET numeroCamera = " + nCamera + ", orarioCheckout = ?, resoconto = "
+							+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = " + nCamera + ")");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	public boolean additionalCost(int Ncamera, int price) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ?"
+					+ "UPDATE SCHEDA SET resoconto = resoconto + SERVIZIO.tariffa"
+					+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?)");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public int totalAmount() {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		}
+		return 1;
 	}
 }
