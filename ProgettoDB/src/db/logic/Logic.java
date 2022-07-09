@@ -64,11 +64,11 @@ public interface Logic {
 	
 	boolean deleteReservation(int tipoPrenotazione); //query 4
 
-	boolean visualClients(int nCamera); // query 5
+	ResultSet visualClients(int nCamera); // query 5
 
 	boolean additionalCost(int nCamera, int price); // query 6
 	
-	boolean dataClient(int nCamera); //query 7
+	ResultSet dataClient(int nCamera); //query 7
 	
 	boolean servicesUsedByClient(int nCamera); //query 8
 	
