@@ -115,7 +115,7 @@ public class LogicsImpl implements Logic {
 			PricePage pri = new PricePage(this);
 			pri.getFrame().setVisible(true);
 		} else {
-			JOptionPane.showMessageDialog(null, "Qualcosa e' andato storto, chiudo l'applicativo");
+			JOptionPane.showMessageDialog(null, "Qualcosa � andato storto, chiudo l'applicativo");
 			System.exit(0);
 		}
 	}
@@ -284,7 +284,7 @@ public class LogicsImpl implements Logic {
 
 	}
 
-	public Boolean dataClient(int nCamera) {
+	public boolean dataClient(int nCamera) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -327,6 +327,34 @@ public class LogicsImpl implements Logic {
 							+ "AND REGISTRAZIONE.codPrenotazione = ? AND PRENOTAZIONE.tipoPrenotazione = REGISTRAZIONE.codPrenotazione"
 							+ "UPDATE SCHEDA SET resoconto = resoconto - ?"
 							+ "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean servicesUsedByClient(int nCamera) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
+					+ nCamera + "SELECT * FROM PRENOTAZIONE WHERE tipoPrenotazione IN "
+					+ "(SELECT codPrenotazione FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean clientOverall() {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
