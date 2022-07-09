@@ -113,4 +113,11 @@ public class AllClientCards {
 		});
 		frmSchedeClienti.getContentPane().add(logout);
 	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frmSchedeClienti;
+	}
 }

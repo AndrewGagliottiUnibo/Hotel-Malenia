@@ -128,6 +128,12 @@ public class PricePage {
 		frmListini.getContentPane().add(priceNameField);
 		
 		JButton allIncBtn = new JButton("Applica a All-inclusive");
+		allIncBtn.addActionListener(e -> {
+				
+			//Query call here
+			productNameField.setText("");
+			priceNameField.setText("");
+		});
 		allIncBtn.setForeground(Color.ORANGE);
 		allIncBtn.setBackground(Color.DARK_GRAY);
 		allIncBtn.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -135,6 +141,12 @@ public class PricePage {
 		frmListini.getContentPane().add(allIncBtn);
 		
 		JButton bEBBtn = new JButton("Applica a B&B");
+		bEBBtn.addActionListener(e -> {
+			
+			//Query call here
+			productNameField.setText("");
+			priceNameField.setText("");
+		});
 		bEBBtn.setForeground(Color.ORANGE);
 		bEBBtn.setBackground(Color.DARK_GRAY);
 		bEBBtn.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -142,6 +154,12 @@ public class PricePage {
 		frmListini.getContentPane().add(bEBBtn);
 		
 		JButton comPenBtn = new JButton("Applica a Pensione Completa");
+		comPenBtn.addActionListener(e -> {
+			
+			//Query call here
+			productNameField.setText("");
+			priceNameField.setText("");
+		});
 		comPenBtn.setForeground(Color.ORANGE);
 		comPenBtn.setBackground(Color.DARK_GRAY);
 		comPenBtn.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -149,15 +167,22 @@ public class PricePage {
 		frmListini.getContentPane().add(comPenBtn);
 		
 		JButton logout = new JButton("Logout");
-				logout.addActionListener(e -> {
-					frmListini.dispose();
-					this.logic.logout();
-					
-				});
+		logout.addActionListener(e -> {
+			frmListini.dispose();
+			this.logic.logout();
+		});
+				
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setBounds(830, 455, 89, 23);
 		frmListini.getContentPane().add(logout);
+	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frmListini;
 	}
 }

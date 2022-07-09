@@ -139,4 +139,10 @@ public class AllReservations {
 		frmPrenotazioni.getContentPane().add(deleteReservationBtn);
 	}
 
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frmPrenotazioni;
+	}
 }

@@ -265,4 +265,11 @@ public class RegistrationCard {
 		registrationButton.setBounds(734, 388, 185, 56);
 		frmRegistraCliente.getContentPane().add(registrationButton);
 	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frmRegistraCliente;
+	}
 }

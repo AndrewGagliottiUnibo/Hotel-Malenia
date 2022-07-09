@@ -127,4 +127,11 @@ public class ClientsInHotel {
 		btnScheda.setBounds(829, 170, 89, 23);
 		frmClientiInStruttura.getContentPane().add(btnScheda);
 	}
+	
+	/**
+	 * @return actual frame.
+	 */
+	public JFrame getFrame() {
+		return this.frmClientiInStruttura;
+	}
 }
