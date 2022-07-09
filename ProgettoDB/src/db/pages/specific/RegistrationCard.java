@@ -4,6 +4,9 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import db.logic.Logic;
+
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,15 +37,14 @@ public class RegistrationCard {
 	private JRadioButton rdbtnIntCompleto;
 	private JRadioButton rdbtnIntAllInclusive;
 	private JLabel lblTipoSoggiorno;
+	private Logic logic;
 
 	/**
-	 * Launch the application.
+	 * Constructor.
 	 */
-	/**
-	 * Create the application.
-	 */
-	public RegistrationCard() {
-		initialize();
+	public RegistrationCard(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**

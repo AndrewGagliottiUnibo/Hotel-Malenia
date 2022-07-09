@@ -185,4 +185,22 @@ public class LogicsImpl implements Logic {
 		}
 		return true;
 	}
+
+	@Override
+	public void registerNewReservation(String nome, String cognome, int data, int Ncamera) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void CheckoutClient(String nome, String cognome, int Ncamera) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean additionalCost(int Ncamera, int price) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

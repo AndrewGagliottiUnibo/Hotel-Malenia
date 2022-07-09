@@ -9,6 +9,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import db.logic.Logic;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -19,6 +22,7 @@ public class NewReservation {
 	private JTextField dateField;
 	private JTextField timeField;
 	private JTextField parkingDaysField;
+	private Logic logic;
 	
 	Connection myConn = null;
 	Statement myStmt = null;
@@ -43,10 +47,11 @@ public class NewReservation {
 //	}
 
 	/**
-	 * Create the application.
+	 * Constructor.
 	 */
-	public NewReservation() {
-		initialize();
+	public NewReservation(final Logic logic) {
+		this.logic = logic;
+		this.initialize();initialize();
 	}
 
 	/**

@@ -14,6 +14,9 @@ import java.sql.Statement;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import db.logic.Logic;
+
 import javax.swing.JTextField;
 
 public class ClientsInHotel {
@@ -21,12 +24,14 @@ public class ClientsInHotel {
 	private JFrame frmClientiInStruttura;
 	private JTable table;
 	private JTextField textField;
+	private Logic logic;
 
 	/**
-	 * Create the application.
+	 * Constructor.
 	 */
-	public ClientsInHotel() {
-		initialize();
+	public ClientsInHotel(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**

@@ -11,18 +11,22 @@ import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import db.logic.Logic;
+
 public class AllReservations {
 
 	private JFrame frmPrenotazioni;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTable table;
+	private Logic logic;
 	
 	/**
-	 * Create the application.
+	 * Constructor.
 	 */
-	public AllReservations() {
-		initialize();
+	public AllReservations(final Logic logic) {
+		this.logic = logic;
+		this.initialize();
 	}
 
 	/**
