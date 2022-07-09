@@ -132,6 +132,11 @@ public class LogicsImpl implements Logic {
 			// 2. Create a statement
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+			while(myRs.next()){
+
+				String s = myRs.getString(1);
+	        }
+			myRs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -153,14 +158,16 @@ public class LogicsImpl implements Logic {
 		return null;
 	}
 
-	public ResultSet actualPrice(String s) {
-		Connection conn;
+	public int actualPrice(String s) {
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		int recordNumber = 0;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			ResultSet pstmt = (ResultSet) conn
-					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = " + s);
-			recordNumber = pstmt.getInt(1);
+			myStmt = myConn.createStatement();
+			myRs = myStmt.executeQuery("SELECT valoreMonetario FROM Listini WHERE" + "nome = " + s);
+			recordNumber = ((ResultSet) myStmt).getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -180,18 +187,16 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
-	public boolean registerNewClient(String nome, String cognome, int data, int nCamera) {
+	public boolean registerNewClient(String nome, String cognome, int data, int nCamera, int tipoPrenotazione,int ora) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
-					+ nCamera + "INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora) VALUES (?, ?, ?)");
-
-			PreparedStatement pstmt1 = conn
-					.prepareStatement("INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata) "
-							+ "VALUES (PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda)" + "UPDATE SCHEDA"
-							+ "SET resoconto = resoconto + ?" + "WHERE codScheda IN (SELECT schedaRegistrata"
-							+ "FROM REGISTRAZIONE" + "WHERE schedaRegistrata = SCHEDA.codScheda)");
+			PreparedStatement pstmt0 = conn.prepareStatement("NSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, resoconto, datiTariffa, durataSoggiorno, orarioCheckin,"
+					+ " orarioCheckout)"
+					+ "VALUES (?, ?, ’ ’, ?, ?, ?, ’ ’, ’ ’)"
+					+ "INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita,numeroTel, tipologiaSoggiorno)"
+					+ "VALUES (?, ?, ?, ?, ?, ?)"
+					+ "INSERT INTO IDENTIFICAZIONE (codiceCliente, numeroScheda)VALUES (?, SCHEDA.codScheda)");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -229,33 +234,50 @@ public class LogicsImpl implements Logic {
 	}
 
 	public ResultSet visualClients(int nCamera) {
-		Connection conn;
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = "
+			myStmt = myConn.createStatement();
+			myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = "
 					+ "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE,PRENOTAZIONE"
 					+ "WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda AND"
 					+ "REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
 					+ "ORDER BY SCHEDA.data DESC, SCHEDA.ora DESC");
-		} catch (SQLException e) {
+			while(myRs.next()){
+
+				String s = myRs.getString(1);
+	        }
+			myRs.close();
+		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
 		}
-		return true;
+
+		return myRs;
+		
 
 	}
 
 	public ResultSet dataClient(int nCamera) {
-		Connection conn;
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt0 = conn
-					.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera = " + nCamera + "");
-		} catch (SQLException e) {
+			myStmt = myConn.createStatement();
+			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera = " + nCamera + "");
+			while(myRs.next()){
+
+				String s = myRs.getString(1);
+	        }
+			myRs.close();
+		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
 		}
-		return true;
+
+		return myRs;
+		
 
 	}
 
@@ -296,59 +318,93 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public ResultSet servicesUsedByClient(int nCamera) {
-		Connection conn;
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
+			myStmt = myConn.createStatement();
+			myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
 					+ nCamera + "SELECT * FROM PRENOTAZIONE WHERE tipoPrenotazione IN "
 					+ "(SELECT codPrenotazione FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
-		} catch (SQLException e) {
+			while(myRs.next()){
+
+				String s = myRs.getString(1);
+	        }
+			myRs.close();
+		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
 		}
-		return true;
+
+		return myRs;
+		
 	}
 
 	public ResultSet totalAmount() {
-		Connection conn;
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
-		} catch (SQLException e) {
+			myStmt = myConn.createStatement();
+			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+			while(myRs.next()){
+
+				String s = myRs.getString(1);
+	        }
+			myRs.close();
+		} catch (Exception e) {
 			e.printStackTrace();
-			return 0;
 		}
-		return 1;
+
+		return myRs;
+		
 	}
 
 	@Override
 	public ResultSet ReviewClient(int codCliente) {
-		Connection conn;
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn
-					.prepareStatement("SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE SCHEDA.codScheda = ?"
+			myStmt = myConn.createStatement();
+			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE SCHEDA.codScheda = ?"
 							+ "AND SCHEDA.codScheda = IDENTIFICAZIONE.numeroScheda AND IDENTIFICAZIONE.codiceCliente = ?)");
-		} catch (SQLException e) {
+			while(myRs.next()){
+
+				String s = myRs.getString(1);
+	        }
+			myRs.close();
+		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
 		}
-		return true;
+
+		return myRs;
+		
 	}
 
 	@Override
 	public ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera) {
-		Connection conn;
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn.prepareStatement(
-					"SELECT * FROM SCHEDA" + "WHERE tipologiaSoggiorno = " + tipoPrenotazione + "intolleranze = "
+			myStmt = myConn.createStatement();
+			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA" + "WHERE tipologiaSoggiorno = " + tipoPrenotazione + "intolleranze = "
 							+ intolleranze + " resoconto = " + resoconto + "numeroCamera = " + nCamera);
-		} catch (SQLException e) {
+			while(myRs.next()){
+
+				String s = myRs.getString(1);
+	        }
+			myRs.close();
+		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
 		}
-		return true;
+
+		return myRs;
+		
 
 	}
 }
