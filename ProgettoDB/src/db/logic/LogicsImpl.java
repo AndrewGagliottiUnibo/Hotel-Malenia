@@ -103,20 +103,15 @@ public class LogicsImpl implements Logic {
 		 * --TODO
 		 */
 		if (specificGUI.equals(ALL_RES)) {
-			AllReservations allRes = new AllReservations(this);
-			allRes.getFrame().setVisible(true);
+			AllReservations allRes = new AllReservations();
 		} else if (specificGUI.equals(REG)) {
-			RegistrationCard reg = new RegistrationCard(this);
-			reg.getFrame().setVisible(true);
+			RegistrationCard reg = new RegistrationCard();
 		} else if (specificGUI.equals(CLI)) {
-			ClientsInHotel cli = new ClientsInHotel(this);
-			cli.getFrame().setVisible(true);
+			ClientsInHotel cli = new ClientsInHotel();
 		} else if (specificGUI.equals(ALL_CARD)) {
-			AllClientCards aCC = new AllClientCards(this);
-			aCC.getFrame().setVisible(true);
+			AllClientCards aCC = new AllClientCards();
 		} else if (specificGUI.equals(PRI)) {
-			PricePage pri = new PricePage(this);
-			pri.getFrame().setVisible(true);
+			PricePage pri = new PricePage();
 		} else {
 			JOptionPane.showMessageDialog(null, "Qualcosa � andato storto, chiudo l'applicativo");
 			System.exit(0);
@@ -248,4 +243,26 @@ public class LogicsImpl implements Logic {
 		}
 		return 1;
 	}
+
+
+	public boolean clientRegistration(int nCamera, String intolleranze , int orarioCheckin , int orarioCheckout) {
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			PreparedStatement pstmt0 = conn.prepareStatement(
+					"INSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, resoconto, datiTariffa, durataSoggiorno, orarioCheckin, orarioCheckout)"
+							+ "VALUES (?, ?, ’ ’, ?, ?, ?, ’ ’, ’ ’)");
+			PreparedStatement pstmt1 = conn.prepareStatement(
+					"INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita,numeroTel, tipologiaSoggiorno VALUES (?, ?, ?, ?, ?, ?)"
+							+ "INSERT INTO IDENTIFICAZIONE (codiceCliente, numeroScheda)"
+							+ "VALUES (?, SCHEDA.codScheda)");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+	}
 }
+
