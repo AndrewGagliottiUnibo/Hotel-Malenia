@@ -110,15 +110,8 @@ public class AllReservations {
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
-		logout.setBounds(830, 455, 89, 23);
+		logout.setBounds(700, 455, 219, 23);
 		frmPrenotazioni.getContentPane().add(logout);
-		
-		JButton backBtn = new JButton("Indietro");
-		backBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		backBtn.setForeground(Color.ORANGE);
-		backBtn.setBackground(Color.DARK_GRAY);
-		backBtn.setBounds(731, 455, 89, 23);
-		frmPrenotazioni.getContentPane().add(backBtn);
 		
 		JLabel codeCardLabel = new JLabel("Inserisci codice prenotazione");
 		codeCardLabel.setForeground(Color.ORANGE);

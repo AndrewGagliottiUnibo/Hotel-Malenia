@@ -34,7 +34,6 @@ public class ClientCard {
 	private JLabel lblTipoSoggiorno;
 	private JTextField resField;
 	private JLabel lblResoconto;
-	private JButton btnAggiorna;
 	private Logic logic;
 
 	/**
@@ -231,6 +230,9 @@ public class ClientCard {
 		frame.getContentPane().add(lblResoconto);
 		
 		JButton viewPreno = new JButton("Vedi Prenotazioni");
+		viewPreno.addActionListener(e -> {
+			
+		});
 		viewPreno.setFont(new Font("Verdana", Font.BOLD, 12));
 		viewPreno.setBackground(Color.DARK_GRAY);
 		viewPreno.setForeground(Color.MAGENTA);
@@ -245,24 +247,23 @@ public class ClientCard {
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBackground(Color.DARK_GRAY);
-		logout.setBounds(830, 455, 89, 23);
+		logout.setBounds(732, 455, 187, 23);
 		frame.getContentPane().add(logout);
 		
-		JButton backButton = new JButton("Indietro");
-		backButton.setForeground(Color.ORANGE);
-		backButton.setFont(new Font("Verdana", Font.BOLD, 12));
-		backButton.setBackground(Color.DARK_GRAY);
-		backButton.setBounds(732, 455, 89, 23);
-		frame.getContentPane().add(backButton);
-		
 		JButton checkoutButton = new JButton("Checkout");
+		checkoutButton.addActionListener(e -> {
+			this.logic.CheckoutClient()
+		});
 		checkoutButton.setForeground(Color.MAGENTA);
 		checkoutButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		checkoutButton.setBackground(Color.DARK_GRAY);
 		checkoutButton.setBounds(732, 398, 187, 46);
 		frame.getContentPane().add(checkoutButton);
 		
-		btnAggiorna = new JButton("Aggiorna");
+		JButton btnAggiorna = new JButton("Aggiorna");
+		btnAggiorna.addActionListener(e -> {
+			
+		});
 		btnAggiorna.setForeground(Color.ORANGE);
 		btnAggiorna.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnAggiorna.setBackground(Color.DARK_GRAY);
