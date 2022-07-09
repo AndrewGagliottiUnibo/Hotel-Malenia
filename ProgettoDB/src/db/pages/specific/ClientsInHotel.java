@@ -79,6 +79,10 @@ public class ClientsInHotel {
 		scrollPane.setViewportView(table);
 		
 		JButton logout = new JButton("Logout");
+		logout.addActionListener(e -> {
+			this.frmClientiInStruttura.dispose();
+			this.logic.logout();	
+		});
 		logout.setForeground(Color.ORANGE);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
 		logout.setBackground(Color.DARK_GRAY);

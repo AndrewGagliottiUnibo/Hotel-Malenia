@@ -115,7 +115,7 @@ public class LogicsImpl implements Logic {
 			PricePage pri = new PricePage(this);
 			pri.getFrame().setVisible(true);
 		} else {
-			JOptionPane.showMessageDialog(null, "Qualcosa � andato storto, chiudo l'applicativo");
+			JOptionPane.showMessageDialog(null, "Qualcosa e' andato storto, chiudo l'applicativo");
 			System.exit(0);
 		}
 	}

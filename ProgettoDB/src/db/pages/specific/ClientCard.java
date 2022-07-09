@@ -233,7 +233,8 @@ public class ClientCard {
 		
 		JButton viewPreno = new JButton("Vedi Prenotazioni");
 		viewPreno.addActionListener(e -> {
-			
+			this.frame.dispose();
+			this.logic.goToSpecificPage("ALL_RES", this.frame);
 		});
 		viewPreno.setFont(new Font("Verdana", Font.BOLD, 12));
 		viewPreno.setBackground(Color.DARK_GRAY);
@@ -265,7 +266,10 @@ public class ClientCard {
 		
 		JButton btnAggiorna = new JButton("Aggiorna");
 		btnAggiorna.addActionListener(e -> {
+			String result = "";
 			
+			//Query here
+			this.resField.setText(result);
 		});
 		btnAggiorna.setForeground(Color.ORANGE);
 		btnAggiorna.setFont(new Font("Verdana", Font.BOLD, 12));
