@@ -254,7 +254,7 @@ public class ClientCard {
 		
 		JButton checkoutButton = new JButton("Checkout");
 		checkoutButton.addActionListener(e -> {
-			this.logic.CheckoutClient()
+			this.logic.CheckoutClient(Integer.parseInt(this.chosenClient));
 		});
 		checkoutButton.setForeground(Color.MAGENTA);
 		checkoutButton.setFont(new Font("Verdana", Font.BOLD, 12));
