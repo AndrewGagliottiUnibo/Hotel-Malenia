@@ -56,7 +56,7 @@ public interface Logic {
 	 * @return
 	 */
 
-	boolean registerNewClient(String nome, String cognome, int data, int nCamera); // query 1 registrazione
+	boolean registerNewClient(String nome, String cognome, int data, int nCamera); // query 1 
 
 	boolean CheckoutClient(int nCamera); // query 2
 	
@@ -68,10 +68,19 @@ public interface Logic {
 
 	boolean additionalCost(int nCamera, int price); // query 6
 	
-	Boolean dataClient(int nCamera); //query 7
+	boolean dataClient(int nCamera); //query 7
+	
+	boolean servicesUsedByClient(int nCamera); //query 8
+	
+	int totalAmount(); //query 9
+	
+	boolean clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera); //query 10
 
-	boolean modifyPrice(int price, String nome); // query 11 pagina 9
+	boolean modifyPrice(int price, String nome); // query 11 
+	
+	boolean ReviewClient(int codCliente); //query 12
+	
 
-	int totalAmount();
+	
 
 }
