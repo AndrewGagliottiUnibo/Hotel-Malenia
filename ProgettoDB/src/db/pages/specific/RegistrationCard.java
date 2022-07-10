@@ -234,25 +234,7 @@ public class RegistrationCard {
 			Connection myConn = null;
 			Statement myStmt = null;
 			ResultSet myRs = null;
-
-			try {
-				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-						"dariostudente");
-				System.out.println("Database connected");
-				// 2. Create a statement
-				myStmt = myConn.createStatement();
-				myRs = myStmt.executeQuery("INSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, "
-						+ "resoconto, datiTariffa, durataSoggiorno, orarioCheckin, orarioCheckout) + "
-						+ "VALUES (?, ?, � �, ?, ?, ?, � �, � �)");
-
-				myRs = myStmt.executeQuery(
-						"INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita, numeroTel, tipologiaSoggiorno) + "
-								+ "VALUES (?, ?, ?, ?, ?, ?)");
-				myRs = myStmt.executeQuery("INSERT INTO IDENTIFICAZIONE (codiceCliente, numeroScheda)"
-						+ "VALUES (?, SCHEDA.codScheda)");
-			} catch (Exception exc) {
-				exc.printStackTrace();
-			}
+			this.logic.registerNewClient(this.name,this.surname,this.);
 		});
 		
 		registrationButton.setForeground(Color.MAGENTA);

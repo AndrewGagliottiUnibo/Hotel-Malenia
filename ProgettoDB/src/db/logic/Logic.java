@@ -49,14 +49,6 @@ public interface Logic {
 	int actualPrice(String s);
 
 	/**
-	 * Modify the price in input.
-	 * 
-	 * @param price
-	 * @param nome
-	 * @return
-	 */
-
-	/**
 	 * Register a new client.
 	 * @param nome
 	 * @param cognome
@@ -66,7 +58,9 @@ public interface Logic {
 	 * @param ora
 	 * @return operation done successfuly or not.
 	 */
-	boolean registerNewClient(String nome, String cognome, int data, int nCamera, int tipoPrenotazione,int ora); // query 1 
+	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita,
+			int numeroTel, int tipologiaSoggiorno,int codScheda, 
+			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, char orarioCheckin, char orarioCheckout); // query 1 
 
 	/**
 	 * DOes the checkout of the client.
@@ -75,13 +69,13 @@ public interface Logic {
 	 */
 	boolean CheckoutClient(int nCamera); // query 2
 	
-	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera); //query 3
+	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto); //query 3
 	
-	boolean deleteReservation(int tipoPrenotazione); //query 4
+	boolean deleteReservation(int tipoPrenotazione, int resoconto); //query 4
 
 	ResultSet visualClients(int nCamera); // query 5
 
-	boolean additionalCost(int nCamera, int price); // query 6
+	boolean additionalCost(int nCamera, int price, int resoconto, int tipoServizio); // query 6
 	
 	ResultSet dataClient(int nCamera); //query 7
 	
@@ -91,6 +85,13 @@ public interface Logic {
 	
 	ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera); //query 10
 
+	/**
+	 * Modify the price in input.
+	 * 
+	 * @param price
+	 * @param nome
+	 * @return
+	 */
 	boolean modifyPrice(int price, String nome); // query 11 
 	
 	ResultSet ReviewClient(int codCliente); //query 12
