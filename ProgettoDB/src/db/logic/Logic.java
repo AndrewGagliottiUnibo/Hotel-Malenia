@@ -66,28 +66,10 @@ public interface Logic {
 	 * @param orarioCheckout
 	 * @return operation done successfully or not.
 	 */
-	
-	/**
-	 * 
-	 * @param nome
-	 * @param cognome
-	 * @param codiceFiscale
-	 * @param dataNascita
-	 * @param numeroTel
-	 * @param tipologiaSoggiorno
-	 * @param codScheda
-	 * @param numeroCamera
-	 * @param intolleranze
-	 * @param resoconto
-	 * @param datiTariffa
-	 * @param durataSoggiorno
-	 * @param orarioCheckin
-	 * @param orarioCheckout
-	 * @return
-	 */
 	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita,
 			int numeroTel, int tipologiaSoggiorno,int codScheda, 
-			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, char orarioCheckin, char orarioCheckout);
+			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, 
+			char orarioCheckin, char orarioCheckout);
 
 	/**
 	 * query 2.
@@ -178,8 +160,4 @@ public interface Logic {
 	 * @return a ResultSet with the informations about a specific client.
 	 */
 	ResultSet ReviewClient(int codCliente);
-	
-
-	
-
 }
