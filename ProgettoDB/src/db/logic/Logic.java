@@ -49,52 +49,116 @@ public interface Logic {
 	int actualPrice(String s);
 
 	/**
-	 * Register a new client.
+	 * query 1.
 	 * @param nome
 	 * @param cognome
-	 * @param data
-	 * @param nCamera
-	 * @param tipoPrenotazione
-	 * @param ora
-	 * @return operation done successfuly or not.
+	 * @param codiceFiscale
+	 * @param dataNascita
+	 * @param numeroTel
+	 * @param tipologiaSoggiorno
+	 * @param codScheda
+	 * @param numeroCamera
+	 * @param intolleranze
+	 * @param resoconto
+	 * @param datiTariffa
+	 * @param durataSoggiorno
+	 * @param orarioCheckin
+	 * @param orarioCheckout
+	 * @return operation done successfully or not.
 	 */
 	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita,
 			int numeroTel, int tipologiaSoggiorno,int codScheda, 
-			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, char orarioCheckin, char orarioCheckout); // query 1 
+			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, char orarioCheckin, char orarioCheckout);
 
 	/**
-	 * DOes the checkout of the client.
+	 * query 2.
+	 * Does the checkout of the client.
 	 * @param nCamera
-	 * @return operation done successfuly or not.
+	 * @return operation done successfully or not.
 	 */
-	boolean CheckoutClient(int nCamera); // query 2
+	boolean CheckoutClient(int nCamera);
 	
-	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto); //query 3
+	/**
+	 * query 3.
+	 * @param tipoPrenotazione
+	 * @param data
+	 * @param ora
+	 * @param nCamera
+	 * @param resoconto
+	 * @return operation done successfully or not.
+	 */
+	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto);
 	
-	boolean deleteReservation(int tipoPrenotazione, int resoconto); //query 4
+	/**
+	 * query 4.
+	 * @param tipoPrenotazione
+	 * @param resoconto
+	 * @return operation done successfully or not.
+	 */
+	boolean deleteReservation(int tipoPrenotazione, int resoconto);
 
-	ResultSet visualClients(int nCamera); // query 5
+	/**
+	 * query 5.
+	 * @param nCamera
+	 * @return a ResultSet of clients.
+	 */
+	ResultSet visualClients(int nCamera);
 
-	boolean additionalCost(int nCamera, int price, int resoconto, int tipoServizio); // query 6
+	/**
+	 * query 6.
+	 * @param nCamera
+	 * @param price
+	 * @param resoconto
+	 * @param tipoServizio
+	 * @return operation done successfully or not.
+	 */
+	boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio);
 	
-	ResultSet dataClient(int nCamera); //query 7
+	/**
+	 * query 7.
+	 * @param nCamera
+	 * @return a ResultSet with the chosen Card.
+	 */
+	ResultSet dataClient(int nCamera);
 	
-	ResultSet servicesUsedByClient(int nCamera); //query 8
+	/**
+	 * query 8.
+	 * @param nCamera
+	 * @return  a ResultSet with the services got for a client.
+	 */
+	ResultSet servicesUsedByClient(int nCamera);
 	
-	ResultSet totalAmount(); //query 9
+	/**
+	 * query 9.
+	 * @return a ResultSet with all clients in the hotel.
+	 */
+	ResultSet totalAmount();
 	
-	ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera); //query 10
+	/**
+	 * query 10.
+	 * @param tipoPrenotazione
+	 * @param intolleranze
+	 * @param resoconto
+	 * @param nCamera
+	 * @return a ResultSet with the clients filtered by some requests.
+	 */
+	ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera);
 
 	/**
 	 * Modify the price in input.
-	 * 
+	 * query 11
 	 * @param price
 	 * @param nome
-	 * @return
+	 * @return the operation done successfully or not.
 	 */
-	boolean modifyPrice(int price, String nome); // query 11 
+	boolean modifyPrice(int price, String nome);
 	
-	ResultSet ReviewClient(int codCliente); //query 12
+	/**
+	 * query 12.
+	 * @param codCliente
+	 * @return a ResultSet with the informations about a specific client.
+	 */
+	ResultSet ReviewClient(int codCliente);
 	
 
 	

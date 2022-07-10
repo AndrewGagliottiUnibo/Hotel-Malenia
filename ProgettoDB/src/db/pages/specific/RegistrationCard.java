@@ -234,7 +234,7 @@ public class RegistrationCard {
 			Connection myConn = null;
 			Statement myStmt = null;
 			ResultSet myRs = null;
-			this.logic.registerNewClient(this.name,this.surname,this.);
+			this.logic.registerNewClient();
 		});
 		
 		registrationButton.setForeground(Color.MAGENTA);

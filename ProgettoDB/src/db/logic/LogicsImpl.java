@@ -120,6 +120,7 @@ public class LogicsImpl implements Logic {
 		}
 	}
 
+	@Override
 	public ResultSet showRoomToBeCleaned() {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -143,6 +144,7 @@ public class LogicsImpl implements Logic {
 		return myRs;
 	}
 
+	@Override
 	public ResultSet showRestaurantTables(final String service) {
 		Connection conn;
 		int recordNumber = 0;
@@ -157,6 +159,7 @@ public class LogicsImpl implements Logic {
 		return null;
 	}
 
+	@Override
 	public int actualPrice(String nome) {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -173,6 +176,7 @@ public class LogicsImpl implements Logic {
 		return recordNumber;
 	}
 
+	@Override
 	public boolean modifyPrice(int price, String nome) {
 		Connection conn;
 		try {
@@ -186,6 +190,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
+	@Override
 	public boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita, int numeroTel,
 			int tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto, int datiTariffa,
 			int durataSoggiorno, char orarioCheckin, char orarioCheckout) {
@@ -210,6 +215,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
+	@Override
 	public boolean CheckoutClient(int nCamera) {
 		Connection conn;
 		try {
@@ -224,7 +230,8 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
-	public boolean additionalCost(int nCamera, int price, int resoconto, int tipoServizio) {
+	@Override
+	public boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
@@ -239,6 +246,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
+	@Override
 	public ResultSet visualClients(int nCamera) {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -261,9 +269,9 @@ public class LogicsImpl implements Logic {
 		}
 
 		return myRs;
-
 	}
 
+	@Override
 	public ResultSet dataClient(int nCamera) {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -303,6 +311,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
+	@Override
 	public boolean deleteReservation(int tipoPrenotazione, int resoconto) {
 		Connection conn;
 		try {
@@ -320,6 +329,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
+	@Override
 	public ResultSet servicesUsedByClient(int nCamera) {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -340,9 +350,9 @@ public class LogicsImpl implements Logic {
 		}
 
 		return myRs;
-
 	}
 
+	@Override
 	public ResultSet totalAmount() {
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -375,7 +385,8 @@ public class LogicsImpl implements Logic {
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE SCHEDA.codScheda = ?"
 					+ "AND SCHEDA.codScheda = IDENTIFICAZIONE.numeroScheda AND IDENTIFICAZIONE.codiceCliente ="
 					+ codCliente + ") "
-					+ "SELECT * FROM IDENTIFICAZIONE.codScheda WHERE IDENTIFICAZIONE.codiceCliente ="+codCliente+")");
+					+ "SELECT * FROM IDENTIFICAZIONE.codScheda WHERE IDENTIFICAZIONE.codiceCliente =" + codCliente
+					+ ")");
 			while (myRs.next()) {
 
 				String s = myRs.getString(1);
