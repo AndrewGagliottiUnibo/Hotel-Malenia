@@ -58,6 +58,25 @@ public interface Logic {
 	 * @param ora
 	 * @return operation done successfuly or not.
 	 */
+	
+	/**
+	 * 
+	 * @param nome
+	 * @param cognome
+	 * @param codiceFiscale
+	 * @param dataNascita
+	 * @param numeroTel
+	 * @param tipologiaSoggiorno
+	 * @param codScheda
+	 * @param numeroCamera
+	 * @param intolleranze
+	 * @param resoconto
+	 * @param datiTariffa
+	 * @param durataSoggiorno
+	 * @param orarioCheckin
+	 * @param orarioCheckout
+	 * @return
+	 */
 	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita,
 			int numeroTel, int tipologiaSoggiorno,int codScheda, 
 			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, char orarioCheckin, char orarioCheckout); // query 1 
