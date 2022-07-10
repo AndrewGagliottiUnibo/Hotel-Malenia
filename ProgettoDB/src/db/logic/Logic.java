@@ -56,7 +56,7 @@ public interface Logic {
 	 * @return
 	 */
 
-	boolean registerNewClient(String nome, String cognome, int data, int nCamera); // query 1 
+	boolean registerNewClient(String nome, String cognome, int data, int nCamera, int tipoPrenotazione,int ora); // query 1 
 
 	boolean CheckoutClient(int nCamera); // query 2
 	
@@ -70,7 +70,7 @@ public interface Logic {
 	
 	ResultSet dataClient(int nCamera); //query 7
 	
-	boolean servicesUsedByClient(int nCamera); //query 8
+	ResultSet servicesUsedByClient(int nCamera); //query 8
 	
 	ResultSet totalAmount(); //query 9
 	

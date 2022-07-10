@@ -316,7 +316,7 @@ public class LogicsImpl implements Logic {
 		return true;
 	}
 
-	@Override
+	
 	public ResultSet servicesUsedByClient(int nCamera) {
 		Connection myConn = null;
 		Statement myStmt = null;
