@@ -35,6 +35,8 @@ public class RegistrationCard {
 	private JRadioButton rdbtnIntAllInclusive;
 	private JLabel lblTipoSoggiorno;
 	private Logic logic;
+	private JTextField codCardField;
+	private JLabel codLabel;
 
 	/**
 	 * Constructor.
@@ -62,6 +64,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(nameRegistered);
 		
 		name = new JTextField();
+		name.setForeground(Color.BLACK);
+		name.setBackground(Color.WHITE);
+		name.setFont(new Font("Verdana", Font.PLAIN, 12));
 		name.setBounds(10, 92, 86, 20);
 		frmRegistraCliente.getContentPane().add(name);
 		name.setColumns(10);
@@ -73,6 +78,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(codeCard);
 		
 		cfField = new JTextField();
+		cfField.setForeground(Color.BLACK);
+		cfField.setBackground(Color.WHITE);
+		cfField.setFont(new Font("Verdana", Font.PLAIN, 12));
 		cfField.setColumns(10);
 		cfField.setBounds(10, 163, 190, 20);
 		frmRegistraCliente.getContentPane().add(cfField);
@@ -96,6 +104,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(amministrativeData);
 		
 		surname = new JTextField();
+		surname.setForeground(Color.BLACK);
+		surname.setBackground(Color.WHITE);
+		surname.setFont(new Font("Verdana", Font.PLAIN, 12));
 		surname.setColumns(10);
 		surname.setBounds(114, 92, 86, 20);
 		frmRegistraCliente.getContentPane().add(surname);
@@ -107,6 +118,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(birthday);
 		
 		dateField = new JTextField();
+		dateField.setForeground(Color.BLACK);
+		dateField.setBackground(Color.WHITE);
+		dateField.setFont(new Font("Verdana", Font.PLAIN, 12));
 		dateField.setColumns(10);
 		dateField.setBounds(10, 235, 190, 20);
 		frmRegistraCliente.getContentPane().add(dateField);
@@ -118,6 +132,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(lblInizioSoggiorno);
 		
 		beginFIeld = new JTextField();
+		beginFIeld.setForeground(Color.BLACK);
+		beginFIeld.setBackground(Color.WHITE);
+		beginFIeld.setFont(new Font("Verdana", Font.PLAIN, 12));
 		beginFIeld.setColumns(10);
 		beginFIeld.setBounds(395, 92, 190, 20);
 		frmRegistraCliente.getContentPane().add(beginFIeld);
@@ -129,11 +146,17 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(lblFineSoggiorno);
 		
 		endFIeld = new JTextField();
+		endFIeld.setForeground(Color.BLACK);
+		endFIeld.setBackground(Color.WHITE);
+		endFIeld.setFont(new Font("Verdana", Font.PLAIN, 12));
 		endFIeld.setColumns(10);
 		endFIeld.setBounds(395, 163, 190, 20);
 		frmRegistraCliente.getContentPane().add(endFIeld);
 		
 		checkoutField = new JTextField();
+		checkoutField.setForeground(Color.BLACK);
+		checkoutField.setBackground(Color.WHITE);
+		checkoutField.setFont(new Font("Verdana", Font.PLAIN, 12));
 		checkoutField.setColumns(10);
 		checkoutField.setBounds(395, 306, 190, 20);
 		frmRegistraCliente.getContentPane().add(checkoutField);
@@ -145,6 +168,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(lblOrarioCheckout);
 		
 		checkinFIeld = new JTextField();
+		checkinFIeld.setForeground(Color.BLACK);
+		checkinFIeld.setBackground(Color.WHITE);
+		checkinFIeld.setFont(new Font("Verdana", Font.PLAIN, 12));
 		checkinFIeld.setColumns(10);
 		checkinFIeld.setBounds(395, 235, 190, 20);
 		frmRegistraCliente.getContentPane().add(checkinFIeld);
@@ -162,6 +188,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(lblTelefono);
 		
 		telField = new JTextField();
+		telField.setForeground(Color.BLACK);
+		telField.setBackground(Color.WHITE);
+		telField.setFont(new Font("Verdana", Font.PLAIN, 12));
 		telField.setColumns(10);
 		telField.setBounds(10, 306, 190, 20);
 		frmRegistraCliente.getContentPane().add(telField);
@@ -187,6 +216,9 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(lblStanzaAssegnata);
 		
 		roomFIeld = new JTextField();
+		roomFIeld.setForeground(Color.BLACK);
+		roomFIeld.setBackground(Color.WHITE);
+		roomFIeld.setFont(new Font("Verdana", Font.PLAIN, 12));
 		roomFIeld.setColumns(10);
 		roomFIeld.setBounds(395, 381, 190, 20);
 		frmRegistraCliente.getContentPane().add(roomFIeld);
@@ -242,6 +274,19 @@ public class RegistrationCard {
 		registrationButton.setBackground(Color.DARK_GRAY);
 		registrationButton.setBounds(734, 388, 185, 56);
 		frmRegistraCliente.getContentPane().add(registrationButton);
+		
+		codCardField = new JTextField();
+		codCardField.setForeground(Color.BLACK);
+		codCardField.setFont(new Font("Verdana", Font.PLAIN, 12));
+		codCardField.setColumns(10);
+		codCardField.setBounds(734, 362, 185, 20);
+		frmRegistraCliente.getContentPane().add(codCardField);
+		
+		codLabel = new JLabel("Codice scheda:");
+		codLabel.setForeground(Color.ORANGE);
+		codLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+		codLabel.setBounds(734, 340, 185, 14);
+		frmRegistraCliente.getContentPane().add(codLabel);
 	}
 	
 	/**
