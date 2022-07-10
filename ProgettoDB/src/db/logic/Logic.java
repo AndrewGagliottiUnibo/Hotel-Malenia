@@ -136,18 +136,8 @@ public interface Logic {
 	ResultSet totalAmount();
 	
 	/**
-	 * query 10.
-	 * @param tipoPrenotazione
-	 * @param intolleranze
-	 * @param resoconto
-	 * @param nCamera
-	 * @return a ResultSet with the clients filtered by some requests.
-	 */
-	ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera);
-
-	/**
 	 * Modify the price in input.
-	 * query 11
+	 * query 10
 	 * @param price
 	 * @param nome
 	 * @return the operation done successfully or not.
@@ -155,7 +145,7 @@ public interface Logic {
 	boolean modifyPrice(int price, String nome);
 	
 	/**
-	 * query 12.
+	 * query 11.
 	 * @param codCliente
 	 * @return a ResultSet with the informations about a specific client.
 	 */

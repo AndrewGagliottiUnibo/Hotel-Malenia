@@ -399,27 +399,4 @@ public class LogicsImpl implements Logic {
 		return myRs;
 
 	}
-
-	@Override
-	public ResultSet clientFilter(int tipoPrenotazione, int intolleranze, int resoconto, int nCamera) {
-		Connection myConn = null;
-		Statement myStmt = null;
-		ResultSet myRs = null;
-		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			myStmt = myConn.createStatement();
-			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA" + "WHERE tipologiaSoggiorno = " + tipoPrenotazione
-					+ "intolleranze = " + intolleranze + " resoconto = " + resoconto + "numeroCamera = " + nCamera);
-			while (myRs.next()) {
-
-				String s = myRs.getString(1);
-			}
-			myRs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return myRs;
-
-	}
 }
