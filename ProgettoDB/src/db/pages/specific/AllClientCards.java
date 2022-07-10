@@ -86,7 +86,7 @@ public class AllClientCards {
 		goToCard.addActionListener(e -> {
 			var chosenClient = this.codeField.getText();
 			
-			//Query here
+			//this.logic.dataClient(this.chosenCard);
 			this.chosenCard = new ClientCard(chosenClient, this.logic);
 			this.chosenCard.getFrame().setVisible(true);
 			this.frmSchedeClienti.dispose();

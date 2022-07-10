@@ -74,7 +74,7 @@ public class NewReservation {
 		JButton breakfastPlus = new JButton("Colazione +");
 		breakfastPlus.addActionListener(e -> {
 			var client = this.codeField.getText();
-			//Query adding taking choice as input
+			this.logic.registerNewReservation(this.codeField, this.dateField, this.timeField, 0, 0);
 		});
 		breakfastPlus.setForeground(Color.ORANGE);
 		breakfastPlus.setBackground(Color.DARK_GRAY);

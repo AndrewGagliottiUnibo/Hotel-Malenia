@@ -77,13 +77,13 @@ public class PricePage {
 			Connection myConn = null;
 			 Statement myStmt = null;
 			 ResultSet myRs = null;
-			
 			try {
 				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
 				System.out.println("Database connected");
 				// 2. Create a statement
 				myStmt = myConn.createStatement();
 				myRs = myStmt.executeQuery("SELECT * FROM LISTINI");
+				
 			}
 			catch (Exception exc) {
 				exc.printStackTrace();

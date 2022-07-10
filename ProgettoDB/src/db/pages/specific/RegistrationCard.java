@@ -267,8 +267,8 @@ public class RegistrationCard {
 			Statement myStmt = null;
 			ResultSet myRs = null;
 			this.logic.registerNewClient(this.name,this.surname,this.cfField,this.dateField,this.telField,
-					this.lblTipoSoggiorno,this.codCardField,this.roomFIeld, int intolleranze, int resoconto, int datiTariffa,
-					int durataSoggiorno, char orarioCheckin, char orarioCheckout);
+					this.lblTipoSoggiorno,this.codCardField,this.roomFIeld, int intolleranze, this., int datiTariffa,
+					int durataSoggiorno, char this.checkinFIeld,this.checkoutField);
 		});
 		
 		registrationButton.setForeground(Color.MAGENTA);

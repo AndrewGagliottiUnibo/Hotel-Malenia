@@ -145,9 +145,7 @@ public class AllReservations {
 		JButton deleteReservationBtn = new JButton("Cancella");
 		deleteReservationBtn.addActionListener(e -> {
 			var choice = this.deleteField.getText();
-			
-			//Query with text cast to Integer.parseInt(choice);
-			//Update table
+			this.logic.deleteReservation(0, 0);
 		});
 		deleteReservationBtn.setForeground(Color.ORANGE);
 		deleteReservationBtn.setFont(new Font("Verdana", Font.BOLD, 12));
