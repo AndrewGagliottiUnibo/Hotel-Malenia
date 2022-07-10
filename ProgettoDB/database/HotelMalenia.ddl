@@ -20,111 +20,110 @@ use SchemaHotel;
 -- _____________ 
 
 create table ABBINAMENTO (
-     schedaAbbinata char(1) not null,
+     schedaAbbinata int not null,
      soggiornoScelto char(1) not null,
      constraint IDABBINAMENTO primary key (schedaAbbinata, soggiornoScelto));
 
 create table ACCESSO (
-     servizioScelto char(1) not null,
-     numeroPrenotazione char(1) not null,
+     servizioScelto char(30) not null,
+     numeroPrenotazione int not null,
      constraint IDACCESSO primary key (servizioScelto, numeroPrenotazione));
 
 create table ADDETTO (
-     nome char(1) not null,
-     cognome char(1) not null,
-     numeroTel char(1) not null,
-     dataNascita char(1) not null,
-     zonaDiLavoro char(1) not null,
-     ruolo char(1) not null,
-     codiceFiscale char(1) not null,
+     nome char(20) not null,
+     cognome char(20) not null,
+     numeroTel int not null,
+     dataNascita char(20) not null,
+     zonaDiLavoro char(40) not null,
+     ruolo char(20) not null,
+     codiceFiscale char(40) not null,
      codRuolo char(1) not null,
      constraint IDADDETTO_1 unique (ruolo),
      constraint IDADDETTO_ID primary key (codRuolo),
      constraint IDADDETTO_2 unique (codiceFiscale));
 
 create table CLIENTE (
-     nome char(1) not null,
-     cognome char(1) not null,
-     numeroTel char(1) not null,
-     dataNascita char(1) not null,
-     codiceFiscale char(1) not null,
+     nome char(20) not null,
+     cognome char(20) not null,
+     numeroTel int not null,
+     dataNascita char(20) not null,
+     codiceFiscale char(40) not null,
      tipologiaSoggiorno char(1) not null,
      constraint IDCLIENTE_ID primary key (codiceFiscale));
 
 create table CONDIZIONAMENTO (
      codSoggiorno char(1) not null,
-     codListino char(1) not null,
-     codServizio char(1) not null,
+     codListino int not null,
+     codServizio char(30) not null,
      constraint IDCONDIZIONAMENTO primary key (codServizio, codSoggiorno, codListino));
 
 create table CREAZIONE (
-     codiceScheda char(1) not null,
+     codiceScheda int not null,
      codiceAddetto char(1) not null,
      constraint IDCREAZIONE primary key (codiceAddetto, codiceScheda));
 
 create table DIRIGENTE (
-     nome char(1) not null,
-     cognome char(1) not null,
-     numeroTel char(1) not null,
-     dataNascita char(1) not null,
-     codiceFiscale char(1) not null,
-     tipologiaListino -- Compound attribute -- not null,
-     codDirigente char(1) not null,
+     nome char(20) not null,
+     cognome char(20) not null,
+     numeroTel int not null,
+     dataNascita char(20) not null,
+     codiceFiscale char(40) not null,
+     tipologiaListino int not null,
+     codDirigente int not null,
      constraint IDDIRIGENTE primary key (codDirigente));
 
 create table EFFETTUAZIONE (
-     clienteServito char(1) not null,
-     prestazione char(1) not null,
+     clienteServito char(40) not null,
+     prestazione int not null,
      constraint IDEFFETTUAZIONE primary key (prestazione, clienteServito));
 
 create table IDENTIFICAZIONE (
-     codiceCliente char(1) not null,
-     numeroScheda char(1) not null,
+     codiceCliente char(40) not null,
+     numeroScheda int not null,
      constraint IDIDENTIFICAZIONE primary key (numeroScheda, codiceCliente));
 
 create table LISTINI (
-     tipoListino char(1) not null,
-     valoreMonetario char(1) not null,
+     tipoListino int not null,
+     valoreMonetario smallint not null,
      constraint IDLISTINI_ID primary key (tipoListino));
 
 create table PRENOTAZIONE (
-     tipoPrenotazione char(1) not null,
-     data char(1),
-     ora char(1),
+     tipoPrenotazione int not null,
+     data char(20),
+     ora char(20),
      constraint IDPRENOTAZIONE_ID primary key (tipoPrenotazione));
 
 create table REGISTRAZIONE (
-     codPrenotazione char(1) not null,
-     schedaRegistrata char(1) not null,
+     codPrenotazione int not null,
+     schedaRegistrata int not null,
      constraint IDREGISTRAZIONE primary key (codPrenotazione, schedaRegistrata));
 
 create table SCHEDA (
-     datiGestionali_DurataSoggiorno char(1) not null,
-     datiGestionali_Tariffa char(1) not null,
-     datiGestionali_orariCheckOut -- Compound attribute -- not null,
-     datiGestionali_Oraricheck-in char(1) not null,
-     resoconto -- Compound attribute -- not null,
-     intolleranze char(1) not null,
-     numeroCamera char(1) not null,
-     codScheda char(1) not null,
+     datiGestionali_DurataSoggiorno char(20) not null,
+     datiGestionali_Tariffa char(20) not null,
+     datiGestionali_orariCheckOut char(20) not null,
+     datiGestionali_Oraricheckin char(20) not null,
+     resoconto int not null,
+     intolleranze char(80) not null,
+     numeroCamera tinyint not null,
+     codScheda int not null,
      constraint IDSCHEDA_ID primary key (codScheda));
 
 create table SERVIZIO (
-     tipoServizio char(1) not null,
-     tariffa char(1),
-     addettoAssegnato char(1) not null,
+     tipoServizio char(30) not null,
+     tariffa int,
+     addettoAssegnato char(20) not null,
      constraint IDSERVIZIO_ID primary key (tipoServizio));
 
 create table SOGGIORNO (
-     prezzo char(1) not null,
+     prezzo int not null,
      tipologia char(1) not null,
      constraint IDSOGGIORNO_ID primary key (tipologia));
 
 create table VISUALIZZAZIONE (
-     codSchedaVisualizzata char(1) not null,
-     codAddettoAccedente char(1) not null,
+     codSchedaVisualizzata int not null,
+     codAddettoAccedente char(20) not null,
      constraint IDVISUALIZZAZIONE primary key (codSchedaVisualizzata, codAddettoAccedente));
-
 
 -- Constraints Section
 -- ___________________ 
@@ -195,7 +194,7 @@ alter table CREAZIONE add constraint FKCRE_SCH
      references SCHEDA (codScheda);
 
 alter table DIRIGENTE add constraint FKGESTIONE
-     foreign key (tipologiaListino -- Compound attribute --)
+     foreign key (tipologiaListino)
      references LISTINI (tipoListino);
 
 alter table EFFETTUAZIONE add constraint FKEFF_PRE

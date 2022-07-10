@@ -56,8 +56,23 @@ public interface Logic {
 	 * @return
 	 */
 
+	/**
+	 * Register a new client.
+	 * @param nome
+	 * @param cognome
+	 * @param data
+	 * @param nCamera
+	 * @param tipoPrenotazione
+	 * @param ora
+	 * @return operation done successfuly or not.
+	 */
 	boolean registerNewClient(String nome, String cognome, int data, int nCamera, int tipoPrenotazione,int ora); // query 1 
 
+	/**
+	 * DOes the checkout of the client.
+	 * @param nCamera
+	 * @return operation done successfuly or not.
+	 */
 	boolean CheckoutClient(int nCamera); // query 2
 	
 	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera); //query 3
