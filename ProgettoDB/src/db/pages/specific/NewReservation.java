@@ -28,24 +28,6 @@ public class NewReservation {
 	Statement myStmt = null;
 	ResultSet myRs = null;
 
-//	try {
-//		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-//				"dariostudente");
-//		System.out.println("Database connected");
-//		// 2. Create a statement
-//		myStmt = myConn.createStatement();
-//		myRs = myStmt.executeQuery(
-//				"INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora)" + "VALUES (?, ?, ?)");
-//
-//		myRs = myStmt.executeQuery("INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata)"
-//				+ "VALUES (PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda)");
-//		myRs = myStmt.executeQuery("UPDATE SCHEDA" + "SET resoconto = resoconto + ?"
-//				+ "WHERE codScheda IN (SELECT schedaRegistrata" + "FROM REGISTRAZIONE"
-//				+ "WHERE schedaRegistrata = SCHEDA.codScheda)");
-//	} catch (Exception exc) {
-//		exc.printStackTrace();
-//	}
-
 	/**
 	 * Constructor.
 	 */

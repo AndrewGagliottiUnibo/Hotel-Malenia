@@ -56,17 +56,19 @@ public interface Logic {
 	 * @return
 	 */
 
-	boolean registerNewClient(String nome, String cognome, int data, int nCamera, int tipoPrenotazione,int ora); // query 1 
+	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita,
+			int numeroTel, int tipologiaSoggiorno,int codScheda, 
+			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, char orarioCheckin, char orarioCheckout); // query 1 
 
 	boolean CheckoutClient(int nCamera); // query 2
 	
-	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera); //query 3
+	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto); //query 3
 	
-	boolean deleteReservation(int tipoPrenotazione); //query 4
+	boolean deleteReservation(int tipoPrenotazione, int resoconto); //query 4
 
 	ResultSet visualClients(int nCamera); // query 5
 
-	boolean additionalCost(int nCamera, int price); // query 6
+	boolean additionalCost(int nCamera, int price, int resoconto, int tipoServizio); // query 6
 	
 	ResultSet dataClient(int nCamera); //query 7
 	
