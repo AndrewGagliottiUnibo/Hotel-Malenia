@@ -132,7 +132,7 @@ public class ClientsInHotel {
 			this.frmClientiInStruttura.dispose();
 			ResultSet myRs = null;
 			try {
-				myRs = this.logic.dataClient(this.chosenCard);  //visualizzare scheda cliente in base al n camera
+				myRs = this.logic.dataClient(Integer.parseInt(choice));  //visualizzare scheda cliente in base al n camera
 				while (myRs.next()) {
 					String s = myRs.getString(1);
 				}
