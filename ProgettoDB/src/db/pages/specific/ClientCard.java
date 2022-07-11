@@ -4,10 +4,12 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
 import db.logic.Logic;
-
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
@@ -20,8 +22,7 @@ public class ClientCard {
 	private JLabel amministrativeData;
 	private JTextField surname;
 	private JTextField dateField;
-	private JTextField beginFIeld;
-	private JTextField endFIeld;
+	private JTextField dayFIeld;
 	private JTextField checkoutField;
 	private JTextField checkinFIeld;
 	private JTextField telField;
@@ -113,27 +114,16 @@ public class ClientCard {
 		dateField.setBounds(10, 235, 190, 20);
 		frame.getContentPane().add(dateField);
 		
-		JLabel lblInizioSoggiorno = new JLabel("Inizio soggiorno");
-		lblInizioSoggiorno.setForeground(Color.ORANGE);
-		lblInizioSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblInizioSoggiorno.setBounds(395, 70, 145, 14);
-		frame.getContentPane().add(lblInizioSoggiorno);
+		JLabel lblSoggiorno = new JLabel("Inizio soggiorno");
+		lblSoggiorno.setForeground(Color.ORANGE);
+		lblSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblSoggiorno.setBounds(395, 70, 145, 14);
+		frame.getContentPane().add(lblSoggiorno);
 		
-		beginFIeld = new JTextField();
-		beginFIeld.setColumns(10);
-		beginFIeld.setBounds(395, 92, 190, 20);
-		frame.getContentPane().add(beginFIeld);
-		
-		JLabel lblFineSoggiorno = new JLabel("Fine Soggiorno");
-		lblFineSoggiorno.setForeground(Color.ORANGE);
-		lblFineSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblFineSoggiorno.setBounds(395, 141, 145, 14);
-		frame.getContentPane().add(lblFineSoggiorno);
-		
-		endFIeld = new JTextField();
-		endFIeld.setColumns(10);
-		endFIeld.setBounds(395, 163, 190, 20);
-		frame.getContentPane().add(endFIeld);
+		dayFIeld = new JTextField();
+		dayFIeld.setColumns(10);
+		dayFIeld.setBounds(395, 92, 190, 20);
+		frame.getContentPane().add(dayFIeld);
 		
 		checkoutField = new JTextField();
 		checkoutField.setColumns(10);
@@ -268,16 +258,62 @@ public class ClientCard {
 		btnAggiorna.addActionListener(e -> {
 			String result = "";
 			
-			//Query here
-			this.resField.setText(result);
-		});
+			/*
+			 * Query of the actual debt of the client.
+			 */
+			Statement myStmt = null;
+			ResultSet myRs = null;
+			
+			try {
+				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				myStmt = conn.createStatement();
+				myRs = myStmt.executeQuery("SELECT SCHEDA.resoconto FROM SCHEDA WHERE numeroCamera = " + this.chosenClient);
+				
+				result = myRs.getString(1);			
+				myRs.close();
+				
+			} catch (Exception exc) {
+				exc.printStackTrace();
+			}
+			
+			this.resField.setText(result);	});
+		
+		
 		btnAggiorna.setForeground(Color.ORANGE);
 		btnAggiorna.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnAggiorna.setBackground(Color.DARK_GRAY);
 		btnAggiorna.setBounds(642, 257, 159, 23);
 		frame.getContentPane().add(btnAggiorna);
+		
+		this.setTextGlobal();
 	}
 	
+	/**
+	 * Set the texts for all GUIs.
+	 */
+	private void setTextGlobal() {
+
+		/*
+		 * Variables used to set the text.
+		 */
+		String name;
+		String surname;
+		String cfCode;
+		String date;
+		int phone;
+		int days;
+		String checkIn;
+		String Checkout;
+		int roomNumber;
+		int debt;
+		int intollerance;
+		String reservationType;
+		
+		this.name.setText(name);
+		this.surname.setText(surname);
+		this.cfField.setText(cfCode);
+	}
+
 	/**
 	 * @return actual frame.
 	 */
