@@ -183,10 +183,6 @@ public class LogicsImpl implements Logic {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			PreparedStatement pstmt = conn
 					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
-<<<<<<< HEAD
-=======
-			
->>>>>>> 3b1e3ac997d85416f94e1f3b690982882758c4b2
 			pstmt.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
