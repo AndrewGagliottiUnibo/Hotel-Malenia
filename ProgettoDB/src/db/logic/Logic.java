@@ -50,6 +50,7 @@ public interface Logic {
 
 	/**
 	 * query 1.
+	 * 
 	 * @param nome
 	 * @param cognome
 	 * @param codiceFiscale
@@ -66,21 +67,21 @@ public interface Logic {
 	 * @param orarioCheckout
 	 * @return operation done successfully or not.
 	 */
-	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita,
-			int numeroTel, int tipologiaSoggiorno,int codScheda, 
-			int numeroCamera,int intolleranze, int resoconto, int datiTariffa, int durataSoggiorno, 
-			char orarioCheckin, char orarioCheckout);
+	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita, int numeroTel,
+			String tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto,
+			int durataSoggiorno, String orarioCheckin, String orarioCheckout);
 
 	/**
-	 * query 2.
-	 * Does the checkout of the client.
+	 * query 2. Does the checkout of the client.
+	 * 
 	 * @param nCamera
 	 * @return operation done successfully or not.
 	 */
 	boolean CheckoutClient(int nCamera);
-	
+
 	/**
 	 * query 3.
+	 * 
 	 * @param tipoPrenotazione
 	 * @param data
 	 * @param ora
@@ -89,9 +90,10 @@ public interface Logic {
 	 * @return operation done successfully or not.
 	 */
 	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto);
-	
+
 	/**
 	 * query 4.
+	 * 
 	 * @param tipoPrenotazione
 	 * @param resoconto
 	 * @return operation done successfully or not.
@@ -100,6 +102,7 @@ public interface Logic {
 
 	/**
 	 * query 5.
+	 * 
 	 * @param nCamera
 	 * @return a ResultSet of clients.
 	 */
@@ -107,6 +110,7 @@ public interface Logic {
 
 	/**
 	 * query 6.
+	 * 
 	 * @param nCamera
 	 * @param price
 	 * @param resoconto
@@ -114,38 +118,42 @@ public interface Logic {
 	 * @return operation done successfully or not.
 	 */
 	boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio);
-	
+
 	/**
 	 * query 7.
+	 * 
 	 * @param nCamera
 	 * @return a ResultSet with the chosen Card.
 	 */
 	ResultSet dataClient(int nCamera);
-	
+
 	/**
 	 * query 8.
+	 * 
 	 * @param nCamera
-	 * @return  a ResultSet with the services got for a client.
+	 * @return a ResultSet with the services got for a client.
 	 */
 	ResultSet servicesUsedByClient(int nCamera);
-	
+
 	/**
 	 * query 9.
+	 * 
 	 * @return a ResultSet with all clients in the hotel.
 	 */
 	ResultSet totalAmount();
-	
+
 	/**
-	 * Modify the price in input.
-	 * query 10
+	 * Modify the price in input. query 10
+	 * 
 	 * @param price
 	 * @param nome
 	 * @return the operation done successfully or not.
 	 */
 	boolean modifyPrice(int price, String nome);
-	
+
 	/**
 	 * query 11.
+	 * 
 	 * @param codCliente
 	 * @return a ResultSet with the informations about a specific client.
 	 */

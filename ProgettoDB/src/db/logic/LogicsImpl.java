@@ -147,29 +147,29 @@ public class LogicsImpl implements Logic {
 	@Override
 	public ResultSet showRestaurantTables(final String service) {
 		Connection conn;
-		int recordNumber = 0;
+		Statement myStm;
+		ResultSet result = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			ResultSet pstmt = (ResultSet) conn
-					.prepareStatement("SELECT valoreMonetario FROM Listini WHERE" + "nome = ");
-			recordNumber = pstmt.getInt(1);
+			myStm = conn.createStatement();
+			result = myStm.executeQuery("SELECT SCHEDA.numeroCamera FROM SCHEDA WHERE datiGestionali_tariffa = " + service);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return result;
 	}
 
 	@Override
 	public int actualPrice(String nome) {
-		Connection myConn = null;
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		int recordNumber = 0;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			myStmt = myConn.createStatement();
+			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT valoreMonetario FROM Listini WHERE" + "nome = " + nome);
-			recordNumber = ((ResultSet) myStmt).getInt(1);
+			recordNumber = myRs.getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -183,6 +183,8 @@ public class LogicsImpl implements Logic {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			PreparedStatement pstmt = conn
 					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
+			
+			pstmt.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -192,16 +194,16 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita, int numeroTel,
-			int tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto, int datiTariffa,
-			int durataSoggiorno, char orarioCheckin, char orarioCheckout) {
+			String tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto,
+			int durataSoggiorno, String orarioCheckin, String orarioCheckout) {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			PreparedStatement pstmt0 = conn.prepareStatement(
 					"NSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, resoconto, datiTariffa, durataSoggiorno, orarioCheckin,"
 							+ " orarioCheckout)" + "VALUES(codScheda=" + codScheda + ",numeroCamera" + numeroCamera
-							+ " ,intolleranze" + intolleranze + "," + "resoconto" + resoconto + ",datiTariffa"
-							+ datiTariffa + ",durataSoggiorno" + durataSoggiorno + "" + ",orarioCheckin" + orarioCheckin
+							+ " ,intolleranze" + intolleranze + "," + "resoconto" + resoconto + ",durataSoggiorno" + durataSoggiorno + "" 
+							+ ",orarioCheckin" + orarioCheckin
 							+ ",orarioCheckout" + orarioCheckout + ")"
 							+ "INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita,numeroTel, tipologiaSoggiorno)"
 							+ "VALUES (nome" + nome + ", cognome" + cognome + ", codiceFiscale" + codiceFiscale
