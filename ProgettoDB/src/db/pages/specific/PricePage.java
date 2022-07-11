@@ -128,6 +128,7 @@ public class PricePage {
 		
 		JButton allIncBtn = new JButton("Applica a All-inclusive");
 		allIncBtn.addActionListener(e -> {
+			this.logic.additionCost(0, 0, 0, 0);
 				
 			//Query call here
 			productNameField.setText("");
