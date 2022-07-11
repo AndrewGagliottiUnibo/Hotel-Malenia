@@ -183,6 +183,7 @@ public class LogicsImpl implements Logic {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			PreparedStatement pstmt = conn
 					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
+			pstmt.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -208,6 +209,7 @@ public class LogicsImpl implements Logic {
 							+ ", dataNascita" + dataNascita + "," + "numeroTel" + numeroTel + ", tipologiaSoggiorno"
 							+ tipologiaSoggiorno + ")"
 							+ "INSERT INTO IDENTIFICAZIONE (codiceCliente, numeroScheda)VALUES (?, SCHEDA.codScheda)");
+			pstmt0.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -253,7 +255,7 @@ public class LogicsImpl implements Logic {
 		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			myStmt = myConn.createStatement();
+			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = "
 					+ "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE,PRENOTAZIONE"
 					+ "WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda AND"
@@ -278,7 +280,7 @@ public class LogicsImpl implements Logic {
 		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			myStmt = myConn.createStatement();
+			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera = " + nCamera + "");
 			while (myRs.next()) {
 

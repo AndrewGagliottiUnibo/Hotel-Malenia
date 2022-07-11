@@ -83,7 +83,9 @@ public class PricePage {
 				// 2. Create a statement
 				myStmt = myConn.createStatement();
 				myRs = myStmt.executeQuery("SELECT * FROM LISTINI");
-				
+				while(myRs.next()) {
+					
+				}
 			}
 			catch (Exception exc) {
 				exc.printStackTrace();
