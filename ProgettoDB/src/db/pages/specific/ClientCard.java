@@ -9,7 +9,11 @@ import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
@@ -292,26 +296,43 @@ public class ClientCard {
 	 * Set the texts for all GUIs.
 	 */
 	private void setTextGlobal() {
-
-		/*
-		 * Variables used to set the text.
-		 */
-		String name;
-		String surname;
-		String cfCode;
-		String date;
-		int phone;
-		int days;
-		String checkIn;
-		String Checkout;
-		int roomNumber;
-		int debt;
-		int intollerance;
-		String reservationType;
 		
-		this.name.setText(name);
-		this.surname.setText(surname);
-		this.cfField.setText(cfCode);
+		// Recover the result set and update the GUI
+		ResultSet result = null;
+		int i = 0;
+
+		try {
+			while(result.next()) {
+				if (i == 0) {
+					this.name.setText(result.getString(1));
+				} else if (i == 1) {
+					this.surname.setText(result.getString(1));				
+				} else if (i == 2) {
+					this.cfField.setText(result.getString(1));
+				} else if (i == 4) {
+			
+				} else if (i == 5) {
+			
+				} else if (i == 6) {
+			
+				} else if (i == 7) {
+			
+				} else if (i == 8) {
+			
+				} else if (i == 8) {
+			
+				} else if (i == 9) {
+			
+				} else if (i == 10) {
+			
+				} else if (i == 11) {
+			
+				}
+				i++;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
