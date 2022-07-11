@@ -252,25 +252,20 @@ public class LogicsImpl implements Logic {
 	public ResultSet visualClients(int nCamera) {
 		Connection myConn = null;
 		Statement myStmt = null;
-		ResultSet myRs = null;
+		ResultSet result = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = conn.createStatement();
-			myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = "
+			result = myStmt.executeQuery("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = "
 					+ "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE,PRENOTAZIONE"
 					+ "WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda AND"
 					+ "REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
 					+ "ORDER BY SCHEDA.data DESC, SCHEDA.ora DESC");
-			while (myRs.next()) {
-
-				String s = myRs.getString(1);
-			}
-			myRs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return myRs;
+		return result;
 	}
 
 	@Override
@@ -282,11 +277,7 @@ public class LogicsImpl implements Logic {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera = " + nCamera + "");
-			while (myRs.next()) {
-
-				String s = myRs.getString(1);
-			}
-			myRs.close();
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -342,11 +333,6 @@ public class LogicsImpl implements Logic {
 			myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA WHERE numeroCamera = " + nCamera
 					+ "SELECT * FROM PRENOTAZIONE WHERE tipoPrenotazione IN "
 					+ "(SELECT codPrenotazione FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
-			while (myRs.next()) {
-
-				String s = myRs.getString(1);
-			}
-			myRs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -363,10 +349,6 @@ public class LogicsImpl implements Logic {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
-			while (myRs.next()) {
-
-				String s = myRs.getString(1);
-			}
 			myRs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -389,10 +371,6 @@ public class LogicsImpl implements Logic {
 					+ codCliente + ") "
 					+ "SELECT * FROM IDENTIFICAZIONE.codScheda WHERE IDENTIFICAZIONE.codiceCliente =" + codCliente
 					+ ")");
-			while (myRs.next()) {
-
-				String s = myRs.getString(1);
-			}
 			myRs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
