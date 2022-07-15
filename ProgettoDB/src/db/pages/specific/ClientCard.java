@@ -11,9 +11,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
@@ -297,8 +294,7 @@ public class ClientCard {
 	 */
 	private void setTextGlobal() {
 		
-		// Recover the result set and update the GUI
-		ResultSet result = null;
+		ResultSet result = this.logic.dataClient(Integer.parseInt(this.chosenClient));
 		int i = 0;
 
 		try {
@@ -310,23 +306,27 @@ public class ClientCard {
 				} else if (i == 2) {
 					this.cfField.setText(result.getString(1));
 				} else if (i == 4) {
-			
+					this.dateField.setText(result.getString(1));
 				} else if (i == 5) {
-			
-				} else if (i == 6) {
-			
+					this.telField.setText(result.getString(1));
+				} else if (i == 6 && result.getString(1) == "0") {
+					this.rdbtnIntGlutine.setSelected(true);
 				} else if (i == 7) {
-			
+					this.dayFIeld.setText(result.getString(1));
 				} else if (i == 8) {
-			
+					this.checkinFIeld.setText(result.getString(1));
 				} else if (i == 8) {
-			
+					this.checkoutField.setText(result.getString(1));
 				} else if (i == 9) {
-			
+					this.roomFIeld.setText(result.getString(1));
 				} else if (i == 10) {
-			
-				} else if (i == 11) {
-			
+					if(result.getString(1) == "BB") {
+						this.rdbtnIntBB.setSelected(true);
+					} else if(result.getString(1) == "PensioneCompleta") {
+						this.rdbtnIntCompleto.setSelected(true);
+					} else {
+						this.rdbtnIntAllInclusive.setSelected(true);
+					}
 				}
 				i++;
 			}
