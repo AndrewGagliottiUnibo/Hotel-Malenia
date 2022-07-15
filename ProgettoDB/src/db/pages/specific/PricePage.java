@@ -62,8 +62,8 @@ public class PricePage {
 		JButton showPrices = new JButton("Vedi listini");
 		showPrices.addActionListener(e -> {
 			Connection myConn = null;
-			 Statement myStmt = null;
-			 ResultSet myRs = null;
+			Statement myStmt = null;
+			ResultSet myRs = null;
 			try {
 				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
 				System.out.println("Database connected");
@@ -113,45 +113,18 @@ public class PricePage {
 		priceNameField.setBounds(466, 115, 453, 20);
 		frmListini.getContentPane().add(priceNameField);
 		
-		JButton allIncBtn = new JButton("Applica a All-inclusive");
-		allIncBtn.addActionListener(e -> {
-			this.logic.additionCost(0, 0, 0, 0);
-				
-			//Query call here
-			productNameField.setText("");
-			priceNameField.setText("");
+		JButton applyBtn = new JButton("Applica");
+		applyBtn.addActionListener(e -> {
+			this.logic.modifyPrice(Integer.parseInt(this.priceNameField.getText()), this.productNameField.getText());
+			this.productNameField.setText("");
+			this.priceNameField.setText("");
 		});
-		allIncBtn.setForeground(Color.ORANGE);
-		allIncBtn.setBackground(Color.DARK_GRAY);
-		allIncBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		allIncBtn.setBounds(462, 214, 457, 23);
-		frmListini.getContentPane().add(allIncBtn);
 		
-		JButton bEBBtn = new JButton("Applica a B&B");
-		bEBBtn.addActionListener(e -> {
-			
-			//Query call here
-			productNameField.setText("");
-			priceNameField.setText("");
-		});
-		bEBBtn.setForeground(Color.ORANGE);
-		bEBBtn.setBackground(Color.DARK_GRAY);
-		bEBBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		bEBBtn.setBounds(462, 146, 457, 23);
-		frmListini.getContentPane().add(bEBBtn);
-		
-		JButton comPenBtn = new JButton("Applica a Pensione Completa");
-		comPenBtn.addActionListener(e -> {
-			
-			//Query call here
-			productNameField.setText("");
-			priceNameField.setText("");
-		});
-		comPenBtn.setForeground(Color.ORANGE);
-		comPenBtn.setBackground(Color.DARK_GRAY);
-		comPenBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		comPenBtn.setBounds(462, 180, 457, 23);
-		frmListini.getContentPane().add(comPenBtn);
+		applyBtn.setForeground(Color.ORANGE);
+		applyBtn.setBackground(Color.DARK_GRAY);
+		applyBtn.setFont(new Font("Verdana", Font.BOLD, 12));
+		applyBtn.setBounds(462, 146, 457, 23);
+		frmListini.getContentPane().add(applyBtn);
 		
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(e -> {
