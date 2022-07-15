@@ -128,7 +128,7 @@ public class PricePage {
 		
 		JButton allIncBtn = new JButton("Applica a All-inclusive");
 		allIncBtn.addActionListener(e -> {
-			this.logic.additionCost(0, 0, 0, 0);
+			this.logic.additionCost(, 900, 0, 0);
 				
 			//Query call here
 			productNameField.setText("");
@@ -142,6 +142,7 @@ public class PricePage {
 		
 		JButton bEBBtn = new JButton("Applica a B&B");
 		bEBBtn.addActionListener(e -> {
+			this.logic.additionCost(0, 400, 0, 1);
 			
 			//Query call here
 			productNameField.setText("");
@@ -155,7 +156,7 @@ public class PricePage {
 		
 		JButton comPenBtn = new JButton("Applica a Pensione Completa");
 		comPenBtn.addActionListener(e -> {
-			
+			this.logic.additionCost(0, 500, 0, 2);
 			//Query call here
 			productNameField.setText("");
 			priceNameField.setText("");
