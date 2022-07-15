@@ -125,8 +125,13 @@ public class AllClientCards {
 
 		JButton viewActualBtn = new JButton("Vedi attuali");
 		viewActualBtn.addActionListener(e -> {
-
+			ResultSet myRs = null;
+			myRs = this.logic.totalAmount();
+			while(myRs.next()) {
+				this.textArea.append(myRs.getString(1) + "\n");
+			}
 			// Query here
+			
 		});
 		viewActualBtn.setForeground(Color.ORANGE);
 		viewActualBtn.setBackground(Color.DARK_GRAY);
