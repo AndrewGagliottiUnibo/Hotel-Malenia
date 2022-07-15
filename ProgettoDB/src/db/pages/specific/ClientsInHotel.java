@@ -134,6 +134,7 @@ public class ClientsInHotel {
 				myRs = this.logic.dataClient(Integer.parseInt(choice));  //visualizzare scheda cliente in base al n camera
 				while (myRs.next()) {
 					String s = myRs.getString(1);
+					tableM
 				}
 				myRs.close();
 			} catch (Exception exc) {
