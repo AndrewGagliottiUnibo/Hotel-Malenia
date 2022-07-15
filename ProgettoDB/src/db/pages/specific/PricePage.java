@@ -128,11 +128,12 @@ public class PricePage {
 		
 		JButton allIncBtn = new JButton("Applica a All-inclusive");
 		allIncBtn.addActionListener(e -> {
+			
 			this.logic.additionCost(, 900, 0, 0);
 				
 			//Query call here
 			productNameField.setText("");
-			priceNameField.setText("");
+			priceNameField.setText("900");
 		});
 		allIncBtn.setForeground(Color.ORANGE);
 		allIncBtn.setBackground(Color.DARK_GRAY);
@@ -146,7 +147,7 @@ public class PricePage {
 			
 			//Query call here
 			productNameField.setText("");
-			priceNameField.setText("");
+			priceNameField.setText("400");
 		});
 		bEBBtn.setForeground(Color.ORANGE);
 		bEBBtn.setBackground(Color.DARK_GRAY);
@@ -159,7 +160,7 @@ public class PricePage {
 			this.logic.additionCost(0, 500, 0, 2);
 			//Query call here
 			productNameField.setText("");
-			priceNameField.setText("");
+			priceNameField.setText("500");
 		});
 		comPenBtn.setForeground(Color.ORANGE);
 		comPenBtn.setBackground(Color.DARK_GRAY);
