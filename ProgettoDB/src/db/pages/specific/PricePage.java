@@ -12,16 +12,15 @@ import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import db.logic.Logic;
+import javax.swing.JTextArea;
 
 public class PricePage {
 
 	private JFrame frmListini;
 	private JTextField productNameField;
 	private JTextField priceNameField;
-	private JTable table;
+	private JTextArea textArea;
 	private Logic logic;
 
 	/**
@@ -54,23 +53,11 @@ public class PricePage {
 		scrollPane.setBounds(10, 50, 442, 428);
 		frmListini.getContentPane().add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-			},
-			new String[] {
-				"Prodotto", "Valore"
-			}
-		));
-		table.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		scrollPane.setViewportView(table);
+		this.textArea = new JTextArea();
+		textArea.setForeground(Color.PINK);
+		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
+		textArea.setBackground(Color.BLACK);
+		scrollPane.setViewportView(textArea);
 		
 		JButton showPrices = new JButton("Vedi listini");
 		showPrices.addActionListener(e -> {
@@ -84,7 +71,7 @@ public class PricePage {
 				myStmt = myConn.createStatement();
 				myRs = myStmt.executeQuery("SELECT * FROM LISTINI");
 				while(myRs.next()) {
-					
+					this.textArea.append(myRs.getString(1) + "\n");
 				}
 			}
 			catch (Exception exc) {
