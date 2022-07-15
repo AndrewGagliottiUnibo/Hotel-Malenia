@@ -5,6 +5,12 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javax.swing.SwingConstants;
 import db.logic.Logic;
 import javax.swing.JPanel;
@@ -15,6 +21,7 @@ import javax.swing.JScrollPane;
 public class RestaurantPages {
 
 	private JFrame frame;
+	private JTextArea textArea;
 	private Logic logic;
 
 	/**
@@ -55,10 +62,26 @@ public class RestaurantPages {
 		JButton lunch = new JButton("Pranzo");
 		lunch.addActionListener(e -> {
 			this.logic.showRestaurantTables("Pranzo");
-			/*
-			 * Aggiornamento textArea
-			 * -- TODO
-			 */
+			this.textArea.setText("");
+			
+			Connection conn;
+			Statement myStm;
+			ResultSet result = null;
+			
+			try {
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				myStm = conn.createStatement();
+				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
+											+ "FROM SCHEDA "
+											+ "WHERE datiGestionali_tariffa = AllInclusive "
+											+ "AND datiGestionali_tariffa = PensioneCompleta");
+				while(result.next()) {
+					this.textArea.append(result.getString(1) + "\n");
+				}
+				
+			} catch (SQLException exc) {
+				exc.printStackTrace();
+			}
 		});
 		
 		lunch.setForeground(Color.ORANGE);
@@ -73,10 +96,28 @@ public class RestaurantPages {
 		JButton breakfast = new JButton("Colazione");
 		breakfast.addActionListener(e -> {
 			this.logic.showRestaurantTables("Colazione");
-			/*
-			 * Aggiornamento textArea
-			 * -- TODO
-			 */
+			this.textArea.setText("");
+			
+			try {
+			
+				Connection conn;
+				Statement myStm;
+				ResultSet result = null;
+				
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				myStm = conn.createStatement();
+				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
+											+ "FROM SCHEDA "
+											+ "WHERE datiGestionali_tariffa = AllInclusive "
+											+ "AND datiGestionali_tariffa = PensioneCompleta"
+											+ "AND datiGestionali_tariffa = BB");
+				while(result.next()) {
+					this.textArea.append(result.getString(1) + "\n");
+				}
+				
+			} catch (SQLException exc) {
+				exc.printStackTrace();
+			}
 		});
 		
 		breakfast.setBackground(Color.BLACK);
@@ -91,10 +132,27 @@ public class RestaurantPages {
 		JButton dinner = new JButton("Cena");
 		dinner.addActionListener(e -> {
 			this.logic.showRestaurantTables("Cena");
-			/*
-			 * Aggiornamento textArea
-			 * -- TODO
-			 */
+			this.textArea.setText("");
+			
+			try {
+			
+				Connection conn;
+				Statement myStm;
+				ResultSet result = null;
+				
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				myStm = conn.createStatement();
+				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
+											+ "FROM SCHEDA "
+											+ "WHERE datiGestionali_tariffa = AllInclusive "
+											+ "AND datiGestionali_tariffa = PensioneCompleta");
+				while(result.next()) {
+					this.textArea.append(result.getString(1) + "\n");
+				}
+				
+			} catch (SQLException exc) {
+				exc.printStackTrace();
+			}
 		});
 		
 		dinner.setForeground(Color.ORANGE);
@@ -125,7 +183,7 @@ public class RestaurantPages {
 		/*
 		 * TextArea to be updated when you require a particular set of clients to be shown.
 		 */
-		JTextArea textArea = new JTextArea();
+		this.textArea = new JTextArea();
 		textArea.setForeground(Color.PINK);
 		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
 		textArea.setEditable(false);
