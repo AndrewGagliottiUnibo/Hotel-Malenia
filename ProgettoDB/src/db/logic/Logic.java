@@ -98,7 +98,7 @@ public interface Logic {
 	 * @param resoconto
 	 * @return operation done successfully or not.
 	 */
-	boolean deleteReservation(int tipoPrenotazione, int resoconto);
+	boolean deleteReservation(int tipoPrenotazione);
 
 	/**
 	 * query 5.

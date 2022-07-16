@@ -300,15 +300,21 @@ public class LogicsImpl implements Logic {
 	}
 
 	@Override
-	public boolean deleteReservation(int tipoPrenotazione, int resoconto) {
+	public boolean deleteReservation(int tipoPrenotazione) {
 		Connection conn;
+		Statement myStmt = null;
+		ResultSet myRs = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myStmt = conn.createStatement();
+			myRs = myStmt.executeQuery("SELECT tariffa FROM SERVIZIO, ACCESSO "
+										+ "WHERE ACCESSO.numeroPrenotazione = " + tipoPrenotazione);
+			var price = myRs.getString(1);
 			PreparedStatement pstmt0 = conn
 					.prepareStatement("DELETE FROM PRENOTAZIONE, REGISTRAZIONE WHERE PRENOTAZIONE.tipoPrenotazione ="
 							+ tipoPrenotazione + ""
 							+ "AND REGISTRAZIONE.codPrenotazione = ? AND PRENOTAZIONE.tipoPrenotazione = REGISTRAZIONE.codPrenotazione"
-							+ "UPDATE SCHEDA SET resoconto =" + resoconto + ""
+							+ "UPDATE SCHEDA SET resoconto = resoconto - " + price
 							+ "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
 			pstmt0.execute();
 		} catch (SQLException e) {
