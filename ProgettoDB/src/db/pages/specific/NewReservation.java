@@ -9,14 +9,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.Color;
 import javax.swing.SwingConstants;
-
 import db.logic.Logic;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class NewReservation {
-
+	
 	private JFrame frmNuovaPrenotazione;
 	private JTextField codeField;
 	private JTextField dateField;
@@ -27,14 +25,19 @@ public class NewReservation {
 	Connection myConn = null;
 	Statement myStmt = null;
 	ResultSet myRs = null;
-
+	
+	/*
+	 * Variables used later in the listeners.
+	 */
+	private int resocontoRes = 0;
+	private int roomRes = 0;
+	
 	/**
 	 * Constructor.
 	 */
 	public NewReservation(final Logic logic) {
 		this.logic = logic;
 		this.initialize();
-		initialize();
 	}
 
 	/**
@@ -76,8 +79,7 @@ public class NewReservation {
 		Statement myStmt = null;
 		ResultSet myRs0 = null;
 		ResultSet myRs1 = null;
-		int roomRes = 0;
-		int resocontoRes = 0;
+		
 		try {
 			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = myConn.createStatement();
