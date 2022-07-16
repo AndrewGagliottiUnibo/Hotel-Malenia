@@ -97,14 +97,12 @@ public class NewReservation {
 			exc.printStackTrace();
 		}
 
-		JButton breakfastPlus = new JButton("Colazione +");
+		JButton breakfastPlus = new JButton("Colazione +");// RISTORAZIONE TIPOSERVIZIO 1
 		breakfastPlus.addActionListener(e -> {
-
-			var client = this.codeField.getText();
-
 			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
 					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
 					resocontoRes);
+			this.logic.additionCost(roomRes, 40, resocontoRes, 1); 
 		});
 		breakfastPlus.setForeground(Color.ORANGE);
 		breakfastPlus.setBackground(Color.DARK_GRAY);
@@ -114,8 +112,10 @@ public class NewReservation {
 
 		JButton lunchPlus = new JButton("Pranzo +");
 		lunchPlus.addActionListener(e -> {
-			var client = this.codeField.getText();
-			this.logic.additionCost(roomRes, 0, resocontoRes, 0);
+			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
+					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+					resocontoRes);
+			this.logic.additionCost(roomRes, 150, resocontoRes, 1); 
 			// Query adding taking choice as input
 		});
 		lunchPlus.setForeground(Color.ORANGE);
@@ -126,8 +126,10 @@ public class NewReservation {
 
 		JButton dinnerPlus = new JButton("Cena +");
 		dinnerPlus.addActionListener(e -> {
-			var client = this.codeField.getText();
-
+			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
+					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+					resocontoRes);
+			this.logic.additionCost(roomRes, 200, resocontoRes, 1);
 			// Query adding taking choice as input
 		});
 		dinnerPlus.setForeground(Color.ORANGE);
@@ -136,10 +138,13 @@ public class NewReservation {
 		dinnerPlus.setBounds(10, 249, 209, 23);
 		frmNuovaPrenotazione.getContentPane().add(dinnerPlus);
 
-		JButton parkingPlus = new JButton("Parcheggio +");
+		JButton parkingPlus = new JButton("Parcheggio +"); //PARCHEGGIO TIPOSERVIZIO 5
 		parkingPlus.addActionListener(e -> {
-			var client = this.codeField.getText();
 			var days = this.parkingDaysField.getText();
+			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
+					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+					resocontoRes);
+			this.logic.additionCost(roomRes, 10*(Integer.parseInt(days)), resocontoRes, 5);
 			// Query adding taking choice, days as input
 		});
 		parkingPlus.setForeground(Color.ORANGE);
@@ -148,11 +153,12 @@ public class NewReservation {
 		parkingPlus.setBounds(10, 368, 209, 23);
 		frmNuovaPrenotazione.getContentPane().add(parkingPlus);
 
-		JButton massagePlus = new JButton("Massaggio +");
+		JButton massagePlus = new JButton("Massaggio +");//SERVIZI PERSONALI TIPOSERVIZIO 3
 		massagePlus.addActionListener(e -> {
-			var client = this.codeField.getText();
-			var date = this.dateField.getText();
-			var time = this.timeField.getText();
+			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
+					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+					resocontoRes);
+			this.logic.additionCost(roomRes, 25, resocontoRes, 3);
 			// Query adding taking choice, date, time as input
 		});
 		massagePlus.setForeground(Color.ORANGE);
@@ -163,10 +169,10 @@ public class NewReservation {
 
 		JButton dirtPlus = new JButton("Fango +");
 		dirtPlus.addActionListener(e -> {
-			var client = this.codeField.getText();
-			var date = this.dateField.getText();
-			var time = this.timeField.getText();
-			// Query adding taking choice, date, time as input
+			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
+					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+					resocontoRes);
+			this.logic.additionCost(roomRes, 50, resocontoRes, 3);
 		});
 		dirtPlus.setForeground(Color.ORANGE);
 		dirtPlus.setBackground(Color.DARK_GRAY);
@@ -176,10 +182,10 @@ public class NewReservation {
 
 		JButton bathPlus = new JButton("Bagno +");
 		bathPlus.addActionListener(e -> {
-			var client = this.codeField.getText();
-			var date = this.dateField.getText();
-			var time = this.timeField.getText();
-			// Query adding taking choice, date, time as input
+			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
+					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+					resocontoRes);
+			this.logic.additionCost(roomRes, 20, resocontoRes, 3);
 		});
 		bathPlus.setForeground(Color.ORANGE);
 		bathPlus.setBackground(Color.DARK_GRAY);
@@ -189,10 +195,10 @@ public class NewReservation {
 
 		JButton bubblePlus = new JButton("Idromassaggio +");
 		bubblePlus.addActionListener(e -> {
-			var client = this.codeField.getText();
-			var date = this.dateField.getText();
-			var time = this.timeField.getText();
-			// Query adding taking choice, date, time as input
+			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
+					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+					resocontoRes);
+			this.logic.additionCost(roomRes, 30, resocontoRes, 3);
 		});
 		bubblePlus.setForeground(Color.ORANGE);
 		bubblePlus.setBackground(Color.DARK_GRAY);

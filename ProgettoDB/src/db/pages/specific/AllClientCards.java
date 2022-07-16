@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.Color;
 import javax.swing.SwingConstants;
@@ -127,8 +128,16 @@ public class AllClientCards {
 		viewActualBtn.addActionListener(e -> {
 			ResultSet myRs = null;
 			myRs = this.logic.totalAmount();
-			while(myRs.next()) {
-				this.textArea.append(myRs.getString(1) + "\n");
+			try {
+				while(myRs.next()) {
+					int row = myRs.getRow();
+					for (int i = 0; i < row; i++) {
+					this.codeField.replaceSelection("SCHEDA: " + myRs.getString(i));
+					}
+				}
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 			// Query here
 			
