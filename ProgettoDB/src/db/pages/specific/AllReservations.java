@@ -12,16 +12,15 @@ import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import db.logic.Logic;
+import javax.swing.JTextArea;
 
 public class AllReservations {
 
 	private JFrame frmPrenotazioni;
 	private JTextField specificViewField;
 	private JTextField deleteField;
-	private JTable table;
+	private JTextArea textArea;
 	private Logic logic;
 
 	/**
@@ -56,51 +55,94 @@ public class AllReservations {
 		scrollPane.setBounds(10, 26, 680, 452);
 		frmPrenotazioni.getContentPane().add(scrollPane);
 
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-				new Object[][] { },
-				new String[] { "Tipo prenotazione", "Data", "Ora", "Scheda", "Camera" }) {
-					/**
-					 * 
-					 */
-					private static final long serialVersionUID = 20220716L;
-			boolean[] columnEditables = new boolean[] { false, false, false, false, false };
+		JLabel lblNewLabel_1 = new JLabel(
+				"Tipo prenotazione                         Data                           Ora                              Scheda                                      Camera");
+		lblNewLabel_1.setBackground(Color.DARK_GRAY);
+		lblNewLabel_1.setForeground(Color.ORANGE);
+		scrollPane.setColumnHeaderView(lblNewLabel_1);
 
-			public boolean isCellEditable(int row, int column) {
-				return columnEditables[column];
-			}
-		});
-		table.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		scrollPane.setViewportView(table);
+		this.textArea = new JTextArea();
+		textArea.setEditable(false);
+		textArea.setForeground(Color.PINK);
+		textArea.setFont(new Font("Verdana", Font.BOLD, 12));
+		textArea.setBackground(Color.BLACK);
+		scrollPane.setViewportView(textArea);
 
 		JLabel viewSpecificLabel = new JLabel("Vedi prenotazioni per scheda");
 		viewSpecificLabel.setForeground(Color.ORANGE);
 		viewSpecificLabel.setFont(new Font("Verdana", Font.BOLD, 12));
 		viewSpecificLabel.setBackground(Color.DARK_GRAY);
-		viewSpecificLabel.setBounds(700, 62, 219, 14);
+		viewSpecificLabel.setBounds(700, 127, 219, 14);
 		frmPrenotazioni.getContentPane().add(viewSpecificLabel);
+
+		JButton showAll = new JButton("Vedi prenotazioni");
+		showAll.addActionListener(e -> {
+
+			Connection myConn = null;
+			Statement myStmt = null;
+			ResultSet myRs = null;
+			try {
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+						"dariostudente");
+				myStmt = myConn.createStatement();
+				myRs = myStmt.executeQuery("SELECT COUNT(*) IN ("
+						+ "SELECT tipoPrenotazione, data, ora, codScheda, numeroCamera FROM PRENOTAZIONE, SCHEDA, REGISTRAZIONE"
+						+ "WHERE REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
+						+ "AND REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda");
+
+				int i = 0;
+				while (myRs.next()) {
+					this.textArea.append(myRs.getString(1));
+
+					if (i == 5) {
+						i = 0;
+						this.textArea.append(" \n");
+					}
+				}
+
+			} catch (Exception exc) {
+				exc.printStackTrace();
+			}
+		});
+		showAll.setForeground(Color.ORANGE);
+		showAll.setFont(new Font("Verdana", Font.BOLD, 12));
+		showAll.setBackground(Color.DARK_GRAY);
+		showAll.setBounds(700, 26, 219, 23);
+		frmPrenotazioni.getContentPane().add(showAll);
 
 		specificViewField = new JTextField();
 		specificViewField.setFont(new Font("Verdana", Font.BOLD, 12));
 		specificViewField.setForeground(Color.PINK);
 		specificViewField.setBackground(Color.BLACK);
-		specificViewField.setBounds(700, 87, 219, 20);
+		specificViewField.setBounds(700, 152, 219, 20);
 		frmPrenotazioni.getContentPane().add(specificViewField);
 		specificViewField.setColumns(10);
 
 		JButton commitSpecificBtn = new JButton("Vedi");
 		commitSpecificBtn.addActionListener(e -> {
 			var choice = this.specificViewField.getText();
+			Connection myConn = null;
+			Statement myStmt = null;
 			ResultSet myRs = null;
 			try {
-				myRs = this.logic.dataClient(Integer.parseInt(choice));
-				while (myRs.next()) {
-					int row = myRs.getRow();
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+						"dariostudente");
+				myStmt = myConn.createStatement();
+				myRs = myStmt.executeQuery("SELECT COUNT(*) IN ("
+						+ "SELECT tipoPrenotazione, data, ora, codScheda, numeroCamera FROM PRENOTAZIONE, SCHEDA, REGISTRAZIONE"
+						+ "WHERE REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
+						+ "AND REGISTRAZIONE.schedaRegistrata = " + choice+ ")");
 
-					for (int i = 0; i < row; i++) {
-						this.specificViewField.replaceSelection("SCHEDA: " + myRs.getString(i));
+				int i = 0;
+				while (myRs.next()) {
+					this.textArea.append(myRs.getString(1));
+
+					if (i == 5) {
+						i = 0;
+						this.textArea.append(" \n");
 					}
 				}
+
 			} catch (Exception exc) {
 				exc.printStackTrace();
 			}
@@ -111,7 +153,7 @@ public class AllReservations {
 		commitSpecificBtn.setForeground(Color.ORANGE);
 		commitSpecificBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 		commitSpecificBtn.setBackground(Color.DARK_GRAY);
-		commitSpecificBtn.setBounds(700, 117, 219, 23);
+		commitSpecificBtn.setBounds(700, 182, 219, 23);
 		frmPrenotazioni.getContentPane().add(commitSpecificBtn);
 
 		JButton logout = new JButton("Logout");
@@ -129,7 +171,7 @@ public class AllReservations {
 		codeCardLabel.setForeground(Color.ORANGE);
 		codeCardLabel.setFont(new Font("Verdana", Font.BOLD, 12));
 		codeCardLabel.setBackground(Color.DARK_GRAY);
-		codeCardLabel.setBounds(700, 240, 219, 14);
+		codeCardLabel.setBounds(700, 298, 219, 14);
 		frmPrenotazioni.getContentPane().add(codeCardLabel);
 
 		deleteField = new JTextField();
@@ -137,7 +179,7 @@ public class AllReservations {
 		deleteField.setForeground(Color.PINK);
 		deleteField.setBackground(Color.BLACK);
 		deleteField.setColumns(10);
-		deleteField.setBounds(700, 265, 219, 20);
+		deleteField.setBounds(700, 323, 219, 20);
 		frmPrenotazioni.getContentPane().add(deleteField);
 
 		JButton deleteReservationBtn = new JButton("Cancella");
@@ -149,7 +191,7 @@ public class AllReservations {
 		deleteReservationBtn.setForeground(Color.ORANGE);
 		deleteReservationBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 		deleteReservationBtn.setBackground(Color.DARK_GRAY);
-		deleteReservationBtn.setBounds(700, 295, 219, 23);
+		deleteReservationBtn.setBounds(700, 353, 219, 23);
 		frmPrenotazioni.getContentPane().add(deleteReservationBtn);
 	}
 
