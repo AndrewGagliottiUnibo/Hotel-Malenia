@@ -52,7 +52,6 @@ public class LogicsImpl implements Logic {
 	private String code;
 	private String password;
 	private LoginPages mainPage;
-	Connection conn;
 
 	/**
 	 * Constructor.
@@ -157,6 +156,7 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public int actualPrice(String nome) {
+		Connection conn = null;
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		int recordNumber = 0;
@@ -245,7 +245,7 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public ResultSet visualClients(int nCamera) {
-		Connection myConn = null;
+		Connection conn = null;
 		Statement myStmt = null;
 		ResultSet result = null;
 		try {
@@ -265,7 +265,7 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public ResultSet dataClient(int nCamera) {
-		Connection myConn = null;
+		Connection conn = null;
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
@@ -323,7 +323,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA WHERE numeroCamera = " + nCamera
 					+ "SELECT * FROM PRENOTAZIONE WHERE tipoPrenotazione IN "
@@ -341,7 +341,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
 			myRs.close();
@@ -359,7 +359,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE SCHEDA.codScheda = ?"
 					+ "AND SCHEDA.codScheda = IDENTIFICAZIONE.numeroScheda AND IDENTIFICAZIONE.codiceCliente ="
