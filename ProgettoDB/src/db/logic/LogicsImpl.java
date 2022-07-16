@@ -128,14 +128,9 @@ public class LogicsImpl implements Logic {
 
 		try {
 			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			System.out.println("Database connected");
-			// 2. Create a statement
+			
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
-			while (myRs.next()) {
-
-				String s = myRs.getString(1);
-			}
 			myRs.close();
 		} catch (Exception e) {
 			e.printStackTrace();

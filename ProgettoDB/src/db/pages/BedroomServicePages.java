@@ -71,7 +71,7 @@ public class BedroomServicePages {
 				 
 				 while(result.next()) {
 					 for(int i = 0; i < row; i++) {
-						 this.textArea.append("Camera: " + result.getString(i));
+						 this.textArea.append("Camera: " + result.getString(i) + "\n");
 					 }
 				 }
 			 } catch(Exception ecc) {
