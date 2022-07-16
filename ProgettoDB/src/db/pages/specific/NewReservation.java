@@ -84,13 +84,13 @@ public class NewReservation {
 			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = myConn.createStatement();
 			myRs0 = myStmt.executeQuery(
-					"SELECT numeroCamera FROM SCHEDA WHERE idScheda =" + Integer.parseInt(this.codeField.getText()));
+					"SELECT numeroCamera FROM SCHEDA WHERE idScheda =" + this.codeField.getText());
 			roomRes = myRs0.getInt(1);
 
 			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = myConn.createStatement();
 			myRs1 = myStmt.executeQuery(
-					"SELECT resoconto FROM SCHEDA WHERE idScheda =" + Integer.parseInt(this.codeField.getText()));
+					"SELECT resoconto FROM SCHEDA WHERE idScheda =" + this.codeField.getText());
 			resocontoRes = myRs1.getInt(1);
 
 		} catch (Exception exc) {
@@ -116,7 +116,6 @@ public class NewReservation {
 					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 150, resocontoRes, 1); 
-			// Query adding taking choice as input
 		});
 		lunchPlus.setForeground(Color.ORANGE);
 		lunchPlus.setBackground(Color.DARK_GRAY);
@@ -130,7 +129,6 @@ public class NewReservation {
 					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 200, resocontoRes, 1);
-			// Query adding taking choice as input
 		});
 		dinnerPlus.setForeground(Color.ORANGE);
 		dinnerPlus.setBackground(Color.DARK_GRAY);
@@ -145,7 +143,6 @@ public class NewReservation {
 					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 10*(Integer.parseInt(days)), resocontoRes, 5);
-			// Query adding taking choice, days as input
 		});
 		parkingPlus.setForeground(Color.ORANGE);
 		parkingPlus.setBackground(Color.DARK_GRAY);
@@ -159,7 +156,6 @@ public class NewReservation {
 					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 25, resocontoRes, 3);
-			// Query adding taking choice, date, time as input
 		});
 		massagePlus.setForeground(Color.ORANGE);
 		massagePlus.setBackground(Color.DARK_GRAY);
