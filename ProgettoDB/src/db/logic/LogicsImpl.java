@@ -127,10 +127,8 @@ public class LogicsImpl implements Logic {
 
 		try {
 			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
-			myRs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -146,8 +144,8 @@ public class LogicsImpl implements Logic {
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStm = conn.createStatement();
-			result = myStm.executeQuery("SELECT SCHEDA.numeroCamera FROM SCHEDA WHERE datiGestionali_tariffa = " + service);
-			
+			result = myStm
+					.executeQuery("SELECT SCHEDA.numeroCamera FROM SCHEDA WHERE datiGestionali_tariffa = " + service);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -196,9 +194,9 @@ public class LogicsImpl implements Logic {
 			PreparedStatement pstmt0 = conn.prepareStatement(
 					"NSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, resoconto, datiTariffa, durataSoggiorno, orarioCheckin,"
 							+ " orarioCheckout)" + "VALUES(codScheda=" + codScheda + ",numeroCamera" + numeroCamera
-							+ " ,intolleranze" + intolleranze + "," + "resoconto" + resoconto + ",durataSoggiorno" + durataSoggiorno + "" 
-							+ ",orarioCheckin" + orarioCheckin
-							+ ",orarioCheckout" + orarioCheckout + ")"
+							+ " ,intolleranze" + intolleranze + "," + "resoconto" + resoconto + ",durataSoggiorno"
+							+ durataSoggiorno + "" + ",orarioCheckin" + orarioCheckin + ",orarioCheckout"
+							+ orarioCheckout + ")"
 							+ "INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita,numeroTel, tipologiaSoggiorno)"
 							+ "VALUES (nome" + nome + ", cognome" + cognome + ", codiceFiscale" + codiceFiscale
 							+ ", dataNascita" + dataNascita + "," + "numeroTel" + numeroTel + ", tipologiaSoggiorno"
@@ -273,7 +271,7 @@ public class LogicsImpl implements Logic {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
 			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera = " + nCamera + "");
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
