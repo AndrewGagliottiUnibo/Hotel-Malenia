@@ -217,9 +217,10 @@ public class LogicsImpl implements Logic {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn.prepareStatement(
+			PreparedStatement pstmt0 = conn.prepareStatement(
 					"UPDATE SCHEDA SET numeroCamera = " + nCamera + ", orarioCheckout = ?, resoconto = "
 							+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = " + nCamera + ")");
+			pstmt0.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -232,10 +233,10 @@ public class LogicsImpl implements Logic {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
-			PreparedStatement pstmt = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio ="
+			PreparedStatement pstmt0 = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio ="
 					+ tipoServizio + "" + "UPDATE SCHEDA SET resoconto = resoconto" + resoconto + " + SERVIZIO.tariffa"
 					+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera =" + nCamera + ")");
-
+			pstmt0.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -292,6 +293,7 @@ public class LogicsImpl implements Logic {
 					+ "VALUES (PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda)" + "UPDATE SCHEDA SET resoconto ="
 					+ resoconto + "" + "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE"
 					+ "WHERE schedaRegistrata = SCHEDA.codScheda");
+			pstmt0.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -310,6 +312,7 @@ public class LogicsImpl implements Logic {
 							+ "AND REGISTRAZIONE.codPrenotazione = ? AND PRENOTAZIONE.tipoPrenotazione = REGISTRAZIONE.codPrenotazione"
 							+ "UPDATE SCHEDA SET resoconto =" + resoconto + ""
 							+ "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
+			pstmt0.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
