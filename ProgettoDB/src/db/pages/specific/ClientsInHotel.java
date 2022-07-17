@@ -38,6 +38,7 @@ public class ClientsInHotel {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings("serial")
 	private void initialize() {
 		frmClientiInStruttura = new JFrame();
 		frmClientiInStruttura.getContentPane().setBackground(Color.DARK_GRAY);
@@ -84,8 +85,6 @@ public class ClientsInHotel {
 
 		JButton showAllBtn = new JButton("Vedi");
 		showAllBtn.addActionListener(e -> {
-			Connection myConn = null;
-			Statement myStmt = null;
 			ResultSet myRs = null;
 			myRs = this.logic.totalAmount();
 			try {
@@ -133,8 +132,10 @@ public class ClientsInHotel {
 			try {
 				myRs = this.logic.dataClient(Integer.parseInt(choice));  //visualizzare scheda cliente in base al n camera
 				while (myRs.next()) {
-					String s = myRs.getString(1);
-					table
+					int row = myRs.getRow();
+					for (int i = 0; i < row; i++) {
+					this.textField.replaceSelection("SCHEDA: " + myRs.getString(i));
+					}
 				}
 				myRs.close();
 			} catch (Exception exc) {

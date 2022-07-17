@@ -173,7 +173,7 @@ public class LogicsImpl implements Logic {
 	public boolean modifyPrice(int price, String nome) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente_");
 			PreparedStatement pstmt = conn
 					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
 			pstmt.execute();
@@ -190,7 +190,7 @@ public class LogicsImpl implements Logic {
 			int durataSoggiorno, String orarioCheckin, String orarioCheckout) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente_");
 			PreparedStatement pstmt0 = conn.prepareStatement(
 					"NSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, resoconto, datiTariffa, durataSoggiorno, orarioCheckin,"
 							+ " orarioCheckout)" + "VALUES(codScheda=" + codScheda + ",numeroCamera" + numeroCamera
@@ -284,7 +284,7 @@ public class LogicsImpl implements Logic {
 	public boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente_");
 			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
 					+ nCamera + "INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora)" + "VALUES (" + tipoPrenotazione
 					+ ", " + data + ", " + ora + ")" + "INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata)"
