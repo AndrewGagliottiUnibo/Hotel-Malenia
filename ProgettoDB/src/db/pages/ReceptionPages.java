@@ -98,7 +98,7 @@ public class ReceptionPages {
 		JButton btnClientiInStruttura = new JButton("Clienti in struttura");
 		btnClientiInStruttura.addActionListener(e -> {
 			this.frmHotelMalenia.setVisible(false);
-			this.logic.goToSpecificPage("ClientsInHotel", this.frmHotelMalenia);
+			this.logic.goToSpecificPage("AllCards", this.frmHotelMalenia);
 		});
 		
 		btnClientiInStruttura.setForeground(Color.ORANGE);

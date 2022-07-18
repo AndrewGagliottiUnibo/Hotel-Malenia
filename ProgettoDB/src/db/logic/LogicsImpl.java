@@ -16,7 +16,6 @@ import db.pages.ReceptionPages;
 import db.pages.RestaurantPages;
 import db.pages.specific.AllClientCards;
 import db.pages.specific.AllReservations;
-import db.pages.specific.ClientsInHotel;
 import db.pages.specific.PricePage;
 import db.pages.specific.RegistrationCard;
 
@@ -45,7 +44,6 @@ public class LogicsImpl implements Logic {
 	 */
 	private static final String ALL_RES = "AllReservations";
 	private static final String REG = "Registration";
-	private static final String CLI = "ClientsInHotel";
 	private static final String ALL_CARD = "AllCards";
 	private static final String PRI = "Prices";
 
@@ -104,9 +102,6 @@ public class LogicsImpl implements Logic {
 		} else if (specificGUI.equals(REG)) {
 			RegistrationCard reg = new RegistrationCard(this);
 			reg.getFrame().setVisible(true);
-		} else if (specificGUI.equals(CLI)) {
-			ClientsInHotel cli = new ClientsInHotel(this);
-			cli.getFrame().setVisible(true);
 		} else if (specificGUI.equals(ALL_CARD)) {
 			AllClientCards aCC = new AllClientCards(this);
 			aCC.getFrame().setVisible(true);
