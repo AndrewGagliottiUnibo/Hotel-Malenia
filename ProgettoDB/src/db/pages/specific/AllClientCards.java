@@ -13,16 +13,16 @@ import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import db.logic.Logic;
+import javax.swing.JTextArea;
 
 public class AllClientCards {
 
 	private JFrame frmSchedeClienti;
 	private JTextField codeField;
-	private JTable table;
 	private ClientCard chosenCard;
+	private JTextArea textAreaCard;
+	private JTextArea textAreaRoom;
 	private Logic logic;
 
 	/**
@@ -53,111 +53,196 @@ public class AllClientCards {
 		frmSchedeClienti.getContentPane().add(cardsView);
 
 		JScrollPane cardsViewScrollPane = new JScrollPane();
-		cardsViewScrollPane.setBounds(10, 34, 754, 444);
+		cardsViewScrollPane.setBounds(10, 34, 307, 444);
 		frmSchedeClienti.getContentPane().add(cardsViewScrollPane);
-
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-				new Object[][] { { null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null }, { null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null }, { null, null, null, null, null, null, null }, },
-				new String[] { "Codice", "Stanza", "Cognome", "Soggiorno", "Inizio", "Fine", "Resoconto" }));
-		table.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		cardsViewScrollPane.setViewportView(table);
+		
+		this.textAreaCard = new JTextArea();
+		textAreaCard.setEnabled(false);
+		textAreaCard.setBackground(Color.BLACK);
+		textAreaCard.setForeground(Color.PINK);
+		textAreaCard.setFont(new Font("Verdana", Font.BOLD, 12));
+		cardsViewScrollPane.setViewportView(textAreaCard);
+		
+		JLabel titleLabelCard = new JLabel("Codice scheda");
+		titleLabelCard.setHorizontalAlignment(SwingConstants.CENTER);
+		titleLabelCard.setForeground(Color.ORANGE);
+		titleLabelCard.setBackground(Color.BLACK);
+		titleLabelCard.setFont(new Font("Verdana", Font.BOLD, 12));
+		cardsViewScrollPane.setColumnHeaderView(titleLabelCard);
 
 		JLabel viewTitle = new JLabel("Inserisci codice");
 		viewTitle.setForeground(Color.ORANGE);
 		viewTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		viewTitle.setFont(new Font("Verdana", Font.BOLD, 12));
-		viewTitle.setBounds(774, 34, 145, 23);
+		viewTitle.setBounds(643, 34, 276, 23);
 		frmSchedeClienti.getContentPane().add(viewTitle);
 
 		codeField = new JTextField();
 		codeField.setBackground(Color.BLACK);
 		codeField.setForeground(Color.PINK);
 		codeField.setFont(new Font("Verdana", Font.BOLD, 12));
-		codeField.setBounds(774, 59, 145, 20);
+		codeField.setBounds(643, 59, 276, 20);
 		frmSchedeClienti.getContentPane().add(codeField);
 		codeField.setColumns(10);
 
 		JButton goToCard = new JButton("Vedi Scheda");
 		goToCard.addActionListener(e -> {
 			var chosenClient = this.codeField.getText();
-
-			// this.logic.dataClient(this.chosenCard);
 			this.chosenCard = new ClientCard(chosenClient, this.logic);
 			this.chosenCard.getFrame().setVisible(true);
 			this.frmSchedeClienti.dispose();
-
 		});
+		
 		goToCard.setForeground(Color.ORANGE);
 		goToCard.setBackground(Color.DARK_GRAY);
 		goToCard.setFont(new Font("Verdana", Font.BOLD, 12));
-		goToCard.setBounds(774, 90, 145, 23);
+		goToCard.setBounds(643, 90, 276, 23);
 		frmSchedeClienti.getContentPane().add(goToCard);
 
 		JButton viewAllBtn = new JButton("Vedi tutte");
 		viewAllBtn.addActionListener(e -> {
-			Connection myConn = null;
-			Statement myStmt = null;
-			ResultSet myRs = null;
+			ResultSet result;
 			try {
-				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-						"dariostudente");
-				myStmt = myConn.createStatement();
-				myRs = myStmt.executeQuery("SELECT * FROM SCHEDA");
-				while (myRs.next()) {
-					int row = myRs.getRow();
+				/*
+				 * Query for cards code.
+				 */
+				result = this.fillPage("codScheda", false);
+				while (result.next()) {
+					int row = result.getRow();
 
 					for (int i = 0; i < row; i++) {
-						this.codeField.replaceSelection("SCHEDA: " + myRs.getString(i));
+						this.textAreaCard.append(result.getString(1) + "\n");
 					}
 				}
+				
+				/*
+				 * Query for room number
+				 */
+				result = this.fillPage("numeroCamera", false);
+				while (result.next()) {
+					int rowRoom = result.getRow();
 
-			} catch (Exception exc) {
-				exc.printStackTrace();
+					for (int i = 0; i < rowRoom; i++) {
+						this.textAreaRoom.append(result.getString(1) + "\n");
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
 			}
 		});
+		
 		viewAllBtn.setForeground(Color.ORANGE);
 		viewAllBtn.setBackground(Color.DARK_GRAY);
 		viewAllBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		viewAllBtn.setBounds(774, 184, 145, 23);
+		viewAllBtn.setBounds(643, 184, 276, 23);
 		frmSchedeClienti.getContentPane().add(viewAllBtn);
 
 		JButton viewActualBtn = new JButton("Vedi attuali");
 		viewActualBtn.addActionListener(e -> {
-			ResultSet myRs = null;
-			myRs = this.logic.totalAmount();
+			ResultSet result;
 			try {
-				while(myRs.next()) {
-					int row = myRs.getRow();
+				/*
+				 * Query for cards code.
+				 */
+				result = this.fillPage("codScheda", true);
+				while (result.next()) {
+					int row = result.getRow();
+
 					for (int i = 0; i < row; i++) {
-					this.codeField.replaceSelection("SCHEDA: " + myRs.getString(i));
+						this.textAreaCard.append(result.getString(1) + "\n");
+					}
+				}
+				
+				/*
+				 * Query for room number
+				 */
+				result = this.fillPage("numeroCamera", true);
+				while (result.next()) {
+					int rowRoom = result.getRow();
+
+					for (int i = 0; i < rowRoom; i++) {
+						this.textAreaRoom.append(result.getString(1) + "\n");
 					}
 				}
 			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			// Query here
-			
 		});
 		viewActualBtn.setForeground(Color.ORANGE);
 		viewActualBtn.setBackground(Color.DARK_GRAY);
 		viewActualBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		viewActualBtn.setBounds(774, 222, 145, 23);
+		viewActualBtn.setBounds(643, 222, 276, 23);
 		frmSchedeClienti.getContentPane().add(viewActualBtn);
 
 		JButton logout = new JButton("Logout");
 		logout.setForeground(Color.ORANGE);
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setFont(new Font("Verdana", Font.BOLD, 12));
-		logout.setBounds(830, 455, 89, 23);
+		logout.setBounds(699, 455, 220, 23);
 		logout.addActionListener(e -> {
 			this.frmSchedeClienti.dispose();
 			this.logic.logout();
 		});
 		frmSchedeClienti.getContentPane().add(logout);
+		
+		JScrollPane roomViewScrollPane = new JScrollPane();
+		roomViewScrollPane.setBounds(327, 34, 306, 444);
+		frmSchedeClienti.getContentPane().add(roomViewScrollPane);
+		
+		JLabel lblNumeroCamera = new JLabel("Numero camera");
+		lblNumeroCamera.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNumeroCamera.setForeground(Color.ORANGE);
+		lblNumeroCamera.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblNumeroCamera.setBackground(Color.BLACK);
+		roomViewScrollPane.setColumnHeaderView(lblNumeroCamera);
+		
+		this.textAreaRoom = new JTextArea();
+		textAreaRoom.setEnabled(false);
+		textAreaRoom.setForeground(Color.PINK);
+		textAreaRoom.setFont(new Font("Verdana", Font.BOLD, 12));
+		textAreaRoom.setBackground(Color.BLACK);
+		roomViewScrollPane.setViewportView(textAreaRoom);
+	}
+
+	/**
+	 * Calls a query for recovering a specific data from SCHEDA table.
+	 * @param cell
+	 * @param value
+	 * @return
+	 */
+	private ResultSet fillPage(final String cell, final boolean value) {
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
+		
+		try {
+			if(value) {
+				/*
+				 * NOT NULL connection.
+				 */
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+						"dariostudente");
+				myStmt = myConn.createStatement();
+				myRs = myStmt.executeQuery("SELECT " + cell + " FROM SCHEDA "
+											+ "WHERE numeroCamera IS NOT NULL");
+			return myRs;
+		} else {
+				/*
+				 * with NULL connection.
+				 */
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+						"dariostudente");
+				myStmt = myConn.createStatement();
+				myRs = myStmt.executeQuery("SELECT " + cell + " FROM SCHEDA");
+
+			return myRs;
+		}
+		
+		} catch (Exception exc) {
+			exc.printStackTrace();
+		}
+		
+		return null;
 	}
 
 	/**

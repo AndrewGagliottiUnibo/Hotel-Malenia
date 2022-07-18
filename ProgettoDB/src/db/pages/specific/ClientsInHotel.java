@@ -6,10 +6,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
