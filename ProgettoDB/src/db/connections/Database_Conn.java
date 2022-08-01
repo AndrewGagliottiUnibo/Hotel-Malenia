@@ -12,11 +12,11 @@ public class Database_Conn {
 		 ResultSet myRs = null;
 		
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "D3s3rt10.");
 			System.out.println("Database connected");
 			// 2. Create a statement
 			myStmt = myConn.createStatement();
-			myRs = myStmt.executeQuery("select * from employees");
+			myRs = myStmt.executeQuery("select * from ADDETTO");
 			
 			 //4. Process the result set
 			while (myRs.next()) {

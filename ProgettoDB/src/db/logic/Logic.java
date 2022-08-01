@@ -158,4 +158,9 @@ public interface Logic {
 	 * @return a ResultSet with the informations about a specific client.
 	 */
 	ResultSet ReviewClient(int codCliente);
+	
+	/**
+	 * @return password value.
+	 */
+	String getOwnPassword();
 }

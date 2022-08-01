@@ -64,12 +64,12 @@ public class RestaurantPages {
 			this.logic.showRestaurantTables("Pranzo");
 			this.textArea.setText("");
 			
-			Connection conn;
-			Statement myStm;
+			Connection conn = null;
+			Statement myStm = null;
 			ResultSet result = null;
 			
 			try {
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "D3s3rt10.");
 				myStm = conn.createStatement();
 				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
 											+ "FROM SCHEDA "
@@ -98,19 +98,17 @@ public class RestaurantPages {
 			this.logic.showRestaurantTables("Colazione");
 			this.textArea.setText("");
 			
-			try {
+			Connection conn = null;
+			Statement myStm = null;
+			ResultSet result = null;
 			
-				Connection conn;
-				Statement myStm;
-				ResultSet result = null;
+			try {
 				
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "D3s3rt10.");
 				myStm = conn.createStatement();
 				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
 											+ "FROM SCHEDA "
-											+ "WHERE datiGestionali_tariffa = AllInclusive "
-											+ "AND datiGestionali_tariffa = PensioneCompleta"
-											+ "AND datiGestionali_tariffa = BB");
+											+ "WHERE SCHEDA.numeroCamera IS NOT NULL");
 				while(result.next()) {
 					this.textArea.append(result.getString(1) + "\n");
 				}
@@ -134,13 +132,13 @@ public class RestaurantPages {
 			this.logic.showRestaurantTables("Cena");
 			this.textArea.setText("");
 			
-			try {
+			Connection conn;
+			Statement myStm;
+			ResultSet result = null;
 			
-				Connection conn;
-				Statement myStm;
-				ResultSet result = null;
+			try {
 				
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", " ");
 				myStm = conn.createStatement();
 				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
 											+ "FROM SCHEDA "

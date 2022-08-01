@@ -31,15 +31,6 @@ public class LogicsImpl implements Logic {
 	private static final String CAM_CODE = "CAM1";
 
 	/**
-	 * Passwords.
-	 */
-	private static final String REC_PASSWORD = "REC1";
-	private static final String DIR_PASSWORD = "DIR1";
-	private static final String SAL_PASSWORD = "SAL1";
-	private static final String SERV_PASSWORD = "SERV1";
-	private static final String CAM_PASSWORD = "CAM1";
-
-	/**
 	 * Specific views.
 	 */
 	private static final String ALL_RES = "AllReservations";
@@ -63,23 +54,23 @@ public class LogicsImpl implements Logic {
 		this.code = code;
 		this.password = password;
 
-		if (this.code.equals(REC_CODE) && this.password.equals(REC_PASSWORD)) {
+		if (this.code.equals(REC_CODE)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			ReceptionPages rec = new ReceptionPages(this);
 			rec.getFrame().setVisible(true);
-		} else if (this.code.equals(DIR_CODE) && this.password.equals(DIR_PASSWORD)) {
+		} else if (this.code.equals(DIR_CODE)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			ManagerPages man = new ManagerPages(this);
 			man.getFrame().setVisible(true);
-		} else if (this.code.equals(SAL_CODE) && this.password.equals(SAL_PASSWORD)) {
+		} else if (this.code.equals(SAL_CODE)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			RestaurantPages res = new RestaurantPages(this);
 			res.getFrame().setVisible(true);
-		} else if (this.code.equals(SERV_CODE) && this.password.equals(SERV_PASSWORD)) {
+		} else if (this.code.equals(SERV_CODE)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			EntertaimentServicePages ent = new EntertaimentServicePages(this);
 			ent.getFrame().setVisible(true);
-		} else if (this.code.equals(CAM_CODE) && this.password.equals(CAM_PASSWORD)) {
+		} else if (this.code.equals(CAM_CODE)) {
 			JOptionPane.showMessageDialog(null, "Login Successful");
 			BedroomServicePages bed = new BedroomServicePages(this);
 			bed.getFrame().setVisible(true);
@@ -121,7 +112,7 @@ public class LogicsImpl implements Logic {
 		ResultSet myRs = null;
 
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
 		} catch (Exception e) {
@@ -137,7 +128,7 @@ public class LogicsImpl implements Logic {
 		Statement myStm;
 		ResultSet result = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStm = conn.createStatement();
 			result = myStm
 					.executeQuery("SELECT SCHEDA.numeroCamera FROM SCHEDA WHERE datiGestionali_tariffa = " + service);
@@ -154,7 +145,7 @@ public class LogicsImpl implements Logic {
 		ResultSet myRs = null;
 		int recordNumber = 0;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT valoreMonetario FROM Listini WHERE" + "nome = " + nome);
 			recordNumber = myRs.getInt(1);
@@ -168,7 +159,7 @@ public class LogicsImpl implements Logic {
 	public boolean modifyPrice(int price, String nome) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente_");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			PreparedStatement pstmt = conn
 					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
 			pstmt.execute();
@@ -185,7 +176,7 @@ public class LogicsImpl implements Logic {
 			int durataSoggiorno, String orarioCheckin, String orarioCheckout) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente_");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			PreparedStatement pstmt0 = conn.prepareStatement(
 					"NSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, resoconto, datiTariffa, durataSoggiorno, orarioCheckin,"
 							+ " orarioCheckout)" + "VALUES(codScheda=" + codScheda + ",numeroCamera" + numeroCamera
@@ -209,7 +200,7 @@ public class LogicsImpl implements Logic {
 	public boolean CheckoutClient(int nCamera) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			PreparedStatement pstmt0 = conn.prepareStatement(
 					"UPDATE SCHEDA SET numeroCamera = " + nCamera + ", orarioCheckout = ?, resoconto = "
 							+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = " + nCamera + ")");
@@ -225,7 +216,7 @@ public class LogicsImpl implements Logic {
 	public boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			PreparedStatement pstmt0 = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio ="
 					+ tipoServizio + "" + "UPDATE SCHEDA SET resoconto = resoconto" + resoconto + " + SERVIZIO.tariffa"
 					+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera =" + nCamera + ")");
@@ -243,7 +234,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet result = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = conn.createStatement();
 			result = myStmt.executeQuery("SELECT codScheda FROM SCHEDA" + "WHERE numeroCamera = "
 					+ "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE,PRENOTAZIONE"
@@ -263,7 +254,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera = " + nCamera + "");
 
@@ -279,7 +270,7 @@ public class LogicsImpl implements Logic {
 	public boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente_");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			PreparedStatement pstmt0 = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = "
 					+ nCamera + "INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora)" + "VALUES (" + tipoPrenotazione
 					+ ", " + data + ", " + ora + ")" + "INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata)"
@@ -300,7 +291,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = conn.createStatement();
 			myRs = myStmt.executeQuery("SELECT tariffa FROM SERVIZIO, ACCESSO "
 										+ "WHERE ACCESSO.numeroPrenotazione = " + tipoPrenotazione);
@@ -325,7 +316,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT codScheda FROM SCHEDA WHERE numeroCamera = " + nCamera
 					+ "SELECT * FROM PRENOTAZIONE WHERE tipoPrenotazione IN "
@@ -343,7 +334,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
 			myRs.close();
@@ -361,7 +352,7 @@ public class LogicsImpl implements Logic {
 		Statement myStmt = null;
 		ResultSet myRs = null;
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
 			myStmt = myConn.createStatement();
 			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE SCHEDA.codScheda = ?"
 					+ "AND SCHEDA.codScheda = IDENTIFICAZIONE.numeroScheda AND IDENTIFICAZIONE.codiceCliente ="
@@ -374,6 +365,10 @@ public class LogicsImpl implements Logic {
 		}
 
 		return myRs;
-
+	}
+	
+	@Override
+	public String getOwnPassword() {
+		return this.password;
 	}
 }

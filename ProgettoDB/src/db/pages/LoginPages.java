@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import db.logic.Logic;
 import db.logic.LogicsImpl;
@@ -18,6 +19,7 @@ public class LoginPages {
 	private JTextField codeField;
 	private JTextField passwordField;
 	private Logic logic;
+	private JPasswordField passwordFieldAgain;
 
 	/**
 	 * Create the application.
@@ -52,23 +54,23 @@ public class LoginPages {
 		JLabel password = new JLabel("Password");
 		password.setForeground(Color.ORANGE);
 		password.setFont(new Font("Verdana", Font.BOLD, 18));
-		password.setBounds(130, 305, 132, 42);
+		password.setBounds(130, 256, 188, 42);
 		panel.add(password);
 
 		JLabel code = new JLabel("Codice");
 		code.setForeground(Color.ORANGE);
 		code.setFont(new Font("Verdana", Font.BOLD, 18));
-		code.setBounds(130, 217, 132, 42);
+		code.setBounds(130, 168, 188, 42);
 		panel.add(code);
 		
 		codeField = new JTextField();
-		codeField.setBounds(356, 232, 303, 20);
+		codeField.setBounds(356, 183, 303, 20);
 		panel.add(codeField);
 		codeField.setColumns(10);
 		
 		passwordField = new JPasswordField();
 		passwordField.setColumns(10);
-		passwordField.setBounds(356, 320, 303, 20);
+		passwordField.setBounds(356, 271, 303, 20);
 		panel.add(passwordField);
 		
 		/*
@@ -76,16 +78,34 @@ public class LoginPages {
 		 */
 		JButton loginBtn = new JButton("Login");
 		loginBtn.addActionListener(e -> {
-			frame.setVisible(false);
-			this.logic.login(codeField.getText(), passwordField.getText());
+			
+			if((this.passwordField.getText()).equals(this.passwordFieldAgain.getText())) {
+				frame.setVisible(false);
+				this.logic.login(codeField.getText(), passwordField.getText());
+			} else {
+				JOptionPane.showMessageDialog(null, "Errore in fase di login");
+			}
+			
 			this.codeField.setText("");
 			this.passwordField.setText("");
+			this.passwordFieldAgain.setText("");
 		});
 
 		loginBtn.setForeground(Color.ORANGE);
 		loginBtn.setBackground(Color.DARK_GRAY);
 		loginBtn.setBounds(722, 422, 89, 23);
 		panel.add(loginBtn);
+		
+		passwordFieldAgain = new JPasswordField();
+		passwordFieldAgain.setColumns(10);
+		passwordFieldAgain.setBounds(356, 364, 303, 20);
+		panel.add(passwordFieldAgain);
+		
+		JLabel passwordAgainLabel = new JLabel("Ripeti password");
+		passwordAgainLabel.setForeground(Color.ORANGE);
+		passwordAgainLabel.setFont(new Font("Verdana", Font.BOLD, 18));
+		passwordAgainLabel.setBounds(130, 349, 188, 42);
+		panel.add(passwordAgainLabel);
 	}
 	
 	/**

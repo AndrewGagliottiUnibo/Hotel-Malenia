@@ -22,6 +22,7 @@ public class AllReservations {
 	private JTextField deleteField;
 	private JTextArea textArea;
 	private Logic logic;
+	private String spaceChar = "                                   ";
 
 	/**
 	 * Constructor.
@@ -55,8 +56,7 @@ public class AllReservations {
 		scrollPane.setBounds(10, 26, 680, 452);
 		frmPrenotazioni.getContentPane().add(scrollPane);
 
-		JLabel lblNewLabel_1 = new JLabel(
-				"Tipo prenotazione                         Data                           Ora                              Scheda                                      Camera");
+		JLabel lblNewLabel_1 = new JLabel("Tipo prenotazione" + this.spaceChar + "Data" + this.spaceChar + "Ora" + this.spaceChar + "Scheda" + this.spaceChar + "Camera");
 		lblNewLabel_1.setBackground(Color.DARK_GRAY);
 		lblNewLabel_1.setForeground(Color.ORANGE);
 		scrollPane.setColumnHeaderView(lblNewLabel_1);
