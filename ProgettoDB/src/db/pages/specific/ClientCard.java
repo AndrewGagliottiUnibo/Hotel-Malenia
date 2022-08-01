@@ -266,7 +266,7 @@ public class ClientCard {
 			ResultSet myRs = null;
 			
 			try {
-				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
 				myStmt = conn.createStatement();
 				myRs = myStmt.executeQuery("SELECT SCHEDA.resoconto FROM SCHEDA WHERE numeroCamera = " + this.chosenClient);
 				
