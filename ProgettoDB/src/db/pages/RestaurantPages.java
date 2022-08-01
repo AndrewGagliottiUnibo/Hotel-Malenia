@@ -69,7 +69,7 @@ public class RestaurantPages {
 			ResultSet result = null;
 			
 			try {
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "D3s3rt10.");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
 				myStm = conn.createStatement();
 				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
 											+ "FROM SCHEDA "
@@ -104,7 +104,7 @@ public class RestaurantPages {
 			
 			try {
 				
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "D3s3rt10.");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
 				myStm = conn.createStatement();
 				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
 											+ "FROM SCHEDA "
@@ -138,7 +138,7 @@ public class RestaurantPages {
 			
 			try {
 				
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", " ");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
 				myStm = conn.createStatement();
 				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
 											+ "FROM SCHEDA "
