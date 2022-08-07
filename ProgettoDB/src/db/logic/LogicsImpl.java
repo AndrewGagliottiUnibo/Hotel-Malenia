@@ -107,31 +107,31 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public ResultSet showRoomToBeCleaned() {
-		Connection myConn = null;
-		Statement myStmt = null;
-		ResultSet myRs = null;
+		Connection conn = null;
+		PreparedStatement myStm = null;
+		ResultSet result = null;
 
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
-			myStmt = myConn.createStatement();
-			myRs = myStmt.executeQuery("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
+			myStm = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+			result = myStm.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return myRs;
+		return result;
 	}
 
 	@Override
 	public ResultSet showRestaurantTables(final String service) {
-		Connection conn;
-		Statement myStm;
+		Connection conn = null;
+		PreparedStatement myStm = null;
 		ResultSet result = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
-			myStm = conn.createStatement();
-			result = myStm
-					.executeQuery("SELECT SCHEDA.numeroCamera FROM SCHEDA WHERE datiGestionali_tariffa = " + service);
+			myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA WHERE datiGestionali_tariffa = ?");
+			myStm.setString(1, service);
+			result = myStm.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -141,14 +141,15 @@ public class LogicsImpl implements Logic {
 	@Override
 	public int actualPrice(String nome) {
 		Connection conn = null;
-		Statement myStmt = null;
-		ResultSet myRs = null;
+		PreparedStatement myStm = null;
+		ResultSet result = null;
 		int recordNumber = 0;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
-			myStmt = conn.createStatement();
-			myRs = myStmt.executeQuery("SELECT valoreMonetario FROM Listini WHERE" + "nome = " + nome);
-			recordNumber = myRs.getInt(1);
+			myStm = conn.prepareStatement("SELECT valoreMonetario FROM Listini WHERE nome = ?"); // manca la colonna nome!!
+			myStm.setString(1, nome);
+			result = myStm.executeQuery();
+			recordNumber = result.getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

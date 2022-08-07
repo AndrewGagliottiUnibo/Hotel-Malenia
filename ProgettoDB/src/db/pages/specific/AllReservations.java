@@ -82,8 +82,7 @@ public class AllReservations {
 			Statement myStmt = null;
 			ResultSet myRs = null;
 			try {
-				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-						"dariostudente");
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
 				myStmt = myConn.createStatement();
 				myRs = myStmt.executeQuery("SELECT COUNT(*) IN ("
 						+ "SELECT tipoPrenotazione, data, ora, codScheda, numeroCamera FROM PRENOTAZIONE, SCHEDA, REGISTRAZIONE"
@@ -125,8 +124,7 @@ public class AllReservations {
 			Statement myStmt = null;
 			ResultSet myRs = null;
 			try {
-				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-						"dariostudente");
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
 				myStmt = myConn.createStatement();
 				myRs = myStmt.executeQuery("SELECT COUNT(*) IN ("
 						+ "SELECT tipoPrenotazione, data, ora, codScheda, numeroCamera FROM PRENOTAZIONE, SCHEDA, REGISTRAZIONE"

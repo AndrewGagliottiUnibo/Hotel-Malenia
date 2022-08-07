@@ -1,22 +1,23 @@
 package db.pages;
 
-import javax.swing.JFrame;
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-import javax.swing.SwingConstants;
-import db.logic.Logic;
-import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+
+import db.logic.Logic;
 
 public class RestaurantPages {
 
@@ -57,40 +58,6 @@ public class RestaurantPages {
 		panel.setLayout(null);
 		
 		/*
-		 * Shows people coming for lunch.
-		 */
-		JButton lunch = new JButton("Pranzo");
-		lunch.addActionListener(e -> {
-			this.logic.showRestaurantTables("Pranzo");
-			this.textArea.setText("");
-			
-			Connection conn = null;
-			Statement myStm = null;
-			ResultSet result = null;
-			
-			try {
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
-				myStm = conn.createStatement();
-				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
-											+ "FROM SCHEDA "
-											+ "WHERE datiGestionali_tariffa = AllInclusive "
-											+ "AND datiGestionali_tariffa = PensioneCompleta");
-				while(result.next()) {
-					this.textArea.append(result.getString(1) + "\n");
-				}
-				
-			} catch (SQLException exc) {
-				exc.printStackTrace();
-			}
-		});
-		
-		lunch.setForeground(Color.ORANGE);
-		lunch.setFont(new Font("Verdana", Font.BOLD, 12));
-		lunch.setBackground(Color.BLACK);
-		lunch.setBounds(808, 68, 111, 23);
-		panel.add(lunch);
-		
-		/*
 		 * Shows people coming for breakfast.
 		 */
 		JButton breakfast = new JButton("Colazione");
@@ -99,16 +66,16 @@ public class RestaurantPages {
 			this.textArea.setText("");
 			
 			Connection conn = null;
-			Statement myStm = null;
+			PreparedStatement myStm = null;
 			ResultSet result = null;
 			
 			try {
 				
 				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
-				myStm = conn.createStatement();
-				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
-											+ "FROM SCHEDA "
+				myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
 											+ "WHERE SCHEDA.numeroCamera IS NOT NULL");
+				result = myStm.executeQuery();
+				
 				while(result.next()) {
 					this.textArea.append(result.getString(1) + "\n");
 				}
@@ -125,6 +92,44 @@ public class RestaurantPages {
 		panel.add(breakfast);
 		
 		/*
+		 * Shows people coming for lunch.
+		 */
+		JButton lunch = new JButton("Pranzo");
+		lunch.addActionListener(e -> {
+			this.logic.showRestaurantTables("Pranzo");
+			this.textArea.setText("");
+			
+			Connection conn = null;
+			PreparedStatement myStm = null;
+			ResultSet result = null;
+			
+			try {
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
+				myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
+											+ "WHERE datiGestionali_tariffa = ? "
+											+ "AND datiGestionali_tariffa = ?");
+				myStm.setString(1, "AllInclusive");
+				myStm.setString(2, "PensioneCompleta");
+				result = myStm.executeQuery();
+				
+				while(result.next()) {
+					this.textArea.append(result.getString(1) + "\n");
+				}
+				
+			} catch (SQLException exc) {
+				exc.printStackTrace();
+			}
+		});
+		
+		lunch.setForeground(Color.ORANGE);
+		lunch.setFont(new Font("Verdana", Font.BOLD, 12));
+		lunch.setBackground(Color.BLACK);
+		lunch.setBounds(808, 68, 111, 23);
+		panel.add(lunch);
+		
+
+		
+		/*
 		 * Shows people coming for dinner.
 		 */
 		JButton dinner = new JButton("Cena");
@@ -132,18 +137,18 @@ public class RestaurantPages {
 			this.logic.showRestaurantTables("Cena");
 			this.textArea.setText("");
 			
-			Connection conn;
-			Statement myStm;
+			Connection conn = null;
+			PreparedStatement myStm = null;
 			ResultSet result = null;
 			
 			try {
-				
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
-				myStm = conn.createStatement();
-				result = myStm.executeQuery("SELECT SCHEDA.numeroCamera "
-											+ "FROM SCHEDA "
-											+ "WHERE datiGestionali_tariffa = AllInclusive "
-											+ "AND datiGestionali_tariffa = PensioneCompleta");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
+				myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
+											+ "WHERE datiGestionali_tariffa = ? "
+											+ "AND datiGestionali_tariffa = ?");
+				myStm.setString(1, "AllInclusive");
+				myStm.setString(2, "PensioneCompleta");
+				result = myStm.executeQuery();
 				while(result.next()) {
 					this.textArea.append(result.getString(1) + "\n");
 				}
