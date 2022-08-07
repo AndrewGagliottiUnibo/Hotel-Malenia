@@ -81,13 +81,13 @@ public class NewReservation {
 		ResultSet myRs1 = null;
 		
 		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
 			myStmt = myConn.createStatement();
 			myRs0 = myStmt.executeQuery(
 					"SELECT numeroCamera FROM SCHEDA WHERE idScheda =" + this.codeField.getText());
 			roomRes = myRs0.getInt(1);
 
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", "dariostudente");
+			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
 			myStmt = myConn.createStatement();
 			myRs1 = myStmt.executeQuery(
 					"SELECT resoconto FROM SCHEDA WHERE idScheda =" + this.codeField.getText());

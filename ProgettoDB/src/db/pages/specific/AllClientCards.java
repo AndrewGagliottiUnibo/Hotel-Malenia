@@ -221,7 +221,7 @@ public class AllClientCards {
 				 * NOT NULL connection.
 				 */
 				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-						"dariostudente");
+						this.logic.getOwnPassword());
 				myStmt = myConn.createStatement();
 				myRs = myStmt.executeQuery("SELECT " + cell + " FROM SCHEDA "
 											+ "WHERE numeroCamera IS NOT NULL");
@@ -231,7 +231,7 @@ public class AllClientCards {
 				 * with NULL connection.
 				 */
 				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-						"dariostudente");
+						this.logic.getOwnPassword());
 				myStmt = myConn.createStatement();
 				myRs = myStmt.executeQuery("SELECT " + cell + " FROM SCHEDA");
 

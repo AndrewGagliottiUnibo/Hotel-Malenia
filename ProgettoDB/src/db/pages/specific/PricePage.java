@@ -65,7 +65,7 @@ public class PricePage {
 			Statement myStmt = null;
 			ResultSet myRs = null;
 			try {
-				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , "dariostudente");
+				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
 				System.out.println("Database connected");
 				// 2. Create a statement
 				myStmt = myConn.createStatement();
