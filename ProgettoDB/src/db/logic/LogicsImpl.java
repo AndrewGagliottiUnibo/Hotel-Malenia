@@ -158,12 +158,15 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public boolean modifyPrice(int price, String nome) {
-		Connection conn;
+		Connection conn = null;
+		PreparedStatement myStm = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
-			PreparedStatement pstmt = conn
-					.prepareStatement("UPDATE valoreMonetario =" + price + " FROM Listini WHERE" + "nome = " + nome);
-			pstmt.execute();
+			// query non funzionante forse "UPDATE Listini SET valoreMonetario = ? WHERE nome = ?"
+			myStm = conn.prepareStatement("UPDATE valoreMonetario = ? FROM Listini WHERE nome = ?");
+			myStm.setInt(1, price);
+			myStm.setString(2, nome);
+			myStm.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -175,37 +178,53 @@ public class LogicsImpl implements Logic {
 	public boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita, int numeroTel,
 			String tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto,
 			int durataSoggiorno, String orarioCheckin, String orarioCheckout) {
-		Connection conn;
+		Connection conn = null;
+		PreparedStatement myStm = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
-			PreparedStatement pstmt0 = conn.prepareStatement(
-					"NSERT INTO SCHEDA (codScheda, numeroCamera, intolleranze, resoconto, datiTariffa, durataSoggiorno, orarioCheckin,"
-							+ " orarioCheckout)" + "VALUES(codScheda=" + codScheda + ",numeroCamera" + numeroCamera
-							+ " ,intolleranze" + intolleranze + "," + "resoconto" + resoconto + ",durataSoggiorno"
-							+ durataSoggiorno + "" + ",orarioCheckin" + orarioCheckin + ",orarioCheckout"
-							+ orarioCheckout + ")"
-							+ "INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita,numeroTel, tipologiaSoggiorno)"
-							+ "VALUES (nome" + nome + ", cognome" + cognome + ", codiceFiscale" + codiceFiscale
-							+ ", dataNascita" + dataNascita + "," + "numeroTel" + numeroTel + ", tipologiaSoggiorno"
-							+ tipologiaSoggiorno + ")"
+			// Elimino le intolleranze, perché il codice fiscale è un int?
+			myStm = conn.prepareStatement(
+					"INSERT INTO SCHEDA (codScheda, numeroCamera, resoconto, durataSoggiorno, orarioCheckin, orarioCheckout)"
+							+ "VALUES (? ,?, ?, ?, ?, ?)"
+							+ "INSERT INTO CLIENTE (nome, cognome, codiceFiscale, dataNascita, numeroTel, tipologiaSoggiorno)"
+							+ "VALUES (? ,?, ?, ?, ?, ?)"
 							+ "INSERT INTO IDENTIFICAZIONE (codiceCliente, numeroScheda)VALUES (?, SCHEDA.codScheda)");
-			pstmt0.execute();
+			myStm.setInt(1, codScheda);
+			myStm.setInt(2, numeroCamera);
+			myStm.setInt(3, resoconto);
+			myStm.setInt(4, durataSoggiorno);
+			myStm.setString(5, orarioCheckin);
+			myStm.setString(6, orarioCheckout);
+			
+			myStm.setString(7, nome);
+			myStm.setString(8, cognome);
+			myStm.setInt(9, codiceFiscale);
+			myStm.setString(10, dataNascita);
+			myStm.setInt(11, numeroTel);
+			myStm.setString(12, tipologiaSoggiorno);
+			
+			myStm.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
 		}
 		return true;
 	}
+	
 
 	@Override
 	public boolean CheckoutClient(int nCamera) {
-		Connection conn;
+		Connection conn = null;
+		PreparedStatement myStm = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
-			PreparedStatement pstmt0 = conn.prepareStatement(
-					"UPDATE SCHEDA SET numeroCamera = " + nCamera + ", orarioCheckout = ?, resoconto = "
-							+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = " + nCamera + ")");
-			pstmt0.execute();
+			// Orario checkout perché non ci sta?
+			myStm = conn.prepareStatement(
+					"UPDATE SCHEDA SET numeroCamera = ?, orarioCheckout = ?, resoconto = "
+					+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?)");
+			myStm.setInt(1, nCamera);
+			myStm.setInt(3, nCamera);
+			myStm.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -215,13 +234,19 @@ public class LogicsImpl implements Logic {
 
 	@Override
 	public boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio) {
-		Connection conn;
+		Connection conn = null;
+		PreparedStatement myStm = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.getOwnPassword());
-			PreparedStatement pstmt0 = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio ="
-					+ tipoServizio + "" + "UPDATE SCHEDA SET resoconto = resoconto" + resoconto + " + SERVIZIO.tariffa"
-					+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera =" + nCamera + ")");
-			pstmt0.execute();
+			// price mai usato, forse al posto di tariffa? Comunque query non funzionante
+			myStm = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? "
+					+ "UPDATE SCHEDA SET resoconto = ? SERVIZIO.tariffa"
+					+ "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?");
+			myStm.setInt(1, tipoServizio);
+			myStm.setInt(2, resoconto);
+			myStm.setInt(3, nCamera);
+			
+			myStm.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
