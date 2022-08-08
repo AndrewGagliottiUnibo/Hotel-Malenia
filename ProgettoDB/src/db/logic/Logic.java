@@ -11,7 +11,7 @@ public interface Logic {
 	 * @param code
 	 * @param password
 	 */
-	void login(String code, String password);
+	void login(String code, char[] password);
 
 	/**
 	 * Let you return to the login page.
