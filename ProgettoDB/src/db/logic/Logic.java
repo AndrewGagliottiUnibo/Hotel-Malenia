@@ -43,10 +43,10 @@ public interface Logic {
 	/**
 	 * Show the actual price for a specific product.
 	 * 
-	 * @param s
+	 * @param tipoListino
 	 * @return
 	 */
-	int actualPrice(String s);
+	int actualPrice(String tipoListino);
 
 	/**
 	 * query 1.
@@ -89,7 +89,7 @@ public interface Logic {
 	 * @param resoconto
 	 * @return operation done successfully or not.
 	 */
-	boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera, int resoconto);
+	boolean registerNewReservation(String tipoPrenotazione, String data, String ora, int nCamera, int resoconto);
 
 	/**
 	 * query 4.
@@ -98,7 +98,7 @@ public interface Logic {
 	 * @param resoconto
 	 * @return operation done successfully or not.
 	 */
-	boolean deleteReservation(int tipoPrenotazione);
+	boolean deleteReservation(int tipoPrenotazione, int numeroCamera);
 
 	/**
 	 * query 5.
@@ -149,7 +149,7 @@ public interface Logic {
 	 * @param nome
 	 * @return the operation done successfully or not.
 	 */
-	boolean modifyPrice(int price, String nome);
+	boolean modifyPrice(int price, String tipoListino);
 
 	/**
 	 * query 11.

@@ -99,8 +99,8 @@ public class NewReservation {
 
 		JButton breakfastPlus = new JButton("Colazione +");// RISTORAZIONE TIPOSERVIZIO 1
 		breakfastPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 40, resocontoRes, 1); 
 		});
@@ -112,8 +112,8 @@ public class NewReservation {
 
 		JButton lunchPlus = new JButton("Pranzo +");
 		lunchPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 150, resocontoRes, 1); 
 		});
@@ -125,8 +125,8 @@ public class NewReservation {
 
 		JButton dinnerPlus = new JButton("Cena +");
 		dinnerPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 200, resocontoRes, 1);
 		});
@@ -139,8 +139,8 @@ public class NewReservation {
 		JButton parkingPlus = new JButton("Parcheggio +"); //PARCHEGGIO TIPOSERVIZIO 5
 		parkingPlus.addActionListener(e -> {
 			var days = this.parkingDaysField.getText();
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 10*(Integer.parseInt(days)), resocontoRes, 5);
 		});
@@ -152,8 +152,8 @@ public class NewReservation {
 
 		JButton massagePlus = new JButton("Massaggio +");//SERVIZI PERSONALI TIPOSERVIZIO 3
 		massagePlus.addActionListener(e -> {
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 25, resocontoRes, 3);
 		});
@@ -165,8 +165,8 @@ public class NewReservation {
 
 		JButton dirtPlus = new JButton("Fango +");
 		dirtPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 50, resocontoRes, 3);
 		});
@@ -178,8 +178,8 @@ public class NewReservation {
 
 		JButton bathPlus = new JButton("Bagno +");
 		bathPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 20, resocontoRes, 3);
 		});
@@ -191,8 +191,8 @@ public class NewReservation {
 
 		JButton bubblePlus = new JButton("Idromassaggio +");
 		bubblePlus.addActionListener(e -> {
-			this.logic.registerNewReservation(Integer.parseInt(this.codeField.getText()),
-					Integer.parseInt(this.dateField.getText()), Integer.parseInt(this.timeField.getText()), roomRes,
+			this.logic.registerNewReservation(this.codeField.getText(),
+					this.dateField.getText(), this.timeField.getText(), roomRes,
 					resocontoRes);
 			this.logic.additionCost(roomRes, 30, resocontoRes, 3);
 		});

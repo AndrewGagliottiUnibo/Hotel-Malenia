@@ -26,7 +26,7 @@ create table ABBINAMENTO (
 
 create table ACCESSO (
      servizioScelto char(30) not null,
-     numeroPrenotazione int not null,
+     numeroPrenotazione char(40) not null,
      constraint IDACCESSO primary key (servizioScelto, numeroPrenotazione));
 
 create table ADDETTO (
@@ -53,7 +53,7 @@ create table CLIENTE (
 
 create table CONDIZIONAMENTO (
      codSoggiorno char(1) not null,
-     codListino int not null,
+     codListino char(40) not null,
      codServizio char(30) not null,
      constraint IDCONDIZIONAMENTO primary key (codServizio, codSoggiorno, codListino));
 
@@ -68,13 +68,13 @@ create table DIRIGENTE (
      numeroTel int not null,
      dataNascita char(20) not null,
      codiceFiscale char(40) not null,
-     tipologiaListino int not null,
+     tipologiaListino char(40) not null,
      codDirigente int not null,
      constraint IDDIRIGENTE primary key (codDirigente));
 
 create table EFFETTUAZIONE (
      clienteServito char(40) not null,
-     prestazione int not null,
+     prestazione char(40) not null,
      constraint IDEFFETTUAZIONE primary key (prestazione, clienteServito));
 
 create table IDENTIFICAZIONE (
@@ -83,18 +83,18 @@ create table IDENTIFICAZIONE (
      constraint IDIDENTIFICAZIONE primary key (numeroScheda, codiceCliente));
 
 create table LISTINI (
-     tipoListino int not null,
-     valoreMonetario smallint not null,
+     tipoListino char(40) not null,
+     valoreMonetario double not null,
      constraint IDLISTINI_ID primary key (tipoListino));
 
 create table PRENOTAZIONE (
-     tipoPrenotazione int not null,
+     tipoPrenotazione char(40) not null,
      data char(20),
      ora char(20),
      constraint IDPRENOTAZIONE_ID primary key (tipoPrenotazione));
 
 create table REGISTRAZIONE (
-     codPrenotazione int not null,
+     codPrenotazione char(40) not null,
      schedaRegistrata int not null,
      constraint IDREGISTRAZIONE primary key (codPrenotazione, schedaRegistrata));
 

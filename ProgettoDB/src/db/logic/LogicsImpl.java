@@ -141,7 +141,7 @@ public class LogicsImpl implements Logic {
   }
 
   @Override
-  public int actualPrice(String nome) {
+  public int actualPrice(String tipoListino) {
     Connection conn = null;
     PreparedStatement myStm = null;
     ResultSet result = null;
@@ -149,11 +149,8 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      myStm = conn.prepareStatement("SELECT valoreMonetario FROM Listini WHERE nome = ?"); // manca
-                                                                                           // la
-                                                                                           // colonna
-                                                                                           // nome!!
-      myStm.setString(1, nome);
+      myStm = conn.prepareStatement("SELECT valoreMonetario FROM Listini WHERE tipoListino = ?");
+      myStm.setString(1, tipoListino);
       result = myStm.executeQuery();
       recordNumber = result.getInt(1);
     } catch (SQLException e) {
@@ -163,17 +160,15 @@ public class LogicsImpl implements Logic {
   }
 
   @Override
-  public boolean modifyPrice(int price, String nome) {
+  public boolean modifyPrice(int price, String tipoListino) {
     Connection conn = null;
     PreparedStatement myStm = null;
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      // query non funzionante forse "UPDATE Listini SET valoreMonetario = ? WHERE
-      // nome = ?"
-      myStm = conn.prepareStatement("UPDATE valoreMonetario = ? FROM Listini WHERE nome = ?");
+      myStm = conn.prepareStatement("UPDATE Listini SET valoreMonetario = ? WHERE tipoListino = ?");
       myStm.setInt(1, price);
-      myStm.setString(2, nome);
+      myStm.setString(2, tipoListino);
       myStm.executeQuery();
     } catch (SQLException e) {
       e.printStackTrace();
@@ -233,12 +228,11 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      // Orario checkout perché non ci sta? E resoconto?
+      // Da rivedere!!
       myStm = conn
-          .prepareStatement("UPDATE SCHEDA SET numeroCamera = ?, orarioCheckout = ?, resoconto = ?"
+          .prepareStatement("UPDATE SCHEDA SET numeroCamera = ?, resoconto = ?"
               + "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?)");
-      myStm.setInt(1, nCamera);
-      myStm.setInt(4, nCamera);
+      myStm.setInt(3, nCamera);
       myStm.executeQuery();
     } catch (SQLException e) {
       e.printStackTrace();
@@ -256,9 +250,10 @@ public class LogicsImpl implements Logic {
           this.getOwnPassword());
       // price mai usato! Comunque query non funzionante, non capisco cosa dovrebbe
       // fare
+      // Da rivedere!!
       myStm = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? "
-          + "UPDATE SCHEDA SET resoconto = ? SERVIZIO.tariffa"
-          + "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?");
+          + "UPDATE SCHEDA SET resoconto = ? + SERVIZIO.tariffa "
+          + "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?)");
       myStm.setInt(1, tipoServizio);
       myStm.setInt(2, resoconto);
       myStm.setInt(3, nCamera);
@@ -279,13 +274,11 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      // Non riconosce codScheda, problema con chiave esterna? Anche qui non so come
-      // fare - seconda query
       myStm = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = ? "
-          + "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE,PRENOTAZIONE"
-          + "WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda AND"
+          + "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE, PRENOTAZIONE, SCHEDA "
+          + "WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda AND "
           + "REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
-          + "ORDER BY SCHEDA.data DESC, SCHEDA.ora DESC");
+          + "ORDER BY PRENOTAZIONE.giorno DESC, PRENOTAZIONE.ora DESC");
       myStm.setInt(1, nCamera);
 
       result = myStm.executeQuery();
@@ -318,17 +311,16 @@ public class LogicsImpl implements Logic {
   }
 
   @Override
-  public boolean registerNewReservation(int tipoPrenotazione, int data, int ora, int nCamera,
+  public boolean registerNewReservation(String tipoPrenotazione, String data, String ora, int nCamera,
       int resoconto) {
     Connection conn = null;
     PreparedStatement myStm = null;
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      // Data, tipoPrenotazione ed ora non sono delle String? nelle altre query lo
-      // erano - seconda query
       // PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda non vengono identificate -
       // terza query
+      // Da rivedere!!
       myStm = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = ? "
           + "INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora) VALUES (?, ?, ?) "
           + "INSERT INTO REGISTRAZIONE (codPrenotazione, schedaRegistrata)"
@@ -337,9 +329,9 @@ public class LogicsImpl implements Logic {
           + "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE"
           + "WHERE schedaRegistrata = SCHEDA.codScheda");
       myStm.setInt(1, nCamera);
-      myStm.setInt(2, tipoPrenotazione);
-      myStm.setInt(3, data);
-      myStm.setInt(4, ora);
+      myStm.setString(2, tipoPrenotazione);
+      myStm.setString(3, data);
+      myStm.setString(4, ora);
       myStm.setInt(5, resoconto);
       myStm.executeQuery();
     } catch (SQLException e) {
@@ -350,7 +342,7 @@ public class LogicsImpl implements Logic {
   }
 
   @Override
-  public boolean deleteReservation(int tipoPrenotazione) {
+  public boolean deleteReservation(int tipoPrenotazione, int numeroCamera) {
     Connection conn = null;
     PreparedStatement myStm = null;
     ResultSet result = null;
@@ -361,17 +353,18 @@ public class LogicsImpl implements Logic {
           "SELECT tariffa FROM SERVIZIO, ACCESSO WHERE ACCESSO.numeroPrenotazione = ? ");
       myStm.setInt(1, tipoPrenotazione);
       result = myStm.executeQuery();
-      // Tariffa nel db è un int, qui è una string? non sarebbe meglio usare
-      // "result.getInt(1)"?
-      var price = result.getString(1);
+      int price = result.getInt(1);
       // Non riconosce molte varibili come SCHEDA.codScheda ad esempio
+      // Da rivedere!!
       myStm = conn.prepareStatement(
           "DELETE FROM PRENOTAZIONE, REGISTRAZIONE WHERE PRENOTAZIONE.tipoPrenotazione = ? "
-              + "AND REGISTRAZIONE.codPrenotazione = ? AND PRENOTAZIONE.tipoPrenotazione = REGISTRAZIONE.codPrenotazione"
-              + "UPDATE SCHEDA SET resoconto = resoconto - " + price
-              + "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
+              + "AND REGISTRAZIONE.codPrenotazione = ? AND PRENOTAZIONE.tipoPrenotazione = REGISTRAZIONE.codPrenotazione "
+              + "UPDATE SCHEDA SET resoconto = resoconto - ? "
+              + "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE, SCHEDA WHERE schedaRegistrata = SCHEDA.codScheda)");
 
       myStm.setInt(1, tipoPrenotazione);
+      myStm.setInt(2, tipoPrenotazione);
+      myStm.setInt(3, price);
 
       myStm.executeQuery();
     } catch (SQLException e) {
@@ -390,6 +383,7 @@ public class LogicsImpl implements Logic {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
       // SCHEDA.codScheda non viene riconosciuta - seconda query
+      // Da rivedere!!
       myStm = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = ? "
           + "SELECT * FROM PRENOTAZIONE WHERE tipoPrenotazione IN "
           + "(SELECT codPrenotazione FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
@@ -430,15 +424,11 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      // Non dovrebbe esserci la var codScheda? - prima query
-      // Solito problema di SCHEDA.codScheda
       myStm = conn.prepareStatement(
-          "SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE SCHEDA.codScheda = ?"
-              + "AND SCHEDA.codScheda = IDENTIFICAZIONE.numeroScheda AND IDENTIFICAZIONE.codiceCliente = ?) "
-              + "SELECT * FROM IDENTIFICAZIONE.codScheda WHERE IDENTIFICAZIONE.codiceCliente = ?)");
+          "SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE "
+              + "SCHEDA.codScheda = IDENTIFICAZIONE.numeroScheda AND IDENTIFICAZIONE.codiceCliente = ?");
 
-      myStm.setInt(2, codCliente);
-      myStm.setInt(3, codCliente);
+      myStm.setInt(1, codCliente);
       result = myStm.executeQuery();
     } catch (Exception e) {
       e.printStackTrace();
