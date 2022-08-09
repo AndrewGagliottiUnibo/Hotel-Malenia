@@ -33,26 +33,20 @@ public interface Logic {
 	ResultSet showRoomToBeCleaned();
 
 	/**
-	 * Restaurant method: due to the input argument, let you make a query returning
-	 * the indicated value.
+	 * Restaurant method: return the reserved tables for breakfast.
 	 * 
-	 * @param one of the three restaurant services
 	 */
 	ResultSet showBreakfastTables();
 	
 	 /**
-     * Restaurant method: due to the input argument, let you make a query returning
-     * the indicated value.
+     * Restaurant method: return the reserved tables for Launch.
      * 
-     * @param one of the three restaurant services
      */
     ResultSet showLaunchTables();
     
     /**
-    * Restaurant method: due to the input argument, let you make a query returning
-    * the indicated value.
+    * Restaurant method: return the reserved tables for Dinner.
     * 
-    * @param one of the three restaurant services
     */
    ResultSet showDinnerTables();
 
