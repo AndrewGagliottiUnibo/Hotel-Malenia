@@ -38,7 +38,23 @@ public interface Logic {
 	 * 
 	 * @param one of the three restaurant services
 	 */
-	ResultSet showRestaurantTables(String service);
+	ResultSet showBreakfastTables();
+	
+	 /**
+     * Restaurant method: due to the input argument, let you make a query returning
+     * the indicated value.
+     * 
+     * @param one of the three restaurant services
+     */
+    ResultSet showLaunchTables();
+    
+    /**
+    * Restaurant method: due to the input argument, let you make a query returning
+    * the indicated value.
+    * 
+    * @param one of the three restaurant services
+    */
+   ResultSet showDinnerTables();
 
 	/**
 	 * Show the actual price for a specific product.

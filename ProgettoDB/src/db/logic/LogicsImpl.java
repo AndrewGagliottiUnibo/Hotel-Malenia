@@ -123,19 +123,55 @@ public class LogicsImpl implements Logic {
   }
 
   @Override
-  public ResultSet showRestaurantTables(final String service) {
+  public ResultSet showBreakfastTables() {
     Connection conn = null;
     PreparedStatement myStm = null;
     ResultSet result = null;
     try {
-      conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-          this.getOwnPassword());
-      myStm = conn.prepareStatement(
-          "SELECT SCHEDA.numeroCamera FROM SCHEDA WHERE datiGestionali_tariffa = ?");
-      myStm.setString(1, service);
-      result = myStm.executeQuery();
-    } catch (SQLException e) {
-      e.printStackTrace();
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.getOwnPassword());
+        myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
+                                    + "WHERE SCHEDA.numeroCamera IS NOT NULL");
+        result = myStm.executeQuery();
+    } catch (SQLException exc) {
+        exc.printStackTrace();
+    }
+    return result;
+  }
+  
+  @Override
+  public ResultSet showLaunchTables() {
+    Connection conn = null;
+    PreparedStatement myStm = null;
+    ResultSet result = null;
+    try {
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.getOwnPassword());
+        myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
+                                    + "WHERE datiGestionali_tariffa = ? "
+                                    + "AND datiGestionali_tariffa = ?");
+        myStm.setString(1, "AllInclusive");
+        myStm.setString(2, "PensioneCompleta");
+        result = myStm.executeQuery();
+    } catch (SQLException exc) {
+        exc.printStackTrace();
+    }
+    return result;
+  }
+  
+  @Override
+  public ResultSet showDinnerTables() {
+    Connection conn = null;
+    PreparedStatement myStm = null;
+    ResultSet result = null;
+    try {
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.getOwnPassword());
+        myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
+                                    + "WHERE datiGestionali_tariffa = ? "
+                                    + "AND datiGestionali_tariffa = ?");
+        myStm.setString(1, "AllInclusive");
+        myStm.setString(2, "PensioneCompleta");
+        result = myStm.executeQuery();
+    } catch (SQLException exc) {
+        exc.printStackTrace();
     }
     return result;
   }
