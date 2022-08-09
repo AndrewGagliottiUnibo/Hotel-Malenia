@@ -184,7 +184,8 @@ public class AllReservations {
 		deleteReservationBtn.addActionListener(e -> {
 			var choice = this.deleteField.getText();
 			this.deleteField.setText("");
-			this.logic.deleteReservation(Integer.parseInt(choice));
+			// Sostituire 8 con il valore corretto di numeroCamera
+			this.logic.deleteReservation(Integer.parseInt(choice), 8);
 		});
 		deleteReservationBtn.setForeground(Color.ORANGE);
 		deleteReservationBtn.setFont(new Font("Verdana", Font.BOLD, 12));

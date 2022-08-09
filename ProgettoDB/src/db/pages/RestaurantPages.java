@@ -74,7 +74,7 @@ public class RestaurantPages {
 				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
 				myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
 											+ "WHERE SCHEDA.numeroCamera IS NOT NULL");
-				result = myStm.executeQuery();
+				result = myStm.executeQuery(); // Decidere dove mettere la query
 				
 				while(result.next()) {
 					this.textArea.append(result.getString(1) + "\n");
