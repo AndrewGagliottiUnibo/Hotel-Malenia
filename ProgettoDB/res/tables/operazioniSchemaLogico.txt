@@ -1,0 +1,6 @@
+Elenco operazioni effettuate nella realizzazione dello schema logico:
+-
+-
+-
+-
+-
