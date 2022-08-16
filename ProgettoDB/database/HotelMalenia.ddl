@@ -1,307 +1,175 @@
 -- *********************************************
--- * SQL MySQL generation                      
+-- * Standard SQL generation                   
 -- *--------------------------------------------
 -- * DB-MAIN version: 11.0.2              
 -- * Generator date: Sep 14 2021              
--- * Generation date: Tue May 17 14:47:12 2022 
--- * LUN file: C:\Users\Dario\Desktop\Personale\Copia\Hotel-Malenia\res\tables\HotelMalenia.lun 
--- * Schema: SchemaHotel/L1 
+-- * Generation date: Tue Aug 16 16:14:38 2022 
 -- ********************************************* 
 
 
 -- Database Section
 -- ________________ 
 
-create database SchemaHotel;
-use SchemaHotel;
+create database HotelDB;
+use HotelDB;
+
+
+-- DBSpace Section
+-- _______________
 
 
 -- Tables Section
 -- _____________ 
 
-create table ABBINAMENTO (
-     schedaAbbinata int not null,
-     soggiornoScelto char(1) not null,
-     constraint IDABBINAMENTO primary key (schedaAbbinata, soggiornoScelto));
-
-create table ACCESSO (
-     servizioScelto char(30) not null,
-     numeroPrenotazione char(40) not null,
-     constraint IDACCESSO primary key (servizioScelto, numeroPrenotazione));
-
 create table ADDETTO (
-     nome char(20) not null,
-     cognome char(20) not null,
-     numeroTel int not null,
-     dataNascita char(20) not null,
-     zonaDiLavoro char(40) not null,
-     ruolo char(20) not null,
-     codiceFiscale char(40) not null,
-     codRuolo char(1) not null,
-     constraint IDADDETTO_1 unique (ruolo),
-     constraint IDADDETTO_ID primary key (codRuolo),
-     constraint IDADDETTO_2 unique (codiceFiscale));
+     codFiscale varchar(16) not null,
+     nome varchar(30) not null,
+     cognome varchar(30) not null,
+     dataNascita date not null,
+     numeroTelefonico numeric(20),
+     codRuolo varchar(30) not null,
+     constraint IDADDETTO_ID primary key (codRuolo));
 
 create table CLIENTE (
-     nome char(20) not null,
-     cognome char(20) not null,
-     numeroTel int not null,
-     dataNascita char(20) not null,
-     codiceFiscale char(40) not null,
-     tipologiaSoggiorno char(1) not null,
-     constraint IDCLIENTE_ID primary key (codiceFiscale));
-
-create table CONDIZIONAMENTO (
-     codSoggiorno char(1) not null,
-     codListino char(40) not null,
-     codServizio char(30) not null,
-     constraint IDCONDIZIONAMENTO primary key (codServizio, codSoggiorno, codListino));
-
-create table CREAZIONE (
-     codiceScheda int not null,
-     codiceAddetto char(1) not null,
-     constraint IDCREAZIONE primary key (codiceAddetto, codiceScheda));
+     codFiscale varchar(16) not null,
+     nome varchar(30) not null,
+     cognome varchar(30) not null,
+     dataNascita date not null,
+     numeroTelefonico numeric(20),
+     constraint IDCLIENTE_ID primary key (codFiscale));
 
 create table DIRIGENTE (
-     nome char(20) not null,
-     cognome char(20) not null,
-     numeroTel int not null,
-     dataNascita char(20) not null,
-     codiceFiscale char(40) not null,
-     tipologiaListino char(40) not null,
-     codDirigente int not null,
+     codDirigente varchar(16) not null,
+     nome varchar(30) not null,
+     cognome varchar(30) not null,
+     dataNascita date not null,
+     numeroTelefonico numeric(20),
+     tipoServizioCoordinato varchar(30) not null,
+     stagioneServizioCoordinato varchar(10) not null,
+     annoServizioCoordinato numeric(4) not null,
+     tipologiaSoggiornoCondizionato varchar(30) not null,
+     meseSoggiornoCondizionato varchar(15) not null,
+     annoSoggiornoCondizionato numeric(4) not null,
      constraint IDDIRIGENTE primary key (codDirigente));
 
-create table EFFETTUAZIONE (
-     clienteServito char(40) not null,
-     prestazione char(40) not null,
-     constraint IDEFFETTUAZIONE primary key (prestazione, clienteServito));
-
-create table IDENTIFICAZIONE (
-     codiceCliente char(40) not null,
-     numeroScheda int not null,
-     constraint IDIDENTIFICAZIONE primary key (numeroScheda, codiceCliente));
-
-create table LISTINI (
-     tipoListino char(40) not null,
-     valoreMonetario double not null,
-     constraint IDLISTINI_ID primary key (tipoListino));
+create table EROGAZIONE (
+     tipoServizioErogato varchar(30) not null,
+     stagioneServizioErogato varchar(10) not null,
+     annoServizioErogato numeric(4) not null,
+     ruoloAddettoErogante varchar(30) not null,
+     constraint IDEROGAZIONE primary key (tipoServizioErogato, stagioneServizioErogato, annoServizioErogato, ruoloAddettoErogante));
 
 create table PRENOTAZIONE (
-     tipoPrenotazione char(40) not null,
-     data char(20),
-     ora char(20),
-     constraint IDPRENOTAZIONE_ID primary key (tipoPrenotazione));
+     tipoPrenotazione varchar(30) not null,
+     giorno varchar(10),
+     ora numeric(2),
+     dataInizioSoggiornoRegistrato date not null,
+     codFiscaleClienteRegistrato varchar(16) not null,
+     tipoServizioUsufruito varchar(30) not null,
+     stagioneServizioUsufruito varchar(15) not null,
+     annoServizioUsufruito numeric(4) not null,
+     codReceptionistOperante varchar(16) not null,
+     constraint IDPRENOTAZIONE unique (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato));
 
-create table REGISTRAZIONE (
-     codPrenotazione char(40) not null,
-     schedaRegistrata int not null,
-     constraint IDREGISTRAZIONE primary key (codPrenotazione, schedaRegistrata));
-
-create table SCHEDA (
-     datiGestionali_DurataSoggiorno char(20) not null,
-     datiGestionali_Tariffa char(20) not null,
-     datiGestionali_orariCheckOut char(20) not null,
-     datiGestionali_Oraricheckin char(20) not null,
-     resoconto int not null,
-     intolleranze char(80) not null,
-     numeroCamera tinyint not null,
-     codScheda int not null,
-     constraint IDSCHEDA_ID primary key (codScheda));
+create table RECEPTIONIST (
+     codReceptionist varchar(16) not null,
+     nome varchar(30) not null,
+     cognome varchar(30) not null,
+     dataNascita date not null,
+     numeroTelefonico numeric(20),
+     constraint IDRECEPTIONIST_ID primary key (codReceptionist));
 
 create table SERVIZIO (
-     tipoServizio char(30) not null,
-     tariffa int,
-     addettoAssegnato char(20) not null,
-     constraint IDSERVIZIO_ID primary key (tipoServizio));
+     tipoServizio varchar(30) not null,
+     stagione varchar(15) not null,
+     anno numeric(4) not null,
+     tariffa numeric(10),
+     constraint IDSERVIZIO_ID primary key (tipoServizio, stagione, anno));
 
 create table SOGGIORNO (
-     prezzo int not null,
-     tipologia char(1) not null,
-     constraint IDSOGGIORNO_ID primary key (tipologia));
+     codFiscaleCliente varchar(16) not null,
+     dataInizio date not null,
+     durataSoggiorno date not null,
+     offertaScelta varchar(20) not null,
+     codScheda numeric(10) not null,
+     numeroCamera numeric(5) not null,
+     resoconto numeric(10),
+     tipologiaSoggiornoScelto varchar(30) not null,
+     meseSoggiornoScelto varchar(15) not null,
+     annoSoggiornoScelto numeric(4) not null,
+     codReceptionistInserente varchar(16) not null,
+     constraint IDSOGGIORNO primary key (dataInizio, codFiscaleCliente));
 
-create table VISUALIZZAZIONE (
-     codSchedaVisualizzata int not null,
-     codAddettoAccedente char(20) not null,
-     constraint IDVISUALIZZAZIONE primary key (codSchedaVisualizzata, codAddettoAccedente));
+create table TIPOLOGIASOGGIORNO (
+     tipologia varchar(30) not null,
+     mese varchar(15) not null,
+     anno numeric(4) not null,
+     prezzo numeric(10) not null,
+     constraint IDTIPOLOGIASOGGIORNO primary key (tipologia, mese, anno));
+
 
 -- Constraints Section
 -- ___________________ 
 
-alter table ABBINAMENTO add constraint FKABB_SOG
-     foreign key (soggiornoScelto)
-     references SOGGIORNO (tipologia);
-
-alter table ABBINAMENTO add constraint FKABB_SCH
-     foreign key (schedaAbbinata)
-     references SCHEDA (codScheda);
-
-alter table ACCESSO add constraint FKACC_PRE
-     foreign key (numeroPrenotazione)
-     references PRENOTAZIONE (tipoPrenotazione);
-
-alter table ACCESSO add constraint FKACC_SER
-     foreign key (servizioScelto)
-     references SERVIZIO (tipoServizio);
-
 -- Not implemented
 -- alter table ADDETTO add constraint IDADDETTO_CHK
---     check(exists(select * from CREAZIONE
---                  where CREAZIONE.codiceAddetto = codRuolo)); 
-
--- Not implemented
--- alter table ADDETTO add constraint IDADDETTO_CHK
---     check(exists(select * from VISUALIZZAZIONE
---                  where VISUALIZZAZIONE.codAddettoAccedente = codRuolo)); 
-
--- Not implemented
--- alter table ADDETTO add constraint IDADDETTO_CHK
---     check(exists(select * from SERVIZIO
---                  where SERVIZIO.addettoAssegnato = codRuolo)); 
+--     check(exists(select * from EROGAZIONE
+--                  where EROGAZIONE.ruoloAddettoErogante = codRuolo)); 
 
 -- Not implemented
 -- alter table CLIENTE add constraint IDCLIENTE_CHK
---     check(exists(select * from EFFETTUAZIONE
---                  where EFFETTUAZIONE.clienteServito = codiceFiscale)); 
+--     check(exists(select * from SOGGIORNO
+--                  where SOGGIORNO.codFiscaleCliente = codFiscale)); 
+
+alter table DIRIGENTE add constraint FKCOORDINAZIONE
+     foreign key (tipoServizioCoordinato, stagioneServizioCoordinato, annoServizioCoordinato)
+     references SERVIZIO(tipoServizio, stagione, anno);
+
+alter table DIRIGENTE add constraint FKCONDIZIONAMENTO
+     foreign key (tipologiaSoggiornoCondizionato, meseSoggiornoCondizionato, annoSoggiornoCondizionato)
+     references TIPOLOGIASOGGIORNO(tipologia, mese, anno);
+
+alter table EROGAZIONE add constraint FKEROG_ADD
+     foreign key (ruoloAddettoErogante)
+     references ADDETTO(codRuolo);
+
+alter table EROGAZIONE add constraint FKEROG_SER
+     foreign key (tipoServizioErogato, stagioneServizioErogato, annoServizioErogato)
+     references SERVIZIO(tipoServizio, stagione, anno);
+
+alter table PRENOTAZIONE add constraint FKACCESSO
+     foreign key (tipoServizioUsufruito, stagioneServizioUsufruito, annoServizioUsufruito)
+     references SERVIZIO(tipoServizio, stagione, anno);
+
+alter table PRENOTAZIONE add constraint FKREGISTRAZIONE
+     foreign key (dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato)
+     references SOGGIORNO(dataInizio, codFiscaleCliente);
+
+alter table PRENOTAZIONE add constraint FKEFFETTUAZIONE
+     foreign key (codReceptionistOperante)
+     references RECEPTIONIST(codReceptionist);
 
 -- Not implemented
--- alter table CLIENTE add constraint IDCLIENTE_CHK
---     check(exists(select * from IDENTIFICAZIONE
---                  where IDENTIFICAZIONE.codiceCliente = codiceFiscale)); 
-
-alter table CLIENTE add constraint FKSELEZIONE
-     foreign key (tipologiaSoggiorno)
-     references SOGGIORNO (tipologia);
-
-alter table CONDIZIONAMENTO add constraint FKCON_SER
-     foreign key (codServizio)
-     references SERVIZIO (tipoServizio);
-
-alter table CONDIZIONAMENTO add constraint FKCON_LIS
-     foreign key (codListino)
-     references LISTINI (tipoListino);
-
-alter table CONDIZIONAMENTO add constraint FKCON_SOG
-     foreign key (codSoggiorno)
-     references SOGGIORNO (tipologia);
-
-alter table CREAZIONE add constraint FKCRE_ADD
-     foreign key (codiceAddetto)
-     references ADDETTO (codRuolo);
-
-alter table CREAZIONE add constraint FKCRE_SCH
-     foreign key (codiceScheda)
-     references SCHEDA (codScheda);
-
-alter table DIRIGENTE add constraint FKGESTIONE
-     foreign key (tipologiaListino)
-     references LISTINI (tipoListino);
-
-alter table EFFETTUAZIONE add constraint FKEFF_PRE
-     foreign key (prestazione)
-     references PRENOTAZIONE (tipoPrenotazione);
-
-alter table EFFETTUAZIONE add constraint FKEFF_CLI
-     foreign key (clienteServito)
-     references CLIENTE (codiceFiscale);
-
-alter table IDENTIFICAZIONE add constraint FKIDE_SCH
-     foreign key (numeroScheda)
-     references SCHEDA (codScheda);
-
-alter table IDENTIFICAZIONE add constraint FKIDE_CLI
-     foreign key (codiceCliente)
-     references CLIENTE (codiceFiscale);
-
--- Not implemented
--- alter table LISTINI add constraint IDLISTINI_CHK
---     check(exists(select * from CONDIZIONAMENTO
---                  where CONDIZIONAMENTO.codListino = tipoListino)); 
-
--- Not implemented
--- alter table LISTINI add constraint IDLISTINI_CHK
---     check(exists(select * from DIRIGENTE
---                  where DIRIGENTE.tipologiaListino = tipoListino)); 
-
--- Not implemented
--- alter table PRENOTAZIONE add constraint IDPRENOTAZIONE_CHK
---     check(exists(select * from REGISTRAZIONE
---                  where REGISTRAZIONE.codPrenotazione = tipoPrenotazione)); 
-
--- Not implemented
--- alter table PRENOTAZIONE add constraint IDPRENOTAZIONE_CHK
---     check(exists(select * from ACCESSO
---                  where ACCESSO.numeroPrenotazione = tipoPrenotazione)); 
-
-alter table REGISTRAZIONE add constraint FKREG_SCH
-     foreign key (schedaRegistrata)
-     references SCHEDA (codScheda);
-
-alter table REGISTRAZIONE add constraint FKREG_PRE
-     foreign key (codPrenotazione)
-     references PRENOTAZIONE (tipoPrenotazione);
-
--- Not implemented
--- alter table SCHEDA add constraint IDSCHEDA_CHK
---     check(exists(select * from VISUALIZZAZIONE
---                  where VISUALIZZAZIONE.codSchedaVisualizzata = codScheda)); 
-
--- Not implemented
--- alter table SCHEDA add constraint IDSCHEDA_CHK
---     check(exists(select * from REGISTRAZIONE
---                  where REGISTRAZIONE.schedaRegistrata = codScheda)); 
-
--- Not implemented
--- alter table SCHEDA add constraint IDSCHEDA_CHK
---     check(exists(select * from IDENTIFICAZIONE
---                  where IDENTIFICAZIONE.numeroScheda = codScheda)); 
-
--- Not implemented
--- alter table SCHEDA add constraint IDSCHEDA_CHK
---     check(exists(select * from ABBINAMENTO
---                  where ABBINAMENTO.schedaAbbinata = codScheda)); 
-
--- Not implemented
--- alter table SCHEDA add constraint IDSCHEDA_CHK
---     check(exists(select * from CREAZIONE
---                  where CREAZIONE.codiceScheda = codScheda)); 
+-- alter table RECEPTIONIST add constraint IDRECEPTIONIST_CHK
+--    check(exists(select * from SOGGIORNO
+--                where SOGGIORNO.codReceptionistInserente = codReceptionist)); 
 
 -- Not implemented
 -- alter table SERVIZIO add constraint IDSERVIZIO_CHK
---     check(exists(select * from ACCESSO
---                  where ACCESSO.servizioScelto = tipoServizio)); 
+--    check(exists(select * from EROGAZIONE
+--                  where EROGAZIONE.tipoServizioErogato = tipoServizio and EROGAZIONE.stagioneServizioErogato = stagione and EROGAZIONE.annoServizioErogato = anno)); 
 
--- Not implemented
--- alter table SERVIZIO add constraint IDSERVIZIO_CHK
---     check(exists(select * from CONDIZIONAMENTO
---                  where CONDIZIONAMENTO.codServizio = tipoServizio)); 
+alter table SOGGIORNO add constraint FKABBINAMENTO
+     foreign key (tipologiaSoggiornoScelto, meseSoggiornoScelto, annoSoggiornoScelto)
+     references TIPOLOGIASOGGIORNO(tipologia, mese, anno);
 
-alter table SERVIZIO add constraint FKEROGAZIONE
-     foreign key (addettoAssegnato)
-     references ADDETTO (codRuolo);
+alter table SOGGIORNO add constraint FKIDENTIFICAZIONE
+     foreign key (codFiscaleCliente)
+     references CLIENTE(codFiscale);
 
--- Not implemented
--- alter table SOGGIORNO add constraint IDSOGGIORNO_CHK
---     check(exists(select * from ABBINAMENTO
---                  where ABBINAMENTO.soggiornoScelto = tipologia)); 
-
--- Not implemented
--- alter table SOGGIORNO add constraint IDSOGGIORNO_CHK
---     check(exists(select * from CONDIZIONAMENTO
---                  where CONDIZIONAMENTO.codSoggiorno = tipologia)); 
-
--- Not implemented
--- alter table SOGGIORNO add constraint IDSOGGIORNO_CHK
---     check(exists(select * from CLIENTE
---                  where CLIENTE.tipologiaSoggiorno = tipologia)); 
-
-alter table VISUALIZZAZIONE add constraint FKVIS_ADD
-     foreign key (codAddettoAccedente)
-     references ADDETTO (codRuolo);
-
-alter table VISUALIZZAZIONE add constraint FKVIS_SCH
-     foreign key (codSchedaVisualizzata)
-     references SCHEDA (codScheda);
+alter table SOGGIORNO add constraint FKCREAZIONE
+     foreign key (codReceptionistInserente)
+     references RECEPTIONIST(codReceptionist);
 
 
 -- Index Section
