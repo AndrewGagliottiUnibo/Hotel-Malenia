@@ -23,11 +23,11 @@ public class LogicsImpl implements Logic {
   /**
    * Codes.
    */
-  private static final String REC_CODE = "REC1";
-  private static final String DIR_CODE = "DIR1";
-  private static final String SAL_CODE = "SAL1";
-  private static final String SERV_CODE = "SERV1";
-  private static final String CAM_CODE = "CAM1";
+  private static final String REC_CODE = "REC";
+  private static final String DIR_CODE = "DIR";
+  private static final String SAL_CODE = "SAL";
+  private static final String SERV_CODE = "SERV";
+  private static final String CAM_CODE = "CAM";
 
   /**
    * Specific views.
