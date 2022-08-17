@@ -10,8 +10,8 @@
 -- Database Section
 -- ________________ 
 
-create database HotelDB;
-use HotelDB;
+create database schemahotel;
+use schemahotel;
 
 
 -- DBSpace Section
@@ -90,6 +90,7 @@ create table SOGGIORNO (
      codFiscaleCliente varchar(16) not null,
      dataInizio date not null,
      durataSoggiorno date not null,
+     soggiornante tinyint not null,
      offertaScelta varchar(20) not null,
      codScheda numeric(10) not null,
      numeroCamera numeric(5) not null,
