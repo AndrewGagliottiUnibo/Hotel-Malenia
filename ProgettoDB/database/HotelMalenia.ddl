@@ -39,7 +39,7 @@ create table CLIENTE (
      constraint IDCLIENTE_ID primary key (codFiscale));
 
 create table DIRIGENTE (
-     codDirigente varchar(16) not null,
+     codDirigente tinyint not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
@@ -68,11 +68,11 @@ create table PRENOTAZIONE (
      tipoServizioUsufruito varchar(30) not null,
      stagioneServizioUsufruito varchar(15) not null,
      annoServizioUsufruito numeric(4) not null,
-     codReceptionistOperante varchar(16) not null,
+     codReceptionistOperante tinyint not null,
      constraint IDPRENOTAZIONE unique (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato));
 
 create table RECEPTIONIST (
-     codReceptionist varchar(16) not null,
+     codReceptionist tinyint not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
@@ -98,7 +98,7 @@ create table SOGGIORNO (
      tipologiaSoggiornoScelto varchar(30) not null,
      meseSoggiornoScelto varchar(15) not null,
      annoSoggiornoScelto numeric(4) not null,
-     codReceptionistInserente varchar(16) not null,
+     codReceptionistInserente tinyint not null,
      constraint IDSOGGIORNO primary key (dataInizio, codFiscaleCliente));
 
 create table TIPOLOGIASOGGIORNO (
