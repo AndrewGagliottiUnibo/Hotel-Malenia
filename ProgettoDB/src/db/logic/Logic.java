@@ -77,9 +77,9 @@ public interface Logic {
 	 * @param orarioCheckout
 	 * @return operation done successfully or not.
 	 */
-	boolean registerNewClient(String nome, String cognome, int codiceFiscale, String dataNascita, int numeroTel,
-			String tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto,
-			int durataSoggiorno, String orarioCheckin, String orarioCheckout);
+	boolean registerNewClient(String nome, String cognome, String codiceFiscale, String dataNascita, int numeroTel,
+	        String dataInizio, String offertaScelta, String tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto,
+			int durataSoggiorno, String meseSoggiorno, int annoSoggiorno);
 
 	/**
 	 * query 2. Does the checkout of the client.
@@ -99,7 +99,8 @@ public interface Logic {
 	 * @param resoconto
 	 * @return operation done successfully or not.
 	 */
-	boolean registerNewReservation(String tipoPrenotazione, String data, String ora, int nCamera, int resoconto);
+	 boolean registerNewReservation(String tipoPrenotazione, String tipoServizio, 
+	      String stagione, int anno, String giorno, String ora, int nCamera, int resoconto);
 
 	/**
 	 * query 4.
@@ -173,4 +174,6 @@ public interface Logic {
 	 * @return password value.
 	 */
 	String getOwnPassword();
+
+
 }
