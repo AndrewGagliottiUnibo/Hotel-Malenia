@@ -338,11 +338,10 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      myStm = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = ? "
-          + "SELECT tipoPrenotazione, data, ora FROM REGISTRAZIONE, PRENOTAZIONE, SCHEDA "
-          + "WHERE REGISTRAZIONE.schedaRegistrata = SCHEDA.codScheda AND "
-          + "REGISTRAZIONE.codPrenotazione = PRENOTAZIONE.tipoPrenotazione"
-          + "ORDER BY PRENOTAZIONE.giorno DESC, PRENOTAZIONE.ora DESC");
+      // Visual client by numeroCamera, implentare in base al codiceFiscale del cliente
+      myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO, PRENOTAZIONE WHERE numeroCamera = ? "
+          + "AND PRENOTAZIONE.codFiscaleClienteRegistrato = SOGGIORNO.codFiscaleCliente "
+          + "AND soggiornante = 1");
       myStm.setInt(1, nCamera);
 
       result = myStm.executeQuery();
@@ -361,7 +360,9 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      myStm = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera = ?");
+      // definire in base al numero camera?
+      myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? "
+          + "AND soggiornante = 1");
       myStm.setInt(1, nCamera);
 
       result = myStm.executeQuery();
@@ -383,9 +384,6 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      // PRENOTAZIONE.tipoPrenotazione, SCHEDA.codScheda non vengono identificate -
-      // terza query
-      // Da rivedere!!
       myStm = conn.prepareStatement("SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
           + "WHERE numeroCamera = ? AND soggiornante = 1");
       myStm.setInt(1, nCamera);
@@ -426,7 +424,7 @@ public class LogicsImpl implements Logic {
   }
 
   @Override
-  public boolean deleteReservation(int tipoPrenotazione, int numeroCamera) {
+  public boolean deleteReservation(int tipoPrenotazione, int numeroCamera, String giorno, int ora) {
     Connection conn = null;
     PreparedStatement myStm = null;
     ResultSet result = null;
@@ -434,23 +432,29 @@ public class LogicsImpl implements Logic {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
       myStm = conn.prepareStatement(
-          "SELECT tariffa FROM SERVIZIO, ACCESSO WHERE ACCESSO.numeroPrenotazione = ? ");
-      myStm.setInt(1, tipoPrenotazione);
+          "SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
+          + "WHERE numeroCamera = ? AND soggiornante = 1");
+      myStm.setInt(1, numeroCamera);
       result = myStm.executeQuery();
-      int price = result.getInt(1);
-      // Non riconosce molte varibili come SCHEDA.codScheda ad esempio
-      // Da rivedere!!
+      String codFiscale = result.getString(1);
+      String dataInizio = result.getString(2);
+
       myStm = conn.prepareStatement(
-          "DELETE FROM PRENOTAZIONE, REGISTRAZIONE WHERE PRENOTAZIONE.tipoPrenotazione = ? "
-              + "AND REGISTRAZIONE.codPrenotazione = ? AND PRENOTAZIONE.tipoPrenotazione = REGISTRAZIONE.codPrenotazione "
-              + "UPDATE SCHEDA SET resoconto = resoconto - ? "
-              + "WHERE codScheda IN (SELECT schedaRegistrata FROM REGISTRAZIONE, SCHEDA WHERE schedaRegistrata = SCHEDA.codScheda)");
+          "DELETE FROM PRENOTAZIONE WHERE tipoPrenotazione = ? AND giorno = ? "
+              + "AND ora = ? AND dataInizioSoggiornoRegistrato = ? AND codFiscaleClienteRegistrato = ?");
 
       myStm.setInt(1, tipoPrenotazione);
-      myStm.setInt(2, tipoPrenotazione);
-      myStm.setInt(3, price);
-
+      myStm.setString(2, giorno);
+      myStm.setInt(3, ora);
+      myStm.setString(4, dataInizio);
+      myStm.setString(4, codFiscale);
       myStm.executeQuery();
+      // come fare qui?
+      myStm = conn.prepareStatement(
+          "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? "
+          + "AND stagione = ? AND anno = ?");
+      myStm.setInt(1, numeroCamera);
+      result = myStm.executeQuery();
     } catch (SQLException e) {
       e.printStackTrace();
       return false;
@@ -466,11 +470,13 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      // SCHEDA.codScheda non viene riconosciuta - seconda query
-      // Da rivedere!!
-      myStm = conn.prepareStatement("SELECT codScheda FROM SCHEDA WHERE numeroCamera = ? "
-          + "SELECT * FROM PRENOTAZIONE WHERE tipoPrenotazione IN "
-          + "(SELECT codPrenotazione FROM REGISTRAZIONE WHERE schedaRegistrata = SCHEDA.codScheda)");
+
+      myStm = conn.prepareStatement("SELECT tipoServizio, stagione, anno, tariffa FROM SERVIZIO "
+          + "RIGHT JOIN (SELECT tipoServizioUsufruito, stagioneServizioUsufruito, annoServizioUsufruito "
+          + "FROM PRENOTAZIONE, SOGGIORNO WHERE numeroCamera = ? AND PRENOTAZIONE.codFiscaleClienteRegistrato = "
+          + "SOGGIORNO.codFiscaleCliente AND soggiornante = 1) AS PREN "
+          + "ON SERVIZIO.tipoServizio = PREN.tipoServizioUsufruito AND SERVIZIO.stagione = PREN.stagioneServizioUsufruito "
+          + "AND SERVIZIO.anno = PREN.annoServizioUsufruito");
 
       myStm.setInt(1, nCamera);
 
@@ -490,7 +496,7 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      myStm = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+      myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE soggiornante = 1");
       result = myStm.executeQuery();
     } catch (Exception e) {
       e.printStackTrace();
