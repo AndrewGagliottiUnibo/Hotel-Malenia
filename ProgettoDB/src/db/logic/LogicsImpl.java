@@ -129,8 +129,8 @@ public class LogicsImpl implements Logic {
     ResultSet result = null;
     try {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.getOwnPassword());
-        myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
-                                    + "WHERE SCHEDA.numeroCamera IS NOT NULL");
+        myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO "
+                                    + "WHERE soggiornante = 1");
         result = myStm.executeQuery();
     } catch (SQLException exc) {
         exc.printStackTrace();
@@ -145,9 +145,8 @@ public class LogicsImpl implements Logic {
     ResultSet result = null;
     try {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.getOwnPassword());
-        myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
-                                    + "WHERE datiGestionali_tariffa = ? "
-                                    + "AND datiGestionali_tariffa = ?");
+        myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO "
+            + "WHERE tipologiaSoggiornoScelto = ? AND tipologiaSoggiornoScelto = ? AND soggiornante = 1");
         myStm.setString(1, "AllInclusive");
         myStm.setString(2, "PensioneCompleta");
         result = myStm.executeQuery();
@@ -164,9 +163,8 @@ public class LogicsImpl implements Logic {
     ResultSet result = null;
     try {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.getOwnPassword());
-        myStm = conn.prepareStatement("SELECT SCHEDA.numeroCamera FROM SCHEDA "
-                                    + "WHERE datiGestionali_tariffa = ? "
-                                    + "AND datiGestionali_tariffa = ?");
+        myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO "
+            + "WHERE tipologiaSoggiornoScelto = ? AND tipologiaSoggiornoScelto = ?");
         myStm.setString(1, "AllInclusive");
         myStm.setString(2, "PensioneCompleta");
         result = myStm.executeQuery();
