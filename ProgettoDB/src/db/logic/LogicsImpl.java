@@ -207,15 +207,25 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public boolean modifyPrice(int price, String tipoListino) {
+    public boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
+	    int mese, int annoSoggiorno, int prezzo) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("UPDATE Listini SET valoreMonetario = ? WHERE tipoListino = ?");
-	    myStm.setInt(1, price);
-	    myStm.setString(2, tipoListino);
+	    myStm = conn.prepareStatement("INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) "
+		    + "VALUES (?, ?, ?, ?) " + "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) "
+		    + "VALUES (?, ?, ?, ?); " + "");
+	    myStm.setString(1, tipoServizio);
+	    myStm.setString(2, stagione);
+	    myStm.setInt(3, anno);
+	    myStm.setInt(4, tariffa);
+	    myStm.setString(5, tipologiaSoggiorno);
+
+	    myStm.setInt(6, mese);
+	    myStm.setInt(7, annoSoggiorno);
+	    myStm.setInt(8, prezzo);
 	    myStm.executeQuery();
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -235,18 +245,12 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    // Elimino le intolleranze, perché il codice fiscale è un int? Manca la colonna
-	    // tariffa - prima query
-	    // Mancano dati nella tabella SOGGIORNO, ergo attualemente non funziona (ma
-	    // nessun problema) - seconda query
-	    // Non capisce da dove prendere codScheda (non riesco a farla funzionare) -
-	    // terza query
-	    myStm = conn.prepareStatement(
-		    "INSERT INTO CLIENTE (codFiscale, nome, cognome, dataNascita, numeroTel)" + "VALUES (?, ?, ?, ?, ?)"
-			    + "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
-			    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
-			    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
-			    + "VALUES (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, 10) ");
+	    myStm = conn.prepareStatement("INSERT INTO CLIENTE (codFiscale, nome, cognome, dataNascita, numeroTel) "
+		    + "VALUES (?, ?, ?, ?, ?); "
+		    + "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
+		    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
+		    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
+		    + "VALUES (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, 10) ");
 	    myStm.setString(1, codiceFiscale);
 	    myStm.setString(2, nome);
 	    myStm.setString(3, cognome);
@@ -264,8 +268,8 @@ public class LogicsImpl implements Logic {
 	    myStm.setInt(14, annoSoggiorno);
 	    myStm.executeQuery();
 
-	    myStm = conn.prepareStatement(
-		    "SELECT prezzo FROM TIPOLOGIASOGGIORNO " + "WHERE tipologia = ?, mese = ?, anno = ?");
+	    myStm = conn
+		    .prepareStatement("SELECT prezzo FROM TIPOLOGIASOGGIORNO WHERE tipologia = ?, mese = ?, anno = ?");
 	    myStm.setString(1, tipologiaSoggiorno);
 	    myStm.setString(2, meseSoggiorno);
 	    myStm.setInt(3, annoSoggiorno);
@@ -294,8 +298,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement(
-		    "SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? " + "AND soggiornante = 1");
+	    myStm = conn
+		    .prepareStatement("SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = 1");
 	    myStm.setInt(1, nCamera);
 	    result = myStm.executeQuery();
 	    String dataInizio = result.getString(1);
@@ -319,10 +323,7 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    // price mai usato! Comunque query non funzionante, non capisco cosa dovrebbe
-	    // fare
-	    // Da rivedere!!
-	    myStm = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? "
+	    myStm = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ?; "
 		    + "UPDATE SCHEDA SET resoconto = ? + SERVIZIO.tariffa "
 		    + "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?)");
 	    myStm.setInt(1, tipoServizio);
@@ -345,8 +346,6 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    // Visual client by numeroCamera, implentare in base al codiceFiscale del
-	    // cliente
 	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO, PRENOTAZIONE WHERE numeroCamera = ? "
 		    + "AND PRENOTAZIONE.codFiscaleClienteRegistrato = SOGGIORNO.codFiscaleCliente "
 		    + "AND soggiornante = 1");
@@ -401,15 +400,17 @@ public class LogicsImpl implements Logic {
 	    myStm = conn.prepareStatement("INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora, "
 		    + "dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato, tipoServizioUsufruito, "
 		    + "stagioneServizioUsufruito, annoServizioUsufruito, codReceptionistOperante) "
-		    + "VALUES (?, ’ ’, ’ ’, dataInizio, codFiscaleCliente, ?, ?, ?, 10)");
+		    + "VALUES (?, ?, ?, dataInizio, codFiscaleCliente, ?, ?, ?, 10)");
 	    myStm.setString(1, tipoPrenotazione);
-	    myStm.setString(2, tipoServizio);
-	    myStm.setString(3, stagione);
-	    myStm.setInt(4, anno);
+	    myStm.setString(2, giorno);
+	    myStm.setString(3, ora);
+	    myStm.setString(4, tipoServizio);
+	    myStm.setString(5, stagione);
+	    myStm.setInt(6, anno);
 	    myStm.executeQuery();
 
 	    myStm = conn.prepareStatement(
-		    "SELECT tariffa FROM SERVIZIO " + "WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
+		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
 	    myStm.setString(1, tipoServizio);
 	    myStm.setString(2, stagione);
 	    myStm.setInt(3, anno);
@@ -518,8 +519,9 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SCHEDA, IDENTIFICAZIONE, CLIENTE WHERE "
-		    + "SCHEDA.codScheda = IDENTIFICAZIONE.numeroScheda AND IDENTIFICAZIONE.codiceCliente = ?");
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE dataInizio = ? AND durataSoggiorno = ? "
+		    + "AND soggiornante = ? AND offertaScelta= ? AND numeroCamera = ? "
+		    + "AND tipologiaSoggiornoScelto = ? AND meseSoggiornoScelto = ? AND annoSoggiornoScelto = ? ");
 
 	    myStm.setInt(1, codCliente);
 	    result = myStm.executeQuery();
