@@ -369,6 +369,25 @@ public class LogicsImpl implements Logic {
 	}
     }
 
+    @Override
+    public ResultSet viewReservations(final int roomNumber) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO, PRENOTAZIONE WHERE numeroCamera = ? "
+		    + "AND PRENOTAZIONE.codFiscaleClienteRegistrato = SOGGIORNO.codFiscaleCliente "
+		    + "AND soggiornante = 1");
+	    myStm.setInt(1, roomNumber);
+	    result = myStm.executeQuery();
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+	return result;
+    }
+
     
     
     
@@ -421,27 +440,6 @@ public class LogicsImpl implements Logic {
 	    return false;
 	}
 	return true;
-    }
-
-    @Override
-    public ResultSet visualClients(int nCamera) {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO, PRENOTAZIONE WHERE numeroCamera = ? "
-		    + "AND PRENOTAZIONE.codFiscaleClienteRegistrato = SOGGIORNO.codFiscaleCliente "
-		    + "AND soggiornante = 1");
-	    myStm.setInt(1, nCamera);
-
-	    result = myStm.executeQuery();
-	} catch (Exception e) {
-	    e.printStackTrace();
-	}
-
-	return result;
     }
 
     @Override

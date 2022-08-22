@@ -117,12 +117,11 @@ public interface Logic {
     void deleteReservation(String reservationType, int roomNumber, String day, int hour);
 
     /**
-     * query 5.
-     * 
-     * @param nCamera
-     * @return a ResultSet of clients.
+     * Query 5 - View all clients actually in the Hotel.
+     * @param roomNumber
+     * @return set of clients viewed.
      */
-    ResultSet visualClients(int nCamera);
+    ResultSet viewReservations(int roomNumber);
 
     /**
      * query 6.
