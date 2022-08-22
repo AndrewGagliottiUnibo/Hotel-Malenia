@@ -2,6 +2,7 @@ package db.logic;
 
 import java.sql.ResultSet;
 import javax.swing.JFrame;
+import javax.swing.JTextArea;
 
 public interface Logic {
 
@@ -30,7 +31,7 @@ public interface Logic {
 	 * BedroomService method: let you make a query where you recover from the db all
 	 * the rooms that must be cleaned.
 	 */
-	ResultSet showRoomToBeCleaned();
+	void showRoomToBeCleaned(JTextArea result);
 
 	/**
 	 * Restaurant method: return the reserved tables for breakfast.

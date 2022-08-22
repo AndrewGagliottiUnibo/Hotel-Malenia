@@ -14,7 +14,6 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
-import java.sql.ResultSet;
 import javax.swing.JScrollPane;
 
 public class BedroomServicePages {
@@ -65,18 +64,7 @@ public class BedroomServicePages {
 		 */
 		JButton requestRoomToBeCleared = new JButton("Vedi camere da pulire");
 		requestRoomToBeCleared.addActionListener(e -> {
-			ResultSet result = this.logic.showRoomToBeCleaned();
-			 try {
-				 int row = result.getRow();
-				 
-				 while(result.next()) {
-					 for(int i = 0; i < row; i++) {
-						 this.textArea.append("Camera: " + result.getString(i) + "\n");
-					 }
-				 }
-			 } catch(Exception ecc) {
-				 ecc.printStackTrace();
-			 }
+		    this.logic.showRoomToBeCleaned(this.textArea);
 		});
 		
 		requestRoomToBeCleared.setFont(new Font("Verdana", Font.BOLD, 12));

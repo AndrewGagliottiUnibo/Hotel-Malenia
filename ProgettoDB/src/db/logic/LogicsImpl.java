@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
 import db.pages.LoginPages;
@@ -105,7 +106,7 @@ public class LogicsImpl implements Logic {
   }
 
   @Override
-  public ResultSet showRoomToBeCleaned() {
+  public void showRoomToBeCleaned(final JTextArea textArea) {
     Connection conn = null;
     PreparedStatement myStm = null;
     ResultSet result = null;
@@ -113,13 +114,23 @@ public class LogicsImpl implements Logic {
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
           this.getOwnPassword());
-      myStm = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+      myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera IS NOT NULL");
       result = myStm.executeQuery();
     } catch (Exception e) {
       e.printStackTrace();
     }
-
-    return result;
+    
+    try {
+		 int row = result.getRow();
+		 
+		 while(result.next()) {
+			 for(int i = 0; i < row; i++) {
+				 textArea.append("Camera: " + result.getString(i) + "\n");
+			 }
+		 }
+	 } catch(Exception ecc) {
+		 ecc.printStackTrace();
+	 }
   }
 
   @Override

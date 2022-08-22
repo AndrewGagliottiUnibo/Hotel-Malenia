@@ -82,8 +82,6 @@ public class ReceptionPages {
 		btnRegistraCliente.addActionListener(e -> {
 			this.frmHotelMalenia.setVisible(false);
 			this.logic.goToSpecificPage("Registration", this.frmHotelMalenia);
-			
-			
 		});
 
 		btnRegistraCliente.setBackground(Color.DARK_GRAY);
