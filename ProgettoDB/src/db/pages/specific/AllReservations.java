@@ -37,6 +37,7 @@ public class AllReservations {
 	 */
 	private void initialize() {
 		frmPrenotazioni = new JFrame();
+		frmPrenotazioni.setResizable(false);
 		frmPrenotazioni.getContentPane().setForeground(Color.ORANGE);
 		frmPrenotazioni.getContentPane().setFont(new Font("Verdana", Font.BOLD, 12));
 		frmPrenotazioni.getContentPane().setBackground(Color.DARK_GRAY);

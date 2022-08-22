@@ -54,6 +54,7 @@ public class ClientCard {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("Scheda Cliente");
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 945, 528);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

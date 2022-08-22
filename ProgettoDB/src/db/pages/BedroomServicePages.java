@@ -38,6 +38,7 @@ public class BedroomServicePages {
      */
     private void initialize() {
 	frame = new JFrame();
+	frame.setResizable(false);
 	frame.setTitle("Hotel Malenia - Servizio camere");
 	frame.setResizable(false);
 	frame.getContentPane().setBackground(Color.DARK_GRAY);

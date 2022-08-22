@@ -27,6 +27,7 @@ public class ManagerPages {
 	 */
 	private void initialize() {
 		frmHotelMalenia = new JFrame();
+		frmHotelMalenia.setResizable(false);
 		frmHotelMalenia.setTitle("Hotel Malenia - Manager");
 		frmHotelMalenia.getContentPane().setBackground(Color.DARK_GRAY);
 		frmHotelMalenia.getContentPane().setForeground(Color.DARK_GRAY);

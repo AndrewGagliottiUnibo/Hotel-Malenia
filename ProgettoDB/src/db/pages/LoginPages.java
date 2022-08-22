@@ -36,6 +36,7 @@ public class LoginPages {
 	 * Set GUI parameters.
 	 */
 	frame = new JFrame();
+	frame.setResizable(false);
 	frame.setTitle("Hotel Malenia - Login");
 	frame.setBackground(Color.YELLOW);
 	frame.setBounds(100, 100, 945, 528);

@@ -45,6 +45,7 @@ public class NewReservation {
 	 */
 	private void initialize() {
 		frmNuovaPrenotazione = new JFrame();
+		frmNuovaPrenotazione.setResizable(false);
 		frmNuovaPrenotazione.getContentPane().setForeground(Color.ORANGE);
 		frmNuovaPrenotazione.getContentPane().setFont(new Font("Verdana", Font.BOLD, 12));
 		frmNuovaPrenotazione.getContentPane().setBackground(Color.DARK_GRAY);

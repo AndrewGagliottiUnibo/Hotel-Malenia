@@ -38,6 +38,7 @@ public class AllClientCards {
 	 */
 	private void initialize() {
 		frmSchedeClienti = new JFrame();
+		frmSchedeClienti.setResizable(false);
 		frmSchedeClienti.setTitle("Schede clienti");
 		frmSchedeClienti.getContentPane().setBackground(Color.DARK_GRAY);
 		frmSchedeClienti.setBounds(100, 100, 945, 528);

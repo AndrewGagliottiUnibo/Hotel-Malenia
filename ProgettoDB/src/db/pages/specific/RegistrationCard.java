@@ -29,11 +29,11 @@ public class RegistrationCard {
 	private JRadioButton rdbtnIntCompleto;
 	private JRadioButton rdbtnIntAllInclusive;
 	private JLabel lblTipoSoggiorno;
-	private Logic logic;
 	private JTextField codCardField;
 	private JLabel codLabel;
 	private JRadioButton rdbtnIntLattosio;
 	private String soggiorno;
+	private Logic logic;
 
 	// Basic value for allergies
 	private int lattosio = 0;
@@ -53,6 +53,7 @@ public class RegistrationCard {
 	 */
 	private void initialize() {
 		frmRegistraCliente = new JFrame();
+		frmRegistraCliente.setResizable(false);
 		frmRegistraCliente.setTitle("Registra Cliente");
 		frmRegistraCliente.getContentPane().setBackground(Color.DARK_GRAY);
 		frmRegistraCliente.setBounds(100, 100, 945, 528);

@@ -28,6 +28,7 @@ public class ReceptionPages {
 	 */
 	private void initialize() {
 		frmHotelMalenia = new JFrame();
+		frmHotelMalenia.setResizable(false);
 		frmHotelMalenia.setTitle("Hotel Malenia - Reception");
 		frmHotelMalenia.setResizable(false);
 		frmHotelMalenia.getContentPane().setBackground(Color.DARK_GRAY);

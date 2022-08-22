@@ -36,6 +36,7 @@ public class PricePage {
 	 */
 	private void initialize() {
 		frmListini = new JFrame();
+		frmListini.setResizable(false);
 		frmListini.getContentPane().setBackground(Color.DARK_GRAY);
 		frmListini.setTitle("Listini");
 		frmListini.setBounds(100, 100, 945, 528);

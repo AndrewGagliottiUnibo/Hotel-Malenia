@@ -30,6 +30,7 @@ public interface Logic {
     /**
      * BedroomService method: let you make a query where you recover from the db all
      * the rooms that must be cleaned.
+     * 
      * @param result
      */
     void showRoomsToBeCleaned(JTextArea result);
