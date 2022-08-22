@@ -125,19 +125,18 @@ public interface Logic {
     ResultSet viewReservations(int roomNumber);
 
     /**
-     * query 6.
+     * Query 6 - Add an item or a service bought to a client card.
      * 
-     * @param tipoServizio
-     * @param stagione
-     * @param anno
-     * @param numeroCamera
-     * @param tipoPrenotazione
-     * @param giorno
-     * @param ora
-     * @return operation done successfully or not.
+     * @param serviceType
+     * @param season
+     * @param year
+     * @param roomNumber
+     * @param reservationType
+     * @param day
+     * @param hour
      */
-    boolean additionCost(String tipoServizio, String stagione, int anno, int numeroCamera, String tipoPrenotazione,
-	    String giorno, int ora);
+    void addCost(String serviceType, String season, int year, int roomNumber, String reservationType, String day,
+	    int hour);
 
     /**
      * Query 7 - View the card of a client.
@@ -169,7 +168,7 @@ public interface Logic {
      * @return a ResultSet with the informations about a specific client.
      */
     ResultSet ReviewClient(int codCliente);
-    
+
     /**
      * Modify the price in input. query 11.
      * 
