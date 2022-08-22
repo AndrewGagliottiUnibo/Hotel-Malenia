@@ -64,7 +64,7 @@ public class BedroomServicePages {
 		 */
 		JButton requestRoomToBeCleared = new JButton("Vedi camere da pulire");
 		requestRoomToBeCleared.addActionListener(e -> {
-		    this.logic.showRoomToBeCleaned(this.textArea);
+		    this.logic.showRoomsToBeCleaned(this.textArea);
 		});
 		
 		requestRoomToBeCleared.setFont(new Font("Verdana", Font.BOLD, 12));
