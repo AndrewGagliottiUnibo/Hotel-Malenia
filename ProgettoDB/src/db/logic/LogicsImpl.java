@@ -364,6 +364,14 @@ public class LogicsImpl implements Logic {
 		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? " + "AND stagione = ? AND anno = ?");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
+	    int price = result.getInt(1);
+
+	    myStm = conn.prepareStatement(
+		    "UPDATE SOGGIORNO SET resoconto = resoconto - ? WHERE codFiscaleCliente = ? AND dataInizio = ?");
+	    myStm.setInt(1, price);
+	    myStm.setString(2, identifier);
+	    myStm.setString(3, beginningDate);
+	    result = myStm.executeQuery();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
@@ -396,7 +404,7 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? " + "AND soggiornante = 1");
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = 1");
 	    myStm.setInt(1, roomNumber);
 
 	    result = myStm.executeQuery();
@@ -417,8 +425,8 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) "
-		    + "VALUES (?, ?, ?, ?) " + "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) "
-		    + "VALUES (?, ?, ?, ?); " + "");
+		    + "VALUES (?, ?, ?, ?); " + "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) "
+		    + "VALUES (?, ?, ?, ?); ");
 	    myStm.setString(1, tipoServizio);
 	    myStm.setString(2, stagione);
 	    myStm.setInt(3, anno);
@@ -505,7 +513,6 @@ public class LogicsImpl implements Logic {
 		    + "AND SERVIZIO.anno = PREN.annoServizioUsufruito");
 
 	    myStm.setInt(1, nCamera);
-
 	    result = myStm.executeQuery();
 	} catch (Exception e) {
 	    e.printStackTrace();
