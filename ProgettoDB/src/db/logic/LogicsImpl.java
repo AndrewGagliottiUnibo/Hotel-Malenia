@@ -408,6 +408,14 @@ public class LogicsImpl implements Logic {
 
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
     @Override
     public boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
 	    int mese, int annoSoggiorno, int prezzo) {
