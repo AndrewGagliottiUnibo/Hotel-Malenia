@@ -188,7 +188,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public int actualPrice(String tipoListino) {
+    public int getSpecificPrice(final String item) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -197,7 +197,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT valoreMonetario FROM Listini WHERE tipoListino = ?");
-	    myStm.setString(1, tipoListino);
+	    myStm.setString(1, item);
 	    result = myStm.executeQuery();
 	    recordNumber = result.getInt(1);
 	} catch (SQLException e) {

@@ -38,51 +38,54 @@ public interface Logic {
     /**
      * Restaurant method: return the reserved tables for breakfast.
      * 
+     * @return set of rooms.
      */
     ResultSet showBreakfastTables();
 
     /**
      * Restaurant method: return the reserved tables for Launch.
      * 
+     * @return set of rooms.
      */
     ResultSet showLaunchTables();
 
     /**
      * Restaurant method: return the reserved tables for Dinner.
      * 
+     * @return set of rooms.
      */
     ResultSet showDinnerTables();
 
     /**
      * Show the actual price for a specific product.
      * 
-     * @param tipoListino
+     * @param item
      * @return
      */
-    int actualPrice(String tipoListino);
+    int getSpecificPrice(String item);
 
-	/**
-	 * query 1.
-	 * 
-	 * @param nome
-	 * @param cognome
-	 * @param codiceFiscale
-	 * @param dataNascita
-	 * @param numeroTel
-	 * @param tipologiaSoggiorno
-	 * @param codScheda
-	 * @param numeroCamera
-	 * @param intolleranze
-	 * @param resoconto
-	 * @param datiTariffa
-	 * @param durataSoggiorno
-	 * @param orarioCheckin
-	 * @param orarioCheckout
-	 * @return operation done successfully or not.
-	 */
-	boolean registerNewClient(String nome, String cognome, String codiceFiscale, String dataNascita, int numeroTel,
-	        String dataInizio, String offertaScelta, String tipologiaSoggiorno, int codScheda, int numeroCamera, int intolleranze, int resoconto,
-			int durataSoggiorno, String meseSoggiorno, int annoSoggiorno);
+    /**
+     * query 1.
+     * 
+     * @param nome
+     * @param cognome
+     * @param codiceFiscale
+     * @param dataNascita
+     * @param numeroTel
+     * @param tipologiaSoggiorno
+     * @param codScheda
+     * @param numeroCamera
+     * @param intolleranze
+     * @param resoconto
+     * @param datiTariffa
+     * @param durataSoggiorno
+     * @param orarioCheckin
+     * @param orarioCheckout
+     * @return operation done successfully or not.
+     */
+    boolean registerNewClient(String nome, String cognome, String codiceFiscale, String dataNascita, int numeroTel,
+	    String dataInizio, String offertaScelta, String tipologiaSoggiorno, int codScheda, int numeroCamera,
+	    int intolleranze, int resoconto, int durataSoggiorno, String meseSoggiorno, int annoSoggiorno);
 
     /**
      * query 2. Does the checkout of the client.
@@ -156,27 +159,26 @@ public interface Logic {
      */
     ResultSet totalAmount();
 
-	/**
-	 * Modify the price in input. query 10
-	 * 
-	 * @param price
-	 * @param nome
-	 * @return the operation done successfully or not.
-	 */
-	boolean modifyPrice(int price, String tipoListino);
+    /**
+     * Modify the price in input. query 10.
+     * 
+     * @param price
+     * @param nome
+     * @return the operation done successfully or not.
+     */
+    boolean modifyPrice(int price, String tipoListino);
 
-	/**
-	 * query 11.
-	 * 
-	 * @param codCliente
-	 * @return a ResultSet with the informations about a specific client.
-	 */
-	ResultSet ReviewClient(int codCliente);
-	
-	/**
-	 * @return password value.
-	 */
-	String getOwnPassword();
+    /**
+     * query 11.
+     * 
+     * @param codCliente
+     * @return a ResultSet with the informations about a specific client.
+     */
+    ResultSet ReviewClient(int codCliente);
 
+    /**
+     * @return password value.
+     */
+    String getOwnPassword();
 
 }
