@@ -127,13 +127,17 @@ public interface Logic {
     /**
      * query 6.
      * 
-     * @param nCamera
-     * @param price
-     * @param resoconto
      * @param tipoServizio
+     * @param stagione
+     * @param anno
+     * @param numeroCamera
+     * @param tipoPrenotazione
+     * @param giorno
+     * @param ora
      * @return operation done successfully or not.
      */
-    boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio);
+    boolean additionCost(String tipoServizio, String stagione, int anno, int numeroCamera, String tipoPrenotazione,
+	    String giorno, int ora);
 
     /**
      * Query 7 - View the card of a client.
@@ -159,21 +163,22 @@ public interface Logic {
     ResultSet totalAmount();
 
     /**
-     * Modify the price in input. query 10.
-     * 
-     * @param price
-     * @param nome
-     * @return the operation done successfully or not.
-     */
-    boolean modifyPrice(int price, String tipoListino);
-
-    /**
-     * query 11.
+     * query 10.
      * 
      * @param codCliente
      * @return a ResultSet with the informations about a specific client.
      */
     ResultSet ReviewClient(int codCliente);
+    
+    /**
+     * Modify the price in input. query 11.
+     * 
+     * @param price
+     * @param nome
+     * @return the operation done successfully or not.
+     */
+    boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
+	    int mese, int annoSoggiorno, int prezzo);
 
     /**
      * @return password value.

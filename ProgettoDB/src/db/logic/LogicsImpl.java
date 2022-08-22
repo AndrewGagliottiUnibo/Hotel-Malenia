@@ -408,14 +408,6 @@ public class LogicsImpl implements Logic {
 
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
     @Override
     public boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
 	    int mese, int annoSoggiorno, int prezzo) {
@@ -445,20 +437,50 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio) {
+    public boolean additionCost(String tipoServizio, String stagione, int anno, int numeroCamera,
+	    String tipoPrenotazione, String giorno, int ora) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
+	ResultSet result = null;
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ?; "
-		    + "UPDATE SCHEDA SET resoconto = ? + SERVIZIO.tariffa "
-		    + "WHERE codScheda IN (SELECT codScheda FROM SCHEDA WHERE numeroCamera = ?)");
-	    myStm.setInt(1, tipoServizio);
-	    myStm.setInt(2, resoconto);
-	    myStm.setInt(3, nCamera);
+	    myStm = conn.prepareStatement(
+		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
+	    myStm.setString(1, tipoServizio);
+	    myStm.setString(2, stagione);
+	    myStm.setInt(3, anno);
+	    result = myStm.executeQuery();
+	    int tariffa = result.getInt(1);
 
+	    myStm = conn.prepareStatement("SELECT dataInizio, codFiscaleCliente FROM SOGGIORNO "
+		    + "WHERE numeroCamera = ? AND soggiornante = 1");
+	    myStm.setInt(1, numeroCamera);
+	    result = myStm.executeQuery();
+	    String dataInizio = result.getString(1);
+	    String codFiscale = result.getString(2);
+
+	    myStm = conn.prepareStatement(
+		    "INSERT INTO PRENOTAZIONE (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, "
+			    + "codFiscaleClienteRegistrato, tipoServizioUsufruito, "
+			    + "stagioneServizioUsufruito, annoServizioUsufruito, codReceptionistOperante) "
+			    + "VALUES (?, ?, ?, ?, ?, ?, stagione, anno, 10)");
+	    myStm.setString(1, tipoPrenotazione);
+	    myStm.setString(2, giorno);
+	    myStm.setInt(3, ora);
+	    myStm.setString(4, dataInizio);
+	    myStm.setString(5, codFiscale);
+	    myStm.setString(6, tipoServizio);
+	    myStm.setString(7, stagione);
+	    myStm.setInt(8, anno);
 	    myStm.executeQuery();
+
+	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
+		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
+	    myStm.setInt(1, tariffa);
+	    myStm.setString(2, codFiscale);
+	    myStm.setString(3, dataInizio);
+
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	    return false;
