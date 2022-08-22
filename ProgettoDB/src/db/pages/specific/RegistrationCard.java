@@ -291,7 +291,7 @@ public class RegistrationCard {
 			}
 
 			this.logic.registerNewClient(this.name.getText(), this.surname.getText(),
-					Integer.parseInt(this.cfField.getText()), this.dateField.getText(),
+					this.cfField.getText(), this.dateField.getText(),
 					Integer.parseInt(this.telField.getText()), this.soggiorno,
 					Integer.parseInt(this.codCardField.getText()), Integer.parseInt(this.roomFIeld.getText()),
 					intollerance, Integer.parseInt(this.resField.getText()), Integer.parseInt(this.dayFIeld.getText()),

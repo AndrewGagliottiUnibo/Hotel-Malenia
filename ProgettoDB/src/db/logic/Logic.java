@@ -66,15 +66,16 @@ public interface Logic {
 	 * @param codiceFiscale
 	 * @param dataNascita
 	 * @param numeroTel
+	 * @param dataInizio
+	 * @param offertaScelta
 	 * @param tipologiaSoggiorno
 	 * @param codScheda
 	 * @param numeroCamera
 	 * @param intolleranze
 	 * @param resoconto
-	 * @param datiTariffa
 	 * @param durataSoggiorno
-	 * @param orarioCheckin
-	 * @param orarioCheckout
+	 * @param meseSoggiorno
+	 * @param annoSoggiorno
 	 * @return operation done successfully or not.
 	 */
 	boolean registerNewClient(String nome, String cognome, String codiceFiscale, String dataNascita, int numeroTel,
@@ -154,16 +155,7 @@ public interface Logic {
 	ResultSet totalAmount();
 
 	/**
-	 * Modify the price in input. query 10
-	 * 
-	 * @param price
-	 * @param nome
-	 * @return the operation done successfully or not.
-	 */
-	boolean modifyPrice(int price, String tipoListino);
-
-	/**
-	 * query 11.
+	 * query 10.
 	 * 
 	 * @param codCliente
 	 * @return a ResultSet with the informations about a specific client.
@@ -171,9 +163,24 @@ public interface Logic {
 	ResultSet ReviewClient(int codCliente);
 	
 	/**
+	 * Modify the price in input. query 11
+	 * 
+	 * @param tipoServizio
+	 * @param stagione
+	 * @param anno
+	 * @param tariffa
+	 * @param tipologiaSoggiorno
+	 * @param mese
+	 * @param annoSoggiorno
+	 * @param prezzo
+	 * @return the operation done successfully or not.
+	 */
+	boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
+		    int mese, int annoSoggiorno, int prezzo);
+	
+	/**
 	 * @return password value.
 	 */
 	String getOwnPassword();
-
 
 }
