@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
 import db.pages.LoginPages;
@@ -105,7 +106,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public ResultSet showRoomToBeCleaned() {
+    public void showRoomsToBeCleaned(final JTextArea textArea) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -113,13 +114,23 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SCHEDA WHERE numeroCamera IS NOT NULL");
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera IS NOT NULL");
 	    result = myStm.executeQuery();
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
 
-	return result;
+	try {
+	    int row = result.getRow();
+
+	    while (result.next()) {
+		for (int i = 0; i < row; i++) {
+		    textArea.append("Camera: " + result.getString(i) + "\n");
+		}
+	    }
+	} catch (Exception ecc) {
+	    ecc.printStackTrace();
+	}
     }
 
     @Override
@@ -146,8 +157,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO "
-		    + "WHERE tipologiaSoggiornoScelto = ? AND tipologiaSoggiornoScelto = ? AND soggiornante = 1");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE tipologiaSoggiornoScelto = ? "
+		    + "AND tipologiaSoggiornoScelto = ? " + "AND soggiornante = 1");
 	    myStm.setString(1, "AllInclusive");
 	    myStm.setString(2, "PensioneCompleta");
 	    result = myStm.executeQuery();
@@ -165,8 +176,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO "
-		    + "WHERE tipologiaSoggiornoScelto = ? AND tipologiaSoggiornoScelto = ?");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE tipologiaSoggiornoScelto = ? "
+		    + "AND tipologiaSoggiornoScelto = ?");
 	    myStm.setString(1, "AllInclusive");
 	    myStm.setString(2, "PensioneCompleta");
 	    result = myStm.executeQuery();
@@ -356,7 +367,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = 1");
+	    // definire in base al numero camera?
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? " + "AND soggiornante = 1");
 	    myStm.setInt(1, nCamera);
 
 	    result = myStm.executeQuery();
@@ -443,8 +455,9 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(4, dataInizio);
 	    myStm.setString(4, codFiscale);
 	    myStm.executeQuery();
+	    // come fare qui?
 	    myStm = conn.prepareStatement(
-		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
+		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? " + "AND stagione = ? AND anno = ?");
 	    myStm.setInt(1, numeroCamera);
 	    result = myStm.executeQuery();
 	} catch (SQLException e) {
@@ -462,6 +475,7 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
+
 	    myStm = conn.prepareStatement("SELECT tipoServizio, stagione, anno, tariffa FROM SERVIZIO "
 		    + "RIGHT JOIN (SELECT tipoServizioUsufruito, stagioneServizioUsufruito, annoServizioUsufruito "
 		    + "FROM PRENOTAZIONE, SOGGIORNO WHERE numeroCamera = ? AND PRENOTAZIONE.codFiscaleClienteRegistrato = "
