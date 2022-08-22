@@ -60,62 +60,61 @@ public interface Logic {
      * Show the actual price for a specific product.
      * 
      * @param item
-     * @return
+     * @return value of chosen item.
      */
     int getSpecificPrice(String item);
 
     /**
-     * query 1.
+     * Query 1 - Register a new client.
      * 
-     * @param nome
-     * @param cognome
-     * @param codiceFiscale
-     * @param dataNascita
-     * @param numeroTel
-     * @param tipologiaSoggiorno
-     * @param codScheda
-     * @param numeroCamera
-     * @param intolleranze
-     * @param resoconto
-     * @param datiTariffa
-     * @param durataSoggiorno
-     * @param orarioCheckin
-     * @param orarioCheckout
-     * @return operation done successfully or not.
+     * @param name
+     * @param surname
+     * @param identifierCode
+     * @param dateOfBirth
+     * @param cellNumber
+     * @param beginningDate
+     * @param remainingDays
+     * @param chosenOffer
+     * @param cardNumber
+     * @param roomNumber
+     * @param vacationType
+     * @param monthOfVacation
+     * @param yearOfVacation
      */
-    boolean registerNewClient(String nome, String cognome, String codiceFiscale, String dataNascita, int numeroTel,
-	    String dataInizio, String offertaScelta, String tipologiaSoggiorno, int codScheda, int numeroCamera,
-	    int intolleranze, int resoconto, int durataSoggiorno, String meseSoggiorno, int annoSoggiorno);
+    void registerNewClient(String name, String surname, String identifierCode, String dateOfBirth, int cellNumber,
+	    String beginningDate, int remainingDays, String chosenOffer, int cardNumber, int roomNumber,
+	    String vacationType, String monthOfVacation, int yearOfVacation);
 
     /**
-     * query 2. Does the checkout of the client.
+     * Query 2. Does the checkout of the client.
      * 
-     * @param nCamera
-     * @return operation done successfully or not.
+     * @param roomNumber
      */
-    boolean CheckoutClient(int nCamera);
+    void checkoutClient(int roomNumber);
 
     /**
-     * query 3.
+     * Query 3 - Register a new reservation.
      * 
-     * @param tipoPrenotazione
-     * @param data
-     * @param ora
-     * @param nCamera
-     * @param resoconto
-     * @return operation done successfully or not.
+     * @param reservationType
+     * @param serviceType
+     * @param season
+     * @param year
+     * @param day
+     * @param hour
+     * @param roomNumber
      */
-    boolean registerNewReservation(String tipoPrenotazione, String tipoServizio, String stagione, int anno,
-	    String giorno, String ora, int nCamera, int resoconto);
+    void registerNewReservation(String reservationType, String serviceType, String date, String season, int year,
+	    String day, int hour, int roomNumber);
 
     /**
-     * query 4.
+     * Query 4 - Delete a reservation.
      * 
-     * @param tipoPrenotazione
-     * @param resoconto
-     * @return operation done successfully or not.
+     * @param reservationType
+     * @param roomNumber
+     * @param day
+     * @param hour
      */
-    boolean deleteReservation(int tipoPrenotazione, int numeroCamera, String giorno, int ora);
+    void deleteReservation(String reservationType, int roomNumber, String day, int hour);
 
     /**
      * query 5.

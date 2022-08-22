@@ -45,7 +45,7 @@ public class LogicsImpl implements Logic {
     /**
      * Constructor.
      */
-    public LogicsImpl(LoginPages mainPage) {
+    public LogicsImpl(final LoginPages mainPage) {
 	this.mainPage = mainPage;
     }
 
@@ -207,6 +207,173 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
+    public void registerNewClient(final String name, final String surname, final String identifierCode,
+	    final String dateOfBirth, final int cellNumber, final String beginningDate, final int remainingDays,
+	    final String chosenOffer, final int cardNumber, final int roomNumber, final String vacationType,
+	    final String monthOfVacation, final int yearOfVacation) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("INSERT INTO CLIENTE (codFiscale, nome, cognome, dataNascita, numeroTel) "
+		    + "VALUES (?, ?, ?, ?, ?); "
+		    + "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
+		    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
+		    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
+		    + "VALUES (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, 10) ");
+	    myStm.setString(1, identifierCode);
+	    myStm.setString(2, name);
+	    myStm.setString(3, surname);
+	    myStm.setString(4, dateOfBirth);
+	    myStm.setInt(5, cellNumber);
+
+	    myStm.setString(6, beginningDate);
+	    myStm.setString(7, identifierCode);
+	    myStm.setInt(8, remainingDays);
+	    myStm.setString(9, chosenOffer);
+	    myStm.setInt(10, cardNumber);
+	    myStm.setInt(11, roomNumber);
+	    myStm.setString(12, vacationType);
+	    myStm.setString(13, monthOfVacation);
+	    myStm.setInt(14, yearOfVacation);
+	    myStm.executeQuery();
+
+	    myStm = conn
+		    .prepareStatement("SELECT prezzo FROM TIPOLOGIASOGGIORNO WHERE tipologia = ?, mese = ?, anno = ?");
+	    myStm.setString(1, vacationType);
+	    myStm.setString(2, monthOfVacation);
+	    myStm.setInt(3, yearOfVacation);
+	    result = myStm.executeQuery();
+	    int price = result.getInt(1);
+
+	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
+		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
+	    myStm.setInt(12, price);
+	    myStm.setString(13, identifierCode);
+	    myStm.setString(14, beginningDate);
+	    myStm.executeQuery();
+
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    @Override
+    public void checkoutClient(final int roomNumber) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn
+		    .prepareStatement("SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = 1");
+	    myStm.setInt(1, roomNumber);
+	    result = myStm.executeQuery();
+	    String beginningDate = result.getString(1);
+
+	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET soggiornante = 0, resoconto = 0 "
+		    + "WHERE numeroCamera = ? AND soggiornante = 1 AND dataInizio = ?");
+	    myStm.setInt(1, roomNumber);
+	    myStm.setString(1, beginningDate);
+	    myStm.executeQuery();
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    @Override
+    public void registerNewReservation(final String reservationType, final String serviceType, final String date,
+	    final String season, final int year, final String day, final int hour, final int roomNumber) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
+		    + "WHERE numeroCamera = ? AND soggiornante = 1");
+	    myStm.setInt(1, roomNumber);
+	    result = myStm.executeQuery();
+	    String identifier = result.getString(1);
+	    String beginningDate = result.getString(2);
+
+	    myStm = conn.prepareStatement("INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora, "
+		    + "dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato, tipoServizioUsufruito, "
+		    + "stagioneServizioUsufruito, annoServizioUsufruito, codReceptionistOperante) "
+		    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, 10)");
+	    myStm.setString(1, reservationType);
+	    myStm.setString(2, date);
+	    myStm.setInt(3, hour);
+	    myStm.setString(4, beginningDate);
+	    myStm.setString(5, identifier);
+	    myStm.setString(6, serviceType);
+	    myStm.setString(7, season);
+	    myStm.setInt(8, year);
+	    myStm.setString(9, serviceType);
+	    myStm.executeQuery();
+
+	    myStm = conn.prepareStatement(
+		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
+	    myStm.setString(1, serviceType);
+	    myStm.setString(2, season);
+	    myStm.setInt(3, year);
+	    result = myStm.executeQuery();
+	    int value = result.getInt(1);
+
+	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
+		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
+	    myStm.setInt(1, value);
+	    myStm.setString(2, identifier);
+	    myStm.setString(3, beginningDate);
+	    myStm.executeQuery();
+
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    @Override
+    public void deleteReservation(final String reservationType, final int roomNumber, final String day,
+	    final int hour) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
+		    + "WHERE numeroCamera = ? AND soggiornante = 1");
+	    myStm.setInt(1, roomNumber);
+	    result = myStm.executeQuery();
+	    String identifier = result.getString(1);
+	    String beginningDate = result.getString(2);
+
+	    myStm = conn.prepareStatement("DELETE FROM PRENOTAZIONE WHERE tipoPrenotazione = ? AND giorno = ? "
+		    + "AND ora = ? AND dataInizioSoggiornoRegistrato = ? AND codFiscaleClienteRegistrato = ?");
+
+	    myStm.setString(1, reservationType);
+	    myStm.setString(2, day);
+	    myStm.setInt(3, hour);
+	    myStm.setString(4, beginningDate);
+	    myStm.setString(4, identifier);
+	    myStm.executeQuery();
+	    myStm = conn.prepareStatement(
+		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? " + "AND stagione = ? AND anno = ?");
+	    myStm.setInt(1, roomNumber);
+	    result = myStm.executeQuery();
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    
+    
+    
+    
+    @Override
     public boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
 	    int mese, int annoSoggiorno, int prezzo) {
 	Connection conn = null;
@@ -226,88 +393,6 @@ public class LogicsImpl implements Logic {
 	    myStm.setInt(6, mese);
 	    myStm.setInt(7, annoSoggiorno);
 	    myStm.setInt(8, prezzo);
-	    myStm.executeQuery();
-	} catch (SQLException e) {
-	    e.printStackTrace();
-	    return false;
-	}
-	return true;
-    }
-
-    @Override
-    public boolean registerNewClient(String nome, String cognome, String codiceFiscale, String dataNascita,
-	    int numeroTel, String dataInizio, String offertaScelta, String tipologiaSoggiorno, int codScheda,
-	    int numeroCamera, int intolleranze, int resoconto, int durataSoggiorno, String meseSoggiorno,
-	    int annoSoggiorno) {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("INSERT INTO CLIENTE (codFiscale, nome, cognome, dataNascita, numeroTel) "
-		    + "VALUES (?, ?, ?, ?, ?); "
-		    + "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
-		    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
-		    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
-		    + "VALUES (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, 10) ");
-	    myStm.setString(1, codiceFiscale);
-	    myStm.setString(2, nome);
-	    myStm.setString(3, cognome);
-	    myStm.setString(4, dataNascita);
-	    myStm.setInt(5, numeroTel);
-
-	    myStm.setString(6, dataInizio);
-	    myStm.setString(7, codiceFiscale);
-	    myStm.setInt(8, durataSoggiorno);
-	    myStm.setString(9, offertaScelta);
-	    myStm.setInt(10, codScheda);
-	    myStm.setInt(11, numeroCamera);
-	    myStm.setString(12, tipologiaSoggiorno);
-	    myStm.setString(13, meseSoggiorno);
-	    myStm.setInt(14, annoSoggiorno);
-	    myStm.executeQuery();
-
-	    myStm = conn
-		    .prepareStatement("SELECT prezzo FROM TIPOLOGIASOGGIORNO WHERE tipologia = ?, mese = ?, anno = ?");
-	    myStm.setString(1, tipologiaSoggiorno);
-	    myStm.setString(2, meseSoggiorno);
-	    myStm.setInt(3, annoSoggiorno);
-	    result = myStm.executeQuery();
-	    int price = result.getInt(1);
-
-	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
-		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
-	    myStm.setInt(12, price);
-	    myStm.setString(13, codiceFiscale);
-	    myStm.setString(14, dataInizio);
-	    myStm.executeQuery();
-
-	} catch (SQLException e) {
-	    e.printStackTrace();
-	    return false;
-	}
-	return true;
-    }
-
-    @Override
-    public boolean CheckoutClient(int nCamera) {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    myStm = conn
-		    .prepareStatement("SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = 1");
-	    myStm.setInt(1, nCamera);
-	    result = myStm.executeQuery();
-	    String dataInizio = result.getString(1);
-
-	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET soggiornante = 0, resoconto = 0 "
-		    + "WHERE numeroCamera = ? AND soggiornante = 1 AND dataInizio = ?");
-	    myStm.setInt(1, nCamera);
-	    myStm.setString(1, dataInizio);
 	    myStm.executeQuery();
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -379,92 +464,6 @@ public class LogicsImpl implements Logic {
 
 	return result;
 
-    }
-
-    @Override
-    public boolean registerNewReservation(String tipoPrenotazione, String tipoServizio, String stagione, int anno,
-	    String giorno, String ora, int nCamera, int resoconto) {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
-		    + "WHERE numeroCamera = ? AND soggiornante = 1");
-	    myStm.setInt(1, nCamera);
-	    result = myStm.executeQuery();
-	    String codFiscaleCliente = result.getString(1);
-	    String dataInizio = result.getString(2);
-
-	    myStm = conn.prepareStatement("INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora, "
-		    + "dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato, tipoServizioUsufruito, "
-		    + "stagioneServizioUsufruito, annoServizioUsufruito, codReceptionistOperante) "
-		    + "VALUES (?, ?, ?, dataInizio, codFiscaleCliente, ?, ?, ?, 10)");
-	    myStm.setString(1, tipoPrenotazione);
-	    myStm.setString(2, giorno);
-	    myStm.setString(3, ora);
-	    myStm.setString(4, tipoServizio);
-	    myStm.setString(5, stagione);
-	    myStm.setInt(6, anno);
-	    myStm.executeQuery();
-
-	    myStm = conn.prepareStatement(
-		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
-	    myStm.setString(1, tipoServizio);
-	    myStm.setString(2, stagione);
-	    myStm.setInt(3, anno);
-	    result = myStm.executeQuery();
-	    int tariffa = result.getInt(1);
-
-	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
-		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
-	    myStm.setInt(1, tariffa);
-	    myStm.setString(2, codFiscaleCliente);
-	    myStm.setString(3, dataInizio);
-	    myStm.executeQuery();
-
-	} catch (SQLException e) {
-	    e.printStackTrace();
-	    return false;
-	}
-	return true;
-    }
-
-    @Override
-    public boolean deleteReservation(int tipoPrenotazione, int numeroCamera, String giorno, int ora) {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
-		    + "WHERE numeroCamera = ? AND soggiornante = 1");
-	    myStm.setInt(1, numeroCamera);
-	    result = myStm.executeQuery();
-	    String codFiscale = result.getString(1);
-	    String dataInizio = result.getString(2);
-
-	    myStm = conn.prepareStatement("DELETE FROM PRENOTAZIONE WHERE tipoPrenotazione = ? AND giorno = ? "
-		    + "AND ora = ? AND dataInizioSoggiornoRegistrato = ? AND codFiscaleClienteRegistrato = ?");
-
-	    myStm.setInt(1, tipoPrenotazione);
-	    myStm.setString(2, giorno);
-	    myStm.setInt(3, ora);
-	    myStm.setString(4, dataInizio);
-	    myStm.setString(4, codFiscale);
-	    myStm.executeQuery();
-	    // come fare qui?
-	    myStm = conn.prepareStatement(
-		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? " + "AND stagione = ? AND anno = ?");
-	    myStm.setInt(1, numeroCamera);
-	    result = myStm.executeQuery();
-	} catch (SQLException e) {
-	    e.printStackTrace();
-	    return false;
-	}
-	return true;
     }
 
     @Override
