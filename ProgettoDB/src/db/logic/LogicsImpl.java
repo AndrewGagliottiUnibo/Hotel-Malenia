@@ -388,10 +388,26 @@ public class LogicsImpl implements Logic {
 	return result;
     }
 
-    
-    
-    
-    
+    @Override
+    public ResultSet viewClientCard(final int roomNumber) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? " + "AND soggiornante = 1");
+	    myStm.setInt(1, roomNumber);
+
+	    result = myStm.executeQuery();
+
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+	return result;
+
+    }
+
     @Override
     public boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
 	    int mese, int annoSoggiorno, int prezzo) {
@@ -440,28 +456,6 @@ public class LogicsImpl implements Logic {
 	    return false;
 	}
 	return true;
-    }
-
-    @Override
-    public ResultSet dataClient(int nCamera) {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    // definire in base al numero camera?
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? " + "AND soggiornante = 1");
-	    myStm.setInt(1, nCamera);
-
-	    result = myStm.executeQuery();
-
-	} catch (Exception e) {
-	    e.printStackTrace();
-	}
-
-	return result;
-
     }
 
     @Override

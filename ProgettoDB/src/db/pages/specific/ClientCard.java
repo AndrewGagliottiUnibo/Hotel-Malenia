@@ -295,7 +295,7 @@ public class ClientCard {
 	 */
 	private void setTextGlobal() {
 		
-		ResultSet result = this.logic.dataClient(Integer.parseInt(this.chosenClient));
+		ResultSet result = this.logic.viewClientCard(Integer.parseInt(this.chosenClient));
 		int i = 0;
 
 		try {

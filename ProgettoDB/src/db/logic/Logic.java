@@ -118,6 +118,7 @@ public interface Logic {
 
     /**
      * Query 5 - View all clients actually in the Hotel.
+     * 
      * @param roomNumber
      * @return set of clients viewed.
      */
@@ -135,12 +136,12 @@ public interface Logic {
     boolean additionCost(int nCamera, int price, int resoconto, int tipoServizio);
 
     /**
-     * query 7.
+     * Query 7 - View the card of a client.
      * 
-     * @param nCamera
+     * @param roomNumber
      * @return a ResultSet with the chosen Card.
      */
-    ResultSet dataClient(int nCamera);
+    ResultSet viewClientCard(int roomNumber);
 
     /**
      * query 8.
