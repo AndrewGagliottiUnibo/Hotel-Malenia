@@ -94,7 +94,7 @@ public class ReceptionPages {
 		/*
 		 * Go to specific view of all clients in the hotel.
 		 */
-		JButton btnClientiInStruttura = new JButton("Clienti in hotel");
+		JButton btnClientiInStruttura = new JButton("Visualizza schede clienti");
 		btnClientiInStruttura.addActionListener(e -> {
 			this.frame.setVisible(false);
 			this.logic.goToSpecificPage("AllCards", this.frame);
