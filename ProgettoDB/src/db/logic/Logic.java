@@ -82,7 +82,7 @@ public interface Logic {
      * @param monthOfVacation
      * @param yearOfVacation
      */
-    void registerNewClient(String name, String surname, String identifierCode, String dateOfBirth, int cellNumber,
+    void registerNewClient(String name, String surname, String identifierCode, String dateOfBirth, String cellNumber,
 	    String beginningDate, int remainingDays, String chosenOffer, int cardNumber, int roomNumber,
 	    String vacationType, String monthOfVacation, int yearOfVacation);
 

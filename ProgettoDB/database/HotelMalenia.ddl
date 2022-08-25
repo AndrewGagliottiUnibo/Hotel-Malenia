@@ -27,7 +27,7 @@ create table ADDETTO (
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
-     numeroTelefonico numeric(20),
+     numeroTelefonico varchar(20),
      constraint IDADDETTO_ID primary key (codRuolo));
 
 create table CLIENTE (
@@ -35,7 +35,7 @@ create table CLIENTE (
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
-     numeroTelefonico numeric(20),
+     numeroTelefonico varchar(20),
      constraint IDCLIENTE_ID primary key (codFiscale));
 
 create table DIRIGENTE (
@@ -43,7 +43,7 @@ create table DIRIGENTE (
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
-     numeroTelefonico numeric(20),
+     numeroTelefonico varchar(20),
      tipoServizioCoordinato varchar(30) not null,
      stagioneServizioCoordinato varchar(15) not null,
      annoServizioCoordinato year not null,
@@ -76,7 +76,7 @@ create table RECEPTIONIST (
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
-     numeroTelefonico numeric(20),
+     numeroTelefonico varchar(20),
      constraint IDRECEPTIONIST_ID primary key (codReceptionist));
 
 create table SERVIZIO (

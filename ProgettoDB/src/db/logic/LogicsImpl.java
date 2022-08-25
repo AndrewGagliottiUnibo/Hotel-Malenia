@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
 import db.pages.LoginPages;
@@ -210,7 +210,7 @@ public class LogicsImpl implements Logic {
 
     @Override
     public void registerNewClient(final String name, final String surname, final String identifierCode,
-	    final String dateOfBirth, final int cellNumber, final String beginningDate, final int remainingDays,
+	    final String dateOfBirth, final String cellNumber, final String beginningDate, final int remainingDays,
 	    final String chosenOffer, final int cardNumber, final int roomNumber, final String vacationType,
 	    final String monthOfVacation, final int yearOfVacation) {
 	Connection conn = null;
@@ -229,7 +229,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, name);
 	    myStm.setString(3, surname);
 	    myStm.setString(4, dateOfBirth);
-	    myStm.setInt(5, cellNumber);
+	    myStm.setString(5, cellNumber);
 
 	    myStm.setString(6, beginningDate);
 	    myStm.setString(7, identifierCode);
