@@ -46,16 +46,16 @@ create table DIRIGENTE (
      numeroTelefonico numeric(20),
      tipoServizioCoordinato varchar(30) not null,
      stagioneServizioCoordinato varchar(15) not null,
-     annoServizioCoordinato smallint unsigned not null,
+     annoServizioCoordinato year not null,
      tipologiaSoggiornoCondizionato varchar(30) not null,
      meseSoggiornoCondizionato varchar(15) not null,
-     annoSoggiornoCondizionato smallint unsigned not null,
+     annoSoggiornoCondizionato year not null,
      constraint IDDIRIGENTE primary key (codDirigente));
 
 create table EROGAZIONE (
      tipoServizioErogato varchar(30) not null,
      stagioneServizioErogato varchar(15) not null,
-     annoServizioErogato smallint unsigned not null,
+     annoServizioErogato year not null,
      ruoloAddettoErogante tinyint unsigned not null,
      constraint IDEROGAZIONE primary key (tipoServizioErogato, stagioneServizioErogato, annoServizioErogato, ruoloAddettoErogante));
 
@@ -67,7 +67,7 @@ create table PRENOTAZIONE (
      codFiscaleClienteRegistrato varchar(16) not null,
      tipoServizioUsufruito varchar(30) not null,
      stagioneServizioUsufruito varchar(15) not null,
-     annoServizioUsufruito smallint unsigned not null,
+     annoServizioUsufruito year not null,
      codReceptionistOperante tinyint unsigned not null,
      constraint IDPRENOTAZIONE unique (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato));
 
@@ -82,7 +82,7 @@ create table RECEPTIONIST (
 create table SERVIZIO (
      tipoServizio varchar(30) not null,
      stagione varchar(15) not null,
-     anno smallint unsigned not null,
+     anno year not null,
      tariffa numeric(10,2),
      constraint IDSERVIZIO_ID primary key (tipoServizio, stagione, anno));
 
@@ -97,14 +97,14 @@ create table SOGGIORNO (
      resoconto numeric(10, 2),
      tipologiaSoggiornoScelto varchar(30) not null,
      meseSoggiornoScelto varchar(15) not null,
-     annoSoggiornoScelto smallint unsigned not null,
+     annoSoggiornoScelto year not null,
      codReceptionistInserente tinyint unsigned not null,
      constraint IDSOGGIORNO primary key (dataInizio, codFiscaleCliente));
 
 create table TIPOLOGIASOGGIORNO (
      tipologia varchar(30) not null,
      mese varchar(15) not null,
-     anno smallint unsigned not null,
+     anno year not null,
      prezzo numeric(10, 2) not null,
      constraint IDTIPOLOGIASOGGIORNO primary key (tipologia, mese, anno));
 
