@@ -109,18 +109,7 @@ create table TIPOLOGIASOGGIORNO (
      constraint IDTIPOLOGIASOGGIORNO primary key (tipologia, mese, anno));
 
 
--- Constraints Section
--- ___________________ 
 
--- Not implemented
--- alter table ADDETTO add constraint IDADDETTO_CHK
---     check(exists(select * from EROGAZIONE
---                  where EROGAZIONE.ruoloAddettoErogante = codRuolo)); 
-
--- Not implemented
--- alter table CLIENTE add constraint IDCLIENTE_CHK
---     check(exists(select * from SOGGIORNO
---                  where SOGGIORNO.codFiscaleCliente = codFiscale)); 
 
 alter table DIRIGENTE add constraint FKCOORDINAZIONE
      foreign key (tipoServizioCoordinato, stagioneServizioCoordinato, annoServizioCoordinato)
@@ -149,16 +138,6 @@ alter table PRENOTAZIONE add constraint FKREGISTRAZIONE
 alter table PRENOTAZIONE add constraint FKEFFETTUAZIONE
      foreign key (codReceptionistOperante)
      references RECEPTIONIST(codReceptionist);
-
--- Not implemented
--- alter table RECEPTIONIST add constraint IDRECEPTIONIST_CHK
---    check(exists(select * from SOGGIORNO
---                where SOGGIORNO.codReceptionistInserente = codReceptionist)); 
-
--- Not implemented
--- alter table SERVIZIO add constraint IDSERVIZIO_CHK
---    check(exists(select * from EROGAZIONE
---                  where EROGAZIONE.tipoServizioErogato = tipoServizio and EROGAZIONE.stagioneServizioErogato = stagione and EROGAZIONE.annoServizioErogato = anno)); 
 
 alter table SOGGIORNO add constraint FKABBINAMENTO
      foreign key (tipologiaSoggiornoScelto, meseSoggiornoScelto, annoSoggiornoScelto)
