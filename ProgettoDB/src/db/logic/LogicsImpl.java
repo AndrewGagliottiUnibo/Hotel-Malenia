@@ -141,7 +141,7 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE soggiornante = 1");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE soggiornante = true");
 	    result = myStm.executeQuery();
 	} catch (SQLException exc) {
 	    exc.printStackTrace();
@@ -158,7 +158,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE tipologiaSoggiornoScelto = ? "
-		    + "AND tipologiaSoggiornoScelto = ? " + "AND soggiornante = 1");
+		    + "AND tipologiaSoggiornoScelto = ? " + "AND soggiornante = true");
 	    myStm.setString(1, "AllInclusive");
 	    myStm.setString(2, "PensioneCompleta");
 	    result = myStm.executeQuery();
@@ -222,7 +222,7 @@ public class LogicsImpl implements Logic {
 		    + "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
 		    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
 		    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
-		    + "VALUES (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, 10) ");
+		    + "VALUES (?, ?, ?, true, ?, ?, ?, 0, ?, ?, ?, 10) ");
 	    myStm.setString(1, identifierCode);
 	    myStm.setString(2, name);
 	    myStm.setString(3, surname);
@@ -269,13 +269,13 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn
-		    .prepareStatement("SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = 1");
+		    .prepareStatement("SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	    final String beginningDate = result.getString(1);
 
-	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET soggiornante = 0, resoconto = 0 "
-		    + "WHERE numeroCamera = ? AND soggiornante = 1 AND dataInizio = ?");
+	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET soggiornante = false, resoconto = 0 "
+		    + "WHERE numeroCamera = ? AND soggiornante = true AND dataInizio = ?");
 	    myStm.setInt(1, roomNumber);
 	    myStm.setString(1, beginningDate);
 	    myStm.executeQuery();
@@ -294,7 +294,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
-		    + "WHERE numeroCamera = ? AND soggiornante = 1");
+		    + "WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	    final String identifier = result.getString(1);
@@ -345,7 +345,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT codFiscaleCliente, dataInizio FROM SOGGIORNO "
-		    + "WHERE numeroCamera = ? AND soggiornante = 1");
+		    + "WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	    final String identifier = result.getString(1);
@@ -387,7 +387,7 @@ public class LogicsImpl implements Logic {
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO, PRENOTAZIONE WHERE numeroCamera = ? "
 		    + "AND PRENOTAZIONE.codFiscaleClienteRegistrato = SOGGIORNO.codFiscaleCliente "
-		    + "AND soggiornante = 1");
+		    + "AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	} catch (Exception e) {
@@ -414,7 +414,7 @@ public class LogicsImpl implements Logic {
 	    int wage = result.getInt(1);
 
 	    myStm = conn.prepareStatement("SELECT dataInizio, codFiscaleCliente FROM SOGGIORNO "
-		    + "WHERE numeroCamera = ? AND soggiornante = 1");
+		    + "WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	    final String beginningDate = result.getString(1);
@@ -454,7 +454,7 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = 1");
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 
 	    result = myStm.executeQuery();
@@ -478,7 +478,7 @@ public class LogicsImpl implements Logic {
 	    myStm = conn.prepareStatement("SELECT tipoServizio, stagione, anno, tariffa FROM SERVIZIO "
 		    + "RIGHT JOIN (SELECT tipoServizioUsufruito, stagioneServizioUsufruito, annoServizioUsufruito "
 		    + "FROM PRENOTAZIONE, SOGGIORNO WHERE numeroCamera = ? AND PRENOTAZIONE.codFiscaleClienteRegistrato = "
-		    + "SOGGIORNO.codFiscaleCliente AND soggiornante = 1) AS PREN "
+		    + "SOGGIORNO.codFiscaleCliente AND soggiornante = true) AS PREN "
 		    + "ON SERVIZIO.tipoServizio = PREN.tipoServizioUsufruito AND SERVIZIO.stagione = PREN.stagioneServizioUsufruito "
 		    + "AND SERVIZIO.anno = PREN.annoServizioUsufruito");
 
@@ -499,7 +499,7 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE soggiornante = 1");
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE soggiornante = true");
 	    result = myStm.executeQuery();
 	} catch (Exception e) {
 	    e.printStackTrace();
@@ -510,7 +510,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public ResultSet viewFilteredClients(String beginningDate, int remainingDays, int isInHotel, String vacationType,
+    public ResultSet viewFilteredClients(String beginningDate, int remainingDays, boolean isInHotel, String vacationType,
 	    int roomNumber, String vacationChosen, String monthChosen, int yearChosen) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
@@ -525,7 +525,7 @@ public class LogicsImpl implements Logic {
 
 	    myStm.setString(1, beginningDate);
 	    myStm.setInt(2, remainingDays);
-	    myStm.setInt(3, isInHotel);
+	    myStm.setBoolean(3, isInHotel);
 	    myStm.setString(4, vacationType);
 	    myStm.setInt(5, roomNumber);
 	    myStm.setString(6, vacationChosen);

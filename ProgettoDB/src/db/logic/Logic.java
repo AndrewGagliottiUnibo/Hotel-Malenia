@@ -167,7 +167,7 @@ public interface Logic {
      * @param codCliente
      * @return a ResultSet with the informations about a specific client.
      */
-    ResultSet viewFilteredClients(String beginningDate, int remainingDays, int isInHotel, String vacationType,
+    ResultSet viewFilteredClients(String beginningDate, int remainingDays, boolean isInHotel, String vacationType,
 	    int roomNumber, String vacationChosen, String monthChosen, int yearChosen);
 
     /**
