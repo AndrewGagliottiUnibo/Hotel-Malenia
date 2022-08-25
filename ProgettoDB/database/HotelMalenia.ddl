@@ -22,12 +22,12 @@ use schemahotel;
 -- _____________ 
 
 create table ADDETTO (
+     codRuolo tinyint unsigned not null,
      codFiscale varchar(16) not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
      numeroTelefonico numeric(20),
-     codRuolo varchar(30) not null,
      constraint IDADDETTO_ID primary key (codRuolo));
 
 create table CLIENTE (
@@ -39,40 +39,40 @@ create table CLIENTE (
      constraint IDCLIENTE_ID primary key (codFiscale));
 
 create table DIRIGENTE (
-     codDirigente tinyint not null,
+     codDirigente tinyint unsigned not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
      numeroTelefonico numeric(20),
      tipoServizioCoordinato varchar(30) not null,
-     stagioneServizioCoordinato varchar(10) not null,
-     annoServizioCoordinato numeric(4) not null,
+     stagioneServizioCoordinato varchar(15) not null,
+     annoServizioCoordinato smallint unsigned not null,
      tipologiaSoggiornoCondizionato varchar(30) not null,
      meseSoggiornoCondizionato varchar(15) not null,
-     annoSoggiornoCondizionato numeric(4) not null,
+     annoSoggiornoCondizionato smallint unsigned not null,
      constraint IDDIRIGENTE primary key (codDirigente));
 
 create table EROGAZIONE (
      tipoServizioErogato varchar(30) not null,
-     stagioneServizioErogato varchar(10) not null,
-     annoServizioErogato numeric(4) not null,
-     ruoloAddettoErogante varchar(30) not null,
+     stagioneServizioErogato varchar(15) not null,
+     annoServizioErogato smallint unsigned not null,
+     ruoloAddettoErogante tinyint unsigned not null,
      constraint IDEROGAZIONE primary key (tipoServizioErogato, stagioneServizioErogato, annoServizioErogato, ruoloAddettoErogante));
 
 create table PRENOTAZIONE (
      tipoPrenotazione varchar(30) not null,
      giorno varchar(10),
-     ora numeric(2),
+     ora tinyint unsigned,
      dataInizioSoggiornoRegistrato date not null,
      codFiscaleClienteRegistrato varchar(16) not null,
      tipoServizioUsufruito varchar(30) not null,
      stagioneServizioUsufruito varchar(15) not null,
-     annoServizioUsufruito numeric(4) not null,
-     codReceptionistOperante tinyint not null,
+     annoServizioUsufruito smallint unsigned not null,
+     codReceptionistOperante tinyint unsigned not null,
      constraint IDPRENOTAZIONE unique (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato));
 
 create table RECEPTIONIST (
-     codReceptionist tinyint not null,
+     codReceptionist tinyint unsigned not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
@@ -82,30 +82,30 @@ create table RECEPTIONIST (
 create table SERVIZIO (
      tipoServizio varchar(30) not null,
      stagione varchar(15) not null,
-     anno numeric(4) not null,
-     tariffa numeric(10),
+     anno smallint unsigned not null,
+     tariffa numeric(10,2),
      constraint IDSERVIZIO_ID primary key (tipoServizio, stagione, anno));
 
 create table SOGGIORNO (
      codFiscaleCliente varchar(16) not null,
      dataInizio date not null,
      durataSoggiorno date not null,
-     soggiornante tinyint not null,
+     soggiornante boolean not null,
      offertaScelta varchar(20) not null,
      codScheda numeric(10) not null,
      numeroCamera numeric(5) not null,
-     resoconto numeric(10),
+     resoconto numeric(10, 2),
      tipologiaSoggiornoScelto varchar(30) not null,
      meseSoggiornoScelto varchar(15) not null,
-     annoSoggiornoScelto numeric(4) not null,
-     codReceptionistInserente tinyint not null,
+     annoSoggiornoScelto smallint unsigned not null,
+     codReceptionistInserente tinyint unsigned not null,
      constraint IDSOGGIORNO primary key (dataInizio, codFiscaleCliente));
 
 create table TIPOLOGIASOGGIORNO (
      tipologia varchar(30) not null,
      mese varchar(15) not null,
-     anno numeric(4) not null,
-     prezzo numeric(10) not null,
+     anno smallint unsigned not null,
+     prezzo numeric(10, 2) not null,
      constraint IDTIPOLOGIASOGGIORNO primary key (tipologia, mese, anno));
 
 
