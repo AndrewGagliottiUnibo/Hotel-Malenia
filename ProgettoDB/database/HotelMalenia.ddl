@@ -62,7 +62,7 @@ create table EROGAZIONE (
 create table PRENOTAZIONE (
      tipoPrenotazione varchar(30) not null,
      giorno varchar(10),
-     ora tinyint unsigned,
+     ora time,
      dataInizioSoggiornoRegistrato date not null,
      codFiscaleClienteRegistrato varchar(16) not null,
      tipoServizioUsufruito varchar(30) not null,

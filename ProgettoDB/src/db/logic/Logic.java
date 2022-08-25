@@ -1,6 +1,7 @@
 package db.logic;
 
 import java.sql.ResultSet;
+
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
@@ -104,7 +105,7 @@ public interface Logic {
      * @param roomNumber
      */
     void registerNewReservation(String reservationType, String serviceType, String date, String season, int year,
-	    String day, int hour, int roomNumber);
+	    String day, String hour, int roomNumber);
 
     /**
      * Query 4 - Delete a reservation.
@@ -114,7 +115,7 @@ public interface Logic {
      * @param day
      * @param hour
      */
-    void deleteReservation(String reservationType, int roomNumber, String day, int hour);
+    void deleteReservation(String reservationType, int roomNumber, String day, String hour);
 
     /**
      * Query 5 - View all clients actually in the Hotel.
@@ -136,7 +137,7 @@ public interface Logic {
      * @param hour
      */
     void addCost(String serviceType, String season, int year, int roomNumber, String reservationType, String day,
-	    int hour);
+	    String hour);
 
     /**
      * Query 7 - View the card of a client.

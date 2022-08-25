@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -286,7 +288,7 @@ public class LogicsImpl implements Logic {
 
     @Override
     public void registerNewReservation(final String reservationType, final String serviceType, final String date,
-	    final String season, final int year, final String day, final int hour, final int roomNumber) {
+	    final String season, final int year, final String day, final String hour, final int roomNumber) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -306,7 +308,7 @@ public class LogicsImpl implements Logic {
 		    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, 10)");
 	    myStm.setString(1, reservationType);
 	    myStm.setString(2, date);
-	    myStm.setInt(3, hour);
+	    myStm.setString(3, hour);
 	    myStm.setString(4, beginningDate);
 	    myStm.setString(5, identifier);
 	    myStm.setString(6, serviceType);
@@ -337,7 +339,7 @@ public class LogicsImpl implements Logic {
 
     @Override
     public void deleteReservation(final String reservationType, final int roomNumber, final String day,
-	    final int hour) {
+	    final String hour) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -356,7 +358,7 @@ public class LogicsImpl implements Logic {
 
 	    myStm.setString(1, reservationType);
 	    myStm.setString(2, day);
-	    myStm.setInt(3, hour);
+	    myStm.setString(3, hour);
 	    myStm.setString(4, beginningDate);
 	    myStm.setString(4, identifier);
 	    myStm.executeQuery();
@@ -398,7 +400,7 @@ public class LogicsImpl implements Logic {
 
     @Override
     public void addCost(final String serviceType, final String season, final int year, final int roomNumber,
-	    final String reservationType, final String day, final int hour) {
+	    final String reservationType, final String day, final String hour) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -427,7 +429,7 @@ public class LogicsImpl implements Logic {
 			    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, 10)");
 	    myStm.setString(1, reservationType);
 	    myStm.setString(2, day);
-	    myStm.setInt(3, hour);
+	    myStm.setString(3, hour);
 	    myStm.setString(4, beginningDate);
 	    myStm.setString(5, identifier);
 	    myStm.setString(6, serviceType);
