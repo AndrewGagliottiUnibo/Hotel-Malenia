@@ -147,37 +147,68 @@ public interface Logic {
     ResultSet viewClientCard(int roomNumber);
 
     /**
-     * query 8.
+     * Query 8 - view expenses done by a client.
      * 
      * @param nCamera
      * @return a ResultSet with the services got for a client.
      */
-    ResultSet servicesUsedByClient(int nCamera);
+    ResultSet servicesUsedByClient(int roomNumber);
 
     /**
-     * query 9.
+     * Query 9 - View all client in the hotel.
      * 
      * @return a ResultSet with all clients in the hotel.
      */
-    ResultSet totalAmount();
+    ResultSet viewAllClients();
 
     /**
-     * query 10.
+     * Query 10 - View clients per filters.
      * 
      * @param codCliente
      * @return a ResultSet with the informations about a specific client.
      */
-    ResultSet ReviewClient(int codCliente);
+    ResultSet viewFilteredClients(String beginningDate, int remainingDays, int isInHotel, String vacationType,
+	    int roomNumber, String vacationChosen, String monthChosen, int yearChosen);
 
     /**
-     * Modify the price in input. query 11.
+     * Query 11 - Insert a new vacation type.
      * 
+     * @param vacationType
+     * @param month
+     * @param year
      * @param price
-     * @param nome
-     * @return the operation done successfully or not.
      */
-    boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
-	    int mese, int annoSoggiorno, int prezzo);
+    void insertVacationType(String vacationType, String month, int year, int price);
+
+    /**
+     * Query 11 - Insert a new service.
+     * 
+     * @param serviceType
+     * @param season
+     * @param year
+     * @param price
+     */
+    void insertService(String serviceType, String season, int year, int price);
+
+    /**
+     * Query 11 - Change a vacation type that is not past or current.
+     * 
+     * @param vacationType
+     * @param month
+     * @param year
+     * @param price
+     */
+    void updateVacationType(String vacationType, String month, int year, int price);
+
+    /**
+     * Query 11 - Change a service that is not past or current.
+     * 
+     * @param serviceType
+     * @param season
+     * @param year
+     * @param price
+     */
+    void updateService(String serviceType, String season, int year, int price);
 
     /**
      * @return password value.

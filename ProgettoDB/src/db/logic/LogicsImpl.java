@@ -465,10 +465,123 @@ public class LogicsImpl implements Logic {
 	return result;
 
     }
+    
+    @Override
+    public ResultSet servicesUsedByClient(final int roomNumber) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+
+	    myStm = conn.prepareStatement("SELECT tipoServizio, stagione, anno, tariffa FROM SERVIZIO "
+		    + "RIGHT JOIN (SELECT tipoServizioUsufruito, stagioneServizioUsufruito, annoServizioUsufruito "
+		    + "FROM PRENOTAZIONE, SOGGIORNO WHERE numeroCamera = ? AND PRENOTAZIONE.codFiscaleClienteRegistrato = "
+		    + "SOGGIORNO.codFiscaleCliente AND soggiornante = 1) AS PREN "
+		    + "ON SERVIZIO.tipoServizio = PREN.tipoServizioUsufruito AND SERVIZIO.stagione = PREN.stagioneServizioUsufruito "
+		    + "AND SERVIZIO.anno = PREN.annoServizioUsufruito");
+
+	    myStm.setInt(1, roomNumber);
+	    result = myStm.executeQuery();
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+
+	return result;
+    }
+    
+    @Override
+    public ResultSet viewAllClients() {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE soggiornante = 1");
+	    result = myStm.executeQuery();
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+
+	return result;
+
+    }
+    
+    @Override
+    public ResultSet viewFilteredClients(String beginningDate, int remainingDays, int isInHotel, String vacationType,
+	    int roomNumber, String vacationChosen, String monthChosen, int yearChosen) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO "
+        	    + "WHERE dataInizio = ? "
+        	    + "AND durataSoggiorno = ? "
+		    + "AND soggiornante = ? "
+		    + "AND offertaScelta= ? "
+		    + "AND numeroCamera = ? "
+		    + "AND tipologiaSoggiornoScelto = ? "
+		    + "AND meseSoggiornoScelto = ? "
+		    + "AND annoSoggiornoScelto = ? ");
+
+	    myStm.setString(1, beginningDate);
+	    /*
+	     * Salvatore qui!
+	     */
+	    result = myStm.executeQuery();
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+
+	return result;
+    }
 
     @Override
-    public boolean modifyPrice(String tipoServizio, String stagione, int anno, int tariffa, String tipologiaSoggiorno,
-	    int mese, int annoSoggiorno, int prezzo) {
+    public void insertVacationType(String vacationType, String month, int year, int price) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) "
+		    			+ "VALUES (?, ?, ?, ?); ");
+	    myStm.setString(1, vacationType);
+	    myStm.setString(2, month);
+	    myStm.setInt(3, year);
+	    myStm.setInt(4, price);
+	    
+	    myStm.executeQuery();
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    @Override
+    public void insertService(String serviceType, String season, int year, int price) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) "
+		    			+ "VALUES (?, ?, ?, ?); ");
+	    myStm.setString(1, serviceType);
+	    myStm.setString(2, season);
+	    myStm.setInt(3, year);
+	    myStm.setInt(4, price);
+	    
+	    myStm.executeQuery();
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    @Override
+    public void updateVacationType(String vacationType, String month, int year, int price) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
@@ -495,69 +608,32 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public ResultSet servicesUsedByClient(int nCamera) {
+    public void updateService(String serviceType, String season, int year, int price) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
-	ResultSet result = null;
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
+	    myStm = conn.prepareStatement("INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) "
+		    + "VALUES (?, ?, ?, ?); " + "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) "
+		    + "VALUES (?, ?, ?, ?); ");
+	    myStm.setString(1, tipoServizio);
+	    myStm.setString(2, stagione);
+	    myStm.setInt(3, anno);
+	    myStm.setInt(4, tariffa);
+	    myStm.setString(5, tipologiaSoggiorno);
 
-	    myStm = conn.prepareStatement("SELECT tipoServizio, stagione, anno, tariffa FROM SERVIZIO "
-		    + "RIGHT JOIN (SELECT tipoServizioUsufruito, stagioneServizioUsufruito, annoServizioUsufruito "
-		    + "FROM PRENOTAZIONE, SOGGIORNO WHERE numeroCamera = ? AND PRENOTAZIONE.codFiscaleClienteRegistrato = "
-		    + "SOGGIORNO.codFiscaleCliente AND soggiornante = 1) AS PREN "
-		    + "ON SERVIZIO.tipoServizio = PREN.tipoServizioUsufruito AND SERVIZIO.stagione = PREN.stagioneServizioUsufruito "
-		    + "AND SERVIZIO.anno = PREN.annoServizioUsufruito");
-
-	    myStm.setInt(1, nCamera);
-	    result = myStm.executeQuery();
-	} catch (Exception e) {
+	    myStm.setInt(6, mese);
+	    myStm.setInt(7, annoSoggiorno);
+	    myStm.setInt(8, prezzo);
+	    myStm.executeQuery();
+	} catch (SQLException e) {
 	    e.printStackTrace();
+	    return false;
 	}
-
-	return result;
+	return true;
     }
-
-    @Override
-    public ResultSet totalAmount() {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE soggiornante = 1");
-	    result = myStm.executeQuery();
-	} catch (Exception e) {
-	    e.printStackTrace();
-	}
-
-	return result;
-
-    }
-
-    @Override
-    public ResultSet ReviewClient(int codCliente) {
-	Connection conn = null;
-	PreparedStatement myStm = null;
-	ResultSet result = null;
-	try {
-	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE dataInizio = ? AND durataSoggiorno = ? "
-		    + "AND soggiornante = ? AND offertaScelta= ? AND numeroCamera = ? "
-		    + "AND tipologiaSoggiornoScelto = ? AND meseSoggiornoScelto = ? AND annoSoggiornoScelto = ? ");
-
-	    myStm.setInt(1, codCliente);
-	    result = myStm.executeQuery();
-	} catch (Exception e) {
-	    e.printStackTrace();
-	}
-
-	return result;
-    }
-
+    
     @Override
     public String getOwnPassword() {
 	return this.password;
