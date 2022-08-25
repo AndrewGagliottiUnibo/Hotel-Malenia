@@ -518,15 +518,19 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO " + "WHERE dataInizio = ? "
-		    + "AND durataSoggiorno = ? " + "AND soggiornante = ? " + "AND offertaScelta= ? "
-		    + "AND numeroCamera = ? " + "AND tipologiaSoggiornoScelto = ? " + "AND meseSoggiornoScelto = ? "
+	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE dataInizio = ? "
+		    + "AND durataSoggiorno = ? AND soggiornante = ? AND offertaScelta = ? "
+		    + "AND numeroCamera = ? AND tipologiaSoggiornoScelto = ? AND meseSoggiornoScelto = ? "
 		    + "AND annoSoggiornoScelto = ? ");
 
 	    myStm.setString(1, beginningDate);
-	    /*
-	     * Salvatore qui!
-	     */
+	    myStm.setInt(2, remainingDays);
+	    myStm.setInt(3, isInHotel);
+	    myStm.setString(4, vacationType);
+	    myStm.setInt(5, roomNumber);
+	    myStm.setString(6, vacationChosen);
+	    myStm.setString(7, monthChosen);
+	    myStm.setInt(8, yearChosen);
 	    result = myStm.executeQuery();
 	} catch (Exception e) {
 	    e.printStackTrace();
@@ -543,7 +547,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
-		    "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) " + "VALUES (?, ?, ?, ?); ");
+		    "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) VALUES (?, ?, ?, ?); ");
 	    myStm.setString(1, vacationType);
 	    myStm.setString(2, month);
 	    myStm.setInt(3, year);
@@ -563,7 +567,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
-		    "INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) " + "VALUES (?, ?, ?, ?); ");
+		    "INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) VALUES (?, ?, ?, ?); ");
 	    myStm.setString(1, serviceType);
 	    myStm.setString(2, season);
 	    myStm.setInt(3, year);
@@ -583,7 +587,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
-		    "UPDATE TIPOLOGIASOGGIORNO " + "SET prezzo = ? " + "WHERE tipologia = ?, mese = ?, anno = ?");
+		    "UPDATE TIPOLOGIASOGGIORNO SET prezzo = ? WHERE tipologia = ? AND mese = ? AND anno = ?");
 	    myStm.setInt(1, price);
 	    myStm.setString(2, vacationType);
 	    myStm.setString(3, month);
@@ -602,8 +606,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("UPDATE TIPOLOGIASOGGIORNO " + "SET tariffa = ? "
-		    + "WHERE tipoServizio = ?, stagione = ?, anno = ?");
+	    myStm = conn.prepareStatement("UPDATE TIPOLOGIASOGGIORNO SET tariffa = ? "
+		    + "WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
 	    myStm.setInt(1, price);
 	    myStm.setString(2, serviceType);
 	    myStm.setString(3, season);
