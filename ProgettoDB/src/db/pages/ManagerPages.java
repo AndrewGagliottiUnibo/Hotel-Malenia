@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 import db.logic.Logic;
 
 public class ManagerPages {
-	private JFrame frmHotelMalenia;
+	private JFrame frame;
 	private Logic logic;
 
 	/**
@@ -26,27 +26,27 @@ public class ManagerPages {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmHotelMalenia = new JFrame();
-		frmHotelMalenia.setResizable(false);
-		frmHotelMalenia.setTitle("Hotel Malenia - Manager");
-		frmHotelMalenia.getContentPane().setBackground(Color.DARK_GRAY);
-		frmHotelMalenia.getContentPane().setForeground(Color.DARK_GRAY);
-		frmHotelMalenia.setBounds(100, 100, 945, 528);
-		frmHotelMalenia.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setTitle("Hotel Malenia - Manager");
+		frame.getContentPane().setBackground(Color.DARK_GRAY);
+		frame.getContentPane().setForeground(Color.DARK_GRAY);
+		frame.setBounds(100, 100, 945, 528);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
 		panel.setForeground(Color.DARK_GRAY);
-		frmHotelMalenia.getContentPane().add(panel, BorderLayout.CENTER);
+		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
 		/*
 		 * Go to all cards visualization.
 		 */
-		JButton btnVisualizzaResoconto = new JButton("Visualizza schede");
+		JButton btnVisualizzaResoconto = new JButton("Visualizza schede clienti");
 		btnVisualizzaResoconto.addActionListener(e -> {
-			this.frmHotelMalenia.setVisible(false);
-			this.logic.goToSpecificPage("AllCards", this.frmHotelMalenia);
+			this.frame.setVisible(false);
+			this.logic.goToSpecificPage("AllCards", this.frame);
 		});
 		
 		btnVisualizzaResoconto.setForeground(Color.ORANGE);
@@ -55,10 +55,10 @@ public class ManagerPages {
 		btnVisualizzaResoconto.setBounds(276, 65, 385, 93);
 		panel.add(btnVisualizzaResoconto);
 		
-		JButton btnListini = new JButton("Listini");
+		JButton btnListini = new JButton("Tariffe e gestione economica");
 		btnListini.addActionListener(e -> {
-			this.frmHotelMalenia.setVisible(false);
-			this.logic.goToSpecificPage("Prices", this.frmHotelMalenia);
+			this.frame.setVisible(false);
+			this.logic.goToSpecificPage("Prices", this.frame);
 		});
 				
 		btnListini.setForeground(Color.ORANGE);
@@ -72,7 +72,7 @@ public class ManagerPages {
 		 */
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(e -> {
-			this.frmHotelMalenia.dispose();
+			this.frame.dispose();
 			this.logic.logout();
 		});
 		
@@ -87,13 +87,13 @@ public class ManagerPages {
 		lblNewLabel.setBackground(Color.DARK_GRAY);
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 18));
-		frmHotelMalenia.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
+		frame.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
 	}
 	
 	/**
 	 * @return actual frame.
 	 */
 	public JFrame getFrame() {
-		return this.frmHotelMalenia;
+		return this.frame;
 	}
 }
