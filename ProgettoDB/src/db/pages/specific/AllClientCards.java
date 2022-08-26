@@ -106,38 +106,16 @@ public class AllClientCards {
 	    ResultSet result;
 	    try {
 		/*
-		 * Query for cards code.
+		 * Query for all clients.
 		 */
-		result = this.fillPage("codScheda", false);
+		result = this.fillPage(false);
 		while (result.next()) {
 		    int row = result.getRow();
 
 		    for (int i = 0; i < row; i++) {
 			this.textAreaCard.append(result.getString(1) + "\n");
-		    }
-		}
-
-		/*
-		 * Query for room number
-		 */
-		result = this.fillPage("numeroCamera", false);
-		while (result.next()) {
-		    int rowRoom = result.getRow();
-
-		    for (int i = 0; i < rowRoom; i++) {
-			this.textAreaRoom.append(result.getString(1) + "\n");
-		    }
-		}
-
-		/*
-		 * Query for cards code.
-		 */
-		result = this.fillSurname("codFiscale", false);
-		while (result.next()) {
-		    int row = result.getRow();
-
-		    for (int i = 0; i < row; i++) {
-			this.textAreaSurname.append(result.getString(1) + "\n");
+			this.textAreaRoom.append(result.getString(2) + "\n");
+			this.textAreaSurname.append(result.getString(3) + "\n");
 		    }
 		}
 	    } catch (SQLException e1) {
@@ -156,38 +134,16 @@ public class AllClientCards {
 	    ResultSet result;
 	    try {
 		/*
-		 * Query for cards code.
+		 * Query for clients in hotel.
 		 */
-		result = this.fillPage("codScheda", true);
+		result = this.fillPage(true);
 		while (result.next()) {
 		    int row = result.getRow();
 
 		    for (int i = 0; i < row; i++) {
 			this.textAreaCard.append(result.getString(1) + "\n");
-		    }
-		}
-
-		/*
-		 * Query for room number
-		 */
-		result = this.fillPage("numeroCamera", true);
-		while (result.next()) {
-		    int rowRoom = result.getRow();
-
-		    for (int i = 0; i < rowRoom; i++) {
-			this.textAreaRoom.append(result.getString(1) + "\n");
-		    }
-		}
-
-		/*
-		 * Query for cards code.
-		 */
-		result = this.fillSurname("codFiscale", true);
-		while (result.next()) {
-		    int row = result.getRow();
-
-		    for (int i = 0; i < row; i++) {
-			this.textAreaSurname.append(result.getString(1) + "\n");
+			this.textAreaRoom.append(result.getString(2) + "\n");
+			this.textAreaSurname.append(result.getString(3) + "\n");
 		    }
 		}
 	    } catch (SQLException e1) {
@@ -248,82 +204,29 @@ public class AllClientCards {
     }
 
     /**
-     * Calls a query for recovering a specific data from SOGGIORNO table.
+     * Calls a query for recovering a specific data from SOGGIORNO and CLIENTE
+     * table.
      * 
-     * @param cell
-     * @param value
+     * @param onlyInHotel
      * @return
      */
-    private ResultSet fillPage(final String cell, final boolean value) {
+    private ResultSet fillPage(final boolean onlyInHotel) {
 	Connection myConn = null;
 	Statement myStmt = null;
 	ResultSet myRs = null;
-
+	String inHotel = "";
 	try {
-	    if (value) {
-		/*
-		 * NOT NULL connection.
-		 */
-		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-			this.logic.getOwnPassword());
-		myStmt = myConn.createStatement();
-		myRs = myStmt.executeQuery("SELECT " + cell + " FROM SOGGIORNO " + "WHERE soggiornante = 1");
-		return myRs;
-	    } else {
-		/*
-		 * with NULL connection.
-		 */
-		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-			this.logic.getOwnPassword());
-		myStmt = myConn.createStatement();
-		myRs = myStmt.executeQuery("SELECT codScheda, numeroCamera, cognome FROM SOGGIORNO "
-			+ "LEFT JOIN (SELECT cognome, codFiscale FROM CLIENTE) "
-			+ "AS CLT ON SOGGIORNO.codFiscaleCliente = CLT.codFiscale");
-
-		return myRs;
+	    if (onlyInHotel) {
+		inHotel = " AND SOGGIORNO.soggiornante = true ";
 	    }
+	    myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.logic.getOwnPassword());
+	    myStmt = myConn.createStatement();
+	    myRs = myStmt.executeQuery("SELECT codScheda, numeroCamera, cognome FROM SOGGIORNO "
+		    + "LEFT JOIN (SELECT cognome, codFiscale FROM CLIENTE) "
+		    + "AS CLT ON SOGGIORNO.codFiscaleCliente = CLT.codFiscale " + inHotel);
 
-	} catch (Exception exc) {
-	    exc.printStackTrace();
-	}
-
-	return myRs;
-    }
-
-    /**
-     * Recovers all surnames from CLIENTE tables.
-     * 
-     * @param cell
-     * @param value
-     * @return set with surnames.
-     */
-    private ResultSet fillSurname(final String cell, final boolean value) {
-	Connection myConn = null;
-	Statement myStmt = null;
-	ResultSet myRs = null;
-
-	try {
-	    if (value) {
-		/*
-		 * NOT NULL connection.
-		 */
-		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-			this.logic.getOwnPassword());
-		myStmt = myConn.createStatement();
-		myRs = myStmt.executeQuery("SELECT " + cell + " FROM CLIENTE, SOGGIORNO " + "WHERE soggiornante = 1");
-		return myRs;
-	    } else {
-		/*
-		 * with NULL connection.
-		 */
-		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
-			this.logic.getOwnPassword());
-		myStmt = myConn.createStatement();
-		myRs = myStmt.executeQuery("SELECT " + cell + " FROM CLIENTE");
-
-		return myRs;
-	    }
-
+	    return myRs;
 	} catch (Exception exc) {
 	    exc.printStackTrace();
 	}
