@@ -16,8 +16,11 @@ import javax.swing.JScrollPane;
 public class EntertaimentServicePages {
 
     private JFrame frame;
-    private JTextField textField;
+    private JTextField roomNumberFieldServices;
     private Logic logic;
+    private JTextField roomNumberFieldTerm;
+    private JTextField dayField;
+    private JTextField timeField;
 
     /**
      * Create the application.
@@ -54,16 +57,16 @@ public class EntertaimentServicePages {
 	roomNumber.setBackground(Color.DARK_GRAY);
 	roomNumber.setForeground(Color.ORANGE);
 	roomNumber.setFont(new Font("Verdana", Font.BOLD, 12));
-	roomNumber.setBounds(65, 21, 106, 28);
+	roomNumber.setBounds(34, 33, 106, 28);
 	panel.add(roomNumber);
 
-	textField = new JTextField();
-	textField.setForeground(Color.PINK);
-	textField.setFont(new Font("Verdana", Font.BOLD, 12));
-	textField.setBackground(Color.BLACK);
-	textField.setBounds(65, 51, 106, 20);
-	panel.add(textField);
-	textField.setColumns(10);
+	roomNumberFieldServices = new JTextField();
+	roomNumberFieldServices.setForeground(Color.PINK);
+	roomNumberFieldServices.setFont(new Font("Verdana", Font.BOLD, 12));
+	roomNumberFieldServices.setBackground(Color.BLACK);
+	roomNumberFieldServices.setBounds(150, 41, 106, 20);
+	panel.add(roomNumberFieldServices);
+	roomNumberFieldServices.setColumns(10);
 
 	JButton casinoEntrance = new JButton("Ingresso al casino'");
 	casinoEntrance.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -71,7 +74,7 @@ public class EntertaimentServicePages {
 	    
 	    
 	});
-	casinoEntrance.setBounds(28, 85, 171, 23);
+	casinoEntrance.setBounds(10, 71, 156, 23);
 	panel.add(casinoEntrance);
 
 	JButton gymEntrance = new JButton("Ingresso palestra");
@@ -80,7 +83,7 @@ public class EntertaimentServicePages {
 	    
 	    
 	});
-	gymEntrance.setBounds(28, 119, 171, 23);
+	gymEntrance.setBounds(100, 106, 156, 23);
 	panel.add(gymEntrance);
 
 	JButton beachEntrance = new JButton("Ingresso Spiaggia");
@@ -89,7 +92,7 @@ public class EntertaimentServicePages {
 	    
 	    
 	});
-	beachEntrance.setBounds(28, 153, 171, 23);
+	beachEntrance.setBounds(181, 71, 156, 23);
 	panel.add(beachEntrance);
 
 	JButton showTerm = new JButton("Terme");
@@ -145,7 +148,7 @@ public class EntertaimentServicePages {
 	    
 	});
 	normalMassageButton.setFont(new Font("Verdana", Font.BOLD, 12));
-	normalMassageButton.setBounds(28, 256, 171, 23);
+	normalMassageButton.setBounds(10, 273, 166, 23);
 	panel.add(normalMassageButton);
 
 	JButton mugShowerButton = new JButton("Doccia fango");
@@ -156,7 +159,7 @@ public class EntertaimentServicePages {
 	    
 	});
 	mugShowerButton.setFont(new Font("Verdana", Font.BOLD, 12));
-	mugShowerButton.setBounds(28, 290, 171, 23);
+	mugShowerButton.setBounds(10, 307, 166, 23);
 	panel.add(mugShowerButton);
 
 	JButton thermalBathButton = new JButton("Bagno Termale");
@@ -167,7 +170,7 @@ public class EntertaimentServicePages {
 	    
 	    
 	});
-	thermalBathButton.setBounds(28, 324, 171, 23);
+	thermalBathButton.setBounds(186, 273, 166, 23);
 	panel.add(thermalBathButton);
 
 	JButton hydroMassageButton = new JButton("Idromassaggio");
@@ -178,7 +181,7 @@ public class EntertaimentServicePages {
 	    
 	    
 	});
-	hydroMassageButton.setBounds(28, 359, 171, 23);
+	hydroMassageButton.setBounds(186, 308, 166, 23);
 	panel.add(hydroMassageButton);
 
 	/*
@@ -193,7 +196,7 @@ public class EntertaimentServicePages {
 	logout.setBackground(Color.DARK_GRAY);
 	logout.setForeground(Color.ORANGE);
 	logout.setFont(new Font("Verdana", Font.BOLD, 12));
-	logout.setBounds(28, 432, 89, 23);
+	logout.setBounds(10, 432, 89, 23);
 	panel.add(logout);
 
 	JScrollPane scrollPane = new JScrollPane();
@@ -206,6 +209,51 @@ public class EntertaimentServicePages {
 	textArea.setEditable(false);
 	textArea.setBackground(Color.BLACK);
 	scrollPane.setViewportView(textArea);
+	
+	JLabel roomNumberTerm = new JLabel("Numero camera");
+	roomNumberTerm.setForeground(Color.ORANGE);
+	roomNumberTerm.setFont(new Font("Verdana", Font.BOLD, 12));
+	roomNumberTerm.setBackground(Color.DARK_GRAY);
+	roomNumberTerm.setBounds(11, 212, 106, 28);
+	panel.add(roomNumberTerm);
+	
+	roomNumberFieldTerm = new JTextField();
+	roomNumberFieldTerm.setForeground(Color.PINK);
+	roomNumberFieldTerm.setFont(new Font("Verdana", Font.BOLD, 12));
+	roomNumberFieldTerm.setColumns(10);
+	roomNumberFieldTerm.setBackground(Color.BLACK);
+	roomNumberFieldTerm.setBounds(11, 242, 106, 20);
+	panel.add(roomNumberFieldTerm);
+	
+	JLabel dayLabel = new JLabel("Giorno");
+	dayLabel.setForeground(Color.ORANGE);
+	dayLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+	dayLabel.setBackground(Color.DARK_GRAY);
+	dayLabel.setBounds(138, 212, 106, 28);
+	panel.add(dayLabel);
+	
+	dayField = new JTextField();
+	dayField.setForeground(Color.PINK);
+	dayField.setFont(new Font("Verdana", Font.BOLD, 12));
+	dayField.setColumns(10);
+	dayField.setBackground(Color.BLACK);
+	dayField.setBounds(138, 242, 106, 20);
+	panel.add(dayField);
+	
+	JLabel timeLabel = new JLabel("Ora");
+	timeLabel.setForeground(Color.ORANGE);
+	timeLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+	timeLabel.setBackground(Color.DARK_GRAY);
+	timeLabel.setBounds(265, 212, 106, 28);
+	panel.add(timeLabel);
+	
+	timeField = new JTextField();
+	timeField.setForeground(Color.PINK);
+	timeField.setFont(new Font("Verdana", Font.BOLD, 12));
+	timeField.setColumns(10);
+	timeField.setBackground(Color.BLACK);
+	timeField.setBounds(265, 242, 106, 20);
+	panel.add(timeField);
     }
 
     /**

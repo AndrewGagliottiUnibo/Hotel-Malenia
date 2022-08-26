@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import db.logic.Logic;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
 
 public class PricePage {
 
@@ -60,8 +61,10 @@ public class PricePage {
 		textArea.setBackground(Color.BLACK);
 		scrollPane.setViewportView(textArea);
 		
-		JButton showPrices = new JButton("Vedi listini");
-		showPrices.addActionListener(e -> {
+		JButton showPricesServices = new JButton("Vedi tariffe servizi");
+		showPricesServices.addActionListener(new ActionListener() {
+		});
+		showPricesServices.addActionListener(e -> {
 			Connection myConn = null;
 			Statement myStmt = null;
 			ResultSet myRs = null;
@@ -79,11 +82,11 @@ public class PricePage {
 				exc.printStackTrace();
 			}
 		});
-		showPrices.setForeground(Color.ORANGE);
-		showPrices.setBackground(Color.DARK_GRAY);
-		showPrices.setFont(new Font("Verdana", Font.BOLD, 12));
-		showPrices.setBounds(10, 22, 167, 23);
-		frmListini.getContentPane().add(showPrices);
+		showPricesServices.setForeground(Color.ORANGE);
+		showPricesServices.setBackground(Color.DARK_GRAY);
+		showPricesServices.setFont(new Font("Verdana", Font.BOLD, 12));
+		showPricesServices.setBounds(10, 23, 195, 23);
+		frmListini.getContentPane().add(showPricesServices);
 		
 		JLabel insertNameLabel = new JLabel("Inserisci il prodotto da modificare");
 		insertNameLabel.setForeground(Color.ORANGE);
@@ -138,6 +141,13 @@ public class PricePage {
 		logout.setBackground(Color.DARK_GRAY);
 		logout.setBounds(830, 455, 89, 23);
 		frmListini.getContentPane().add(logout);
+		
+		JButton showPricesVacationTypes = new JButton("Vedi tariffe soggiorni");
+		showPricesVacationTypes.setForeground(Color.ORANGE);
+		showPricesVacationTypes.setFont(new Font("Verdana", Font.BOLD, 12));
+		showPricesVacationTypes.setBackground(Color.DARK_GRAY);
+		showPricesVacationTypes.setBounds(257, 23, 195, 23);
+		frmListini.getContentPane().add(showPricesVacationTypes);
 	}
 	
 	/**
