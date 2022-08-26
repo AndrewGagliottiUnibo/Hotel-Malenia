@@ -276,7 +276,9 @@ public class AllClientCards {
 		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
 		myStmt = myConn.createStatement();
-		myRs = myStmt.executeQuery("SELECT " + cell + " FROM SOGGIORNO");
+		myRs = myStmt.executeQuery("SELECT codScheda, numeroCamera, cognome FROM SOGGIORNO "
+			+ "LEFT JOIN (SELECT cognome, codFiscale FROM CLIENTE) "
+			+ "AS CLT ON SOGGIORNO.codFiscaleCliente = CLT.codFiscale");
 
 		return myRs;
 	    }
