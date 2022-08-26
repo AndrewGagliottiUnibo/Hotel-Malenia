@@ -4,6 +4,11 @@ import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import db.logic.Logic;
@@ -17,12 +22,13 @@ public class EntertaimentServicePages {
 
     private JFrame frame;
     private JTextField roomNumberField;
-    private Logic logic;
     private JTextField dayField;
     private JTextField timeField;
     private JTextField seasonField;
     private JTextField yearField;
     private JTextField roomNumberShow;
+    private JTextArea textArea;
+    private Logic logic;
 
     /**
      * Create the application.
@@ -216,7 +222,7 @@ public class EntertaimentServicePages {
 	scrollPane.setBounds(409, 95, 510, 360);
 	panel.add(scrollPane);
 
-	JTextArea textArea = new JTextArea();
+	this.textArea = new JTextArea();
 	textArea.setForeground(Color.PINK);
 	textArea.setFont(new Font("Verdana", Font.BOLD, 12));
 	textArea.setEditable(false);
@@ -282,7 +288,7 @@ public class EntertaimentServicePages {
 	yearLabelServices.setBackground(Color.DARK_GRAY);
 	yearLabelServices.setBounds(10, 114, 106, 28);
 	panel.add(yearLabelServices);
-	
+
 	roomNumberShow = new JTextField();
 	roomNumberShow.setForeground(Color.PINK);
 	roomNumberShow.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -298,8 +304,37 @@ public class EntertaimentServicePages {
      * @param string
      */
     private void showReservations(final String string) {
-	// TODO Auto-generated method stub
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
 
+	try {
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.logic.getOwnPassword());
+	    myStm = conn.prepareStatement(
+		    "SELECT codFiscale FROM SOGGIORNO " + "WHERE numeroCamera = ? AND soggiornante = true");
+	    myStm.setInt(1, Integer.parseInt(this.roomNumberShow.getText()));
+	    result = myStm.executeQuery();
+	    final String identifier = result.getString(1);
+
+	    myStm = conn.prepareStatement(
+		    "SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE WHERE codFiscaleClienteRegistrato = ?");
+	    myStm.setString(1, identifier);
+	    result = myStm.executeQuery();
+
+	    /*
+	     * Printing data.
+	     */
+	    while (result.next()) {
+		int row = result.getRow();
+
+		for (int i = 0; i < row; i++) {
+		    this.textArea.append(result.getString(1) + "\n");
+		}
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
     }
 
     /**
