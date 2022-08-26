@@ -62,13 +62,13 @@ public class PricePage {
 		scrollPane.setViewportView(textArea);
 		
 		JButton showPricesServices = new JButton("Vedi tariffe servizi");
-		showPricesServices.addActionListener(new ActionListener() {
-		});
 		showPricesServices.addActionListener(e -> {
 			Connection myConn = null;
 			Statement myStmt = null;
 			ResultSet myRs = null;
 			try {
+			    
+			    // TODO
 				myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root" , this.logic.getOwnPassword());
 				System.out.println("Database connected");
 				// 2. Create a statement
@@ -119,6 +119,8 @@ public class PricePage {
 		
 		JButton applyBtn = new JButton("Applica");
 		applyBtn.addActionListener(e -> {
+		    
+		    //TODO
 			this.logic.modifyPrice(Integer.parseInt(this.priceNameField.getText()), this.productNameField.getText());
 			this.productNameField.setText("");
 			this.priceNameField.setText("");
