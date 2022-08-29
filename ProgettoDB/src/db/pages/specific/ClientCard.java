@@ -296,24 +296,38 @@ public class ClientCard {
      */
     private void loadData() {
 
-	Connection myConn = null;
-	Statement myStmt = null;
-	ResultSet myRs = null;
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
 
 	try {
-	    myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
-	    myStmt = myConn.createStatement();
-	    myRs = myStmt.executeQuery("SELECT resoconto FROM SOGGIORNO WHERE numeroCamera = " + this.chosenClient);
+	    myStm = conn.prepareStatement("SELECT nome, cognome, codFiscale, dataNascita, numeroTelefonico, "
+	    	+ "numeroCamera, dataInizio, durataSoggiorno, tipologiaSoggiornoScelto, meseSoggiornoScelto, "
+	    	+ "annoSoggiornoScelto, codScheda FROM CLIENTE, SOGGIORNO "
+	    	+ "WHERE SOGGIORNO.codScheda = ? AND SOGGIORNO.codFiscaleCliente = CLIENTE.codFiscale");
 
-	    result = myRs.getString(1);
-	    myRs.close();
+	    myStm.setInt(1, Integer.valueOf(this.chosenClient));
+	    result = myStm.executeQuery();
+	    this.name.setText(result.getString(1));
+	    this.surname.setText(result.getString(2));
+	    this.cfField.setText(result.getString(3));
+	    this.dateField.setText(result.getString(4));
+	    this.telField.setText(result.getString(5));
+	    this.roomFIeld.setText(result.getString(6));
+	    this.dayFIeld.setText(result.getString(7));
+	    this.expirationDateField.setText(result.getString(8));
+	    this.vacationTypeField.setText(result.getString(9));
+	    this.monthField.setText(result.getString(10));
+	    this.yearField.setText(result.getString(11));
+	    this.codeCardField.setText(result.getString(12));
 
 	} catch (Exception exc) {
 	    exc.printStackTrace();
 	}
 
-	this.resField.setText(result);
+	//this.resField.setText(result);
     }
 
     /**
