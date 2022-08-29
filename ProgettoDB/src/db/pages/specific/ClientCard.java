@@ -36,6 +36,11 @@ public class ClientCard {
 	private JTextField expirationDateField;
 	private JTextField codeCardField;
 	private JLabel lblUniversalIdentifier;
+	private JTextField vacationTypeField;
+	private JTextField monthField;
+	private JLabel lblMeseSoggiorno;
+	private JTextField yearField;
+	private JLabel lblAnnoSoggiorno;
 
 	/**
 	 * Create the application.
@@ -65,6 +70,7 @@ public class ClientCard {
 		frame.getContentPane().add(nameRegistered);
 		
 		name = new JTextField();
+		name.setEditable(false);
 		name.setBounds(10, 92, 86, 20);
 		frame.getContentPane().add(name);
 		name.setColumns(10);
@@ -76,6 +82,7 @@ public class ClientCard {
 		frame.getContentPane().add(codeCard);
 		
 		cfField = new JTextField();
+		cfField.setEditable(false);
 		cfField.setColumns(10);
 		cfField.setBounds(10, 163, 190, 20);
 		frame.getContentPane().add(cfField);
@@ -99,6 +106,7 @@ public class ClientCard {
 		frame.getContentPane().add(amministrativeData);
 		
 		surname = new JTextField();
+		surname.setEditable(false);
 		surname.setColumns(10);
 		surname.setBounds(114, 92, 86, 20);
 		frame.getContentPane().add(surname);
@@ -110,6 +118,7 @@ public class ClientCard {
 		frame.getContentPane().add(birthday);
 		
 		dateField = new JTextField();
+		dateField.setEditable(false);
 		dateField.setColumns(10);
 		dateField.setBounds(10, 235, 190, 20);
 		frame.getContentPane().add(dateField);
@@ -121,6 +130,7 @@ public class ClientCard {
 		frame.getContentPane().add(lblSoggiorno);
 		
 		dayFIeld = new JTextField();
+		dayFIeld.setEditable(false);
 		dayFIeld.setColumns(10);
 		dayFIeld.setBounds(395, 92, 190, 20);
 		frame.getContentPane().add(dayFIeld);
@@ -132,6 +142,7 @@ public class ClientCard {
 		frame.getContentPane().add(lblTelefono);
 		
 		telField = new JTextField();
+		telField.setEditable(false);
 		telField.setColumns(10);
 		telField.setBounds(10, 306, 190, 20);
 		frame.getContentPane().add(telField);
@@ -143,6 +154,7 @@ public class ClientCard {
 		frame.getContentPane().add(lblStanzaAssegnata);
 		
 		roomFIeld = new JTextField();
+		roomFIeld.setEditable(false);
 		roomFIeld.setColumns(10);
 		roomFIeld.setBounds(10, 374, 190, 20);
 		frame.getContentPane().add(roomFIeld);
@@ -235,11 +247,13 @@ public class ClientCard {
 		frame.getContentPane().add(lblexpire);
 		
 		expirationDateField = new JTextField();
+		expirationDateField.setEditable(false);
 		expirationDateField.setColumns(10);
 		expirationDateField.setBounds(395, 145, 190, 20);
 		frame.getContentPane().add(expirationDateField);
 		
 		codeCardField = new JTextField();
+		codeCardField.setEditable(false);
 		codeCardField.setColumns(10);
 		codeCardField.setBounds(395, 374, 190, 20);
 		frame.getContentPane().add(codeCardField);
@@ -249,6 +263,36 @@ public class ClientCard {
 		lblUniversalIdentifier.setFont(new Font("Verdana", Font.BOLD, 12));
 		lblUniversalIdentifier.setBounds(395, 352, 190, 14);
 		frame.getContentPane().add(lblUniversalIdentifier);
+		
+		vacationTypeField = new JTextField();
+		vacationTypeField.setEditable(false);
+		vacationTypeField.setColumns(10);
+		vacationTypeField.setBounds(395, 201, 190, 20);
+		frame.getContentPane().add(vacationTypeField);
+		
+		monthField = new JTextField();
+		monthField.setEditable(false);
+		monthField.setColumns(10);
+		monthField.setBounds(395, 260, 190, 20);
+		frame.getContentPane().add(monthField);
+		
+		lblMeseSoggiorno = new JLabel("Mese soggiorno");
+		lblMeseSoggiorno.setForeground(Color.ORANGE);
+		lblMeseSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblMeseSoggiorno.setBounds(395, 235, 145, 14);
+		frame.getContentPane().add(lblMeseSoggiorno);
+		
+		yearField = new JTextField();
+		yearField.setEditable(false);
+		yearField.setColumns(10);
+		yearField.setBounds(395, 321, 190, 20);
+		frame.getContentPane().add(yearField);
+		
+		lblAnnoSoggiorno = new JLabel("Anno soggiorno");
+		lblAnnoSoggiorno.setForeground(Color.ORANGE);
+		lblAnnoSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblAnnoSoggiorno.setBounds(395, 296, 145, 14);
+		frame.getContentPane().add(lblAnnoSoggiorno);
 		
 		this.setTextGlobal();
 	}

@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
 
 public class AllReservations {
 
-    private JFrame frmPrenotazioni;
+    private JFrame frame;
     private JTextField specificViewField;
     private JTextField dayDeleteField;
     private JTextArea textArea;
@@ -40,26 +40,26 @@ public class AllReservations {
      * Initialize the contents of the frame.
      */
     private void initialize() {
-	frmPrenotazioni = new JFrame();
-	frmPrenotazioni.setResizable(false);
-	frmPrenotazioni.getContentPane().setForeground(Color.ORANGE);
-	frmPrenotazioni.getContentPane().setFont(new Font("Verdana", Font.BOLD, 12));
-	frmPrenotazioni.getContentPane().setBackground(Color.DARK_GRAY);
-	frmPrenotazioni.setTitle("Prenotazioni");
-	frmPrenotazioni.setBounds(100, 100, 945, 528);
-	frmPrenotazioni.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frmPrenotazioni.getContentPane().setLayout(null);
+	frame = new JFrame();
+	frame.setResizable(false);
+	frame.getContentPane().setForeground(Color.ORANGE);
+	frame.getContentPane().setFont(new Font("Verdana", Font.BOLD, 12));
+	frame.getContentPane().setBackground(Color.DARK_GRAY);
+	frame.setTitle("Prenotazioni");
+	frame.setBounds(100, 100, 945, 528);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.getContentPane().setLayout(null);
 
 	JLabel lblNewLabel = new JLabel("Prenotazioni");
 	lblNewLabel.setBounds(0, 0, 929, 23);
 	lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 	lblNewLabel.setForeground(Color.RED);
 	lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 18));
-	frmPrenotazioni.getContentPane().add(lblNewLabel);
+	frame.getContentPane().add(lblNewLabel);
 
 	JScrollPane scrollPane = new JScrollPane();
 	scrollPane.setBounds(10, 26, 680, 452);
-	frmPrenotazioni.getContentPane().add(scrollPane);
+	frame.getContentPane().add(scrollPane);
 
 	JLabel lblNewLabel_1 = new JLabel(
 		"Tipo prenotazione" + this.spaceChar + "Data" + this.spaceChar + "Ora" + this.spaceChar + "Cliente");
@@ -79,7 +79,7 @@ public class AllReservations {
 	viewSpecificLabel.setFont(new Font("Verdana", Font.BOLD, 12));
 	viewSpecificLabel.setBackground(Color.DARK_GRAY);
 	viewSpecificLabel.setBounds(700, 127, 219, 14);
-	frmPrenotazioni.getContentPane().add(viewSpecificLabel);
+	frame.getContentPane().add(viewSpecificLabel);
 
 	JButton showAll = new JButton("Vedi prenotazioni area");
 	showAll.addActionListener(e -> {
@@ -115,14 +115,14 @@ public class AllReservations {
 	showAll.setFont(new Font("Verdana", Font.BOLD, 12));
 	showAll.setBackground(Color.DARK_GRAY);
 	showAll.setBounds(700, 77, 219, 23);
-	frmPrenotazioni.getContentPane().add(showAll);
+	frame.getContentPane().add(showAll);
 
 	specificViewField = new JTextField();
 	specificViewField.setFont(new Font("Verdana", Font.BOLD, 12));
 	specificViewField.setForeground(Color.PINK);
 	specificViewField.setBackground(Color.BLACK);
 	specificViewField.setBounds(700, 152, 219, 20);
-	frmPrenotazioni.getContentPane().add(specificViewField);
+	frame.getContentPane().add(specificViewField);
 	specificViewField.setColumns(10);
 
 	JButton commitSpecificBtn = new JButton("Vedi prenotazione cliente");
@@ -157,25 +157,25 @@ public class AllReservations {
 	commitSpecificBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 	commitSpecificBtn.setBackground(Color.DARK_GRAY);
 	commitSpecificBtn.setBounds(700, 182, 219, 23);
-	frmPrenotazioni.getContentPane().add(commitSpecificBtn);
+	frame.getContentPane().add(commitSpecificBtn);
 
 	JButton logout = new JButton("Logout");
 	logout.addActionListener(e -> {
-	    this.frmPrenotazioni.dispose();
+	    this.frame.dispose();
 	    this.logic.logout();
 	});
 	logout.setFont(new Font("Verdana", Font.BOLD, 12));
 	logout.setForeground(Color.ORANGE);
 	logout.setBackground(Color.DARK_GRAY);
 	logout.setBounds(700, 455, 219, 23);
-	frmPrenotazioni.getContentPane().add(logout);
+	frame.getContentPane().add(logout);
 
 	JLabel codeLabelDay = new JLabel("Inserisci giorno");
 	codeLabelDay.setForeground(new Color(0, 128, 0));
 	codeLabelDay.setFont(new Font("Verdana", Font.BOLD, 12));
 	codeLabelDay.setBackground(Color.DARK_GRAY);
 	codeLabelDay.setBounds(700, 319, 219, 14);
-	frmPrenotazioni.getContentPane().add(codeLabelDay);
+	frame.getContentPane().add(codeLabelDay);
 
 	dayDeleteField = new JTextField();
 	dayDeleteField.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -183,7 +183,7 @@ public class AllReservations {
 	dayDeleteField.setBackground(Color.BLACK);
 	dayDeleteField.setColumns(10);
 	dayDeleteField.setBounds(700, 334, 219, 20);
-	frmPrenotazioni.getContentPane().add(dayDeleteField);
+	frame.getContentPane().add(dayDeleteField);
 
 	JButton deleteReservationBtn = new JButton("Cancella");
 	deleteReservationBtn.addActionListener(e -> {
@@ -201,7 +201,7 @@ public class AllReservations {
 	deleteReservationBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 	deleteReservationBtn.setBackground(Color.DARK_GRAY);
 	deleteReservationBtn.setBounds(700, 401, 219, 23);
-	frmPrenotazioni.getContentPane().add(deleteReservationBtn);
+	frame.getContentPane().add(deleteReservationBtn);
 
 	reservationTypeField = new JTextField();
 	reservationTypeField.setForeground(Color.PINK);
@@ -209,21 +209,21 @@ public class AllReservations {
 	reservationTypeField.setColumns(10);
 	reservationTypeField.setBackground(Color.BLACK);
 	reservationTypeField.setBounds(700, 49, 219, 20);
-	frmPrenotazioni.getContentPane().add(reservationTypeField);
+	frame.getContentPane().add(reservationTypeField);
 
 	JLabel labelReservationType = new JLabel("Vedi prenotazioni per tipo");
 	labelReservationType.setForeground(Color.ORANGE);
 	labelReservationType.setFont(new Font("Verdana", Font.BOLD, 12));
 	labelReservationType.setBackground(Color.DARK_GRAY);
 	labelReservationType.setBounds(700, 27, 219, 14);
-	frmPrenotazioni.getContentPane().add(labelReservationType);
+	frame.getContentPane().add(labelReservationType);
 
 	JLabel codeCardLabel = new JLabel("Inserisci prenotazione");
 	codeCardLabel.setForeground(new Color(0, 128, 0));
 	codeCardLabel.setFont(new Font("Verdana", Font.BOLD, 12));
 	codeCardLabel.setBackground(Color.DARK_GRAY);
 	codeCardLabel.setBounds(700, 238, 219, 14);
-	frmPrenotazioni.getContentPane().add(codeCardLabel);
+	frame.getContentPane().add(codeCardLabel);
 
 	deleteReservationField = new JTextField();
 	deleteReservationField.setForeground(Color.PINK);
@@ -231,7 +231,7 @@ public class AllReservations {
 	deleteReservationField.setColumns(10);
 	deleteReservationField.setBackground(Color.BLACK);
 	deleteReservationField.setBounds(700, 253, 219, 20);
-	frmPrenotazioni.getContentPane().add(deleteReservationField);
+	frame.getContentPane().add(deleteReservationField);
 
 	hourDeleteField = new JTextField();
 	hourDeleteField.setForeground(Color.PINK);
@@ -239,21 +239,21 @@ public class AllReservations {
 	hourDeleteField.setColumns(10);
 	hourDeleteField.setBackground(Color.BLACK);
 	hourDeleteField.setBounds(700, 372, 219, 20);
-	frmPrenotazioni.getContentPane().add(hourDeleteField);
+	frame.getContentPane().add(hourDeleteField);
 
 	JLabel lblHour = new JLabel("Inserisci ora");
 	lblHour.setForeground(new Color(0, 128, 0));
 	lblHour.setFont(new Font("Verdana", Font.BOLD, 12));
 	lblHour.setBackground(Color.DARK_GRAY);
 	lblHour.setBounds(700, 357, 219, 14);
-	frmPrenotazioni.getContentPane().add(lblHour);
+	frame.getContentPane().add(lblHour);
 
 	JLabel lblClient = new JLabel("Inserisci camera");
 	lblClient.setForeground(new Color(0, 128, 0));
 	lblClient.setFont(new Font("Verdana", Font.BOLD, 12));
 	lblClient.setBackground(Color.DARK_GRAY);
 	lblClient.setBounds(700, 277, 219, 14);
-	frmPrenotazioni.getContentPane().add(lblClient);
+	frame.getContentPane().add(lblClient);
 
 	clientDeleteField = new JTextField();
 	clientDeleteField.setForeground(Color.PINK);
@@ -261,13 +261,13 @@ public class AllReservations {
 	clientDeleteField.setColumns(10);
 	clientDeleteField.setBackground(Color.BLACK);
 	clientDeleteField.setBounds(700, 292, 219, 20);
-	frmPrenotazioni.getContentPane().add(clientDeleteField);
+	frame.getContentPane().add(clientDeleteField);
     }
 
     /**
      * @return actual frame.
      */
     public JFrame getFrame() {
-	return this.frmPrenotazioni;
+	return this.frame;
     }
 }
