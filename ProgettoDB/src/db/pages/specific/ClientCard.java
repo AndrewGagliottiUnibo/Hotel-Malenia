@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.JButton;
 
 public class ClientCard {
@@ -220,11 +219,11 @@ public class ClientCard {
 		myStm = conn.prepareStatement("UPDATE SOGGIORNO " + "SET resoconto = ? " + "WHERE codScheda = ? "
 			+ "AND soggiornante = true");
 
-		myStm.setInt(1, Integer.parseInt(this.resField.getText()));
+		myStm.setInt(1, Integer.parseInt(this.wageField.getText()));
 		myStm.setString(2, this.chosenClient);
 		result = myStm.executeQuery();
 
-		this.resField.setText(result.getString(1));
+		this.wageField.setText(result.getString(1));
 	    } catch (Exception exc) {
 		exc.printStackTrace();
 	    }
@@ -326,8 +325,6 @@ public class ClientCard {
 	} catch (Exception exc) {
 	    exc.printStackTrace();
 	}
-
-	this.wageField.setText(result);
     }
 
     /**
