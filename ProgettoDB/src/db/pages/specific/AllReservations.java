@@ -93,7 +93,7 @@ public class AllReservations {
 		myStmt = myConn.prepareStatement("SELECT tipoPrenotazione, giorno, ora, codFiscaleClienteRegistrato "
 			+ "FROM PRENOTAZIONE, SOGGIORNO " + "WHERE tipoPrenotazione = ?"
 			+ "AND SOGGIORNO.soggiornante = true "
-			+ "AND PRENOTAZIONE.dataInizioSoggiorno = SOGGIORNO.dataInizio");
+			+ "AND PRENOTAZIONE.dataInizioSoggiornoRegistrato = SOGGIORNO.dataInizio");
 		myStmt.setString(1, this.reservationTypeField.getText());
 		myRs = myStmt.executeQuery();
 
