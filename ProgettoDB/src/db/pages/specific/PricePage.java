@@ -258,8 +258,9 @@ public class PricePage {
 	modifyBtnVacation.setBackground(Color.DARK_GRAY);
 	modifyBtnVacation.setBounds(720, 358, 171, 45);
 	this.modifyBtnVacation.addActionListener(e -> {
-	    // TODO
-
+	    this.logic.updateVacationType(this.vacationField.getText(), this.monthVacationField.getText(),
+		    Integer.parseInt(this.yearVacationField.getText()),
+		    Integer.parseInt(this.vacationPriceField.getText()));
 	});
 	frame.getContentPane().add(modifyBtnVacation);
 
@@ -268,8 +269,9 @@ public class PricePage {
 	 */
 	this.applyBtnService = new JButton("Applica nuovo");
 	applyBtnService.addActionListener(e -> {
-
-	    // TODO
+	    this.logic.insertService(this.serviceField.getText(), this.seasonServiceField.getText(),
+		    Integer.parseInt(this.yearServiceField.getText()),
+		    Integer.parseInt(this.priceServiceField.getText()));
 	});
 
 	applyBtnService.setForeground(Color.ORANGE);
@@ -287,8 +289,9 @@ public class PricePage {
 	applyBtnVacation.setBackground(Color.DARK_GRAY);
 	applyBtnVacation.setBounds(720, 285, 171, 45);
 	this.applyBtnVacation.addActionListener(e -> {
-	    // TODO
-
+	    this.logic.insertVacationType(this.vacationField.getText(), this.monthVacationField.getText(),
+		    Integer.parseInt(this.yearVacationField.getText()),
+		    Integer.parseInt(this.vacationPriceField.getText()));
 	});
 	frame.getContentPane().add(applyBtnVacation);
 
