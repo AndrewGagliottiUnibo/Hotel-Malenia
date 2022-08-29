@@ -74,7 +74,7 @@ public class RegistrationCard {
 		frmRegistraCliente.getContentPane().add(name);
 		name.setColumns(10);
 
-		JLabel codeCard = new JLabel("Dati personali");
+		JLabel codeCard = new JLabel("Dati sensibili");
 		codeCard.setForeground(Color.RED);
 		codeCard.setFont(new Font("Verdana", Font.BOLD, 18));
 		codeCard.setBounds(10, 11, 333, 48);
