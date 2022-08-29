@@ -24,20 +24,18 @@ public class ClientCard {
 	private JTextField surname;
 	private JTextField dateField;
 	private JTextField dayFIeld;
-	private JTextField checkoutField;
-	private JTextField checkinFIeld;
 	private JTextField telField;
-	private JRadioButton rdbtnIntGlutine;
 	private JLabel lblStanzaAssegnata;
 	private JTextField roomFIeld;
-	private JRadioButton rdbtnIntBB;
-	private JRadioButton rdbtnIntCompleto;
-	private JRadioButton rdbtnIntAllInclusive;
 	private JLabel lblTipoSoggiorno;
 	private JTextField resField;
 	private JLabel lblResoconto;
 	private Logic logic;
 	private String chosenClient;
+	private JLabel lblexpire;
+	private JTextField expirationDateField;
+	private JTextField codeCardField;
+	private JLabel lblUniversalIdentifier;
 
 	/**
 	 * Create the application.
@@ -71,7 +69,7 @@ public class ClientCard {
 		frame.getContentPane().add(name);
 		name.setColumns(10);
 		
-		JLabel codeCard = new JLabel("");
+		JLabel codeCard = new JLabel("Dati sensibili");
 		codeCard.setForeground(Color.RED);
 		codeCard.setFont(new Font("Verdana", Font.BOLD, 18));
 		codeCard.setBounds(10, 11, 333, 48);
@@ -127,28 +125,6 @@ public class ClientCard {
 		dayFIeld.setBounds(395, 92, 190, 20);
 		frame.getContentPane().add(dayFIeld);
 		
-		checkoutField = new JTextField();
-		checkoutField.setColumns(10);
-		checkoutField.setBounds(395, 306, 190, 20);
-		frame.getContentPane().add(checkoutField);
-		
-		JLabel lblOrarioCheckout = new JLabel("Orario check-out");
-		lblOrarioCheckout.setForeground(Color.ORANGE);
-		lblOrarioCheckout.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblOrarioCheckout.setBounds(395, 284, 145, 14);
-		frame.getContentPane().add(lblOrarioCheckout);
-		
-		checkinFIeld = new JTextField();
-		checkinFIeld.setColumns(10);
-		checkinFIeld.setBounds(395, 235, 190, 20);
-		frame.getContentPane().add(checkinFIeld);
-		
-		JLabel lblOrarioCheckin = new JLabel("Orario check-in");
-		lblOrarioCheckin.setForeground(Color.ORANGE);
-		lblOrarioCheckin.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblOrarioCheckin.setBounds(395, 213, 145, 14);
-		frame.getContentPane().add(lblOrarioCheckin);
-		
 		JLabel lblTelefono = new JLabel("Telefono");
 		lblTelefono.setForeground(Color.ORANGE);
 		lblTelefono.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -160,67 +136,32 @@ public class ClientCard {
 		telField.setBounds(10, 306, 190, 20);
 		frame.getContentPane().add(telField);
 		
-		JRadioButton rdbtnIntLattosio = new JRadioButton("Int - Lattosio");
-		rdbtnIntLattosio.setForeground(Color.ORANGE);
-		rdbtnIntLattosio.setBackground(Color.DARK_GRAY);
-		rdbtnIntLattosio.setFont(new Font("Verdana", Font.BOLD, 12));
-		rdbtnIntLattosio.setBounds(10, 359, 190, 23);
-		frame.getContentPane().add(rdbtnIntLattosio);
-		
-		rdbtnIntGlutine = new JRadioButton("Int - Glutine");
-		rdbtnIntGlutine.setForeground(Color.ORANGE);
-		rdbtnIntGlutine.setBackground(Color.DARK_GRAY);
-		rdbtnIntGlutine.setFont(new Font("Verdana", Font.BOLD, 12));
-		rdbtnIntGlutine.setBounds(10, 398, 190, 23);
-		frame.getContentPane().add(rdbtnIntGlutine);
-		
 		lblStanzaAssegnata = new JLabel("Stanza assegnata");
 		lblStanzaAssegnata.setForeground(Color.ORANGE);
 		lblStanzaAssegnata.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblStanzaAssegnata.setBounds(395, 359, 145, 14);
+		lblStanzaAssegnata.setBounds(10, 352, 145, 14);
 		frame.getContentPane().add(lblStanzaAssegnata);
 		
 		roomFIeld = new JTextField();
 		roomFIeld.setColumns(10);
-		roomFIeld.setBounds(395, 381, 190, 20);
+		roomFIeld.setBounds(10, 374, 190, 20);
 		frame.getContentPane().add(roomFIeld);
-		
-		rdbtnIntBB = new JRadioButton("B&B");
-		rdbtnIntBB.setForeground(Color.ORANGE);
-		rdbtnIntBB.setFont(new Font("Verdana", Font.BOLD, 12));
-		rdbtnIntBB.setBackground(Color.DARK_GRAY);
-		rdbtnIntBB.setBounds(642, 92, 190, 23);
-		frame.getContentPane().add(rdbtnIntBB);
-		
-		rdbtnIntCompleto = new JRadioButton("Completo");
-		rdbtnIntCompleto.setForeground(Color.ORANGE);
-		rdbtnIntCompleto.setFont(new Font("Verdana", Font.BOLD, 12));
-		rdbtnIntCompleto.setBackground(Color.DARK_GRAY);
-		rdbtnIntCompleto.setBounds(642, 118, 190, 23);
-		frame.getContentPane().add(rdbtnIntCompleto);
-		
-		rdbtnIntAllInclusive = new JRadioButton("All-inclusive");
-		rdbtnIntAllInclusive.setForeground(Color.ORANGE);
-		rdbtnIntAllInclusive.setFont(new Font("Verdana", Font.BOLD, 12));
-		rdbtnIntAllInclusive.setBackground(Color.DARK_GRAY);
-		rdbtnIntAllInclusive.setBounds(642, 146, 190, 23);
-		frame.getContentPane().add(rdbtnIntAllInclusive);
 		
 		lblTipoSoggiorno = new JLabel("Tipo soggiorno");
 		lblTipoSoggiorno.setForeground(Color.ORANGE);
 		lblTipoSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblTipoSoggiorno.setBounds(643, 71, 145, 14);
+		lblTipoSoggiorno.setBounds(395, 176, 145, 14);
 		frame.getContentPane().add(lblTipoSoggiorno);
 		
 		resField = new JTextField();
-		resField.setBounds(642, 235, 159, 20);
+		resField.setBounds(642, 91, 159, 20);
 		frame.getContentPane().add(resField);
 		resField.setColumns(10);
 		
 		lblResoconto = new JLabel("Resoconto");
 		lblResoconto.setForeground(Color.MAGENTA);
 		lblResoconto.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblResoconto.setBounds(643, 214, 145, 14);
+		lblResoconto.setBounds(643, 70, 145, 14);
 		frame.getContentPane().add(lblResoconto);
 		
 		JButton viewPreno = new JButton("Vedi Prenotazioni");
@@ -231,7 +172,7 @@ public class ClientCard {
 		viewPreno.setFont(new Font("Verdana", Font.BOLD, 12));
 		viewPreno.setBackground(Color.DARK_GRAY);
 		viewPreno.setForeground(Color.MAGENTA);
-		viewPreno.setBounds(641, 305, 160, 23);
+		viewPreno.setBounds(642, 176, 187, 48);
 		frame.getContentPane().add(viewPreno);
 		
 		JButton logout = new JButton("Logout");
@@ -250,10 +191,10 @@ public class ClientCard {
 			this.logic.CheckoutClient(Integer.parseInt(this.chosenClient));
 			this.frame.dispose();
 		});
-		checkoutButton.setForeground(Color.MAGENTA);
+		checkoutButton.setForeground(Color.RED);
 		checkoutButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		checkoutButton.setBackground(Color.DARK_GRAY);
-		checkoutButton.setBounds(732, 398, 187, 46);
+		checkoutButton.setBounds(642, 348, 187, 46);
 		frame.getContentPane().add(checkoutButton);
 		
 		JButton btnAggiorna = new JButton("Aggiorna");
@@ -281,11 +222,33 @@ public class ClientCard {
 			this.resField.setText(result);	});
 		
 		
-		btnAggiorna.setForeground(Color.ORANGE);
+		btnAggiorna.setForeground(Color.MAGENTA);
 		btnAggiorna.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnAggiorna.setBackground(Color.DARK_GRAY);
-		btnAggiorna.setBounds(642, 257, 159, 23);
+		btnAggiorna.setBounds(642, 113, 159, 23);
 		frame.getContentPane().add(btnAggiorna);
+		
+		lblexpire = new JLabel("Durata soggiorno");
+		lblexpire.setForeground(Color.ORANGE);
+		lblexpire.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblexpire.setBounds(395, 123, 145, 14);
+		frame.getContentPane().add(lblexpire);
+		
+		expirationDateField = new JTextField();
+		expirationDateField.setColumns(10);
+		expirationDateField.setBounds(395, 145, 190, 20);
+		frame.getContentPane().add(expirationDateField);
+		
+		codeCardField = new JTextField();
+		codeCardField.setColumns(10);
+		codeCardField.setBounds(395, 374, 190, 20);
+		frame.getContentPane().add(codeCardField);
+		
+		lblUniversalIdentifier = new JLabel("Codice universale scheda");
+		lblUniversalIdentifier.setForeground(Color.ORANGE);
+		lblUniversalIdentifier.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblUniversalIdentifier.setBounds(395, 352, 190, 14);
+		frame.getContentPane().add(lblUniversalIdentifier);
 		
 		this.setTextGlobal();
 	}
