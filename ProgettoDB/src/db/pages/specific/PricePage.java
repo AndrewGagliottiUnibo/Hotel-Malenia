@@ -19,10 +19,16 @@ import java.awt.event.ActionListener;
 public class PricePage {
 
 	private JFrame frmListini;
-	private JTextField productNameField;
-	private JTextField priceNameField;
+	private JTextField serviceField;
+	private JTextField priceServiceField;
 	private JTextArea textArea;
 	private Logic logic;
+	private JTextField seasonServiceField;
+	private JTextField yearServiceField;
+	private JTextField vacationField;
+	private JTextField vacationPriceField;
+	private JTextField monthVacationField;
+	private JTextField yearVacationField;
 
 	/**
 	 * Constructor.
@@ -88,37 +94,41 @@ public class PricePage {
 		showPricesServices.setBounds(10, 23, 195, 23);
 		frmListini.getContentPane().add(showPricesServices);
 		
-		JLabel insertNameLabel = new JLabel("Inserisci il prodotto da modificare");
-		insertNameLabel.setForeground(Color.ORANGE);
-		insertNameLabel.setBackground(Color.DARK_GRAY);
-		insertNameLabel.setFont(new Font("Verdana", Font.BOLD, 12));
-		insertNameLabel.setBounds(466, 34, 453, 14);
-		frmListini.getContentPane().add(insertNameLabel);
+		JLabel lblServiceField = new JLabel("Inserisci il servizio");
+		lblServiceField.setForeground(Color.ORANGE);
+		lblServiceField.setBackground(Color.DARK_GRAY);
+		lblServiceField.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblServiceField.setBounds(466, 34, 226, 14);
+		frmListini.getContentPane().add(lblServiceField);
 		
-		productNameField = new JTextField();
-		productNameField.setForeground(Color.PINK);
-		productNameField.setBackground(Color.BLACK);
-		productNameField.setBounds(466, 59, 453, 20);
-		frmListini.getContentPane().add(productNameField);
-		productNameField.setColumns(10);
+		serviceField = new JTextField();
+		serviceField.setForeground(Color.PINK);
+		serviceField.setBackground(Color.BLACK);
+		serviceField.setBounds(462, 52, 230, 20);
+		frmListini.getContentPane().add(serviceField);
+		serviceField.setColumns(10);
 		
-		JLabel insertPriceField = new JLabel("Inserisci il prezzo");
-		insertPriceField.setForeground(Color.ORANGE);
-		insertPriceField.setBackground(Color.DARK_GRAY);
-		insertPriceField.setFont(new Font("Verdana", Font.BOLD, 12));
-		insertPriceField.setBounds(466, 90, 453, 14);
-		frmListini.getContentPane().add(insertPriceField);
+		JLabel lblPrice = new JLabel("Inserisci il prezzo del servizio");
+		lblPrice.setForeground(Color.ORANGE);
+		lblPrice.setBackground(Color.DARK_GRAY);
+		lblPrice.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblPrice.setBounds(462, 83, 230, 14);
+		frmListini.getContentPane().add(lblPrice);
 		
-		priceNameField = new JTextField();
-		priceNameField.setFont(new Font("Verdana", Font.BOLD, 12));
-		priceNameField.setForeground(Color.PINK);
-		priceNameField.setColumns(10);
-		priceNameField.setBackground(Color.BLACK);
-		priceNameField.setBounds(466, 115, 453, 20);
-		frmListini.getContentPane().add(priceNameField);
+		priceServiceField = new JTextField();
+		priceServiceField.setFont(new Font("Verdana", Font.BOLD, 12));
+		priceServiceField.setForeground(Color.PINK);
+		priceServiceField.setColumns(10);
+		priceServiceField.setBackground(Color.BLACK);
+		priceServiceField.setBounds(462, 100, 230, 20);
+		frmListini.getContentPane().add(priceServiceField);
 		
-		JButton applyBtn = new JButton("Applica");
-		applyBtn.addActionListener(e -> {
+		JButton applyBtnService = new JButton("Applica nuovo");
+		applyBtnService.addActionListener(new ActionListener() {
+		});
+		applyBtnService.addActionListener(new ActionListener() {
+		});
+		applyBtnService.addActionListener(e -> {
 		    
 		    //TODO
 			this.logic.modifyPrice(Integer.parseInt(this.priceNameField.getText()), this.productNameField.getText());
@@ -126,11 +136,11 @@ public class PricePage {
 			this.priceNameField.setText("");
 		});
 		
-		applyBtn.setForeground(Color.ORANGE);
-		applyBtn.setBackground(Color.DARK_GRAY);
-		applyBtn.setFont(new Font("Verdana", Font.BOLD, 12));
-		applyBtn.setBounds(462, 146, 457, 23);
-		frmListini.getContentPane().add(applyBtn);
+		applyBtnService.setForeground(Color.ORANGE);
+		applyBtnService.setBackground(Color.DARK_GRAY);
+		applyBtnService.setFont(new Font("Verdana", Font.BOLD, 12));
+		applyBtnService.setBounds(720, 83, 171, 45);
+		frmListini.getContentPane().add(applyBtnService);
 		
 		JButton logout = new JButton("Logout");
 		logout.addActionListener(e -> {
@@ -150,6 +160,117 @@ public class PricePage {
 		showPricesVacationTypes.setBackground(Color.DARK_GRAY);
 		showPricesVacationTypes.setBounds(257, 23, 195, 23);
 		frmListini.getContentPane().add(showPricesVacationTypes);
+		
+		seasonServiceField = new JTextField();
+		seasonServiceField.setForeground(Color.PINK);
+		seasonServiceField.setFont(new Font("Verdana", Font.BOLD, 12));
+		seasonServiceField.setColumns(10);
+		seasonServiceField.setBackground(Color.BLACK);
+		seasonServiceField.setBounds(462, 148, 230, 20);
+		frmListini.getContentPane().add(seasonServiceField);
+		
+		JLabel lblSeason = new JLabel("Inserisci la stagione");
+		lblSeason.setForeground(Color.ORANGE);
+		lblSeason.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblSeason.setBackground(Color.DARK_GRAY);
+		lblSeason.setBounds(462, 131, 230, 14);
+		frmListini.getContentPane().add(lblSeason);
+		
+		yearServiceField = new JTextField();
+		yearServiceField.setForeground(Color.PINK);
+		yearServiceField.setFont(new Font("Verdana", Font.BOLD, 12));
+		yearServiceField.setColumns(10);
+		yearServiceField.setBackground(Color.BLACK);
+		yearServiceField.setBounds(462, 196, 230, 20);
+		frmListini.getContentPane().add(yearServiceField);
+		
+		JLabel lblYear = new JLabel("Inserisci l'anno");
+		lblYear.setForeground(Color.ORANGE);
+		lblYear.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblYear.setBackground(Color.DARK_GRAY);
+		lblYear.setBounds(462, 179, 230, 14);
+		frmListini.getContentPane().add(lblYear);
+		
+		vacationField = new JTextField();
+		vacationField.setForeground(Color.PINK);
+		vacationField.setFont(new Font("Verdana", Font.BOLD, 12));
+		vacationField.setColumns(10);
+		vacationField.setBackground(Color.BLACK);
+		vacationField.setBounds(462, 262, 230, 20);
+		frmListini.getContentPane().add(vacationField);
+		
+		JLabel lblInserisciIlSoggiorno = new JLabel("Inserisci il soggiorno");
+		lblInserisciIlSoggiorno.setForeground(new Color(0, 128, 0));
+		lblInserisciIlSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblInserisciIlSoggiorno.setBackground(Color.DARK_GRAY);
+		lblInserisciIlSoggiorno.setBounds(462, 245, 230, 14);
+		frmListini.getContentPane().add(lblInserisciIlSoggiorno);
+		
+		vacationPriceField = new JTextField();
+		vacationPriceField.setForeground(Color.PINK);
+		vacationPriceField.setFont(new Font("Verdana", Font.BOLD, 12));
+		vacationPriceField.setColumns(10);
+		vacationPriceField.setBackground(Color.BLACK);
+		vacationPriceField.setBounds(462, 310, 230, 20);
+		frmListini.getContentPane().add(vacationPriceField);
+		
+		JLabel lblInserisciIlPrezzo = new JLabel("Inserisci il prezzo del soggiorno");
+		lblInserisciIlPrezzo.setForeground(new Color(0, 128, 0));
+		lblInserisciIlPrezzo.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblInserisciIlPrezzo.setBackground(Color.DARK_GRAY);
+		lblInserisciIlPrezzo.setBounds(462, 293, 230, 14);
+		frmListini.getContentPane().add(lblInserisciIlPrezzo);
+		
+		monthVacationField = new JTextField();
+		monthVacationField.setForeground(Color.PINK);
+		monthVacationField.setFont(new Font("Verdana", Font.BOLD, 12));
+		monthVacationField.setColumns(10);
+		monthVacationField.setBackground(Color.BLACK);
+		monthVacationField.setBounds(462, 358, 230, 20);
+		frmListini.getContentPane().add(monthVacationField);
+		
+		JLabel insertPriceField_5_1 = new JLabel("Inserisci il mese");
+		insertPriceField_5_1.setForeground(new Color(0, 128, 0));
+		insertPriceField_5_1.setFont(new Font("Verdana", Font.BOLD, 12));
+		insertPriceField_5_1.setBackground(Color.DARK_GRAY);
+		insertPriceField_5_1.setBounds(462, 341, 230, 14);
+		frmListini.getContentPane().add(insertPriceField_5_1);
+		
+		yearVacationField = new JTextField();
+		yearVacationField.setForeground(Color.PINK);
+		yearVacationField.setFont(new Font("Verdana", Font.BOLD, 12));
+		yearVacationField.setColumns(10);
+		yearVacationField.setBackground(Color.BLACK);
+		yearVacationField.setBounds(462, 408, 230, 20);
+		frmListini.getContentPane().add(yearVacationField);
+		
+		JLabel insertPriceField_5_2 = new JLabel("Inserisci l'anno");
+		insertPriceField_5_2.setForeground(new Color(0, 128, 0));
+		insertPriceField_5_2.setFont(new Font("Verdana", Font.BOLD, 12));
+		insertPriceField_5_2.setBackground(Color.DARK_GRAY);
+		insertPriceField_5_2.setBounds(462, 391, 230, 14);
+		frmListini.getContentPane().add(insertPriceField_5_2);
+		
+		JButton modifyBtnService = new JButton("Modifica presente");
+		modifyBtnService.setForeground(Color.ORANGE);
+		modifyBtnService.setFont(new Font("Verdana", Font.BOLD, 12));
+		modifyBtnService.setBackground(Color.DARK_GRAY);
+		modifyBtnService.setBounds(720, 148, 171, 45);
+		frmListini.getContentPane().add(modifyBtnService);
+		
+		JButton modifyBtnVacation = new JButton("Modifica presente");
+		modifyBtnVacation.setForeground(new Color(0, 128, 0));
+		modifyBtnVacation.setFont(new Font("Verdana", Font.BOLD, 12));
+		modifyBtnVacation.setBackground(Color.DARK_GRAY);
+		modifyBtnVacation.setBounds(720, 358, 171, 45);
+		frmListini.getContentPane().add(modifyBtnVacation);
+		
+		JButton applyBtnVacation = new JButton("Applica nuovo");
+		applyBtnVacation.setForeground(new Color(0, 128, 0));
+		applyBtnVacation.setFont(new Font("Verdana", Font.BOLD, 12));
+		applyBtnVacation.setBackground(Color.DARK_GRAY);
+		applyBtnVacation.setBounds(720, 285, 171, 45);
+		frmListini.getContentPane().add(applyBtnVacation);
 	}
 	
 	/**
