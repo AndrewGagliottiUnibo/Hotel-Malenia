@@ -1,19 +1,21 @@
 package db.pages.specific;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import java.awt.Color;
-import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
+
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import db.logic.Logic;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import db.logic.Logic;
 
 public class PricePage {
 
@@ -195,24 +197,24 @@ public class PricePage {
 	 */
 	JButton showPricesServices = new JButton("Vedi tariffe servizi");
 	showPricesServices.addActionListener(e -> {
-	    Connection myConn = null;
-	    Statement myStmt = null;
-	    ResultSet myRs = null;
+	    Connection conn = null;
+	    PreparedStatement myStm = null;
+	    ResultSet result = null;
 	    try {
-
-		// TODO
-		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
-		System.out.println("Database connected");
-		// 2. Create a statement
-		myStmt = myConn.createStatement();
-		myRs = myStmt.executeQuery("SELECT * FROM LISTINI");
-		while (myRs.next()) {
-		    this.textArea.append(myRs.getString(1) + "\n");
+		myStm = conn.prepareStatement("SELECT * FROM SERVIZIO ORDER BY anno DESC");
+		result = myStm.executeQuery();
+		while (result.next()) {
+		    this.textArea.append(result.getString(1) + "\t");
+		    this.textArea.append(result.getString(2) + "\t");
+		    this.textArea.append(result.getString(3) + "\t");
+		    this.textArea.append("€ " + result.getString(4) + "\n");
 		}
 	    } catch (Exception exc) {
 		exc.printStackTrace();
 	    }
+
 	});
 	showPricesServices.setForeground(Color.ORANGE);
 	showPricesServices.setBackground(Color.DARK_GRAY);
@@ -225,7 +227,23 @@ public class PricePage {
 	 */
 	showPricesVacationTypes = new JButton("Vedi tariffe soggiorni");
 	showPricesServices.addActionListener(e -> {
-	    // TODO
+	    Connection conn = null;
+	    PreparedStatement myStm = null;
+	    ResultSet result = null;
+	    try {
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+			this.logic.getOwnPassword());
+		myStm = conn.prepareStatement("SELECT * FROM TIPOLOGIASOGGIORNO ORDER BY anno DESC");
+		result = myStm.executeQuery();
+		while (result.next()) {
+		    this.textArea.append(result.getString(1) + "\t");
+		    this.textArea.append(result.getString(2) + "\t");
+		    this.textArea.append(result.getString(3) + "\t");
+		    this.textArea.append("€ " + result.getString(4) + "\n");
+		}
+	    } catch (Exception exc) {
+		exc.printStackTrace();
+	    }
 
 	});
 	showPricesVacationTypes.setForeground(Color.ORANGE);
