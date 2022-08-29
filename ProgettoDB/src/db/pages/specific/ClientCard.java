@@ -24,21 +24,21 @@ public class ClientCard {
     private JTextField dateField;
     private JTextField dayFIeld;
     private JTextField telField;
-    private JLabel lblStanzaAssegnata;
+    private JLabel lblRoom;
     private JTextField roomFIeld;
-    private JLabel lblTipoSoggiorno;
-    private JTextField resField;
-    private JLabel lblResoconto;
+    private JLabel lblVacation;
+    private JTextField wageField;
+    private JLabel lblWage;
     private String chosenClient;
-    private JLabel lblexpire;
+    private JLabel lblExpire;
     private JTextField expirationDateField;
     private JTextField codeCardField;
     private JLabel lblUniversalIdentifier;
     private JTextField vacationTypeField;
     private JTextField monthField;
-    private JLabel lblMeseSoggiorno;
+    private JLabel lblMonth;
     private JTextField yearField;
-    private JLabel lblAnnoSoggiorno;
+    private JLabel lblYear;
     private Logic logic;
 
     /**
@@ -123,11 +123,11 @@ public class ClientCard {
 	dateField.setBounds(10, 235, 190, 20);
 	frame.getContentPane().add(dateField);
 
-	JLabel lblSoggiorno = new JLabel("Inizio soggiorno");
-	lblSoggiorno.setForeground(Color.ORANGE);
-	lblSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblSoggiorno.setBounds(395, 70, 145, 14);
-	frame.getContentPane().add(lblSoggiorno);
+	JLabel lblBeginning = new JLabel("Inizio soggiorno");
+	lblBeginning.setForeground(Color.ORANGE);
+	lblBeginning.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblBeginning.setBounds(395, 70, 145, 14);
+	frame.getContentPane().add(lblBeginning);
 
 	dayFIeld = new JTextField();
 	dayFIeld.setEditable(false);
@@ -135,11 +135,11 @@ public class ClientCard {
 	dayFIeld.setBounds(395, 92, 190, 20);
 	frame.getContentPane().add(dayFIeld);
 
-	JLabel lblTelefono = new JLabel("Telefono");
-	lblTelefono.setForeground(Color.ORANGE);
-	lblTelefono.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblTelefono.setBounds(10, 284, 190, 14);
-	frame.getContentPane().add(lblTelefono);
+	JLabel lblPhone = new JLabel("Telefono");
+	lblPhone.setForeground(Color.ORANGE);
+	lblPhone.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblPhone.setBounds(10, 284, 190, 14);
+	frame.getContentPane().add(lblPhone);
 
 	telField = new JTextField();
 	telField.setEditable(false);
@@ -147,11 +147,11 @@ public class ClientCard {
 	telField.setBounds(10, 306, 190, 20);
 	frame.getContentPane().add(telField);
 
-	lblStanzaAssegnata = new JLabel("Stanza assegnata");
-	lblStanzaAssegnata.setForeground(Color.ORANGE);
-	lblStanzaAssegnata.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblStanzaAssegnata.setBounds(10, 352, 145, 14);
-	frame.getContentPane().add(lblStanzaAssegnata);
+	lblRoom = new JLabel("Stanza assegnata");
+	lblRoom.setForeground(Color.ORANGE);
+	lblRoom.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblRoom.setBounds(10, 352, 145, 14);
+	frame.getContentPane().add(lblRoom);
 
 	roomFIeld = new JTextField();
 	roomFIeld.setEditable(false);
@@ -159,33 +159,33 @@ public class ClientCard {
 	roomFIeld.setBounds(10, 374, 190, 20);
 	frame.getContentPane().add(roomFIeld);
 
-	lblTipoSoggiorno = new JLabel("Tipo soggiorno");
-	lblTipoSoggiorno.setForeground(Color.ORANGE);
-	lblTipoSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblTipoSoggiorno.setBounds(395, 176, 145, 14);
-	frame.getContentPane().add(lblTipoSoggiorno);
+	lblVacation = new JLabel("Tipo soggiorno");
+	lblVacation.setForeground(Color.ORANGE);
+	lblVacation.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblVacation.setBounds(395, 176, 145, 14);
+	frame.getContentPane().add(lblVacation);
 
-	resField = new JTextField();
-	resField.setBounds(642, 91, 159, 20);
-	frame.getContentPane().add(resField);
-	resField.setColumns(10);
+	wageField = new JTextField();
+	wageField.setBounds(642, 91, 159, 20);
+	frame.getContentPane().add(wageField);
+	wageField.setColumns(10);
 
-	lblResoconto = new JLabel("Resoconto");
-	lblResoconto.setForeground(Color.MAGENTA);
-	lblResoconto.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblResoconto.setBounds(643, 70, 145, 14);
-	frame.getContentPane().add(lblResoconto);
+	lblWage = new JLabel("Resoconto");
+	lblWage.setForeground(Color.MAGENTA);
+	lblWage.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblWage.setBounds(643, 70, 145, 14);
+	frame.getContentPane().add(lblWage);
 
-	JButton viewPreno = new JButton("Vedi Prenotazioni");
-	viewPreno.addActionListener(e -> {
+	JButton viewReservation = new JButton("Vedi Prenotazioni");
+	viewReservation.addActionListener(e -> {
 	    this.frame.dispose();
 	    this.logic.goToSpecificPage("ALL_RES", this.frame);
 	});
-	viewPreno.setFont(new Font("Verdana", Font.BOLD, 12));
-	viewPreno.setBackground(Color.DARK_GRAY);
-	viewPreno.setForeground(Color.MAGENTA);
-	viewPreno.setBounds(642, 176, 187, 48);
-	frame.getContentPane().add(viewPreno);
+	viewReservation.setFont(new Font("Verdana", Font.BOLD, 12));
+	viewReservation.setBackground(Color.DARK_GRAY);
+	viewReservation.setForeground(Color.MAGENTA);
+	viewReservation.setBounds(642, 176, 187, 48);
+	frame.getContentPane().add(viewReservation);
 
 	JButton logout = new JButton("Logout");
 	logout.addActionListener(e -> {
@@ -209,19 +209,19 @@ public class ClientCard {
 	checkoutButton.setBounds(642, 348, 187, 46);
 	frame.getContentPane().add(checkoutButton);
 
-	JButton btnAggiorna = new JButton("Aggiorna");
-	btnAggiorna.addActionListener(e -> {
+	JButton btnUpdate = new JButton("Aggiorna");
+	btnUpdate.addActionListener(e -> {
 	    Connection conn = null;
 	    PreparedStatement myStm = null;
 	    ResultSet result = null;
 	    try {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
-		myStm = conn.prepareStatement("UPDATE SOGGIORNO " + "SET resoconto = ? " + "WHERE numeroCamera = ? "
+		myStm = conn.prepareStatement("UPDATE SOGGIORNO " + "SET resoconto = ? " + "WHERE codScheda = ? "
 			+ "AND soggiornante = true");
 
 		myStm.setInt(1, Integer.parseInt(this.resField.getText()));
-		myStm.setInt(2, Integer.parseInt(this.chosenClient));
+		myStm.setString(2, this.chosenClient);
 		result = myStm.executeQuery();
 
 		this.resField.setText(result.getString(1));
@@ -230,17 +230,17 @@ public class ClientCard {
 	    }
 	});
 
-	btnAggiorna.setForeground(Color.MAGENTA);
-	btnAggiorna.setFont(new Font("Verdana", Font.BOLD, 12));
-	btnAggiorna.setBackground(Color.DARK_GRAY);
-	btnAggiorna.setBounds(642, 113, 159, 23);
-	frame.getContentPane().add(btnAggiorna);
+	btnUpdate.setForeground(Color.MAGENTA);
+	btnUpdate.setFont(new Font("Verdana", Font.BOLD, 12));
+	btnUpdate.setBackground(Color.DARK_GRAY);
+	btnUpdate.setBounds(642, 113, 159, 23);
+	frame.getContentPane().add(btnUpdate);
 
-	lblexpire = new JLabel("Durata soggiorno");
-	lblexpire.setForeground(Color.ORANGE);
-	lblexpire.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblexpire.setBounds(395, 123, 145, 14);
-	frame.getContentPane().add(lblexpire);
+	lblExpire = new JLabel("Durata soggiorno");
+	lblExpire.setForeground(Color.ORANGE);
+	lblExpire.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblExpire.setBounds(395, 123, 145, 14);
+	frame.getContentPane().add(lblExpire);
 
 	expirationDateField = new JTextField();
 	expirationDateField.setEditable(false);
@@ -272,11 +272,11 @@ public class ClientCard {
 	monthField.setBounds(395, 260, 190, 20);
 	frame.getContentPane().add(monthField);
 
-	lblMeseSoggiorno = new JLabel("Mese soggiorno");
-	lblMeseSoggiorno.setForeground(Color.ORANGE);
-	lblMeseSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblMeseSoggiorno.setBounds(395, 235, 145, 14);
-	frame.getContentPane().add(lblMeseSoggiorno);
+	lblMonth = new JLabel("Mese soggiorno");
+	lblMonth.setForeground(Color.ORANGE);
+	lblMonth.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblMonth.setBounds(395, 235, 145, 14);
+	frame.getContentPane().add(lblMonth);
 
 	yearField = new JTextField();
 	yearField.setEditable(false);
@@ -284,11 +284,11 @@ public class ClientCard {
 	yearField.setBounds(395, 321, 190, 20);
 	frame.getContentPane().add(yearField);
 
-	lblAnnoSoggiorno = new JLabel("Anno soggiorno");
-	lblAnnoSoggiorno.setForeground(Color.ORANGE);
-	lblAnnoSoggiorno.setFont(new Font("Verdana", Font.BOLD, 12));
-	lblAnnoSoggiorno.setBounds(395, 296, 145, 14);
-	frame.getContentPane().add(lblAnnoSoggiorno);
+	lblYear = new JLabel("Anno soggiorno");
+	lblYear.setForeground(Color.ORANGE);
+	lblYear.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblYear.setBounds(395, 296, 145, 14);
+	frame.getContentPane().add(lblYear);
     }
 
     /**
@@ -327,7 +327,7 @@ public class ClientCard {
 	    exc.printStackTrace();
 	}
 
-	//this.resField.setText(result);
+	this.wageField.setText(result);
     }
 
     /**
