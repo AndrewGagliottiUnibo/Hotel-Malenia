@@ -176,16 +176,16 @@ public class ClientCard {
 	lblWage.setBounds(643, 70, 145, 14);
 	frame.getContentPane().add(lblWage);
 
-	JButton viewPreno = new JButton("Vedi Prenotazioni");
-	viewPreno.addActionListener(e -> {
+	JButton viewReservation = new JButton("Vedi Prenotazioni");
+	viewReservation.addActionListener(e -> {
 	    this.frame.dispose();
 	    this.logic.goToSpecificPage("ALL_RES", this.frame);
 	});
-	viewPreno.setFont(new Font("Verdana", Font.BOLD, 12));
-	viewPreno.setBackground(Color.DARK_GRAY);
-	viewPreno.setForeground(Color.MAGENTA);
-	viewPreno.setBounds(642, 176, 187, 48);
-	frame.getContentPane().add(viewPreno);
+	viewReservation.setFont(new Font("Verdana", Font.BOLD, 12));
+	viewReservation.setBackground(Color.DARK_GRAY);
+	viewReservation.setForeground(Color.MAGENTA);
+	viewReservation.setBounds(642, 176, 187, 48);
+	frame.getContentPane().add(viewReservation);
 
 	JButton logout = new JButton("Logout");
 	logout.addActionListener(e -> {
@@ -209,8 +209,8 @@ public class ClientCard {
 	checkoutButton.setBounds(642, 348, 187, 46);
 	frame.getContentPane().add(checkoutButton);
 
-	JButton btnAggiorna = new JButton("Aggiorna");
-	btnAggiorna.addActionListener(e -> {
+	JButton btnUpdate = new JButton("Aggiorna");
+	btnUpdate.addActionListener(e -> {
 	    Connection conn = null;
 	    PreparedStatement myStm = null;
 	    ResultSet result = null;
@@ -230,11 +230,11 @@ public class ClientCard {
 	    }
 	});
 
-	btnAggiorna.setForeground(Color.MAGENTA);
-	btnAggiorna.setFont(new Font("Verdana", Font.BOLD, 12));
-	btnAggiorna.setBackground(Color.DARK_GRAY);
-	btnAggiorna.setBounds(642, 113, 159, 23);
-	frame.getContentPane().add(btnAggiorna);
+	btnUpdate.setForeground(Color.MAGENTA);
+	btnUpdate.setFont(new Font("Verdana", Font.BOLD, 12));
+	btnUpdate.setBackground(Color.DARK_GRAY);
+	btnUpdate.setBounds(642, 113, 159, 23);
+	frame.getContentPane().add(btnUpdate);
 
 	lblExpire = new JLabel("Durata soggiorno");
 	lblExpire.setForeground(Color.ORANGE);
