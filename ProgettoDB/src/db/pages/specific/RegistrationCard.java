@@ -22,7 +22,6 @@ public class RegistrationCard {
 	private JTextField checkoutField;
 	private JTextField checkinFIeld;
 	private JTextField telField;
-	private JRadioButton rdbtnIntGlutine;
 	private JLabel lblStanzaAssegnata;
 	private JTextField roomFIeld;
 	private JRadioButton rdbtnIntBB;
@@ -31,7 +30,6 @@ public class RegistrationCard {
 	private JLabel lblTipoSoggiorno;
 	private JTextField codCardField;
 	private JLabel codLabel;
-	private JRadioButton rdbtnIntLattosio;
 	private String soggiorno;
 	private Logic logic;
 
@@ -39,6 +37,8 @@ public class RegistrationCard {
 	private int lattosio = 0;
 	private int glutine = 0;
 	private JTextField resField;
+	private JLabel lblRoom;
+	private JTextField roomField;
 
 	/**
 	 * Constructor.
@@ -184,20 +184,6 @@ public class RegistrationCard {
 		telField.setBounds(10, 306, 190, 20);
 		frmRegistraCliente.getContentPane().add(telField);
 
-		this.rdbtnIntLattosio = new JRadioButton("Int - Lattosio");
-		rdbtnIntLattosio.setForeground(Color.ORANGE);
-		rdbtnIntLattosio.setBackground(Color.DARK_GRAY);
-		rdbtnIntLattosio.setFont(new Font("Verdana", Font.BOLD, 12));
-		rdbtnIntLattosio.setBounds(10, 359, 190, 23);
-		frmRegistraCliente.getContentPane().add(rdbtnIntLattosio);
-
-		rdbtnIntGlutine = new JRadioButton("Int - Glutine");
-		rdbtnIntGlutine.setForeground(Color.ORANGE);
-		rdbtnIntGlutine.setBackground(Color.DARK_GRAY);
-		rdbtnIntGlutine.setFont(new Font("Verdana", Font.BOLD, 12));
-		rdbtnIntGlutine.setBounds(10, 398, 190, 23);
-		frmRegistraCliente.getContentPane().add(rdbtnIntGlutine);
-
 		lblStanzaAssegnata = new JLabel("Stanza assegnata");
 		lblStanzaAssegnata.setForeground(Color.ORANGE);
 		lblStanzaAssegnata.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -265,22 +251,6 @@ public class RegistrationCard {
 			this.soggiorno = "PensioneCompleta";
 		});
 
-		this.rdbtnIntGlutine.addActionListener(e -> {
-			if (this.glutine == 0) {
-				this.glutine = 1;
-			} else {
-				this.glutine = 0;
-			}
-		});
-
-		this.rdbtnIntLattosio.addActionListener(e -> {
-			if (this.lattosio == 0) {
-				this.lattosio = 1;
-			} else {
-				this.lattosio = 0;
-			}
-		});
-
 		JButton registrationButton = new JButton("Registra");
 		registrationButton.addActionListener(e -> {
 			
@@ -331,6 +301,20 @@ public class RegistrationCard {
 		resField.setBackground(Color.WHITE);
 		resField.setBounds(395, 163, 190, 20);
 		frmRegistraCliente.getContentPane().add(resField);
+		
+		lblRoom = new JLabel("Stanza assegnata");
+		lblRoom.setForeground(Color.ORANGE);
+		lblRoom.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblRoom.setBounds(10, 359, 190, 14);
+		frmRegistraCliente.getContentPane().add(lblRoom);
+		
+		roomField = new JTextField();
+		roomField.setForeground(Color.BLACK);
+		roomField.setFont(new Font("Verdana", Font.PLAIN, 12));
+		roomField.setColumns(10);
+		roomField.setBackground(Color.WHITE);
+		roomField.setBounds(10, 381, 190, 20);
+		frmRegistraCliente.getContentPane().add(roomField);
 	}
 
 	/**

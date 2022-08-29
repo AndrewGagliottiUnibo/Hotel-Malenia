@@ -217,11 +217,11 @@ public class ClientCard {
 	    try {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
-		myStm = conn.prepareStatement("UPDATE SOGGIORNO " + "SET resoconto = ? " + "WHERE numeroCamera = ? "
+		myStm = conn.prepareStatement("UPDATE SOGGIORNO " + "SET resoconto = ? " + "WHERE codScheda = ? "
 			+ "AND soggiornante = true");
 
 		myStm.setInt(1, Integer.parseInt(this.resField.getText()));
-		myStm.setInt(2, Integer.parseInt(this.chosenClient));
+		myStm.setString(2, this.chosenClient);
 		result = myStm.executeQuery();
 
 		this.resField.setText(result.getString(1));
