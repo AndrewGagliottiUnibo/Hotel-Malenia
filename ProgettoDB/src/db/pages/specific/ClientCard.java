@@ -218,7 +218,7 @@ public class ClientCard {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
 		myStm = conn.prepareStatement("SELECT resoconto FROM SOGGIORNO WHERE numeroCamera = "
-			+ this.chosenClient + "AND soggiornante = 1");
+			+ this.chosenClient + "AND soggiornante = true");
 		result = myStm.executeQuery();
 
 		this.resField.setText(result.getString(1));
