@@ -143,7 +143,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE soggiornante = true");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE soggiornante = true "
+	    	+ "ORDER BY numeroCamera");
 	    result = myStm.executeQuery();
 	} catch (SQLException exc) {
 	    exc.printStackTrace();
@@ -159,8 +160,9 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE tipologiaSoggiornoScelto = ? "
-		    + "AND tipologiaSoggiornoScelto = ? " + "AND soggiornante = true");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE tipologiaSoggiornoScelto = ? "
+		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true "
+		    + "ORDER BY numeroCamera");
 	    myStm.setString(1, "AllInclusive");
 	    myStm.setString(2, "PensioneCompleta");
 	    result = myStm.executeQuery();
@@ -178,8 +180,9 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO " + "WHERE tipologiaSoggiornoScelto = ? "
-		    + "AND tipologiaSoggiornoScelto = ?");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE tipologiaSoggiornoScelto = ? "
+		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true "
+		    + "ORDER BY numeroCamera");
 	    myStm.setString(1, "AllInclusive");
 	    myStm.setString(2, "PensioneCompleta");
 	    result = myStm.executeQuery();
@@ -270,8 +273,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn
-		    .prepareStatement("SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
+	    myStm = conn.prepareStatement(
+		    "SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	    final String beginningDate = result.getString(1);
@@ -512,8 +515,8 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public ResultSet viewFilteredClients(String beginningDate, int remainingDays, boolean isInHotel, String vacationType,
-	    int roomNumber, String vacationChosen, String monthChosen, int yearChosen) {
+    public ResultSet viewFilteredClients(String beginningDate, int remainingDays, boolean isInHotel,
+	    String vacationType, int roomNumber, String vacationChosen, String monthChosen, int yearChosen) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
