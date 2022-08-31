@@ -168,7 +168,7 @@ public class RegistrationCard {
 	     */
 	    this.logic.registerNewClient(this.name.getText(), this.surname.getText(), this.cfField.getText(),
 		    this.dateField.getText(), this.telField.getText(), this.beginningField.getText(),
-		    Integer.parseInt(this.expireField.getText()), this.vacationField.getText(),
+		    this.expireField.getText(), this.vacationField.getText(),
 		    Integer.parseInt(this.codCardField.getText()), Integer.parseInt(this.roomField.getText()),
 		    this.vacationField.getText(), this.monthField.getText(), Integer.parseInt(this.yearField.getText()));
 	});
@@ -227,7 +227,6 @@ public class RegistrationCard {
 	frmRegistraCliente.getContentPane().add(lblVacation);
 
 	vacationField = new JTextField();
-	vacationField.setEditable(false);
 	vacationField.setColumns(10);
 	vacationField.setBounds(395, 235, 190, 20);
 	frmRegistraCliente.getContentPane().add(vacationField);
@@ -239,7 +238,6 @@ public class RegistrationCard {
 	frmRegistraCliente.getContentPane().add(lblMonth);
 
 	monthField = new JTextField();
-	monthField.setEditable(false);
 	monthField.setColumns(10);
 	monthField.setBounds(395, 306, 190, 20);
 	frmRegistraCliente.getContentPane().add(monthField);
@@ -251,7 +249,6 @@ public class RegistrationCard {
 	frmRegistraCliente.getContentPane().add(lblYear);
 
 	yearField = new JTextField();
-	yearField.setEditable(false);
 	yearField.setColumns(10);
 	yearField.setBounds(395, 381, 190, 20);
 	frmRegistraCliente.getContentPane().add(yearField);

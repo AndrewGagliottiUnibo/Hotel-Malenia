@@ -143,8 +143,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE soggiornante = true "
-	    	+ "ORDER BY numeroCamera");
+	    myStm = conn.prepareStatement(
+		    "SELECT numeroCamera FROM SOGGIORNO WHERE soggiornante = true " + "ORDER BY numeroCamera");
 	    result = myStm.executeQuery();
 	} catch (SQLException exc) {
 	    exc.printStackTrace();
@@ -161,8 +161,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE tipologiaSoggiornoScelto = ? "
-		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true "
-		    + "ORDER BY numeroCamera");
+		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true " + "ORDER BY numeroCamera");
 	    myStm.setString(1, "AllInclusive");
 	    myStm.setString(2, "PensioneCompleta");
 	    result = myStm.executeQuery();
@@ -181,8 +180,7 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE tipologiaSoggiornoScelto = ? "
-		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true "
-		    + "ORDER BY numeroCamera");
+		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true " + "ORDER BY numeroCamera");
 	    myStm.setString(1, "AllInclusive");
 	    myStm.setString(2, "PensioneCompleta");
 	    result = myStm.executeQuery();
@@ -213,7 +211,7 @@ public class LogicsImpl implements Logic {
 
     @Override
     public void registerNewClient(final String name, final String surname, final String identifierCode,
-	    final String dateOfBirth, final String cellNumber, final String beginningDate, final int remainingDays,
+	    final String dateOfBirth, final String cellNumber, final String beginningDate, final String remainingDays,
 	    final String chosenOffer, final int cardNumber, final int roomNumber, final String vacationType,
 	    final String monthOfVacation, final int yearOfVacation) {
 	Connection conn = null;
@@ -222,43 +220,48 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("INSERT INTO CLIENTE (codFiscale, nome, cognome, dataNascita, numeroTel) "
-		    + "VALUES (?, ?, ?, ?, ?); "
-		    + "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
-		    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
-		    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
-		    + "VALUES (?, ?, ?, true, ?, ?, ?, 0, ?, ?, ?, 10) ");
+	    myStm = conn
+		    .prepareStatement("INSERT INTO CLIENTE (codFiscale, nome, cognome, dataNascita, numeroTelefonico) "
+			    + "VALUES (?, ?, ?, ?, ?)");
 	    myStm.setString(1, identifierCode);
 	    myStm.setString(2, name);
 	    myStm.setString(3, surname);
 	    myStm.setString(4, dateOfBirth);
 	    myStm.setString(5, cellNumber);
+	    myStm.executeUpdate();
 
-	    myStm.setString(6, beginningDate);
-	    myStm.setString(7, identifierCode);
-	    myStm.setInt(8, remainingDays);
-	    myStm.setString(9, chosenOffer);
-	    myStm.setInt(10, cardNumber);
-	    myStm.setInt(11, roomNumber);
-	    myStm.setString(12, vacationType);
-	    myStm.setString(13, monthOfVacation);
-	    myStm.setInt(14, yearOfVacation);
-	    myStm.executeQuery();
+	    myStm = conn.prepareStatement(
+		    "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
+			    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
+			    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
+			    + "VALUES (?, ?, ?, true, ?, ?, ?, 0, ?, ?, ?, 10)");
+	    myStm.setString(1, beginningDate);
+	    myStm.setString(2, identifierCode);
+	    myStm.setString(3, remainingDays);
+	    myStm.setString(4, chosenOffer);
+	    myStm.setInt(5, cardNumber);
+	    myStm.setInt(6, roomNumber);
+	    myStm.setString(7, vacationType);
+	    myStm.setString(8, monthOfVacation);
+	    myStm.setInt(9, yearOfVacation);
+	    myStm.executeUpdate();
 
-	    myStm = conn
-		    .prepareStatement("SELECT prezzo FROM TIPOLOGIASOGGIORNO WHERE tipologia = ?, mese = ?, anno = ?");
+	    myStm = conn.prepareStatement(
+		    "SELECT prezzo FROM TIPOLOGIASOGGIORNO WHERE tipologia = ? AND mese = ? AND anno = ?");
 	    myStm.setString(1, vacationType);
 	    myStm.setString(2, monthOfVacation);
 	    myStm.setInt(3, yearOfVacation);
 	    result = myStm.executeQuery();
+
+	    result.next();
 	    int price = result.getInt(1);
 
 	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
 		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
-	    myStm.setInt(12, price);
-	    myStm.setString(13, identifierCode);
-	    myStm.setString(14, beginningDate);
-	    myStm.executeQuery();
+	    myStm.setInt(1, price);
+	    myStm.setString(2, identifierCode);
+	    myStm.setString(3, beginningDate);
+	    myStm.executeUpdate();
 
 	} catch (SQLException e) {
 	    e.printStackTrace();

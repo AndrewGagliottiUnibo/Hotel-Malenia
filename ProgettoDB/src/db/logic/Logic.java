@@ -74,7 +74,7 @@ public interface Logic {
      * @param dateOfBirth
      * @param cellNumber
      * @param beginningDate
-     * @param remainingDays
+     * @param string
      * @param chosenOffer
      * @param cardNumber
      * @param roomNumber
@@ -83,7 +83,7 @@ public interface Logic {
      * @param yearOfVacation
      */
     void registerNewClient(String name, String surname, String identifierCode, String dateOfBirth, String cellNumber,
-	    String beginningDate, int remainingDays, String chosenOffer, int cardNumber, int roomNumber,
+	    String beginningDate, String string, String chosenOffer, int cardNumber, int roomNumber,
 	    String vacationType, String monthOfVacation, int yearOfVacation);
 
     /**
