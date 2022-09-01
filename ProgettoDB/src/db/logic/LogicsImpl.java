@@ -278,7 +278,7 @@ public class LogicsImpl implements Logic {
 		    "SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
-	    if(!result.next()) {
+	    if (!result.next()) {
 		return;
 	    }
 	    final String beginningDate = result.getString(1);
@@ -306,6 +306,7 @@ public class LogicsImpl implements Logic {
 		    + "WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
+	    result.next();
 	    final String identifier = result.getString(1);
 	    final String beginningDate = result.getString(2);
 
@@ -322,7 +323,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(7, season);
 	    myStm.setInt(8, year);
 	    myStm.setString(9, serviceType);
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 
 	    myStm = conn.prepareStatement(
 		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
@@ -330,6 +331,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, season);
 	    myStm.setInt(3, year);
 	    result = myStm.executeQuery();
+	    result.next();
 	    int value = result.getInt(1);
 
 	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
@@ -337,7 +339,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setInt(1, value);
 	    myStm.setString(2, identifier);
 	    myStm.setString(3, beginningDate);
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -357,22 +359,23 @@ public class LogicsImpl implements Logic {
 		    + "WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
+	    result.next();
 	    final String identifier = result.getString(1);
 	    final String beginningDate = result.getString(2);
 
 	    myStm = conn.prepareStatement("DELETE FROM PRENOTAZIONE WHERE tipoPrenotazione = ? AND giorno = ? "
 		    + "AND ora = ? AND dataInizioSoggiornoRegistrato = ? AND codFiscaleClienteRegistrato = ?");
-
 	    myStm.setString(1, reservationType);
 	    myStm.setString(2, day);
 	    myStm.setString(3, hour);
 	    myStm.setString(4, beginningDate);
 	    myStm.setString(4, identifier);
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 	    myStm = conn.prepareStatement(
 		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? " + "AND stagione = ? AND anno = ?");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
+	    result.next();
 	    int price = result.getInt(1);
 
 	    myStm = conn.prepareStatement(
@@ -380,7 +383,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setInt(1, price);
 	    myStm.setString(2, identifier);
 	    myStm.setString(3, beginningDate);
-	    result = myStm.executeQuery();
+	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
@@ -420,12 +423,14 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, season);
 	    myStm.setInt(3, year);
 	    result = myStm.executeQuery();
+	    result.next();
 	    int wage = result.getInt(1);
 
 	    myStm = conn.prepareStatement("SELECT dataInizio, codFiscaleCliente FROM SOGGIORNO "
 		    + "WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
+	    result.next();
 	    final String beginningDate = result.getString(1);
 	    final String identifier = result.getString(2);
 
@@ -442,14 +447,14 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(6, serviceType);
 	    myStm.setString(7, season);
 	    myStm.setInt(8, year);
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 
 	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
 		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
 	    myStm.setInt(1, wage);
 	    myStm.setString(2, identifier);
 	    myStm.setString(3, beginningDate);
-
+	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
@@ -465,7 +470,6 @@ public class LogicsImpl implements Logic {
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
-
 	    result = myStm.executeQuery();
 
 	} catch (Exception e) {
@@ -556,13 +560,12 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
-		    "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) VALUES (?, ?, ?, ?); ");
+		    "INSERT INTO TIPOLOGIASOGGIORNO (tipologia, mese, anno, prezzo) VALUES (?, ?, ?, ?)");
 	    myStm.setString(1, vacationType);
 	    myStm.setString(2, month);
 	    myStm.setInt(3, year);
 	    myStm.setInt(4, price);
-
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
@@ -576,13 +579,12 @@ public class LogicsImpl implements Logic {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
-		    "INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) VALUES (?, ?, ?, ?); ");
+		    "INSERT INTO SERVIZIO (tipoServizio, stagione, anno, tariffa) VALUES (?, ?, ?, ?)");
 	    myStm.setString(1, serviceType);
 	    myStm.setString(2, season);
 	    myStm.setInt(3, year);
 	    myStm.setInt(4, price);
-
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
@@ -601,8 +603,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, vacationType);
 	    myStm.setString(3, month);
 	    myStm.setInt(4, year);
-
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
@@ -621,8 +622,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, serviceType);
 	    myStm.setString(3, season);
 	    myStm.setInt(4, year);
-
-	    myStm.executeQuery();
+	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
