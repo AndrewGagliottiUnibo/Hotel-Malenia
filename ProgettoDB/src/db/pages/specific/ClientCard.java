@@ -1,16 +1,18 @@
 package db.pages.specific;
 
-import javax.swing.JFrame;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import db.logic.Logic;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import db.logic.Logic;
 
 public class ClientCard {
 
@@ -175,7 +177,7 @@ public class ClientCard {
 	lblWage.setBounds(643, 70, 145, 14);
 	frame.getContentPane().add(lblWage);
 
-	JButton viewReservation = new JButton("Vedi Prenotazioni");
+	JButton viewReservation = new JButton("Vedi Prenotazioni"); //FIXME: Non funziona!
 	viewReservation.addActionListener(e -> {
 	    this.frame.dispose();
 	    this.logic.goToSpecificPage("ALL_RES", this.frame);
@@ -212,18 +214,18 @@ public class ClientCard {
 	btnUpdate.addActionListener(e -> {
 	    Connection conn = null;
 	    PreparedStatement myStm = null;
-	    ResultSet result = null;
 	    try {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
-		myStm = conn.prepareStatement("UPDATE SOGGIORNO " + "SET resoconto = ? " + "WHERE codScheda = ? "
-			+ "AND soggiornante = true");
+		myStm = conn.prepareStatement(
+			"UPDATE SOGGIORNO SET resoconto = ? WHERE codScheda = ? AND soggiornante = true");
 
 		myStm.setInt(1, Integer.parseInt(this.wageField.getText()));
 		myStm.setString(2, this.chosenClient);
-		result = myStm.executeQuery();
+		myStm.executeUpdate();
 
-		this.wageField.setText(result.getString(1));
+		//this.wageField.setText(result.getString(1)); FIXME: cosa vuoi fare??
+		
 	    } catch (Exception exc) {
 		exc.printStackTrace();
 	    }
@@ -303,12 +305,13 @@ public class ClientCard {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT nome, cognome, codFiscale, dataNascita, numeroTelefonico, "
-	    	+ "numeroCamera, dataInizio, durataSoggiorno, tipologiaSoggiornoScelto, meseSoggiornoScelto, "
-	    	+ "annoSoggiornoScelto, codScheda FROM CLIENTE, SOGGIORNO "
-	    	+ "WHERE SOGGIORNO.codScheda = ? AND SOGGIORNO.codFiscaleCliente = CLIENTE.codFiscale");
+		    + "numeroCamera, dataInizio, durataSoggiorno, tipologiaSoggiornoScelto, meseSoggiornoScelto, "
+		    + "annoSoggiornoScelto, codScheda, resoconto FROM CLIENTE, SOGGIORNO "
+		    + "WHERE SOGGIORNO.codScheda = ? AND SOGGIORNO.codFiscaleCliente = CLIENTE.codFiscale");
 
 	    myStm.setInt(1, Integer.valueOf(this.chosenClient));
 	    result = myStm.executeQuery();
+	    result.next();
 	    this.name.setText(result.getString(1));
 	    this.surname.setText(result.getString(2));
 	    this.cfField.setText(result.getString(3));
@@ -321,6 +324,7 @@ public class ClientCard {
 	    this.monthField.setText(result.getString(10));
 	    this.yearField.setText(result.getString(11));
 	    this.codeCardField.setText(result.getString(12));
+	    this.wageField.setText(result.getString(13));
 
 	} catch (Exception exc) {
 	    exc.printStackTrace();

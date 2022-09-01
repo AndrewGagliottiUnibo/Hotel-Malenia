@@ -280,13 +280,16 @@ public class LogicsImpl implements Logic {
 		    "SELECT dataInizio FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
+	    if(!result.next()) {
+		return;
+	    }
 	    final String beginningDate = result.getString(1);
 
 	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET soggiornante = false, resoconto = 0 "
 		    + "WHERE numeroCamera = ? AND soggiornante = true AND dataInizio = ?");
 	    myStm.setInt(1, roomNumber);
-	    myStm.setString(1, beginningDate);
-	    myStm.executeQuery();
+	    myStm.setString(2, beginningDate);
+	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}

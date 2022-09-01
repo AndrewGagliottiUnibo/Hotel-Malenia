@@ -108,6 +108,7 @@ public class AllClientCards {
 		/*
 		 * Query for all clients.
 		 */
+		this.clearTextAreas();
 		result = this.fillPage(false);
 		while (result.next()) {
 		    int row = result.getRow();
@@ -136,6 +137,7 @@ public class AllClientCards {
 		/*
 		 * Query for clients in hotel.
 		 */
+		this.clearTextAreas();
 		result = this.fillPage(true);
 		while (result.next()) {
 		    int row = result.getRow();
@@ -222,9 +224,8 @@ public class AllClientCards {
 	    myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
 	    myStmt = myConn.createStatement();
-	    myRs = myStmt.executeQuery("SELECT codScheda, numeroCamera, cognome FROM SOGGIORNO "
-		    + "LEFT JOIN (SELECT cognome, codFiscale FROM CLIENTE) "
-		    + "AS CLT ON SOGGIORNO.codFiscaleCliente = CLT.codFiscale " + inHotel);
+	    myRs = myStmt.executeQuery("SELECT codScheda, numeroCamera, cognome FROM SOGGIORNO, CLIENTE "
+		    + "WHERE SOGGIORNO.codFiscaleCliente = CLIENTE.codFiscale " + inHotel);
 
 	    return myRs;
 	} catch (Exception exc) {
@@ -232,6 +233,12 @@ public class AllClientCards {
 	}
 
 	return myRs;
+    }
+
+    private void clearTextAreas() {
+	this.textAreaCard.setText("");
+	this.textAreaRoom.setText("");
+	this.textAreaSurname.setText("");
     }
 
     /**
