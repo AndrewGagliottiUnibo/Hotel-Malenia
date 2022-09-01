@@ -3,10 +3,6 @@ package db.pages.specific;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import db.logic.Logic;
@@ -14,264 +10,285 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class NewReservation {
-	
-	private JFrame frmNuovaPrenotazione;
-	private JTextField codeField;
-	private JTextField dateField;
-	private JTextField timeField;
-	private JTextField parkingDaysField;
-	private Logic logic;
 
-	Connection myConn = null;
-	Statement myStmt = null;
-	ResultSet myRs = null;
-	
+    private JFrame frmNuovaPrenotazione;
+    private JTextField roomField;
+    private JTextField dateField;
+    private JTextField timeField;
+    private JTextField parkingDaysField;
+    private JTextField seasonField;
+    private JTextField yearField;
+    private Logic logic;
+
+    /**
+     * Constructor.
+     */
+    public NewReservation(final Logic logic) {
+	this.logic = logic;
+	this.initialize();
+    }
+
+    /**
+     * Initialize the contents of the frame.
+     */
+    private void initialize() {
+	frmNuovaPrenotazione = new JFrame();
+	frmNuovaPrenotazione.setResizable(false);
+	frmNuovaPrenotazione.getContentPane().setForeground(Color.ORANGE);
+	frmNuovaPrenotazione.getContentPane().setFont(new Font("Verdana", Font.BOLD, 12));
+	frmNuovaPrenotazione.getContentPane().setBackground(Color.DARK_GRAY);
+	frmNuovaPrenotazione.setTitle("Nuova prenotazione");
+	frmNuovaPrenotazione.setBounds(100, 100, 945, 528);
+	frmNuovaPrenotazione.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frmNuovaPrenotazione.getContentPane().setLayout(null);
+
+	JLabel title = new JLabel("Nuova prenotazione");
+	title.setBounds(0, 0, 929, 23);
+	title.setHorizontalAlignment(SwingConstants.CENTER);
+	title.setForeground(Color.RED);
+	title.setFont(new Font("Verdana", Font.BOLD, 18));
+	frmNuovaPrenotazione.getContentPane().add(title);
+
+	JLabel roomLabel = new JLabel("Numero camera");
+	roomLabel.setForeground(Color.ORANGE);
+	roomLabel.setBackground(Color.DARK_GRAY);
+	roomLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+	roomLabel.setBounds(20, 77, 138, 23);
+	frmNuovaPrenotazione.getContentPane().add(roomLabel);
+
+	roomField = new JTextField();
+	roomField.setForeground(Color.PINK);
+	roomField.setBackground(Color.BLACK);
+	roomField.setFont(new Font("Verdana", Font.BOLD, 12));
+	roomField.setColumns(10);
+	roomField.setBounds(20, 99, 209, 20);
+	frmNuovaPrenotazione.getContentPane().add(roomField);
+
 	/*
-	 * Variables used later in the listeners.
+	 * Parking.
 	 */
-	private int resocontoRes = 0;
-	private int roomRes = 0;
-	
-	/**
-	 * Constructor.
+	JButton parkingPlus = new JButton("Parcheggio +");
+	parkingPlus.addActionListener(e -> {
+	    var days = Integer.parseInt(this.parkingDaysField.getText());
+	    for (int i = 0; i < days; i++) {
+		this.logic.registerNewReservation("Parchegio", "Parchegio", "NULL", this.seasonField.getText(),
+			Integer.parseInt(this.yearField.getText()), "NULL", this.timeField.getText(),
+			Integer.parseInt(this.roomField.getText()));
+	    }
+	});
+	parkingPlus.setForeground(Color.ORANGE);
+	parkingPlus.setBackground(Color.DARK_GRAY);
+	parkingPlus.setFont(new Font("Verdana", Font.BOLD, 12));
+	parkingPlus.setBounds(253, 369, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(parkingPlus);
+
+	/*
+	 * Massage.
 	 */
-	public NewReservation(final Logic logic) {
-		this.logic = logic;
-		this.initialize();
-	}
+	JButton massagePlus = new JButton("Massaggio +");
+	massagePlus.addActionListener(e -> {
+	    this.logic.registerNewReservation("Massaggio", "Massaggio", this.dateField.getText(),
+		    this.seasonField.getText(), Integer.parseInt(this.yearField.getText()), this.dateField.getText(),
+		    this.timeField.getText(), Integer.parseInt(this.roomField.getText()));
+	});
+	massagePlus.setForeground(Color.ORANGE);
+	massagePlus.setBackground(Color.DARK_GRAY);
+	massagePlus.setFont(new Font("Verdana", Font.BOLD, 12));
+	massagePlus.setBounds(655, 253, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(massagePlus);
 
-	/**
-	 * Initialize the contents of the frame.
+	/*
+	 * Dirt massage.
 	 */
-	private void initialize() {
-		frmNuovaPrenotazione = new JFrame();
-		frmNuovaPrenotazione.setResizable(false);
-		frmNuovaPrenotazione.getContentPane().setForeground(Color.ORANGE);
-		frmNuovaPrenotazione.getContentPane().setFont(new Font("Verdana", Font.BOLD, 12));
-		frmNuovaPrenotazione.getContentPane().setBackground(Color.DARK_GRAY);
-		frmNuovaPrenotazione.setTitle("Nuova prenotazione");
-		frmNuovaPrenotazione.setBounds(100, 100, 945, 528);
-		frmNuovaPrenotazione.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmNuovaPrenotazione.getContentPane().setLayout(null);
+	JButton dirtPlus = new JButton("Fango +");
+	dirtPlus.addActionListener(e -> {
+	    this.logic.registerNewReservation("Fango", "Fango", this.dateField.getText(), this.seasonField.getText(),
+		    Integer.parseInt(this.yearField.getText()), this.dateField.getText(), this.timeField.getText(),
+		    Integer.parseInt(this.roomField.getText()));
+	});
+	dirtPlus.setForeground(Color.ORANGE);
+	dirtPlus.setBackground(Color.DARK_GRAY);
+	dirtPlus.setFont(new Font("Verdana", Font.BOLD, 12));
+	dirtPlus.setBounds(655, 313, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(dirtPlus);
 
-		JLabel title = new JLabel("Nuova prenotazione");
-		title.setBounds(0, 0, 929, 23);
-		title.setHorizontalAlignment(SwingConstants.CENTER);
-		title.setForeground(Color.RED);
-		title.setFont(new Font("Verdana", Font.BOLD, 18));
-		frmNuovaPrenotazione.getContentPane().add(title);
+	/*
+	 * Bath.
+	 */
+	JButton bathPlus = new JButton("Bagno +");
+	bathPlus.addActionListener(e -> {
+	    this.logic.registerNewReservation("Bagno", "Bagno", this.dateField.getText(), this.seasonField.getText(),
+		    Integer.parseInt(this.yearField.getText()), this.dateField.getText(), this.timeField.getText(),
+		    Integer.parseInt(this.roomField.getText()));
+	});
+	bathPlus.setForeground(Color.ORANGE);
+	bathPlus.setBackground(Color.DARK_GRAY);
+	bathPlus.setFont(new Font("Verdana", Font.BOLD, 12));
+	bathPlus.setBounds(655, 193, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(bathPlus);
 
-		JLabel cardLabel = new JLabel("Codice scheda");
-		cardLabel.setForeground(Color.ORANGE);
-		cardLabel.setBackground(Color.DARK_GRAY);
-		cardLabel.setFont(new Font("Verdana", Font.BOLD, 12));
-		cardLabel.setBounds(10, 74, 138, 23);
-		frmNuovaPrenotazione.getContentPane().add(cardLabel);
+	/*
+	 * Idro bath.
+	 */
+	JButton bubblePlus = new JButton("Idromassaggio +");
+	bubblePlus.addActionListener(e -> {
+	    this.logic.registerNewReservation("Idromassaggio", "Idromassaggio", this.dateField.getText(),
+		    this.seasonField.getText(), Integer.parseInt(this.yearField.getText()), this.dateField.getText(),
+		    this.timeField.getText(), Integer.parseInt(this.roomField.getText()));
+	});
+	bubblePlus.setForeground(Color.ORANGE);
+	bubblePlus.setBackground(Color.DARK_GRAY);
+	bubblePlus.setFont(new Font("Verdana", Font.BOLD, 12));
+	bubblePlus.setBounds(655, 369, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(bubblePlus);
 
-		codeField = new JTextField();
-		codeField.setForeground(Color.PINK);
-		codeField.setBackground(Color.BLACK);
-		codeField.setFont(new Font("Verdana", Font.BOLD, 12));
-		codeField.setColumns(10);
-		codeField.setBounds(10, 108, 209, 20);
-		frmNuovaPrenotazione.getContentPane().add(codeField);
+	JLabel dateLabel = new JLabel("Data");
+	dateLabel.setForeground(Color.ORANGE);
+	dateLabel.setBackground(Color.DARK_GRAY);
+	dateLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+	dateLabel.setBounds(655, 77, 138, 23);
+	frmNuovaPrenotazione.getContentPane().add(dateLabel);
 
-		Connection myConn = null;
-		Statement myStmt = null;
-		ResultSet myRs0 = null;
-		ResultSet myRs1 = null;
-		
-		try {
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
-			myStmt = myConn.createStatement();
-			myRs0 = myStmt.executeQuery(
-					"SELECT numeroCamera FROM SCHEDA WHERE idScheda =" + this.codeField.getText());
-			roomRes = myRs0.getInt(1);
+	dateField = new JTextField();
+	dateField.setForeground(Color.PINK);
+	dateField.setBackground(Color.BLACK);
+	dateField.setFont(new Font("Verdana", Font.BOLD, 12));
+	dateField.setColumns(10);
+	dateField.setBounds(655, 101, 209, 20);
+	frmNuovaPrenotazione.getContentPane().add(dateField);
 
-			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root", this.logic.getOwnPassword());
-			myStmt = myConn.createStatement();
-			myRs1 = myStmt.executeQuery(
-					"SELECT resoconto FROM SCHEDA WHERE idScheda =" + this.codeField.getText());
-			resocontoRes = myRs1.getInt(1);
+	JLabel timeLabel = new JLabel("Ora");
+	timeLabel.setForeground(Color.ORANGE);
+	timeLabel.setBackground(Color.DARK_GRAY);
+	timeLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+	timeLabel.setBounds(655, 132, 138, 23);
+	frmNuovaPrenotazione.getContentPane().add(timeLabel);
 
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+	timeField = new JTextField();
+	timeField.setForeground(Color.PINK);
+	timeField.setBackground(Color.BLACK);
+	timeField.setFont(new Font("Verdana", Font.BOLD, 12));
+	timeField.setColumns(10);
+	timeField.setBounds(655, 156, 209, 20);
+	frmNuovaPrenotazione.getContentPane().add(timeField);
 
-		JButton breakfastPlus = new JButton("Colazione +");// RISTORAZIONE TIPOSERVIZIO 1
-		breakfastPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 40, resocontoRes, 1); 
-		});
-		breakfastPlus.setForeground(Color.ORANGE);
-		breakfastPlus.setBackground(Color.DARK_GRAY);
-		breakfastPlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		breakfastPlus.setBounds(10, 182, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(breakfastPlus);
+	JButton logout = new JButton("Logout");
+	logout.addActionListener(e -> {
+	    this.frmNuovaPrenotazione.dispose();
+	    this.logic.logout();
+	});
 
-		JButton lunchPlus = new JButton("Pranzo +");
-		lunchPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 150, resocontoRes, 1); 
-		});
-		lunchPlus.setForeground(Color.ORANGE);
-		lunchPlus.setBackground(Color.DARK_GRAY);
-		lunchPlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		lunchPlus.setBounds(10, 215, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(lunchPlus);
+	logout.setForeground(Color.ORANGE);
+	logout.setBackground(Color.DARK_GRAY);
+	logout.setFont(new Font("Verdana", Font.BOLD, 12));
+	logout.setBounds(710, 455, 209, 23);
+	frmNuovaPrenotazione.getContentPane().add(logout);
 
-		JButton dinnerPlus = new JButton("Cena +");
-		dinnerPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 200, resocontoRes, 1);
-		});
-		dinnerPlus.setForeground(Color.ORANGE);
-		dinnerPlus.setBackground(Color.DARK_GRAY);
-		dinnerPlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		dinnerPlus.setBounds(10, 249, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(dinnerPlus);
+	JLabel classicReservationTitle = new JLabel("Prenotazioni classiche");
+	classicReservationTitle.setHorizontalAlignment(SwingConstants.CENTER);
+	classicReservationTitle.setForeground(Color.MAGENTA);
+	classicReservationTitle.setFont(new Font("Verdana", Font.BOLD, 16));
+	classicReservationTitle.setBounds(10, 52, 264, 14);
+	frmNuovaPrenotazione.getContentPane().add(classicReservationTitle);
 
-		JButton parkingPlus = new JButton("Parcheggio +"); //PARCHEGGIO TIPOSERVIZIO 5
-		parkingPlus.addActionListener(e -> {
-			var days = this.parkingDaysField.getText();
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 10*(Integer.parseInt(days)), resocontoRes, 5);
-		});
-		parkingPlus.setForeground(Color.ORANGE);
-		parkingPlus.setBackground(Color.DARK_GRAY);
-		parkingPlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		parkingPlus.setBounds(10, 368, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(parkingPlus);
+	JLabel timeReservationTitle = new JLabel("Prenotazioni Orarie");
+	timeReservationTitle.setHorizontalAlignment(SwingConstants.CENTER);
+	timeReservationTitle.setForeground(Color.MAGENTA);
+	timeReservationTitle.setFont(new Font("Verdana", Font.BOLD, 16));
+	timeReservationTitle.setBounds(655, 52, 264, 14);
+	frmNuovaPrenotazione.getContentPane().add(timeReservationTitle);
 
-		JButton massagePlus = new JButton("Massaggio +");//SERVIZI PERSONALI TIPOSERVIZIO 3
-		massagePlus.addActionListener(e -> {
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 25, resocontoRes, 3);
-		});
-		massagePlus.setForeground(Color.ORANGE);
-		massagePlus.setBackground(Color.DARK_GRAY);
-		massagePlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		massagePlus.setBounds(358, 233, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(massagePlus);
+	JLabel parkingDays = new JLabel("Giorni di parcheggio");
+	parkingDays.setForeground(Color.ORANGE);
+	parkingDays.setFont(new Font("Verdana", Font.BOLD, 12));
+	parkingDays.setBackground(Color.DARK_GRAY);
+	parkingDays.setBounds(253, 315, 138, 23);
+	frmNuovaPrenotazione.getContentPane().add(parkingDays);
 
-		JButton dirtPlus = new JButton("Fango +");
-		dirtPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 50, resocontoRes, 3);
-		});
-		dirtPlus.setForeground(Color.ORANGE);
-		dirtPlus.setBackground(Color.DARK_GRAY);
-		dirtPlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		dirtPlus.setBounds(358, 267, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(dirtPlus);
+	parkingDaysField = new JTextField();
+	parkingDaysField.setForeground(Color.PINK);
+	parkingDaysField.setFont(new Font("Verdana", Font.BOLD, 12));
+	parkingDaysField.setColumns(10);
+	parkingDaysField.setBackground(Color.BLACK);
+	parkingDaysField.setBounds(253, 338, 209, 20);
+	frmNuovaPrenotazione.getContentPane().add(parkingDaysField);
 
-		JButton bathPlus = new JButton("Bagno +");
-		bathPlus.addActionListener(e -> {
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 20, resocontoRes, 3);
-		});
-		bathPlus.setForeground(Color.ORANGE);
-		bathPlus.setBackground(Color.DARK_GRAY);
-		bathPlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		bathPlus.setBounds(358, 301, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(bathPlus);
+	/*
+	 * Gym.
+	 */
+	JButton btnGym = new JButton("Palestra +");
+	btnGym.addActionListener(e -> {
+	    this.logic.registerNewReservation("Palestra", "Palestra", "NULL", this.seasonField.getText(),
+		    Integer.parseInt(this.yearField.getText()), "NULL", this.timeField.getText(),
+		    Integer.parseInt(this.roomField.getText()));
+	});
 
-		JButton bubblePlus = new JButton("Idromassaggio +");
-		bubblePlus.addActionListener(e -> {
-			this.logic.registerNewReservation(this.codeField.getText(),
-					this.dateField.getText(), this.timeField.getText(), roomRes,
-					resocontoRes);
-			this.logic.additionCost(roomRes, 30, resocontoRes, 3);
-		});
-		bubblePlus.setForeground(Color.ORANGE);
-		bubblePlus.setBackground(Color.DARK_GRAY);
-		bubblePlus.setFont(new Font("Verdana", Font.BOLD, 12));
-		bubblePlus.setBounds(358, 335, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(bubblePlus);
+	btnGym.setForeground(Color.ORANGE);
+	btnGym.setFont(new Font("Verdana", Font.BOLD, 12));
+	btnGym.setBackground(Color.DARK_GRAY);
+	btnGym.setBounds(253, 99, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(btnGym);
 
-		JLabel dateLabel = new JLabel("Data");
-		dateLabel.setForeground(Color.ORANGE);
-		dateLabel.setBackground(Color.DARK_GRAY);
-		dateLabel.setFont(new Font("Verdana", Font.BOLD, 12));
-		dateLabel.setBounds(358, 77, 138, 23);
-		frmNuovaPrenotazione.getContentPane().add(dateLabel);
+	/*
+	 * Casino.
+	 */
+	JButton btnCasino = new JButton("Casino' +");
+	btnCasino.addActionListener(e -> {
+	    this.logic.registerNewReservation("Casino'", "Casino'", "NULL", this.seasonField.getText(),
+		    Integer.parseInt(this.yearField.getText()), "NULL", this.timeField.getText(),
+		    Integer.parseInt(this.roomField.getText()));
+	});
 
-		dateField = new JTextField();
-		dateField.setForeground(Color.PINK);
-		dateField.setBackground(Color.BLACK);
-		dateField.setFont(new Font("Verdana", Font.BOLD, 12));
-		dateField.setColumns(10);
-		dateField.setBounds(358, 111, 209, 20);
-		frmNuovaPrenotazione.getContentPane().add(dateField);
+	btnCasino.setForeground(Color.ORANGE);
+	btnCasino.setFont(new Font("Verdana", Font.BOLD, 12));
+	btnCasino.setBackground(Color.DARK_GRAY);
+	btnCasino.setBounds(253, 160, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(btnCasino);
 
-		JLabel timeLabel = new JLabel("Ora");
-		timeLabel.setForeground(Color.ORANGE);
-		timeLabel.setBackground(Color.DARK_GRAY);
-		timeLabel.setFont(new Font("Verdana", Font.BOLD, 12));
-		timeLabel.setBounds(358, 148, 138, 23);
-		frmNuovaPrenotazione.getContentPane().add(timeLabel);
+	/*
+	 * Beach.
+	 */
+	JButton btnBeach = new JButton("Siaggia +");
+	btnBeach.addActionListener(e -> {
+	    this.logic.registerNewReservation("Spiaggia", "Spiaggia", "NULL", this.seasonField.getText(),
+		    Integer.parseInt(this.yearField.getText()), "NULL", this.timeField.getText(),
+		    Integer.parseInt(this.roomField.getText()));
+	});
 
-		timeField = new JTextField();
-		timeField.setForeground(Color.PINK);
-		timeField.setBackground(Color.BLACK);
-		timeField.setFont(new Font("Verdana", Font.BOLD, 12));
-		timeField.setColumns(10);
-		timeField.setBounds(358, 182, 209, 20);
-		frmNuovaPrenotazione.getContentPane().add(timeField);
+	btnBeach.setForeground(Color.ORANGE);
+	btnBeach.setFont(new Font("Verdana", Font.BOLD, 12));
+	btnBeach.setBackground(Color.DARK_GRAY);
+	btnBeach.setBounds(253, 220, 209, 49);
+	frmNuovaPrenotazione.getContentPane().add(btnBeach);
 
-		JButton logout = new JButton("Logout");
-		logout.addActionListener(e -> {
-			this.frmNuovaPrenotazione.dispose();
-			this.logic.logout();
-		});
-		logout.setForeground(Color.ORANGE);
-		logout.setBackground(Color.DARK_GRAY);
-		logout.setFont(new Font("Verdana", Font.BOLD, 12));
-		logout.setBounds(710, 455, 209, 23);
-		frmNuovaPrenotazione.getContentPane().add(logout);
+	seasonField = new JTextField();
+	seasonField.setForeground(Color.PINK);
+	seasonField.setFont(new Font("Verdana", Font.BOLD, 12));
+	seasonField.setColumns(10);
+	seasonField.setBackground(Color.BLACK);
+	seasonField.setBounds(20, 154, 209, 20);
+	frmNuovaPrenotazione.getContentPane().add(seasonField);
 
-		JLabel classicReservationTitle = new JLabel("Prenotazioni classiche");
-		classicReservationTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		classicReservationTitle.setForeground(Color.MAGENTA);
-		classicReservationTitle.setFont(new Font("Verdana", Font.BOLD, 16));
-		classicReservationTitle.setBounds(10, 49, 264, 14);
-		frmNuovaPrenotazione.getContentPane().add(classicReservationTitle);
+	JLabel seasonLabel = new JLabel("Stagione");
+	seasonLabel.setForeground(Color.ORANGE);
+	seasonLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+	seasonLabel.setBackground(Color.DARK_GRAY);
+	seasonLabel.setBounds(20, 132, 138, 23);
+	frmNuovaPrenotazione.getContentPane().add(seasonLabel);
 
-		JLabel timeReservationTitle = new JLabel("Prenotazioni Orarie");
-		timeReservationTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		timeReservationTitle.setForeground(Color.MAGENTA);
-		timeReservationTitle.setFont(new Font("Verdana", Font.BOLD, 16));
-		timeReservationTitle.setBounds(358, 52, 264, 14);
-		frmNuovaPrenotazione.getContentPane().add(timeReservationTitle);
+	yearField = new JTextField();
+	yearField.setForeground(Color.PINK);
+	yearField.setFont(new Font("Verdana", Font.BOLD, 12));
+	yearField.setColumns(10);
+	yearField.setBackground(Color.BLACK);
+	yearField.setBounds(20, 215, 209, 20);
+	frmNuovaPrenotazione.getContentPane().add(yearField);
 
-		JLabel parkingDays = new JLabel("Giorni di parcheggio");
-		parkingDays.setForeground(Color.ORANGE);
-		parkingDays.setFont(new Font("Verdana", Font.BOLD, 12));
-		parkingDays.setBackground(Color.DARK_GRAY);
-		parkingDays.setBounds(10, 306, 138, 23);
-		frmNuovaPrenotazione.getContentPane().add(parkingDays);
-
-		parkingDaysField = new JTextField();
-		parkingDaysField.setForeground(Color.PINK);
-		parkingDaysField.setFont(new Font("Verdana", Font.BOLD, 12));
-		parkingDaysField.setColumns(10);
-		parkingDaysField.setBackground(Color.BLACK);
-		parkingDaysField.setBounds(10, 337, 209, 20);
-		frmNuovaPrenotazione.getContentPane().add(parkingDaysField);
-	}
-
+	JLabel yearLabel = new JLabel("Anno");
+	yearLabel.setForeground(Color.ORANGE);
+	yearLabel.setFont(new Font("Verdana", Font.BOLD, 12));
+	yearLabel.setBackground(Color.DARK_GRAY);
+	yearLabel.setBounds(20, 193, 138, 23);
+	frmNuovaPrenotazione.getContentPane().add(yearLabel);
+    }
 }
