@@ -171,6 +171,21 @@ public class RegistrationCard {
 		    this.expireField.getText(), this.vacationField.getText(),
 		    Integer.parseInt(this.codCardField.getText()), Integer.parseInt(this.roomField.getText()),
 		    this.vacationField.getText(), this.monthField.getText(), Integer.parseInt(this.yearField.getText()));
+	    
+	    /*
+	     * Clearing fields.
+	     */
+	    this.name.setText("");
+	    this.surname.setText("");
+	    this.cfField.setText("");
+	    this.dateField.setText("");
+	    this.telField.setText("");
+	    this.roomField.setText("");
+	    this.beginningField.setText("");
+	    this.expireField.setText("");
+	    this.vacationField.setText("");
+	    this.monthField.setText("");
+	    this.yearField.setText("");
 	});
 
 	registrationButton.setForeground(Color.MAGENTA);

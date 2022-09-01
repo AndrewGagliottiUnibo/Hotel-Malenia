@@ -179,8 +179,8 @@ public class ClientCard {
 
 	JButton viewReservation = new JButton("Vedi Prenotazioni"); //FIXME: Non funziona!
 	viewReservation.addActionListener(e -> {
+	    this.logic.goToSpecificPage("AllReservations", this.frame);
 	    this.frame.dispose();
-	    this.logic.goToSpecificPage("ALL_RES", this.frame);
 	});
 	viewReservation.setFont(new Font("Verdana", Font.BOLD, 12));
 	viewReservation.setBackground(Color.DARK_GRAY);
