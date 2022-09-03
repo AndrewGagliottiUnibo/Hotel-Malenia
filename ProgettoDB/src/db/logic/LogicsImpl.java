@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -255,12 +256,45 @@ public class LogicsImpl implements Logic {
 	    result.next();
 	    int price = result.getInt(1);
 
-	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
-		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
-	    myStm.setInt(1, price);
-	    myStm.setString(2, identifierCode);
-	    myStm.setString(3, beginningDate);
-	    myStm.executeUpdate();
+	    /*
+	     * Update for table resoconto in database.
+	     */
+	    java.sql.Date begDate = java.sql.Date.valueOf(beginningDate);
+	    Calendar begCal = Calendar.getInstance();
+	    begCal.setTime(begDate);
+	    int bMonth = begCal.get(Calendar.MONTH);
+	    int bDay = begCal.get(Calendar.DAY_OF_MONTH);
+	    int bYear = begCal.get(Calendar.YEAR);
+	    
+	    java.sql.Date endDate = java.sql.Date.valueOf(remainingDays);
+	    Calendar endCal = Calendar.getInstance();
+	    endCal.setTime(endDate);
+	    int eMonth = endCal.get(Calendar.MONTH);
+	    int eDay = endCal.get(Calendar.DAY_OF_MONTH);
+	    int eYear = endCal.get(Calendar.YEAR);
+	    
+	    /*
+	     * Non so come fare cristo ci devo pensare.
+	     */
+	    if (eYear - bYear > 1) {
+		if(eMonth - bMonth > 1 || eMonth - bMonth < 1) {
+		    if(eDay - bDay > 1 || eDay - bDay < 1) {
+			
+		    }
+		}
+		
+	    } else {
+		//Altre casistiche.
+	    }
+	    
+	    for (int i = bDay; i < eDay; i++) {
+		myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
+			+ "WHERE codFiscaleCliente = ? AND dataInizio = ?");
+		myStm.setInt(1, price);
+		myStm.setString(2, identifierCode);
+		myStm.setString(3, beginningDate);
+		myStm.executeUpdate();
+	    }
 
 	} catch (SQLException e) {
 	    e.printStackTrace();
