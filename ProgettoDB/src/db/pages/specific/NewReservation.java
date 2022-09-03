@@ -71,7 +71,7 @@ public class NewReservation {
 	parkingPlus.addActionListener(e -> {
 	    var days = Integer.parseInt(this.parkingDaysField.getText());
 	    for (int i = 0; i < days; i++) {
-		this.logic.registerNewReservation("Parchegio", "Parchegio", "NULL", this.seasonField.getText(),
+		this.logic.registerNewReservation("Parcheggio", "Parcheggio", "NULL", this.seasonField.getText(),
 			Integer.parseInt(this.yearField.getText()), "NULL", this.timeField.getText(),
 			Integer.parseInt(this.roomField.getText()));
 	    }
