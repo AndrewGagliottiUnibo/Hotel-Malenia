@@ -76,10 +76,10 @@ public class EntertaimentServicePages {
 	panel.add(roomNumberField);
 	roomNumberField.setColumns(10);
 
-	JButton casinoEntrance = new JButton("Ingresso al casino'");
+	JButton casinoEntrance = new JButton("Ingresso al casino");
 	casinoEntrance.setFont(new Font("Verdana", Font.BOLD, 12));
 	casinoEntrance.addActionListener(e -> {
-	    this.logic.addCost("Casino'", this.seasonField.getText(), Integer.parseInt(this.yearField.getText()),
+	    this.logic.addCost("Casino", this.seasonField.getText(), Integer.parseInt(this.yearField.getText()),
 		    Integer.parseInt(this.roomNumberField.getText()), "Casino'", null, null);
 	});
 
@@ -312,7 +312,7 @@ public class EntertaimentServicePages {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
 	    myStm = conn.prepareStatement(
-		    "SELECT codFiscale FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
+		    "SELECT codFiscaleCliente FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, Integer.parseInt(this.roomNumberShow.getText()));
 	    result = myStm.executeQuery();
 	    result.next();
@@ -326,12 +326,9 @@ public class EntertaimentServicePages {
 	    /*
 	     * Printing data.
 	     */
+	    this.textArea.setText("");
 	    while (result.next()) {
-		int row = result.getRow();
-
-		for (int i = 0; i < row; i++) {
 		    this.textArea.append(result.getString(1) + "\n");
-		}
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();

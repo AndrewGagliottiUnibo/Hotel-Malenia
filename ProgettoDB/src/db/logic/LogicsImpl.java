@@ -314,7 +314,7 @@ public class LogicsImpl implements Logic {
 	    String identifier = result.getString(1);
 	    String beginningDate = result.getString(2);
 
-	    myStm = conn.prepareStatement("INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora, "
+	    myStm = conn.prepareStatement("INSERT INTO PRENOTAZIONE (tipoPrenotazione, giorno, ora, "
 		    + "dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato, tipoServizioUsufruito, "
 		    + "stagioneServizioUsufruito, annoServizioUsufruito, codReceptionistOperante) "
 		    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, 10)");
