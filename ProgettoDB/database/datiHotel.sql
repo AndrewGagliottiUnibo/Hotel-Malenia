@@ -1,10 +1,85 @@
 #
 # TABLE DATA FOR: TIPOLOGIASOGGIORNO
 #
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'January', '2022', '180.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'January', '2022', '300.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'January', '2022', '500.00');
 
+# DATA FOR 2022
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Gennaio', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Gennaio', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Gennaio', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Febbraio', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Febbraio', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Febbraio', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Marzo', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Marzo', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Marzo', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Aprile', '2022', '50.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Aprile', '2022', '70.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Aprile', '2022', '100.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Maggio', '2022', '50.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Maggio', '2022', '70.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Maggio', '2022', '100.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Giugno', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Giugno', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Giugno', '2022', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Luglio', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Luglio', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Luglio', '2022', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Agosto', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Agosto', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Agosto', '2022', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Settembre', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Settembre', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Settembre', '2022', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Ottobre', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Ottobre', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Ottobre', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Novembre', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Novembre', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Novembre', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Dicembre', '2022', '50.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Dicembre', '2022', '70.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Dicembre', '2022', '100.00');
+
+
+# DATA FOR 2023
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Gennaio', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Gennaio', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Gennaio', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Febbraio', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Febbraio', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Febbraio', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Marzo', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Marzo', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Marzo', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Aprile', '2022', '50.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Aprile', '2022', '70.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Aprile', '2022', '100.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Maggio', '2022', '50.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Maggio', '2022', '70.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Maggio', '2022', '100.00');
+
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Giugno', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Giugno', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Giugno', '2022', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Luglio', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Luglio', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Luglio', '2022', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Agosto', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Agosto', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Agosto', '2022', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Settembre', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Settembre', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Settembre', '2022', '120.00');
+
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Ottobre', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Ottobre', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Ottobre', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Novembre', '2022', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Novembre', '2022', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Novembre', '2022', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Dicembre', '2022', '50.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Dicembre', '2022', '70.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Dicembre', '2022', '100.00');
 
 #
 # TABLE DATA FOR: SERVIZIO
