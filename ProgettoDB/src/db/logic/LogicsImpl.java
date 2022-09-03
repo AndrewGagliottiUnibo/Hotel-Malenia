@@ -1,13 +1,16 @@
 package db.logic;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
 import db.pages.LoginPages;
@@ -305,8 +308,8 @@ public class LogicsImpl implements Logic {
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	    result.next();
-	    final String identifier = result.getString(1);
-	    final String beginningDate = result.getString(2);
+	    String identifier = result.getString(1);
+	    String beginningDate = result.getString(2);
 
 	    myStm = conn.prepareStatement("INSERT INTO PRENOTAZIONE (tipoPrenotazione, data, ora, "
 		    + "dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato, tipoServizioUsufruito, "
@@ -320,7 +323,6 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(6, serviceType);
 	    myStm.setString(7, season);
 	    myStm.setInt(8, year);
-	    myStm.setString(9, serviceType);
 	    myStm.executeUpdate();
 
 	    myStm = conn.prepareStatement(
@@ -422,15 +424,15 @@ public class LogicsImpl implements Logic {
 	    myStm.setInt(3, year);
 	    result = myStm.executeQuery();
 	    result.next();
-	    int wage = result.getInt(1);
+	    Double wage = result.getDouble(1);
 
 	    myStm = conn.prepareStatement("SELECT dataInizio, codFiscaleCliente FROM SOGGIORNO "
 		    + "WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, roomNumber);
 	    result = myStm.executeQuery();
 	    result.next();
-	    final String beginningDate = result.getString(1);
-	    final String identifier = result.getString(2);
+	    Date beginningDate = result.getDate(1);
+	    String identifier = result.getString(2);
 
 	    myStm = conn.prepareStatement(
 		    "INSERT INTO PRENOTAZIONE (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, "
@@ -440,7 +442,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(1, reservationType);
 	    myStm.setString(2, day);
 	    myStm.setString(3, hour);
-	    myStm.setString(4, beginningDate);
+	    myStm.setDate(4, beginningDate);
 	    myStm.setString(5, identifier);
 	    myStm.setString(6, serviceType);
 	    myStm.setString(7, season);
@@ -449,9 +451,9 @@ public class LogicsImpl implements Logic {
 
 	    myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
 		    + "WHERE codFiscaleCliente = ? AND dataInizio = ?");
-	    myStm.setInt(1, wage);
+	    myStm.setDouble(1, wage);
 	    myStm.setString(2, identifier);
-	    myStm.setString(3, beginningDate);
+	    myStm.setDate(3, beginningDate);
 	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
