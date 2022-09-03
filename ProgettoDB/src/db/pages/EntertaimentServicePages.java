@@ -312,9 +312,10 @@ public class EntertaimentServicePages {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
 	    myStm = conn.prepareStatement(
-		    "SELECT codFiscale FROM SOGGIORNO " + "WHERE numeroCamera = ? AND soggiornante = true");
+		    "SELECT codFiscale FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = true");
 	    myStm.setInt(1, Integer.parseInt(this.roomNumberShow.getText()));
 	    result = myStm.executeQuery();
+	    result.next();
 	    final String identifier = result.getString(1);
 
 	    myStm = conn.prepareStatement(

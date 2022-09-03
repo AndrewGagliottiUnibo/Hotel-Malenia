@@ -177,7 +177,7 @@ public class ClientCard {
 	lblWage.setBounds(643, 70, 145, 14);
 	frame.getContentPane().add(lblWage);
 
-	JButton viewReservation = new JButton("Vedi Prenotazioni"); //FIXME: Non funziona!
+	JButton viewReservation = new JButton("Vedi Prenotazioni");
 	viewReservation.addActionListener(e -> {
 	    this.logic.goToSpecificPage("AllReservations", this.frame);
 	    this.frame.dispose();
@@ -223,8 +223,6 @@ public class ClientCard {
 		myStm.setInt(1, Integer.parseInt(this.wageField.getText()));
 		myStm.setString(2, this.chosenClient);
 		myStm.executeUpdate();
-
-		//this.wageField.setText(result.getString(1)); FIXME: cosa vuoi fare??
 		
 	    } catch (Exception exc) {
 		exc.printStackTrace();
