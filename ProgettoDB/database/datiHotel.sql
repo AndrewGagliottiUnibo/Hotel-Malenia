@@ -1,8 +1,6 @@
 #
-# TABLE DATA FOR: TIPOLOGIASOGGIORNO
+# TABLE DATA FOR: TIPOLOGIASOGGIORNO 2022
 #
-
-# DATA FOR 2022
 INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Gennaio', '2022', '30.00');
 INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Gennaio', '2022', '60.00');
 INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Gennaio', '2022', '90.00');
@@ -40,65 +38,148 @@ INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES 
 INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Dicembre', '2022', '70.00');
 INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Dicembre', '2022', '100.00');
 
-
-# DATA FOR 2023
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Gennaio', '2022', '30.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Gennaio', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Gennaio', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Febbraio', '2022', '30.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Febbraio', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Febbraio', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Marzo', '2022', '30.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Marzo', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Marzo', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Aprile', '2022', '50.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Aprile', '2022', '70.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Aprile', '2022', '100.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Maggio', '2022', '50.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Maggio', '2022', '70.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Maggio', '2022', '100.00');
-
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Giugno', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Giugno', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Giugno', '2022', '120.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Luglio', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Luglio', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Luglio', '2022', '120.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Agosto', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Agosto', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Agosto', '2022', '120.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Settembre', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Settembre', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Settembre', '2022', '120.00');
-
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Ottobre', '2022', '30.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Ottobre', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Ottobre', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Novembre', '2022', '30.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Novembre', '2022', '60.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Novembre', '2022', '90.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Dicembre', '2022', '50.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Dicembre', '2022', '70.00');
-INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Dicembre', '2022', '100.00');
+#
+# TABLE DATA FOR: TIPOLOGIASOGGIORNO 2023
+#
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Gennaio', '2023', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Gennaio', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Gennaio', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Febbraio', '2023', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Febbraio', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Febbraio', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Marzo', '2023', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Marzo', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Marzo', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Aprile', '2023', '40.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Aprile', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Aprile', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Maggio', '2023', '40.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Maggio', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Maggio', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Giugno', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Giugno', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Giugno', '2023', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Luglio', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Luglio', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Luglio', '2023', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Agosto', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Agosto', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Agosto', '2023', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Settembre', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Settembre', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Settembre', '2023', '120.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Ottobre', '2023', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Ottobre', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Ottobre', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Novembre', '2023', '30.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Novembre', '2023', '60.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Novembre', '2023', '90.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('BB', 'Dicembre', '2023', '40.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('PB', 'Dicembre', '2023', '70.00');
+INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES ('ALI', 'Dicembre', '2023', '100.00');
 
 #
-# TABLE DATA FOR: SERVIZIO
+# TABLE DATA FOR: SERVIZIO 2022
 #
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Estiva', '2022', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Estiva', '2022', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Estiva', '2022', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Estiva', '2022', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Estiva', '2022', '8.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Estiva', '2022', '5.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Estiva', '2022', '10.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Estiva', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Estate', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Estate', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Estate', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Estate', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Estate', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Estate', '2022', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Estate', '2022', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Estate', '2022', '8.00');
+
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Primavera', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Primavera', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Primavera', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Primavera', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Primavera', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Primavera', '2022', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Primavera', '2022', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Primavera', '2022', '8.00');
+
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Autunno', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Autunno', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Autunno', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Autunno', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Autunno', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Autunno', '2022', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Autunno', '2022', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Autunno', '2022', '8.00');
+
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Inverno', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Inverno', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Inverno', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Inverno', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Inverno', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Inverno', '2022', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Inverno', '2022', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Inverno', '2022', '8.00');
+
+#
+# TABLE DATA FOR: SERVIZIO 2023
+#
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Estate', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Estate', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Estate', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Estate', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Estate', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Estate', '2023', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Estate', '2023', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Estate', '2023', '8.00');
+
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Primavera', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Primavera', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Primavera', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Primavera', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Primavera', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Primavera', '2023', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Primavera', '2023', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Primavera', '2023', '8.00');
+
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Autunno', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Autunno', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Autunno', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Autunno', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Autunno', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Autunno', '2023', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Autunno', '2023', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Autunno', '2023', '8.00');
+
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Inverno', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Inverno', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Inverno', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Inverno', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Inverno', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Inverno', '2023', '5.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Inverno', '2023', '10.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Inverno', '2023', '8.00');
 
 
 #
-# TABLE DATA FOR: DIRIGENTE
+# TABLE DATA FOR: DIRIGENTE 2022
 #
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Invernale', '2022', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Inverno', '2022', 'BB', 'January', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Estate', '2022', 'BB', 'January', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Primavera', '2022', 'BB', 'January', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Autunno', '2022', 'BB', 'January', '2022');
+
+#
+# TABLE DATA FOR: DIRIGENTE 2023
+#
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Inverno', '2023', 'BB', 'January', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Estate', '2023', 'BB', 'January', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Primavera', '2023', 'BB', 'January', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Autunno', '2023', 'BB', 'January', '2022');
 
 
 #
