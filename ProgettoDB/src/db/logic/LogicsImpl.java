@@ -106,7 +106,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public void showRoomsToBeCleaned(final JTextArea textArea) {
+    public ResultSet showRoomsToBeCleaned(final JTextArea textArea) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -114,23 +114,12 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT * FROM SOGGIORNO WHERE numeroCamera IS NOT NULL");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE soggiornante = true");
 	    result = myStm.executeQuery();
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-
-	try {
-	    int row = result.getRow();
-
-	    while (result.next()) {
-		for (int i = 0; i < row; i++) {
-		    textArea.append("Camera: " + result.getString(i) + "\n");
-		}
-	    }
-	} catch (Exception ecc) {
-	    ecc.printStackTrace();
-	}
+	return result;
     }
 
     @Override

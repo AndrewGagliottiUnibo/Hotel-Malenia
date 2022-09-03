@@ -34,7 +34,7 @@ public interface Logic {
      * 
      * @param result
      */
-    void showRoomsToBeCleaned(JTextArea result);
+    ResultSet showRoomsToBeCleaned(JTextArea result);
 
     /**
      * Restaurant method: return the reserved tables for breakfast.
