@@ -81,35 +81,35 @@ INSERT INTO `TIPOLOGIASOGGIORNO` (`tipologia`, `mese`, `anno`, `prezzo`) VALUES 
 #
 # TABLE DATA FOR: SERVIZIO 2022
 #
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Estate', '2022', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Estate', '2022', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Estate', '2022', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Estate', '2022', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Estate', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Estate', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Estate', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Estate', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Estate', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Estate', '2022', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Estate', '2022', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Estate', '2022', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Estate', '2022', '8.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Primavera', '2022', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Primavera', '2022', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Primavera', '2022', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Primavera', '2022', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Primavera', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Primavera', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Primavera', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Primavera', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Primavera', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Primavera', '2022', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Primavera', '2022', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Primavera', '2022', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Primavera', '2022', '8.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Autunno', '2022', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Autunno', '2022', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Autunno', '2022', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Autunno', '2022', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Autunno', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Autunno', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Autunno', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Autunno', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Autunno', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Autunno', '2022', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Autunno', '2022', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Autunno', '2022', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Autunno', '2022', '8.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Inverno', '2022', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Inverno', '2022', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Inverno', '2022', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Inverno', '2022', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Inverno', '2022', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Inverno', '2022', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Inverno', '2022', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Inverno', '2022', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Inverno', '2022', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Inverno', '2022', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Inverno', '2022', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Inverno', '2022', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Inverno', '2022', '8.00');
@@ -117,35 +117,35 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 #
 # TABLE DATA FOR: SERVIZIO 2023
 #
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Estate', '2023', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Estate', '2023', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Estate', '2023', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Estate', '2023', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Estate', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Estate', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Estate', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Estate', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Estate', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Estate', '2023', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Estate', '2023', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Estate', '2023', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Estate', '2023', '8.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Primavera', '2023', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Primavera', '2023', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Primavera', '2023', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Primavera', '2023', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Primavera', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Primavera', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Primavera', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Primavera', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Primavera', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Primavera', '2023', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Primavera', '2023', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Primavera', '2023', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Primavera', '2023', '8.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Autunno', '2023', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Autunno', '2023', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Autunno', '2023', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Autunno', '2023', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Autunno', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Autunno', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Autunno', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Autunno', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Autunno', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Autunno', '2023', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Autunno', '2023', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Autunno', '2023', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Autunno', '2023', '8.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Inverno', '2023', '20.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Inverno', '2023', '40.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Inverno', '2023', '15.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno con idromassaggio', 'Inverno', '2023', '25.00');
-INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Lettino Spiaggia', 'Inverno', '2023', '8.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio', 'Inverno', '2023', '20.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango', 'Inverno', '2023', '40.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno', 'Inverno', '2023', '15.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Idromassaggio', 'Inverno', '2023', '25.00');
+INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Spiaggia', 'Inverno', '2023', '8.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Inverno', '2023', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Inverno', '2023', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Inverno', '2023', '8.00');
@@ -155,25 +155,155 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 # TABLE DATA FOR: DIRIGENTE 2022
 #
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Inverno', '2022', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Estate', '2022', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'BB', 'Febbraio', '2022');
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Primavera', '2022', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'BB', 'Dicembre', '2022');
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Autunno', '2022', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'PB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'PB', 'Febbraio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'PB', 'Dicembre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'ALI', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'ALI', 'Febbraio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2022', 'ALI', 'Dicembre', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'BB', 'Giugno', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'BB', 'Luglio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'BB', 'Agosto', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'PB', 'Giugno', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'PB', 'Luglio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'PB', 'Agosto', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'ALI', 'Giugno', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'ALI', 'Luglio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2022', 'ALI', 'Agosto', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'BB', 'Marzo', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'BB', 'Aprile', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'BB', 'Maggio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'PB', 'Marzo', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'PB', 'Aprile', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'PB', 'Maggio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'ALI', 'Marzo', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'ALI', 'Aprile', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2022', 'ALI', 'Maggio', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'BB', 'Settembre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'BB', 'Ottobre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'BB', 'Novembre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'PB', 'Settembre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'PB', 'Ottobre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'PB', 'Novembre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'ALI', 'Settembre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'ALI', 'Ottobre', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2022', 'ALI', 'Novembre', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Fango', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Fango', 'Estate', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Fango', 'Primavera', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Fango', 'Autunno', '2022', 'BB', 'Gennaio', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Bagno', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Bagno', 'Estate', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Bagno', 'Primavera', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Bagno', 'Autunno', '2022', 'BB', 'Gennaio', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Idromassaggio', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Idromassaggio', 'Estate', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Idromassaggio', 'Primavera', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Idromassaggio', 'Autunno', '2022', 'BB', 'Gennaio', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2022', 'BB', 'Gennaio', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Palestra', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Palestra', 'Estate', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Palestra', 'Primavera', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Palestra', 'Autunno', '2022', 'BB', 'Gennaio', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Casino', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Casino', 'Estate', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Casino', 'Primavera', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Casino', 'Autunno', '2022', 'BB', 'Gennaio', '2022');
+
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Parcheggio', 'Inverno', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Parcheggio', 'Estate', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Parcheggio', 'Primavera', '2022', 'BB', 'Gennaio', '2022');
+INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Parcheggio', 'Autunno', '2022', 'BB', 'Gennaio', '2022');
 
 #
 # TABLE DATA FOR: DIRIGENTE 2023
 #
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Inverno', '2023', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Inverno', '2023', 'BB', 'Gennaio', '2023');
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Estate', '2023', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Estate', '2023', 'BB', 'Gennaio', '2023');
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Primavera', '2023', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Primavera', '2023', 'BB', 'Gennaio', '2023');
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio Normale', 'Autunno', '2023', 'BB', 'January', '2022');
+VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Massaggio', 'Autunno', '2023', 'BB', 'Gennaio', '2023');
 
 
 #
@@ -195,7 +325,7 @@ INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita
 # TABLE DATA FOR: EROGAZIONE
 #
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio Normale', 'Invernale', '2022', 1);
+VALUES ('Massaggio', 'Invernale', '2022', 1);
 
 
 #
