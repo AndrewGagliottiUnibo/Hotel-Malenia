@@ -6,12 +6,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
-
 import db.pages.BedroomServicePages;
 import db.pages.EntertaimentServicePages;
 import db.pages.LoginPages;
@@ -213,7 +210,7 @@ public class LogicsImpl implements Logic {
     public void registerNewClient(final String name, final String surname, final String identifierCode,
 	    final String dateOfBirth, final String cellNumber, final String beginningDate, final String remainingDays,
 	    final String chosenOffer, final int cardNumber, final int roomNumber, final String vacationType,
-	    final String monthOfVacation, final int yearOfVacation) {
+	    final String monthOfVacation, final int yearOfVacation, final int daysOfReservations) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -259,35 +256,7 @@ public class LogicsImpl implements Logic {
 	    /*
 	     * Update for table resoconto in database.
 	     */
-	    java.sql.Date begDate = java.sql.Date.valueOf(beginningDate);
-	    Calendar begCal = Calendar.getInstance();
-	    begCal.setTime(begDate);
-	    int bMonth = begCal.get(Calendar.MONTH);
-	    int bDay = begCal.get(Calendar.DAY_OF_MONTH);
-	    int bYear = begCal.get(Calendar.YEAR);
-	    
-	    java.sql.Date endDate = java.sql.Date.valueOf(remainingDays);
-	    Calendar endCal = Calendar.getInstance();
-	    endCal.setTime(endDate);
-	    int eMonth = endCal.get(Calendar.MONTH);
-	    int eDay = endCal.get(Calendar.DAY_OF_MONTH);
-	    int eYear = endCal.get(Calendar.YEAR);
-	    
-	    /*
-	     * Non so come fare cristo ci devo pensare.
-	     */
-	    if (eYear - bYear > 1) {
-		if(eMonth - bMonth > 1 || eMonth - bMonth < 1) {
-		    if(eDay - bDay > 1 || eDay - bDay < 1) {
-			
-		    }
-		}
-		
-	    } else {
-		//Altre casistiche.
-	    }
-	    
-	    for (int i = bDay; i < eDay; i++) {
+	    for (int i = 0; i < daysOfReservations; i++) {
 		myStm = conn.prepareStatement("UPDATE SOGGIORNO SET resoconto = resoconto + ? "
 			+ "WHERE codFiscaleCliente = ? AND dataInizio = ?");
 		myStm.setInt(1, price);

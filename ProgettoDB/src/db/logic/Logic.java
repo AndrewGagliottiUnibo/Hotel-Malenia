@@ -81,10 +81,11 @@ public interface Logic {
      * @param vacationType
      * @param monthOfVacation
      * @param yearOfVacation
+     * @param daysOfReservations
      */
     void registerNewClient(String name, String surname, String identifierCode, String dateOfBirth, String cellNumber,
 	    String beginningDate, String string, String chosenOffer, int cardNumber, int roomNumber,
-	    String vacationType, String monthOfVacation, int yearOfVacation);
+	    String vacationType, String monthOfVacation, int yearOfVacation, int daysOfReservations);
 
     /**
      * Query 2. Does the checkout of the client.
