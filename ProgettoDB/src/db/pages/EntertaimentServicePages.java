@@ -117,10 +117,10 @@ public class EntertaimentServicePages {
 	showTerm.setBounds(799, 60, 120, 23);
 	panel.add(showTerm);
 
-	JButton showCasino = new JButton("Casino'");
+	JButton showCasino = new JButton("Casino");
 	showCasino.setFont(new Font("Verdana", Font.BOLD, 12));
 	showCasino.addActionListener(e -> {
-	    this.showReservations("Casino'");
+	    this.showReservations("Casino");
 	});
 
 	showCasino.setBounds(669, 60, 120, 23);
