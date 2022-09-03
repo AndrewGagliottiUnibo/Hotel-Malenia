@@ -106,7 +106,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public ResultSet showRoomsToBeCleaned(final JTextArea textArea) {
+    public void showRoomsToBeCleaned(final JTextArea textArea) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -119,7 +119,16 @@ public class LogicsImpl implements Logic {
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-	return result;
+
+	try {
+		
+		while (result.next()) {
+		    textArea.append("Camera: " + result.getString(1) + "\n");
+		}
+		
+	    } catch (Exception ecc) {
+		ecc.printStackTrace();
+	    }
     }
 
     @Override
