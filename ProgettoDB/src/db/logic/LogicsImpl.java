@@ -605,7 +605,7 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("UPDATE TIPOLOGIASOGGIORNO SET tariffa = ? "
+	    myStm = conn.prepareStatement("UPDATE SERVIZIO SET tariffa = ? "
 		    + "WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
 	    myStm.setInt(1, price);
 	    myStm.setString(2, serviceType);

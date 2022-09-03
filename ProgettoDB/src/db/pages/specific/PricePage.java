@@ -205,6 +205,7 @@ public class PricePage {
 			this.logic.getOwnPassword());
 		myStm = conn.prepareStatement("SELECT * FROM SERVIZIO ORDER BY anno DESC");
 		result = myStm.executeQuery();
+		this.textArea.setText("");
 		while (result.next()) {
 		    this.textArea.append(result.getString(1) + "\t");
 		    this.textArea.append(result.getString(2) + "\t");
@@ -226,7 +227,7 @@ public class PricePage {
 	 * Show vacation type prices.
 	 */
 	showPricesVacationTypes = new JButton("Vedi tariffe soggiorni");
-	showPricesServices.addActionListener(e -> {
+	showPricesVacationTypes.addActionListener(e -> {
 	    Connection conn = null;
 	    PreparedStatement myStm = null;
 	    ResultSet result = null;
@@ -235,6 +236,7 @@ public class PricePage {
 			this.logic.getOwnPassword());
 		myStm = conn.prepareStatement("SELECT * FROM TIPOLOGIASOGGIORNO ORDER BY anno DESC");
 		result = myStm.executeQuery();
+		this.textArea.setText("");
 		while (result.next()) {
 		    this.textArea.append(result.getString(1) + "\t");
 		    this.textArea.append(result.getString(2) + "\t");
