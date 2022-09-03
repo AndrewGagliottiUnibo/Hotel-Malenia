@@ -89,7 +89,6 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Estate', '2022', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Estate', '2022', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Estate', '2022', '8.00');
-
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Primavera', '2022', '20.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Primavera', '2022', '40.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Primavera', '2022', '15.00');
@@ -98,7 +97,6 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Primavera', '2022', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Primavera', '2022', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Primavera', '2022', '8.00');
-
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Autunno', '2022', '20.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Autunno', '2022', '40.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Autunno', '2022', '15.00');
@@ -107,7 +105,6 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Autunno', '2022', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Autunno', '2022', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Autunno', '2022', '8.00');
-
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Inverno', '2022', '20.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Inverno', '2022', '40.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Inverno', '2022', '15.00');
@@ -128,7 +125,6 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Estate', '2023', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Estate', '2023', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Estate', '2023', '8.00');
-
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Primavera', '2023', '20.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Primavera', '2023', '40.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Primavera', '2023', '15.00');
@@ -137,7 +133,6 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Primavera', '2023', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Primavera', '2023', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Primavera', '2023', '8.00');
-
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Autunno', '2023', '20.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Autunno', '2023', '40.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Autunno', '2023', '15.00');
@@ -146,7 +141,6 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Palestra', 'Autunno', '2023', '5.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Casino', 'Autunno', '2023', '10.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Parcheggio', 'Autunno', '2023', '8.00');
-
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Massaggio Normale', 'Inverno', '2023', '20.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Fango con doccia termale', 'Inverno', '2023', '40.00');
 INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('Bagno Termale', 'Inverno', '2023', '15.00');
