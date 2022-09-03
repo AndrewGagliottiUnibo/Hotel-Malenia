@@ -1377,15 +1377,6 @@ VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Parcheggio', 
 # TABLE DATA FOR: ADDETTO
 #
 INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (1, 'ntdmtg84t66e917r', 'Augusta', 'Hodkiewicz', '2003-11-28', '+00 0819406876');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (2, 'wdqlqu94o55o269d', 'Leola', 'Koss', '1998-08-05', '+99 2591726856');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (3, 'duwqqk15a11a278z', 'Astrid', 'Maggio', '1989-02-22', '');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (4, 'pdugqb64h72k152i', 'Josephine', 'Ebert', '2010-07-18', '');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (5, 'wivfnc86b38x191h', 'Ayla', 'Trantow', '2015-07-04', '+01 0884709913');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (6, 'oljsnj11h82c388v', 'Arne', 'Hayes', '1985-07-22', '+36 1509838706');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (7, 'jjmrxb66o11u099h', 'Wallace', 'Hagenes', '1992-07-11', '+89 6546710366');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (8, 'xnlgnn52d00x115x', 'Mafalda', 'Ledner', '2005-09-01', '');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (9, 'ualxwm35i72h641z', 'Gladys', 'Ondricka', '1976-08-20', '+68 1207480936');
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (10, 'aowqmf35n60s074a', 'Gordon', 'Volkman', '2017-03-23', '+56 9293639702');
 
 
 #
