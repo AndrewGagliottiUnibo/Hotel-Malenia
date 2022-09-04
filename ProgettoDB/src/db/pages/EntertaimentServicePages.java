@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -335,15 +336,12 @@ public class EntertaimentServicePages {
 		    "SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
 		    + "WHERE codFiscaleClienteRegistrato = ? AND tipoPrenotazione = ? OR tipoPrenotazione = ? "
 		    + "OR tipoPrenotazione = ? OR tipoPrenotazione = ?");
-	    String serv1 = "Massaggio";
-	    String serv2 = "Fango";
-	    String serv3 = "Bagno";
-	    String serv4 = "Idromassaggio";
+	    List<String> servs = List.of("Massaggio","Fango","Bagno","Idromassaggio");
 	    myStm.setString(1, identifier);
-	    myStm.setString(2, serv1);
-	    myStm.setString(3, serv2);
-	    myStm.setString(4, serv3);
-	    myStm.setString(5, serv4);
+	    myStm.setString(2, servs.get(0));
+	    myStm.setString(3, servs.get(1));
+	    myStm.setString(4, servs.get(2));
+	    myStm.setString(5, servs.get(3));
 	    result = myStm.executeQuery();
 
 	    /*

@@ -111,13 +111,9 @@ public class AllClientCards {
 		this.clearTextAreas();
 		result = this.fillPage(false);
 		while (result.next()) {
-		    int row = result.getRow();
-
-		    for (int i = 0; i < row; i++) {
 			this.textAreaCard.append(result.getString(1) + "\n");
 			this.textAreaRoom.append(result.getString(2) + "\n");
 			this.textAreaSurname.append(result.getString(3) + "\n");
-		    }
 		}
 	    } catch (SQLException e1) {
 		e1.printStackTrace();
@@ -140,13 +136,10 @@ public class AllClientCards {
 		this.clearTextAreas();
 		result = this.fillPage(true);
 		while (result.next()) {
-		    int row = result.getRow();
 
-		    for (int i = 0; i < row; i++) {
 			this.textAreaCard.append(result.getString(1) + "\n");
 			this.textAreaRoom.append(result.getString(2) + "\n");
 			this.textAreaSurname.append(result.getString(3) + "\n");
-		    }
 		}
 	    } catch (SQLException e1) {
 		e1.printStackTrace();
