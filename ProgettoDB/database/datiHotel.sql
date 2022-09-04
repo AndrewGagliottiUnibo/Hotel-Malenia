@@ -1383,7 +1383,7 @@ INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita
 # TABLE DATA FOR: EROGAZIONE 2022
 #
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Invernale', '2022', 1);
+VALUES ('Massaggio', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Massaggio', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1392,7 +1392,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Massaggio', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Invernale', '2022', 1);
+VALUES ('Fango', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1401,7 +1401,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Fango', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Invernale', '2022', 1);
+VALUES ('Bagno', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1410,7 +1410,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Bagno', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Invernale', '2022', 1);
+VALUES ('Idromassaggio', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1419,7 +1419,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Idromassaggio', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Invernale', '2022', 1);
+VALUES ('Spiaggia', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1428,7 +1428,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Spiaggia', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Invernale', '2022', 1);
+VALUES ('Palestra', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1437,7 +1437,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Palestra', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Invernale', '2022', 1);
+VALUES ('Casino', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1446,7 +1446,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Casino', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Invernale', '2022', 1);
+VALUES ('Parcheggio', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1459,7 +1459,7 @@ VALUES ('Parcheggio', 'Autunno', '2022', 1);
 # TABLE DATA FOR: EROGAZIONE 2023
 #
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Invernale', '2023', 1);
+VALUES ('Massaggio', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Massaggio', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1468,7 +1468,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Massaggio', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Invernale', '2023', 1);
+VALUES ('Fango', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1477,7 +1477,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Fango', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Invernale', '2023', 1);
+VALUES ('Bagno', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1486,7 +1486,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Bagno', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Invernale', '2023', 1);
+VALUES ('Idromassaggio', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1495,7 +1495,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Idromassaggio', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Invernale', '2023', 1);
+VALUES ('Spiaggia', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1504,7 +1504,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Spiaggia', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Invernale', '2023', 1);
+VALUES ('Palestra', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1513,7 +1513,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Palestra', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Invernale', '2023', 1);
+VALUES ('Casino', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1522,7 +1522,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Casino', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Invernale', '2023', 1);
+VALUES ('Parcheggio', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1645,42 +1645,42 @@ INSERT INTO `CLIENTE` (`codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTe
 # TABLE DATA FOR: SOGGIORNO 2022 - actual
 #
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'obznpr10a32w952u', '2022-09-14', 'true', 'BB', '0000193478', '101', '900.00', 'BB', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'obznpr10a32w952u', '2022-09-14', 'true', 'BB', '0000193478', '101', '900.00', 'BB', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'yzfmmc73p40q141o', '2022-09-06', 'true', 'BB', '0000194478', '204', '420.00', 'BB', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'yzfmmc73p40q141o', '2022-09-06', 'true', 'BB', '0000194478', '204', '420.00', 'BB', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'zsddmq19d50l295i', '2022-09-14', 'true', 'BB', '0000196668', '103', '900.00', 'BB', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'zsddmq19d50l295i', '2022-09-14', 'true', 'BB', '0000196668', '103', '900.00', 'BB', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'kdbrxr24p20x988x', '2022-09-14', 'true', 'PB', '0000673478', '106', '1350.00', 'PB', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'kdbrxr24p20x988x', '2022-09-14', 'true', 'PB', '0000673478', '106', '1350.00', 'PB', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'waidil48b45u898w', '2022-09-14', 'true', 'PB', '0000995448', '107', '1350.00', 'PB', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'waidil48b45u898w', '2022-09-14', 'true', 'PB', '0000995448', '107', '1350.00', 'PB', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'elzcna68w16r786i', '2022-09-14', 'true', 'ALI', '0000199978', '110', '1800.00', 'ALI', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'elzcna68w16r786i', '2022-09-14', 'true', 'ALI', '0000199978', '110', '1800.00', 'ALI', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'blbrjd16m87t113x', '2022-09-14', 'true', 'ALI', '0008883478', '111', '1800.00', 'ALI', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'blbrjd16m87t113x', '2022-09-14', 'true', 'ALI', '0008883478', '111', '1800.00', 'ALI', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'uwddfz89g60w152l', '2022-09-14', 'true', 'ALI', '0044483478', '210', '1800.00', 'ALI', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'uwddfz89g60w152l', '2022-09-14', 'true', 'ALI', '0044483478', '210', '1800.00', 'ALI', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'wcqkht67z81h362a', '2022-09-14', 'true', 'ALI', '0077773478', '211', '1800.00', 'ALI', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'wcqkht67z81h362a', '2022-09-14', 'true', 'ALI', '0077773478', '211', '1800.00', 'ALI', 'Settembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-09-01', 'wlurgn18s25z563g', '2022-09-14', 'true', 'ALI', '0011883478', '310', '1800.00', 'ALI', 'Settembre', '2022', '10')
+VALUES ('2022-09-01', 'wlurgn18s25z563g', '2022-09-14', 'true', 'ALI', '0011883478', '310', '1800.00', 'ALI', 'Settembre', '2022', '10');
 
 #
 # TABLE DATA FOR: SOGGIORNO 2022 - not arrived or already departed
 #
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'yzjnes53j56r141v', '2022-12-31', 'false', 'ALI', '0000122478', '110', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'yzjnes53j56r141v', '2022-12-31', 'false', 'ALI', '0000122478', '110', '1500.00', 'ALI', 'Dicembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'zxgbhr53x76v368i', '2022-12-31', 'false', 'ALI', '0000100078', '111', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'zxgbhr53x76v368i', '2022-12-31', 'false', 'ALI', '0000100078', '111', '1500.00', 'ALI', 'Dicembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'sbupog32l65f028n', '2022-12-31', 'false', 'ALI', '0000190478', '210', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'sbupog32l65f028n', '2022-12-31', 'false', 'ALI', '0000190478', '210', '1500.00', 'ALI', 'Dicembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'ucrhhv52p15d728l', '2022-12-31', 'false', 'ALI', '0000193470', '211', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'ucrhhv52p15d728l', '2022-12-31', 'false', 'ALI', '0000193470', '211', '1500.00', 'ALI', 'Dicembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'blbrjd16m87t113x', '2022-12-31', 'false', 'ALI', '0000093478', '310', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'blbrjd16m87t113x', '2022-12-31', 'false', 'ALI', '0000093478', '310', '1500.00', 'ALI', 'Dicembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'ueiifj92b58o524c', '2022-12-31', 'false', 'ALI', '0008900478', '311', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'ueiifj92b58o524c', '2022-12-31', 'false', 'ALI', '0008900478', '311', '1500.00', 'ALI', 'Dicembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'qpccsu81x56t466a', '2022-12-31', 'false', 'ALI', '0008800008', '410', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'qpccsu81x56t466a', '2022-12-31', 'false', 'ALI', '0008800008', '410', '1500.00', 'ALI', 'Dicembre', '2022', '10');
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
-VALUES ('2022-12-17', 'qminsg80f67i990v', '2022-12-31', 'false', 'ALI', '0008899998', '411', '1500.00', 'ALI', 'Dicembre', '2022', '10')
+VALUES ('2022-12-17', 'qminsg80f67i990v', '2022-12-31', 'false', 'ALI', '0008899998', '411', '1500.00', 'ALI', 'Dicembre', '2022', '10');
