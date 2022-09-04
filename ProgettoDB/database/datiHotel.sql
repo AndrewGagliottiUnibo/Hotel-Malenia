@@ -1666,7 +1666,7 @@ INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `
 VALUES ('2022-09-01', 'wlurgn18s25z563g', '2022-09-14', 'true', 'ALI', '0011883478', '310', '1800.00', 'ALI', 'Settembre', '2022', '10');
 
 #
-# TABLE DATA FOR: SOGGIORNO 2022 - not arrived or already departed
+# TABLE DATA FOR: SOGGIORNO 2022 - not arrived
 #
 INSERT INTO `SOGGIORNO` (`dataInizio`, `codFiscaleCliente`, `durataSoggiorno`, `soggiornante`, `offertaScelta`, `codScheda`, `numeroCamera`, `resoconto`, `tipologiaSoggiornoScelto`, `meseSoggiornoScelto`, `annoSoggiornoScelto`, `codReceptionistInserente`) 
 VALUES ('2022-12-17', 'yzjnes53j56r141v', '2022-12-31', 'false', 'ALI', '0000122478', '110', '1500.00', 'ALI', 'Dicembre', '2022', '10');
