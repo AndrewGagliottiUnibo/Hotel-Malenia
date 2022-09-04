@@ -1383,7 +1383,7 @@ INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita
 # TABLE DATA FOR: EROGAZIONE 2022
 #
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Invernale', '2022', 1);
+VALUES ('Massaggio', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Massaggio', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1392,7 +1392,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Massaggio', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Invernale', '2022', 1);
+VALUES ('Fango', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1401,7 +1401,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Fango', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Invernale', '2022', 1);
+VALUES ('Bagno', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1410,7 +1410,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Bagno', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Invernale', '2022', 1);
+VALUES ('Idromassaggio', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1419,7 +1419,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Idromassaggio', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Invernale', '2022', 1);
+VALUES ('Spiaggia', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1428,7 +1428,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Spiaggia', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Invernale', '2022', 1);
+VALUES ('Palestra', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1437,7 +1437,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Palestra', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Invernale', '2022', 1);
+VALUES ('Casino', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1446,7 +1446,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Casino', 'Autunno', '2022', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Invernale', '2022', 1);
+VALUES ('Parcheggio', 'Inverno', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Primavera', '2022', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1459,7 +1459,7 @@ VALUES ('Parcheggio', 'Autunno', '2022', 1);
 # TABLE DATA FOR: EROGAZIONE 2023
 #
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Invernale', '2023', 1);
+VALUES ('Massaggio', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Massaggio', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1468,7 +1468,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Massaggio', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Invernale', '2023', 1);
+VALUES ('Fango', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1477,7 +1477,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Fango', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Invernale', '2023', 1);
+VALUES ('Bagno', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1486,7 +1486,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Bagno', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Invernale', '2023', 1);
+VALUES ('Idromassaggio', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1495,7 +1495,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Idromassaggio', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Invernale', '2023', 1);
+VALUES ('Spiaggia', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1504,7 +1504,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Spiaggia', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Invernale', '2023', 1);
+VALUES ('Palestra', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1513,7 +1513,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Palestra', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Invernale', '2023', 1);
+VALUES ('Casino', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -1522,7 +1522,7 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Casino', 'Autunno', '2023', 1);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Invernale', '2023', 1);
+VALUES ('Parcheggio', 'Inverno', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Primavera', '2023', 1);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
