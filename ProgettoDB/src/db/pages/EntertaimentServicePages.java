@@ -1,22 +1,24 @@
 package db.pages;
 
-import javax.swing.JFrame;
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
+import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.awt.Color;
-import javax.swing.SwingConstants;
-import db.logic.Logic;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+
 import javax.swing.JButton;
-import javax.swing.JTextArea;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import db.logic.Logic;
 
 public class EntertaimentServicePages {
 
@@ -80,7 +82,7 @@ public class EntertaimentServicePages {
 	casinoEntrance.setFont(new Font("Verdana", Font.BOLD, 12));
 	casinoEntrance.addActionListener(e -> {
 	    this.logic.addCost("Casino", this.seasonField.getText(), Integer.parseInt(this.yearField.getText()),
-		    Integer.parseInt(this.roomNumberField.getText()), "Casino'", null, null);
+		    Integer.parseInt(this.roomNumberField.getText()), "Casino", null, null);
 	});
 
 	casinoEntrance.setBounds(141, 129, 156, 23);
@@ -111,7 +113,7 @@ public class EntertaimentServicePages {
 	showTerm.setBackground(Color.DARK_GRAY);
 	showTerm.setFont(new Font("Verdana", Font.BOLD, 12));
 	showTerm.addActionListener(e -> {
-	    this.showReservations("Terme");
+	    this.showThermsReservations();
 	});
 
 	showTerm.setBounds(799, 60, 120, 23);
@@ -297,17 +299,12 @@ public class EntertaimentServicePages {
 	roomNumberShow.setBounds(590, 25, 106, 20);
 	panel.add(roomNumberShow);
     }
-
-    /**
-     * Write all reservation from type in input.
-     * 
-     * @param string
-     */
-    private void showReservations(final String string) {
+    
+    private String getClientIdentifierFromDB() {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
-
+	String identifier = "";
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
@@ -316,11 +313,73 @@ public class EntertaimentServicePages {
 	    myStm.setInt(1, Integer.parseInt(this.roomNumberShow.getText()));
 	    result = myStm.executeQuery();
 	    result.next();
-	    final String identifier = result.getString(1);
+	    identifier = result.getString(1);
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return identifier;
+    }
+    
+
+    private void showThermsReservations() {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+
+	try {
+	    final String identifier = this.getClientIdentifierFromDB();
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.logic.getOwnPassword());
+	    
+	    myStm = conn.prepareStatement(
+		    "SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
+		    + "WHERE codFiscaleClienteRegistrato = ? AND tipoPrenotazione = ? OR tipoPrenotazione = ? "
+		    + "OR tipoPrenotazione = ? OR tipoPrenotazione = ?");
+	    String serv1 = "Massaggio";
+	    String serv2 = "Fango";
+	    String serv3 = "Bagno";
+	    String serv4 = "Idromassaggio";
+	    myStm.setString(1, identifier);
+	    myStm.setString(2, serv1);
+	    myStm.setString(3, serv2);
+	    myStm.setString(4, serv3);
+	    myStm.setString(5, serv4);
+	    result = myStm.executeQuery();
+
+	    /*
+	     * Printing data.
+	     */
+	    this.textArea.setText("");
+	    while (result.next()) {
+		    this.textArea.append(result.getString(1) + "\t" +
+			    result.getString(2) + "\t" + result.getString(3) + "\n");
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	
+    }
+
+    /**
+     * Write all reservation from type in input.
+     * 
+     * @param string
+     */
+    private void showReservations(final String tipoPrenotazione) {
+	Connection conn = null;
+	PreparedStatement myStm = null;
+	ResultSet result = null;
+
+	try {
+	    final String identifier = this.getClientIdentifierFromDB();
+	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
+		    this.logic.getOwnPassword());
 
 	    myStm = conn.prepareStatement(
-		    "SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE WHERE codFiscaleClienteRegistrato = ?");
+		    "SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
+		    + "WHERE codFiscaleClienteRegistrato = ? AND tipoPrenotazione = ?");
 	    myStm.setString(1, identifier);
+	    myStm.setString(2, tipoPrenotazione);
 	    result = myStm.executeQuery();
 
 	    /*
