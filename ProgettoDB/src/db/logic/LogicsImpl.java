@@ -157,10 +157,10 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE tipologiaSoggiornoScelto = ? "
-		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true " + "ORDER BY numeroCamera");
-	    myStm.setString(1, "AllInclusive");
-	    myStm.setString(2, "PensioneCompleta");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE (tipologiaSoggiornoScelto = ? "
+		    + "OR tipologiaSoggiornoScelto = ?) AND soggiornante = true " + "ORDER BY numeroCamera");
+	    myStm.setString(1, "ALI");
+	    myStm.setString(2, "PB");
 	    result = myStm.executeQuery();
 	} catch (SQLException exc) {
 	    exc.printStackTrace();
@@ -176,10 +176,10 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE tipologiaSoggiornoScelto = ? "
-		    + "OR tipologiaSoggiornoScelto = ? AND soggiornante = true " + "ORDER BY numeroCamera");
-	    myStm.setString(1, "AllInclusive");
-	    myStm.setString(2, "PensioneCompleta");
+	    myStm = conn.prepareStatement("SELECT numeroCamera FROM SOGGIORNO WHERE (tipologiaSoggiornoScelto = ? "
+		    + "OR tipologiaSoggiornoScelto = ?) AND soggiornante = true " + "ORDER BY numeroCamera");
+	    myStm.setString(1, "ALI");
+	    myStm.setString(2, "PB");
 	    result = myStm.executeQuery();
 	} catch (SQLException exc) {
 	    exc.printStackTrace();
