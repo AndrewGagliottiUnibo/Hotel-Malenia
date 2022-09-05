@@ -22,7 +22,7 @@ use schemahotel;
 -- _____________ 
 
 create table ADDETTO (
-     codRuolo tinyint unsigned not null,
+     codRuolo int unsigned not null,
      codFiscale varchar(16) not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
@@ -39,7 +39,7 @@ create table CLIENTE (
      constraint IDCLIENTE_ID primary key (codFiscale));
 
 create table DIRIGENZA (
-     firmaOperazione tinyint unsigned not null,
+     firmaOperazione int unsigned not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
