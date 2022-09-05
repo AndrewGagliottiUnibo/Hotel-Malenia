@@ -1089,99 +1089,99 @@ INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `n
 VALUES (154, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'ALI', 'Dicembre', '2023');
 
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (155, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Giugno', '2023');
+VALUES (1155, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Giugno', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (156, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Luglio', '2023');
+VALUES (1156, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Luglio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (157, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Agosto', '2023');
+VALUES (1157, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Agosto', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (158, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Giugno', '2023');
+VALUES (1158, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Giugno', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (159, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Luglio', '2023');
+VALUES (1159, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Luglio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (160, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Agosto', '2023');
+VALUES (1160, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Agosto', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (161, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Giugno', '2023');
+VALUES (1161, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Giugno', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (162, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Luglio', '2023');
+VALUES (1162, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Luglio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (163, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Agosto', '2023');
+VALUES (1163, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Agosto', '2023');
 
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (164, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'BB', 'Marzo', '2023');
+VALUES (1164, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'BB', 'Marzo', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (165, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'BB', 'Aprile', '2023');
+VALUES (1165, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'BB', 'Aprile', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (166, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'BB', 'Maggio', '2023');
+VALUES (1166, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'BB', 'Maggio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (167, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'PB', 'Marzo', '2023');
+VALUES (1167, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'PB', 'Marzo', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (168, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'PB', 'Aprile', '2023');
+VALUES (1168, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'PB', 'Aprile', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (169, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'PB', 'Maggio', '2023');
+VALUES (1169, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'PB', 'Maggio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (170, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'ALI', 'Marzo', '2023');
+VALUES (1170, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'ALI', 'Marzo', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (171, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'ALI', 'Aprile', '2023');
+VALUES (1171, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'ALI', 'Aprile', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (172, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'ALI', 'Maggio', '2023');
+VALUES (1172, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'ALI', 'Maggio', '2023');
 
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (173, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'BB', 'Settembre', '2023');
+VALUES (1173, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'BB', 'Settembre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (174, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'BB', 'Ottobre', '2023');
+VALUES (1174, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'BB', 'Ottobre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (175, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'BB', 'Novembre', '2023');
+VALUES (1175, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'BB', 'Novembre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (176, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'PB', 'Settembre', '2023');
+VALUES (1176, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'PB', 'Settembre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (177, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'PB', 'Ottobre', '2023');
+VALUES (1177, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'PB', 'Ottobre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (178, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'PB', 'Novembre', '2023');
+VALUES (1178, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'PB', 'Novembre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (179, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'ALI', 'Settembre', '2023');
+VALUES (1179, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'ALI', 'Settembre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (180, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'ALI', 'Ottobre', '2023');
+VALUES (1180, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'ALI', 'Ottobre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (181, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'ALI', 'Novembre', '2023');
+VALUES (1181, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Autunno', '2023', 'ALI', 'Novembre', '2023');
 
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (182, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'BB', 'Gennaio', '2023');
+VALUES (1182, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'BB', 'Gennaio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (183, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'BB', 'Febbraio', '2023');
+VALUES (1183, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'BB', 'Febbraio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (184, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'BB', 'Dicembre', '2023');
+VALUES (1184, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'BB', 'Dicembre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (185, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'PB', 'Gennaio', '2023');
+VALUES (1185, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'PB', 'Gennaio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (186, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'PB', 'Febbraio', '2023');
+VALUES (1186, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'PB', 'Febbraio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (187, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'PB', 'Dicembre', '2023');
+VALUES (1187, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'PB', 'Dicembre', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (188, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'ALI', 'Gennaio', '2023');
+VALUES (1188, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'ALI', 'Gennaio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (189, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'ALI', 'Febbraio', '2023');
+VALUES (1189, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'ALI', 'Febbraio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (190, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'ALI', 'Dicembre', '2023');
+VALUES (1190, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Inverno', '2023', 'ALI', 'Dicembre', '2023');
 
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (191, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Giugno', '2023');
+VALUES (1191, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Giugno', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (192, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Luglio', '2023');
+VALUES (1192, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Luglio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (193, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Agosto', '2023');
+VALUES (1193, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'BB', 'Agosto', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (194, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Giugno', '2023');
+VALUES (1194, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Giugno', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (195, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Luglio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (196, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Agosto', '2023');
+VALUES (1196, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'PB', 'Agosto', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (197, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Giugno', '2023');
+VALUES (1197, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Giugno', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (198, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Luglio', '2023');
+VALUES (1198, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Luglio', '2023');
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
-VALUES (199, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Agosto', '2023');
+VALUES (1199, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Estate', '2023', 'ALI', 'Agosto', '2023');
 
 INSERT INTO `DIRIGENZA` (`firmaOperazione`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1200, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Spiaggia', 'Primavera', '2023', 'BB', 'Marzo', '2023');
