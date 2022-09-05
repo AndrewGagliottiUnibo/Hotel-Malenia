@@ -156,32 +156,298 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) 
 VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146');
 
-
 #
 # TABLE DATA FOR: CONDIZIONAMENTO 2022
 #
-
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Gennaio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Gennaio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Gennaio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Febbraio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Febbraio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Febbraio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Marzo', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Marzo', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Marzo', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Aprile', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Aprile', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Aprile', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Maggio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Maggio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Maggio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Giugno', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Giugno', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Giugno', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Luglio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Luglio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Luglio', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Agosto', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Agosto', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Agosto', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Settembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Settembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Settembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Ottobre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Ottobre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Ottobre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Novembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Novembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Novembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Dicembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Dicembre', '2022');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Dicembre', '2022');
 
 #
 # TABLE DATA FOR: CONDIZIONAMENTO 2023
 #
-
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Gennaio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Gennaio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Gennaio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Febbraio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Febbraio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Febbraio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Marzo', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Marzo', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Marzo', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Aprile', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Aprile', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Aprile', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Maggio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Maggio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Maggio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Giugno', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Giugno', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Giugno', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Luglio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Luglio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Luglio', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Agosto', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Agosto', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Agosto', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Settembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Settembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Settembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Ottobre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Ottobre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Ottobre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Novembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Novembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Novembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'BB', 'Dicembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'PB', 'Dicembre', '2023');
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+VALUES (1, 'ALI', 'Dicembre', '2023');
 
 #
 # TABLE DATA FOR: COORDINAZIONE 2022
 #
-
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Autunno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Autunno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Autunno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Autunno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Autunno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Autunno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Autunno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Inverno', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Primavera', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Estate', '2022');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Autunno', '2022');
 
 #
 # TABLE DATA FOR: COORDINAZIONE 2023
 #
-
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Massaggio', 'Autunno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Fango', 'Autunno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Bagno', 'Autunno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Idromassaggio', 'Autunno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Spiaggia', 'Autunno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Palestra', 'Autunno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Casino', 'Autunno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Inverno', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Primavera', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Estate', '2023');
+INSERT INTO `COORDINAZIONE` (`codDirigenteCoordinante`, `tipoServizioCoordinato`, `stagioneServizioCoordinato`, `annoServizioCoordinato`) 
+VALUES (1, 'Parcheggio', 'Autunno', '2023');
 
 #
 # TABLE DATA FOR: ADDETTO
 #
 INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (10, 'ntdmtg84t66e917r', 'Augusta', 'Hodkiewicz', '2003-11-28', '+00 0819406876');
-
 
 #
 # TABLE DATA FOR: EROGAZIONE 2022
@@ -194,7 +460,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Massaggio', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Massaggio', 'Autunno', '2022', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -203,7 +468,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Fango', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Autunno', '2022', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -212,7 +476,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Bagno', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Autunno', '2022', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -221,7 +484,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Idromassaggio', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Autunno', '2022', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -230,7 +492,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Spiaggia', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Autunno', '2022', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -239,7 +500,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Palestra', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Autunno', '2022', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -248,7 +508,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Casino', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Autunno', '2022', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -257,7 +516,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Parcheggio', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Autunno', '2022', 10);
-
 
 #
 # TABLE DATA FOR: EROGAZIONE 2023
@@ -270,7 +528,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Massaggio', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Massaggio', 'Autunno', '2023', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -279,7 +536,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Fango', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Fango', 'Autunno', '2023', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -288,7 +544,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Bagno', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Bagno', 'Autunno', '2023', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -297,7 +552,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Idromassaggio', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Idromassaggio', 'Autunno', '2023', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -306,7 +560,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Spiaggia', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Spiaggia', 'Autunno', '2023', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -315,7 +568,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Palestra', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Palestra', 'Autunno', '2023', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -324,7 +576,6 @@ INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `ann
 VALUES ('Casino', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Casino', 'Autunno', '2023', 10);
-
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
@@ -334,12 +585,10 @@ VALUES ('Parcheggio', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
 VALUES ('Parcheggio', 'Autunno', '2023', 10);
 
-
 #
 # TABLE DATA FOR: RECEPTIONIST
 #
 INSERT INTO `RECEPTIONIST` (`codReceptionist`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (10, 'Luigi', 'Verdi', '2001-05-02', '+58 8318904050');
-
 
 #
 # TABLE DATA FOR: CLIENTE
