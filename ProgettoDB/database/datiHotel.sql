@@ -159,153 +159,153 @@ VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146');
 #
 # TABLE DATA FOR: CONDIZIONAMENTO 2022
 #
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Gennaio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Gennaio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Gennaio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Febbraio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Febbraio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Febbraio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Marzo', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Marzo', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Marzo', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Aprile', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Aprile', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Aprile', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Maggio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Maggio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Maggio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Giugno', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Giugno', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Giugno', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Luglio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Luglio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Luglio', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Agosto', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Agosto', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Agosto', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Settembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Settembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Settembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Ottobre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Ottobre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Ottobre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Novembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Novembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Novembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Dicembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Dicembre', '2022');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Dicembre', '2022');
 
 #
 # TABLE DATA FOR: CONDIZIONAMENTO 2023
 #
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Gennaio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Gennaio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Gennaio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Febbraio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Febbraio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Febbraio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Marzo', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Marzo', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Marzo', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Aprile', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Aprile', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Aprile', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Maggio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Maggio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Maggio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Giugno', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Giugno', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Giugno', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Luglio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Luglio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Luglio', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Agosto', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Agosto', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Agosto', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Settembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Settembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Settembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Ottobre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Ottobre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Ottobre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Novembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Novembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Novembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'BB', 'Dicembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'PB', 'Dicembre', '2023');
-INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipoSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
+INSERT INTO `CONDIZIONAMENTO` (`codDirigenteOperante`, `tipologiaSoggiornoCondizionato`, `meseSoggiornoCondizionato`, `annoSoggiornoCondizionato`) 
 VALUES (1, 'ALI', 'Dicembre', '2023');
 
 #
