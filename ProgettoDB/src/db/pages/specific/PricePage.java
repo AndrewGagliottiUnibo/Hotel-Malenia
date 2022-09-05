@@ -209,7 +209,7 @@ public class PricePage {
 		while (result.next()) {
 		    this.textArea.append(result.getString(1) + "\t");
 		    this.textArea.append(result.getString(2) + "\t");
-		    this.textArea.append(result.getString(3) + "\t");
+		    this.textArea.append(result.getString(3).substring(0, 4) + "\t");
 		    this.textArea.append("€ " + result.getString(4) + "\n");
 		}
 	    } catch (Exception exc) {
@@ -240,7 +240,7 @@ public class PricePage {
 		while (result.next()) {
 		    this.textArea.append(result.getString(1) + "\t");
 		    this.textArea.append(result.getString(2) + "\t");
-		    this.textArea.append(result.getString(3) + "\t");
+		    this.textArea.append(result.getString(3).substring(0, 4) + "\t");
 		    this.textArea.append("€ " + result.getString(4) + "\n");
 		}
 	    } catch (Exception exc) {

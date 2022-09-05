@@ -73,12 +73,12 @@ create table PRENOTAZIONE (
      giorno varchar(10),
      ora time,
      dataInizioSoggiornoRegistrato date not null,
-     codFiscaleClienteClienteRegistrato varchar(16) not null,
+     codFiscaleClienteRegistrato varchar(16) not null,
      codReceptionistOperante tinyint unsigned not null,
      tipoServizioUsufruito varchar(30) not null,
      stagioneServizioUsufruito varchar(15) not null,
      annoServizioUsufruito year not null,
-     constraint IDPRENOTAZIONE unique (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, codFiscaleClienteClienteRegistrato));
+     constraint IDPRENOTAZIONE unique (tipoPrenotazione, giorno, ora, dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato));
 
 create table RECEPTIONIST (
      codReceptionist tinyint unsigned not null,
@@ -150,7 +150,7 @@ alter table PRENOTAZIONE add constraint FKEFFETTUAZIONE
      references RECEPTIONIST(codReceptionist);
 
 alter table PRENOTAZIONE add constraint FKREGISTRAZIONE
-     foreign key (dataInizioSoggiornoRegistrato, codFiscaleClienteClienteRegistrato)
+     foreign key (dataInizioSoggiornoRegistrato, codFiscaleClienteRegistrato)
      references SOGGIORNO(dataInizio, codFiscaleCliente);
 
 alter table PRENOTAZIONE add constraint FKACCESSO
