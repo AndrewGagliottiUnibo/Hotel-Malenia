@@ -98,12 +98,13 @@ public class AllReservations {
 		myRs = myStmt.executeQuery();
 
 		this.reservationTypeField.setText("");
+		this.textArea.setText("");
 
 		while (myRs.next()) {
-		    this.textArea.append(myRs.getString(1) + "       ");
-		    this.textArea.append(myRs.getString(2) + "       ");
-		    this.textArea.append(myRs.getString(3) + "       ");
-		    this.textArea.append(myRs.getString(4) + "       ");
+		    this.textArea.append(myRs.getString(1) + "\t");
+		    this.textArea.append(myRs.getString(2) + "\t");
+		    this.textArea.append(myRs.getString(3) + "\t");
+		    this.textArea.append(myRs.getString(4) + "\t");
 		    this.textArea.append(" \n");
 		}
 
@@ -134,18 +135,19 @@ public class AllReservations {
 		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
 		myStmt = myConn.prepareStatement("SELECT tipoPrenotazione, giorno, ora, codFiscaleClienteRegistrato "
-			+ "FROM PRENOTAZIONE, SOGGIORNO " + "WHERE codFiscaleClienteRegistrato = ?"
+			+ "FROM PRENOTAZIONE, SOGGIORNO " + "WHERE numeroCamera = ?"
 			+ "AND SOGGIORNO.soggiornante = true");
 		myStmt.setString(1, this.specificViewField.getText());
 		myRs = myStmt.executeQuery();
 
 		this.specificViewField.setText("");
+		this.textArea.setText("");
 
 		while (myRs.next()) {
-		    this.textArea.append(myRs.getString(1) + "       ");
-		    this.textArea.append(myRs.getString(2) + "       ");
-		    this.textArea.append(myRs.getString(3) + "       ");
-		    this.textArea.append(myRs.getString(4) + "       ");
+		    this.textArea.append(myRs.getString(1) + "\t");
+		    this.textArea.append(myRs.getString(2) + "\t");
+		    this.textArea.append(myRs.getString(3) + "\t");
+		    this.textArea.append(myRs.getString(4) + "\t");
 		    this.textArea.append(" \n");
 		}
 

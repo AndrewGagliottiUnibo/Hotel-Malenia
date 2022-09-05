@@ -351,7 +351,7 @@ public class LogicsImpl implements Logic {
 
     @Override
     public void deleteReservation(final String reservationType, final int roomNumber, final String day,
-	    final String hour) {
+	    final String hour, final String season, final int year) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
@@ -372,12 +372,15 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, day);
 	    myStm.setString(3, hour);
 	    myStm.setString(4, beginningDate);
-	    myStm.setString(4, identifier);
+	    myStm.setString(5, identifier);
 	    myStm.executeUpdate();
 	    myStm = conn.prepareStatement(
-		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? " + "AND stagione = ? AND anno = ?");
-	    myStm.setInt(1, roomNumber);
+		    "SELECT tariffa FROM SERVIZIO WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
+	    myStm.setString(1, reservationType);
+	    myStm.setString(2, season);
+	    myStm.setInt(3, year);
 	    result = myStm.executeQuery();
+	    
 	    result.next();
 	    int price = result.getInt(1);
 
