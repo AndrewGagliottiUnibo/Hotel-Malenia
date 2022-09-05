@@ -38,8 +38,8 @@ create table CLIENTE (
      numeroTelefonico varchar(20),
      constraint IDCLIENTE_ID primary key (codFiscale));
 
-create table DIRIGENTE (
-     codDirigente tinyint unsigned not null,
+create table DIRIGENZA (
+     firmaOperazione tinyint unsigned not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
      dataNascita date not null,
@@ -50,7 +50,7 @@ create table DIRIGENTE (
      tipologiaSoggiornoCondizionato varchar(30) not null,
      meseSoggiornoCondizionato varchar(15) not null,
      annoSoggiornoCondizionato year not null,
-     constraint IDDIRIGENTE primary key (codDirigente));
+     constraint IDDIRIGENZA primary key (firmaOperazione));
 
 create table EROGAZIONE (
      tipoServizioErogato varchar(30) not null,
@@ -111,11 +111,11 @@ create table TIPOLOGIASOGGIORNO (
 
 
 
-alter table DIRIGENTE add constraint FKCOORDINAZIONE
+alter table DIRIGENZA add constraint FKCOORDINAZIONE
      foreign key (tipoServizioCoordinato, stagioneServizioCoordinato, annoServizioCoordinato)
      references SERVIZIO(tipoServizio, stagione, anno);
 
-alter table DIRIGENTE add constraint FKCONDIZIONAMENTO
+alter table DIRIGENZA add constraint FKCONDIZIONAMENTO
      foreign key (tipologiaSoggiornoCondizionato, meseSoggiornoCondizionato, annoSoggiornoCondizionato)
      references TIPOLOGIASOGGIORNO(tipologia, mese, anno);
 
