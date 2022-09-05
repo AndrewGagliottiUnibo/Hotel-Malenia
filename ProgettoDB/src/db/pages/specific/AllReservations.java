@@ -200,6 +200,8 @@ public class AllReservations {
 	    this.clientDeleteField.setText("");
 	    this.dayDeleteField.setText("");
 	    this.hourDeleteField.setText("");
+	    this.seasonField.setText("");
+	    this.yearField.setText("");
 	    this.textArea.setText("");
 	});
 	deleteReservationBtn.setForeground(new Color(0, 128, 0));
