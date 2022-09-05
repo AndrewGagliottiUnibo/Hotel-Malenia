@@ -27,6 +27,8 @@ public class AllReservations {
     private JTextField deleteReservationField;
     private JTextField hourDeleteField;
     private JTextField clientDeleteField;
+    private JTextField seasonField;
+    private JTextField yearField;
 
     /**
      * Constructor.
@@ -78,7 +80,7 @@ public class AllReservations {
 	viewSpecificLabel.setForeground(Color.RED);
 	viewSpecificLabel.setFont(new Font("Verdana", Font.BOLD, 12));
 	viewSpecificLabel.setBackground(Color.DARK_GRAY);
-	viewSpecificLabel.setBounds(700, 127, 219, 14);
+	viewSpecificLabel.setBounds(700, 100, 219, 14);
 	frame.getContentPane().add(viewSpecificLabel);
 
 	JButton showAll = new JButton("Vedi prenotazioni area");
@@ -114,14 +116,14 @@ public class AllReservations {
 	showAll.setForeground(Color.ORANGE);
 	showAll.setFont(new Font("Verdana", Font.BOLD, 12));
 	showAll.setBackground(Color.DARK_GRAY);
-	showAll.setBounds(700, 77, 219, 23);
+	showAll.setBounds(700, 66, 219, 23);
 	frame.getContentPane().add(showAll);
 
 	specificViewField = new JTextField();
 	specificViewField.setFont(new Font("Verdana", Font.BOLD, 12));
 	specificViewField.setForeground(Color.PINK);
 	specificViewField.setBackground(Color.BLACK);
-	specificViewField.setBounds(700, 152, 219, 20);
+	specificViewField.setBounds(700, 113, 219, 20);
 	frame.getContentPane().add(specificViewField);
 	specificViewField.setColumns(10);
 
@@ -156,7 +158,7 @@ public class AllReservations {
 	commitSpecificBtn.setForeground(Color.RED);
 	commitSpecificBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 	commitSpecificBtn.setBackground(Color.DARK_GRAY);
-	commitSpecificBtn.setBounds(700, 182, 219, 23);
+	commitSpecificBtn.setBounds(700, 135, 219, 23);
 	frame.getContentPane().add(commitSpecificBtn);
 
 	JButton logout = new JButton("Logout");
@@ -174,7 +176,7 @@ public class AllReservations {
 	codeLabelDay.setForeground(new Color(0, 128, 0));
 	codeLabelDay.setFont(new Font("Verdana", Font.BOLD, 12));
 	codeLabelDay.setBackground(Color.DARK_GRAY);
-	codeLabelDay.setBounds(700, 319, 219, 14);
+	codeLabelDay.setBounds(700, 260, 219, 14);
 	frame.getContentPane().add(codeLabelDay);
 
 	dayDeleteField = new JTextField();
@@ -182,7 +184,7 @@ public class AllReservations {
 	dayDeleteField.setForeground(Color.PINK);
 	dayDeleteField.setBackground(Color.BLACK);
 	dayDeleteField.setColumns(10);
-	dayDeleteField.setBounds(700, 334, 219, 20);
+	dayDeleteField.setBounds(700, 275, 219, 20);
 	frame.getContentPane().add(dayDeleteField);
 
 	JButton deleteReservationBtn = new JButton("Cancella");
@@ -200,7 +202,7 @@ public class AllReservations {
 	deleteReservationBtn.setForeground(new Color(0, 128, 0));
 	deleteReservationBtn.setFont(new Font("Verdana", Font.BOLD, 12));
 	deleteReservationBtn.setBackground(Color.DARK_GRAY);
-	deleteReservationBtn.setBounds(700, 401, 219, 23);
+	deleteReservationBtn.setBounds(700, 421, 219, 23);
 	frame.getContentPane().add(deleteReservationBtn);
 
 	reservationTypeField = new JTextField();
@@ -208,7 +210,7 @@ public class AllReservations {
 	reservationTypeField.setFont(new Font("Verdana", Font.BOLD, 12));
 	reservationTypeField.setColumns(10);
 	reservationTypeField.setBackground(Color.BLACK);
-	reservationTypeField.setBounds(700, 49, 219, 20);
+	reservationTypeField.setBounds(700, 46, 219, 20);
 	frame.getContentPane().add(reservationTypeField);
 
 	JLabel labelReservationType = new JLabel("Vedi prenotazioni per tipo");
@@ -222,7 +224,7 @@ public class AllReservations {
 	codeCardLabel.setForeground(new Color(0, 128, 0));
 	codeCardLabel.setFont(new Font("Verdana", Font.BOLD, 12));
 	codeCardLabel.setBackground(Color.DARK_GRAY);
-	codeCardLabel.setBounds(700, 238, 219, 14);
+	codeCardLabel.setBounds(700, 179, 219, 14);
 	frame.getContentPane().add(codeCardLabel);
 
 	deleteReservationField = new JTextField();
@@ -230,7 +232,7 @@ public class AllReservations {
 	deleteReservationField.setFont(new Font("Verdana", Font.BOLD, 12));
 	deleteReservationField.setColumns(10);
 	deleteReservationField.setBackground(Color.BLACK);
-	deleteReservationField.setBounds(700, 253, 219, 20);
+	deleteReservationField.setBounds(700, 194, 219, 20);
 	frame.getContentPane().add(deleteReservationField);
 
 	hourDeleteField = new JTextField();
@@ -238,21 +240,21 @@ public class AllReservations {
 	hourDeleteField.setFont(new Font("Verdana", Font.BOLD, 12));
 	hourDeleteField.setColumns(10);
 	hourDeleteField.setBackground(Color.BLACK);
-	hourDeleteField.setBounds(700, 372, 219, 20);
+	hourDeleteField.setBounds(700, 313, 219, 20);
 	frame.getContentPane().add(hourDeleteField);
 
 	JLabel lblHour = new JLabel("Inserisci ora");
 	lblHour.setForeground(new Color(0, 128, 0));
 	lblHour.setFont(new Font("Verdana", Font.BOLD, 12));
 	lblHour.setBackground(Color.DARK_GRAY);
-	lblHour.setBounds(700, 357, 219, 14);
+	lblHour.setBounds(700, 298, 219, 14);
 	frame.getContentPane().add(lblHour);
 
 	JLabel lblClient = new JLabel("Inserisci camera");
 	lblClient.setForeground(new Color(0, 128, 0));
 	lblClient.setFont(new Font("Verdana", Font.BOLD, 12));
 	lblClient.setBackground(Color.DARK_GRAY);
-	lblClient.setBounds(700, 277, 219, 14);
+	lblClient.setBounds(700, 218, 219, 14);
 	frame.getContentPane().add(lblClient);
 
 	clientDeleteField = new JTextField();
@@ -260,8 +262,38 @@ public class AllReservations {
 	clientDeleteField.setFont(new Font("Verdana", Font.BOLD, 12));
 	clientDeleteField.setColumns(10);
 	clientDeleteField.setBackground(Color.BLACK);
-	clientDeleteField.setBounds(700, 292, 219, 20);
+	clientDeleteField.setBounds(700, 233, 219, 20);
 	frame.getContentPane().add(clientDeleteField);
+	
+	seasonField = new JTextField();
+	seasonField.setForeground(Color.PINK);
+	seasonField.setFont(new Font("Verdana", Font.BOLD, 12));
+	seasonField.setColumns(10);
+	seasonField.setBackground(Color.BLACK);
+	seasonField.setBounds(700, 349, 219, 20);
+	frame.getContentPane().add(seasonField);
+	
+	JLabel lblSeason = new JLabel("Inserisci stagione");
+	lblSeason.setForeground(new Color(0, 128, 0));
+	lblSeason.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblSeason.setBackground(Color.DARK_GRAY);
+	lblSeason.setBounds(700, 334, 219, 14);
+	frame.getContentPane().add(lblSeason);
+	
+	yearField = new JTextField();
+	yearField.setForeground(Color.PINK);
+	yearField.setFont(new Font("Verdana", Font.BOLD, 12));
+	yearField.setColumns(10);
+	yearField.setBackground(Color.BLACK);
+	yearField.setBounds(700, 390, 219, 20);
+	frame.getContentPane().add(yearField);
+	
+	JLabel lblYear = new JLabel("Inserisci anno");
+	lblYear.setForeground(new Color(0, 128, 0));
+	lblYear.setFont(new Font("Verdana", Font.BOLD, 12));
+	lblYear.setBackground(Color.DARK_GRAY);
+	lblYear.setBounds(700, 375, 219, 14);
+	frame.getContentPane().add(lblYear);
     }
 
     /**
