@@ -123,51 +123,51 @@ create table TIPOLOGIASOGGIORNO (
 
 alter table CONDIZIONAMENTO add constraint FKCON_DIR_FK
      foreign key (codDirigenteOperante)
-     references DIRIGENTE;
+     references DIRIGENTE(codDirigente);
 
 alter table CONDIZIONAMENTO add constraint FKCON_TIP
      foreign key (tipologiaSoggiornoCondizionato, meseSoggiornoCondizionato, annoSoggiornoCondizionato)
-     references TIPOLOGIASOGGIORNO;
+     references TIPOLOGIASOGGIORNO(tipologia, mese, anno);
 
 alter table COORDINAZIONE add constraint FKCOO_DIR_FK
      foreign key (codDirigenteCoordinante)
-     references DIRIGENTE;
+     references DIRIGENTE(codDirigente);
 
 alter table COORDINAZIONE add constraint FKCOO_SER
      foreign key (tipoServizioCoordinato, stagioneServizioCoordinato, annoServizioCoordinato)
-     references SERVIZIO;
+     references SERVIZIO(tipoServizio, stagione, anno);
 
 alter table EROGAZIONE add constraint FKERO_ADD
      foreign key (ruoloAddettoErogante)
-     references ADDETTO;
+     references ADDETTO(codRuolo);
 
 alter table EROGAZIONE add constraint FKERO_SER
      foreign key (tipoServizioErogato, stagioneServizioErogato, annoServizioErogato)
-     references SERVIZIO;
+     references SERVIZIO(tipoServizio, stagione, anno);
 
 alter table PRENOTAZIONE add constraint FKEFFETTUAZIONE
      foreign key (codReceptionistOperante)
-     references RECEPTIONIST;
+     references RECEPTIONIST(codReceptionist);
 
 alter table PRENOTAZIONE add constraint FKREGISTRAZIONE
      foreign key (dataInizioSoggiornoRegistrato, codFiscaleClienteClienteRegistrato)
-     references SOGGIORNO;
+     references SOGGIORNO(dataInizio, codFiscaleCliente);
 
 alter table PRENOTAZIONE add constraint FKACCESSO
      foreign key (tipoServizioUsufruito, stagioneServizioUsufruito, annoServizioUsufruito)
-     references SERVIZIO;
+     references SERVIZIO(tipoServizio, stagione, anno);
 
 alter table SOGGIORNO add constraint FKABBINAMENTO
      foreign key (tipologiaSoggiornoScelto, meseSoggiornoScelto, annoSoggiornoScelto)
-     references TIPOLOGIASOGGIORNO;
+     references TIPOLOGIASOGGIORNO(tipologia, mese, anno);
 
 alter table SOGGIORNO add constraint FKIDENTIFICAZIONE
      foreign key (codFiscaleCliente)
-     references CLIENTE;
+     references CLIENTE(codFiscale);
 
 alter table SOGGIORNO add constraint FKCREAZIONE
      foreign key (codReceptionistInserente)
-     references RECEPTIONIST;
+     references RECEPTIONIST(codReceptionist);
 
 
 -- Index Section
