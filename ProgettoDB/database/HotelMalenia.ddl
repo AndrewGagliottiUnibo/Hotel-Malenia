@@ -44,14 +44,14 @@ create table CONDIZIONAMENTO (
      tipologiaSoggiornoCondizionato varchar(30) not null,
      meseSoggiornoCondizionato varchar(15) not null,
      annoSoggiornoCondizionato year not null,
-     constraint FKCON_DIR_ID primary key (codDirigenteOperante));
+     constraint FKCON_DIR_ID primary key (codDirigenteOperante, tipologiaSoggiornoCondizionato, meseSoggiornoCondizionato, annoSoggiornoCondizionato));
 
 create table COORDINAZIONE (
      codDirigenteCoordinante tinyint unsigned not null,
      tipoServizioCoordinato varchar(30) not null,
      stagioneServizioCoordinato varchar(15) not null,
      annoServizioCoordinato year not null,
-     constraint FKCOO_DIR_ID primary key (codDirigenteCoordinante));
+     constraint FKCOO_DIR_ID primary key (codDirigenteCoordinante, tipoServizioCoordinato, stagioneServizioCoordinato, annoServizioCoordinato));
 
 create table DIRIGENTE (
      codDirigente tinyint unsigned not null,
