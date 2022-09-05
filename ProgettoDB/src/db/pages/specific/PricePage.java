@@ -266,7 +266,7 @@ public class PricePage {
 	this.modifyBtnService.addActionListener(e -> {
 	    this.logic.updateService(this.serviceField.getText(), this.seasonServiceField.getText(),
 		    Integer.parseInt(this.yearServiceField.getText()),
-		    Integer.parseInt(this.priceServiceField.getText()));
+		    Double.parseDouble(this.priceServiceField.getText()));
 	});
 	frame.getContentPane().add(modifyBtnService);
 
@@ -281,7 +281,7 @@ public class PricePage {
 	this.modifyBtnVacation.addActionListener(e -> {
 	    this.logic.updateVacationType(this.vacationField.getText(), this.monthVacationField.getText(),
 		    Integer.parseInt(this.yearVacationField.getText()),
-		    Integer.parseInt(this.vacationPriceField.getText()));
+		    Double.parseDouble(this.vacationPriceField.getText()));
 	});
 	frame.getContentPane().add(modifyBtnVacation);
 
@@ -292,7 +292,7 @@ public class PricePage {
 	applyBtnService.addActionListener(e -> {
 	    this.logic.insertService(this.serviceField.getText(), this.seasonServiceField.getText(),
 		    Integer.parseInt(this.yearServiceField.getText()),
-		    Integer.parseInt(this.priceServiceField.getText()));
+		    Double.parseDouble(this.priceServiceField.getText()));
 	});
 
 	applyBtnService.setForeground(Color.ORANGE);
@@ -312,7 +312,7 @@ public class PricePage {
 	this.applyBtnVacation.addActionListener(e -> {
 	    this.logic.insertVacationType(this.vacationField.getText(), this.monthVacationField.getText(),
 		    Integer.parseInt(this.yearVacationField.getText()),
-		    Integer.parseInt(this.vacationPriceField.getText()));
+		    Double.parseDouble(this.vacationPriceField.getText()));
 	});
 	frame.getContentPane().add(applyBtnVacation);
 
