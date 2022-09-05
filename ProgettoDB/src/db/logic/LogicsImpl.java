@@ -577,9 +577,9 @@ public class LogicsImpl implements Logic {
 	     * Condizionamento table.
 	     */
 	    myStm = conn.prepareStatement(
-		    "INSERT INTO CONDIZIONAMENTO (codDirigenteOperante, tipoSoggiornoCondizionato, meseSoggiornoCondizionato, annoSoggiornoCondizionato) "
+		    "INSERT INTO CONDIZIONAMENTO (codDirigenteOperante, tipologiaSoggiornoCondizionato, meseSoggiornoCondizionato, annoSoggiornoCondizionato) "
 			    + "VALUES (?, ?, ?, ?)");
-	    myStm.setInt(1, 10);
+	    myStm.setInt(1, 1);
 	    myStm.setString(2, vacationType);
 	    myStm.setString(3, month);
 	    myStm.setInt(4, year);
@@ -613,7 +613,7 @@ public class LogicsImpl implements Logic {
 	    myStm = conn.prepareStatement(
 		    "INSERT INTO COORDINAZIONE (codDirigenteCoordinante, tipoServizioCoordinato, stagioneServizioCoordinato, annoServizioCoordinato) "
 			    + "VALUES (?, ?, ?, ?)");
-	    myStm.setInt(1, 10);
+	    myStm.setInt(1, 1);
 	    myStm.setString(2, serviceType);
 	    myStm.setString(3, season);
 	    myStm.setInt(4, year);
