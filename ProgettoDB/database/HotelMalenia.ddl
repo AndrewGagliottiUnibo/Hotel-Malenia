@@ -22,7 +22,7 @@ use schemahotel;
 -- _____________ 
 
 create table ADDETTO (
-     codRuolo int unsigned not null,
+     codRuolo tinyint unsigned not null,
      codFiscale varchar(16) not null,
      nome varchar(30) not null,
      cognome varchar(30) not null,
@@ -89,7 +89,7 @@ create table SERVIZIO (
 create table SOGGIORNO (
      codFiscaleCliente varchar(16) not null,
      dataInizio date not null,
-     durataSoggiorno date not null,
+     datafine date not null,
      soggiornante boolean not null,
      offertaScelta varchar(20) not null,
      codScheda numeric(10) not null,
