@@ -116,7 +116,7 @@ public interface Logic {
      * @param day
      * @param hour
      */
-    void deleteReservation(String reservationType, int roomNumber, String day, String hour);
+    void deleteReservation(String reservationType, int roomNumber, String day, String hour, String season, int year);
 
     /**
      * Query 5 - View all clients actually in the Hotel.
