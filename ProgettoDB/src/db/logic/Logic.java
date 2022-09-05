@@ -180,7 +180,7 @@ public interface Logic {
      * @param year
      * @param price
      */
-    void insertVacationType(String vacationType, String month, int year, int price);
+    void insertVacationType(String vacationType, String month, int year, double price);
 
     /**
      * Query 11 - Insert a new service.
@@ -190,7 +190,7 @@ public interface Logic {
      * @param year
      * @param price
      */
-    void insertService(String serviceType, String season, int year, int price);
+    void insertService(String serviceType, String season, int year, double price);
 
     /**
      * Query 11 - Change a vacation type that is not past or current.
@@ -200,7 +200,7 @@ public interface Logic {
      * @param year
      * @param price
      */
-    void updateVacationType(String vacationType, String month, int year, int price);
+    void updateVacationType(String vacationType, String month, int year, double price);
 
     /**
      * Query 11 - Change a service that is not past or current.
@@ -210,7 +210,7 @@ public interface Logic {
      * @param year
      * @param price
      */
-    void updateService(String serviceType, String season, int year, int price);
+    void updateService(String serviceType, String season, int year, double price);
 
     /**
      * @return password value.

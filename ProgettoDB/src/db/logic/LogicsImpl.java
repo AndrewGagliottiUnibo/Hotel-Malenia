@@ -556,7 +556,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public void insertVacationType(String vacationType, String month, int year, int price) {
+    public void insertVacationType(String vacationType, String month, int year, double price) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
@@ -570,7 +570,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(1, vacationType);
 	    myStm.setString(2, month);
 	    myStm.setInt(3, year);
-	    myStm.setInt(4, price);
+	    myStm.setDouble(4, price);
 	    myStm.executeUpdate();
 
 	    /*
@@ -590,7 +590,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public void insertService(String serviceType, String season, int year, int price) {
+    public void insertService(String serviceType, String season, int year, double price) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
@@ -604,7 +604,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(1, serviceType);
 	    myStm.setString(2, season);
 	    myStm.setInt(3, year);
-	    myStm.setInt(4, price);
+	    myStm.setDouble(4, price);
 	    myStm.executeUpdate();
 
 	    /*
@@ -624,7 +624,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public void updateVacationType(String vacationType, String month, int year, int price) {
+    public void updateVacationType(String vacationType, String month, int year, double price) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
@@ -632,7 +632,7 @@ public class LogicsImpl implements Logic {
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
 		    "UPDATE TIPOLOGIASOGGIORNO SET prezzo = ? WHERE tipologia = ? AND mese = ? AND anno = ?");
-	    myStm.setInt(1, price);
+	    myStm.setDouble(1, price);
 	    myStm.setString(2, vacationType);
 	    myStm.setString(3, month);
 	    myStm.setInt(4, year);
@@ -643,7 +643,7 @@ public class LogicsImpl implements Logic {
     }
 
     @Override
-    public void updateService(String serviceType, String season, int year, int price) {
+    public void updateService(String serviceType, String season, int year, double price) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
@@ -651,7 +651,7 @@ public class LogicsImpl implements Logic {
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
 		    "UPDATE SERVIZIO SET tariffa = ? " + "WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
-	    myStm.setInt(1, price);
+	    myStm.setDouble(1, price);
 	    myStm.setString(2, serviceType);
 	    myStm.setString(3, season);
 	    myStm.setInt(4, year);
