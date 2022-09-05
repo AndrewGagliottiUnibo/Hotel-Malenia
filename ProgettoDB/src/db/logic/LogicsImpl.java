@@ -122,14 +122,14 @@ public class LogicsImpl implements Logic {
 	}
 
 	try {
-		
-		while (result.next()) {
-		    textArea.append("Camera: " + result.getString(1) + "\n");
-		}
-		
-	    } catch (Exception ecc) {
-		ecc.printStackTrace();
+
+	    while (result.next()) {
+		textArea.append("Camera: " + result.getString(1) + "\n");
 	    }
+
+	} catch (Exception ecc) {
+	    ecc.printStackTrace();
+	}
     }
 
     @Override
@@ -560,6 +560,9 @@ public class LogicsImpl implements Logic {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
+	    /*
+	     * TipologiaSoggiorno table.
+	     */
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
@@ -568,6 +571,18 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, month);
 	    myStm.setInt(3, year);
 	    myStm.setInt(4, price);
+	    myStm.executeUpdate();
+
+	    /*
+	     * Condizionamento table.
+	     */
+	    myStm = conn.prepareStatement(
+		    "INSERT INTO CONDIZIONAMENTO (codDirigenteOperante, tipoSoggiornoCondizionato, meseSoggiornoCondizionato, annoSoggiornoCondizionato) "
+			    + "VALUES (?, ?, ?, ?)");
+	    myStm.setInt(1, 10);
+	    myStm.setString(2, vacationType);
+	    myStm.setString(3, month);
+	    myStm.setInt(4, year);
 	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -579,6 +594,9 @@ public class LogicsImpl implements Logic {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	try {
+	    /*
+	     * Servizio table.
+	     */
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
 	    myStm = conn.prepareStatement(
@@ -587,6 +605,18 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, season);
 	    myStm.setInt(3, year);
 	    myStm.setInt(4, price);
+	    myStm.executeUpdate();
+
+	    /*
+	     * Coordinazione table.
+	     */
+	    myStm = conn.prepareStatement(
+		    "INSERT INTO COORDINAZIONE (codDirigenteCoordinante, tipoServizioCoordinato, stagioneServizioCoordinato, annoServizioCoordinato) "
+			    + "VALUES (?, ?, ?, ?)");
+	    myStm.setInt(1, 10);
+	    myStm.setString(2, serviceType);
+	    myStm.setString(3, season);
+	    myStm.setInt(4, year);
 	    myStm.executeUpdate();
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -619,8 +649,8 @@ public class LogicsImpl implements Logic {
 	try {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.getOwnPassword());
-	    myStm = conn.prepareStatement("UPDATE SERVIZIO SET tariffa = ? "
-		    + "WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
+	    myStm = conn.prepareStatement(
+		    "UPDATE SERVIZIO SET tariffa = ? " + "WHERE tipoServizio = ? AND stagione = ? AND anno = ?");
 	    myStm.setInt(1, price);
 	    myStm.setString(2, serviceType);
 	    myStm.setString(3, season);

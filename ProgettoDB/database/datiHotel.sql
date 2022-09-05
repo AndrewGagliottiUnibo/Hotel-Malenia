@@ -1376,159 +1376,159 @@ VALUES (1307, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146', 'Parcheggio
 #
 # TABLE DATA FOR: ADDETTO
 #
-INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (1, 'ntdmtg84t66e917r', 'Augusta', 'Hodkiewicz', '2003-11-28', '+00 0819406876');
+INSERT INTO `ADDETTO` (`codRuolo`, `codFiscale`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) VALUES (10, 'ntdmtg84t66e917r', 'Augusta', 'Hodkiewicz', '2003-11-28', '+00 0819406876');
 
 
 #
 # TABLE DATA FOR: EROGAZIONE 2022
 #
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Inverno', '2022', 1);
+VALUES ('Massaggio', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Primavera', '2022', 1);
+VALUES ('Massaggio', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Estate', '2022', 1);
+VALUES ('Massaggio', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Autunno', '2022', 1);
+VALUES ('Massaggio', 'Autunno', '2022', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Inverno', '2022', 1);
+VALUES ('Fango', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Primavera', '2022', 1);
+VALUES ('Fango', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Estate', '2022', 1);
+VALUES ('Fango', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Autunno', '2022', 1);
+VALUES ('Fango', 'Autunno', '2022', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Inverno', '2022', 1);
+VALUES ('Bagno', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Primavera', '2022', 1);
+VALUES ('Bagno', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Estate', '2022', 1);
+VALUES ('Bagno', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Autunno', '2022', 1);
+VALUES ('Bagno', 'Autunno', '2022', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Inverno', '2022', 1);
+VALUES ('Idromassaggio', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Primavera', '2022', 1);
+VALUES ('Idromassaggio', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Estate', '2022', 1);
+VALUES ('Idromassaggio', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Autunno', '2022', 1);
+VALUES ('Idromassaggio', 'Autunno', '2022', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Inverno', '2022', 1);
+VALUES ('Spiaggia', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Primavera', '2022', 1);
+VALUES ('Spiaggia', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Estate', '2022', 1);
+VALUES ('Spiaggia', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Autunno', '2022', 1);
+VALUES ('Spiaggia', 'Autunno', '2022', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Inverno', '2022', 1);
+VALUES ('Palestra', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Primavera', '2022', 1);
+VALUES ('Palestra', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Estate', '2022', 1);
+VALUES ('Palestra', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Autunno', '2022', 1);
+VALUES ('Palestra', 'Autunno', '2022', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Inverno', '2022', 1);
+VALUES ('Casino', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Primavera', '2022', 1);
+VALUES ('Casino', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Estate', '2022', 1);
+VALUES ('Casino', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Autunno', '2022', 1);
+VALUES ('Casino', 'Autunno', '2022', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Inverno', '2022', 1);
+VALUES ('Parcheggio', 'Inverno', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Primavera', '2022', 1);
+VALUES ('Parcheggio', 'Primavera', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Estate', '2022', 1);
+VALUES ('Parcheggio', 'Estate', '2022', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Autunno', '2022', 1);
+VALUES ('Parcheggio', 'Autunno', '2022', 10);
 
 
 #
 # TABLE DATA FOR: EROGAZIONE 2023
 #
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Inverno', '2023', 1);
+VALUES ('Massaggio', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Primavera', '2023', 1);
+VALUES ('Massaggio', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Estate', '2023', 1);
+VALUES ('Massaggio', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Massaggio', 'Autunno', '2023', 1);
+VALUES ('Massaggio', 'Autunno', '2023', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Inverno', '2023', 1);
+VALUES ('Fango', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Primavera', '2023', 1);
+VALUES ('Fango', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Estate', '2023', 1);
+VALUES ('Fango', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Fango', 'Autunno', '2023', 1);
+VALUES ('Fango', 'Autunno', '2023', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Inverno', '2023', 1);
+VALUES ('Bagno', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Primavera', '2023', 1);
+VALUES ('Bagno', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Estate', '2023', 1);
+VALUES ('Bagno', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Bagno', 'Autunno', '2023', 1);
+VALUES ('Bagno', 'Autunno', '2023', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Inverno', '2023', 1);
+VALUES ('Idromassaggio', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Primavera', '2023', 1);
+VALUES ('Idromassaggio', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Estate', '2023', 1);
+VALUES ('Idromassaggio', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Idromassaggio', 'Autunno', '2023', 1);
+VALUES ('Idromassaggio', 'Autunno', '2023', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Inverno', '2023', 1);
+VALUES ('Spiaggia', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Primavera', '2023', 1);
+VALUES ('Spiaggia', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Estate', '2023', 1);
+VALUES ('Spiaggia', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Spiaggia', 'Autunno', '2023', 1);
+VALUES ('Spiaggia', 'Autunno', '2023', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Inverno', '2023', 1);
+VALUES ('Palestra', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Primavera', '2023', 1);
+VALUES ('Palestra', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Estate', '2023', 1);
+VALUES ('Palestra', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Palestra', 'Autunno', '2023', 1);
+VALUES ('Palestra', 'Autunno', '2023', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Inverno', '2023', 1);
+VALUES ('Casino', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Primavera', '2023', 1);
+VALUES ('Casino', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Estate', '2023', 1);
+VALUES ('Casino', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Casino', 'Autunno', '2023', 1);
+VALUES ('Casino', 'Autunno', '2023', 10);
 
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Inverno', '2023', 1);
+VALUES ('Parcheggio', 'Inverno', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Primavera', '2023', 1);
+VALUES ('Parcheggio', 'Primavera', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Estate', '2023', 1);
+VALUES ('Parcheggio', 'Estate', '2023', 10);
 INSERT INTO `EROGAZIONE` (`tipoServizioErogato`, `stagioneServizioErogato`, `annoServizioErogato`, `ruoloAddettoErogante`) 
-VALUES ('Parcheggio', 'Autunno', '2023', 1);
+VALUES ('Parcheggio', 'Autunno', '2023', 10);
 
 
 #
