@@ -193,7 +193,8 @@ public class AllReservations {
 	deleteReservationBtn.addActionListener(e -> {
 	    this.logic.deleteReservation(this.deleteReservationField.getText(),
 		    Integer.parseInt(this.clientDeleteField.getText()), this.dayDeleteField.getText(),
-		    this.hourDeleteField.getText());
+		    this.hourDeleteField.getText(), this.seasonField.getText(),
+		    Integer.parseInt(this.yearField.getText()));
 
 	    this.deleteReservationField.setText("");
 	    this.clientDeleteField.setText("");
@@ -266,7 +267,7 @@ public class AllReservations {
 	clientDeleteField.setBackground(Color.BLACK);
 	clientDeleteField.setBounds(700, 233, 219, 20);
 	frame.getContentPane().add(clientDeleteField);
-	
+
 	seasonField = new JTextField();
 	seasonField.setForeground(Color.PINK);
 	seasonField.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -274,14 +275,14 @@ public class AllReservations {
 	seasonField.setBackground(Color.BLACK);
 	seasonField.setBounds(700, 349, 219, 20);
 	frame.getContentPane().add(seasonField);
-	
+
 	JLabel lblSeason = new JLabel("Inserisci stagione");
 	lblSeason.setForeground(new Color(0, 128, 0));
 	lblSeason.setFont(new Font("Verdana", Font.BOLD, 12));
 	lblSeason.setBackground(Color.DARK_GRAY);
 	lblSeason.setBounds(700, 334, 219, 14);
 	frame.getContentPane().add(lblSeason);
-	
+
 	yearField = new JTextField();
 	yearField.setForeground(Color.PINK);
 	yearField.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -289,7 +290,7 @@ public class AllReservations {
 	yearField.setBackground(Color.BLACK);
 	yearField.setBounds(700, 390, 219, 20);
 	frame.getContentPane().add(yearField);
-	
+
 	JLabel lblYear = new JLabel("Inserisci anno");
 	lblYear.setForeground(new Color(0, 128, 0));
 	lblYear.setFont(new Font("Verdana", Font.BOLD, 12));

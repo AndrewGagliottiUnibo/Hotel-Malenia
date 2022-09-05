@@ -380,7 +380,7 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(2, season);
 	    myStm.setInt(3, year);
 	    result = myStm.executeQuery();
-	    
+
 	    result.next();
 	    int price = result.getInt(1);
 
