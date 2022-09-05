@@ -156,21 +156,26 @@ INSERT INTO `SERVIZIO` (`tipoServizio`, `stagione`, `anno`, `tariffa`) VALUES ('
 INSERT INTO `DIRIGENTE` (`codDirigente`, `nome`, `cognome`, `dataNascita`, `numeroTelefonico`) 
 VALUES (1, 'Mario', 'Vandervort', '1972-09-21', '+69 0654191146');
 
+
 #
 # TABLE DATA FOR: CONDIZIONAMENTO 2022
 #
+
 
 #
 # TABLE DATA FOR: CONDIZIONAMENTO 2023
 #
 
+
 #
 # TABLE DATA FOR: COORDINAZIONE 2022
 #
 
+
 #
 # TABLE DATA FOR: COORDINAZIONE 2023
 #
+
 
 #
 # TABLE DATA FOR: ADDETTO
