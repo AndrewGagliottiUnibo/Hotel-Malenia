@@ -81,6 +81,7 @@ public class PricePage {
 	frame.getContentPane().add(lblServiceField);
 
 	serviceField = new JTextField();
+	serviceField.setFont(new Font("Verdana", Font.BOLD, 12));
 	serviceField.setForeground(Color.PINK);
 	serviceField.setBackground(Color.BLACK);
 	serviceField.setBounds(462, 52, 230, 20);
