@@ -1,19 +1,21 @@
 package db.pages.specific;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.awt.Color;
-import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
+
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import db.logic.Logic;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import db.logic.Logic;
 
 public class AllReservations {
 
@@ -22,7 +24,6 @@ public class AllReservations {
     private JTextField dayDeleteField;
     private JTextArea textArea;
     private Logic logic;
-    private String spaceChar = "                                              ";
     private JTextField reservationTypeField;
     private JTextField deleteReservationField;
     private JTextField hourDeleteField;
@@ -63,12 +64,6 @@ public class AllReservations {
 	scrollPane.setBounds(10, 26, 680, 452);
 	frame.getContentPane().add(scrollPane);
 
-	JLabel lblNewLabel_1 = new JLabel(
-		"Tipo prenotazione" + this.spaceChar + "Data" + this.spaceChar + "Ora" + this.spaceChar + "Cliente");
-	lblNewLabel_1.setBackground(Color.DARK_GRAY);
-	lblNewLabel_1.setForeground(Color.ORANGE);
-	scrollPane.setColumnHeaderView(lblNewLabel_1);
-
 	this.textArea = new JTextArea();
 	textArea.setEditable(false);
 	textArea.setForeground(Color.PINK);
@@ -92,10 +87,11 @@ public class AllReservations {
 	    try {
 		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
-		myStmt = myConn.prepareStatement("SELECT tipoPrenotazione, giorno, ora, codFiscaleClienteRegistrato "
-			+ "FROM PRENOTAZIONE, SOGGIORNO " + "WHERE tipoPrenotazione = ?"
-			+ "AND SOGGIORNO.soggiornante = true "
-			+ "AND PRENOTAZIONE.dataInizioSoggiornoRegistrato = SOGGIORNO.dataInizio");
+		myStmt = myConn.prepareStatement(
+			"SELECT tipoPrenotazione, giorno, ora, codFiscaleClienteRegistrato, numeroCamera "
+				+ "FROM PRENOTAZIONE, SOGGIORNO WHERE tipoPrenotazione = ? "
+				+ "AND SOGGIORNO.soggiornante = true "
+				+ "AND PRENOTAZIONE.dataInizioSoggiornoRegistrato = SOGGIORNO.dataInizio");
 		myStmt.setString(1, this.reservationTypeField.getText());
 		myRs = myStmt.executeQuery();
 
@@ -107,7 +103,7 @@ public class AllReservations {
 		    this.textArea.append(myRs.getString(2) + "\t");
 		    this.textArea.append(myRs.getString(3) + "\t");
 		    this.textArea.append(myRs.getString(4) + "\t");
-		    this.textArea.append(" \n");
+		    this.textArea.append(myRs.getString(5) + "\n");
 		}
 
 	    } catch (Exception exc) {
@@ -137,8 +133,7 @@ public class AllReservations {
 		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
 		myStmt = myConn.prepareStatement("SELECT tipoPrenotazione, giorno, ora, codFiscaleClienteRegistrato "
-			+ "FROM PRENOTAZIONE, SOGGIORNO " + "WHERE numeroCamera = ?"
-			+ "AND SOGGIORNO.soggiornante = true");
+			+ "FROM PRENOTAZIONE, SOGGIORNO WHERE numeroCamera = ?" + "AND SOGGIORNO.soggiornante = true");
 		myStmt.setString(1, this.specificViewField.getText());
 		myRs = myStmt.executeQuery();
 
@@ -149,8 +144,7 @@ public class AllReservations {
 		    this.textArea.append(myRs.getString(1) + "\t");
 		    this.textArea.append(myRs.getString(2) + "\t");
 		    this.textArea.append(myRs.getString(3) + "\t");
-		    this.textArea.append(myRs.getString(4) + "\t");
-		    this.textArea.append(" \n");
+		    this.textArea.append(myRs.getString(4) + "\n");
 		}
 
 	    } catch (Exception exc) {

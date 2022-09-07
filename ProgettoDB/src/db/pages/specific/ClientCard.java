@@ -203,6 +203,7 @@ public class ClientCard {
 	checkoutButton.addActionListener(e -> {
 	    this.logic.checkoutClient(Integer.parseInt(this.roomFIeld.getText()));
 	    this.frame.dispose();
+	    this.logic.logout();
 	});
 	checkoutButton.setForeground(Color.RED);
 	checkoutButton.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -220,10 +221,10 @@ public class ClientCard {
 		myStm = conn.prepareStatement(
 			"UPDATE SOGGIORNO SET resoconto = ? WHERE codScheda = ? AND soggiornante = true");
 
-		myStm.setInt(1, Integer.parseInt(this.wageField.getText()));
+		myStm.setDouble(1, Double.parseDouble(this.wageField.getText()));
 		myStm.setString(2, this.chosenClient);
 		myStm.executeUpdate();
-		
+
 	    } catch (Exception exc) {
 		exc.printStackTrace();
 	    }
@@ -235,7 +236,7 @@ public class ClientCard {
 	btnUpdate.setBounds(642, 113, 159, 23);
 	frame.getContentPane().add(btnUpdate);
 
-	lblExpire = new JLabel("Durata soggiorno");
+	lblExpire = new JLabel("Fine soggiorno");
 	lblExpire.setForeground(Color.ORANGE);
 	lblExpire.setFont(new Font("Verdana", Font.BOLD, 12));
 	lblExpire.setBounds(395, 123, 145, 14);
@@ -303,7 +304,7 @@ public class ClientCard {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
 	    myStm = conn.prepareStatement("SELECT nome, cognome, codFiscale, dataNascita, numeroTelefonico, "
-		    + "numeroCamera, dataInizio, durataSoggiorno, tipologiaSoggiornoScelto, meseSoggiornoScelto, "
+		    + "numeroCamera, dataInizio, dataFine, tipologiaSoggiornoScelto, meseSoggiornoScelto, "
 		    + "annoSoggiornoScelto, codScheda, resoconto FROM CLIENTE, SOGGIORNO "
 		    + "WHERE SOGGIORNO.codScheda = ? AND SOGGIORNO.codFiscaleCliente = CLIENTE.codFiscale");
 

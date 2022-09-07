@@ -114,7 +114,7 @@ public class EntertaimentServicePages {
 	showTerm.setBackground(Color.DARK_GRAY);
 	showTerm.setFont(new Font("Verdana", Font.BOLD, 12));
 	showTerm.addActionListener(e -> {
-	    this.showThermsReservations();
+	    this.showThermsReservations(Integer.parseInt(this.roomNumberShow.getText()));
 	});
 
 	showTerm.setBounds(799, 60, 120, 23);
@@ -300,7 +300,7 @@ public class EntertaimentServicePages {
 	roomNumberShow.setBounds(590, 25, 106, 20);
 	panel.add(roomNumberShow);
     }
-    
+
     private String getClientIdentifierFromDB() {
 	Connection conn = null;
 	PreparedStatement myStm = null;
@@ -320,28 +320,30 @@ public class EntertaimentServicePages {
 	}
 	return identifier;
     }
-    
 
-    private void showThermsReservations() {
+    private void showThermsReservations(final int roomNumber) {
 	Connection conn = null;
 	PreparedStatement myStm = null;
 	ResultSet result = null;
 
 	try {
-	    final String identifier = this.getClientIdentifierFromDB();
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
-	    
-	    myStm = conn.prepareStatement(
-		    "SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
-		    + "WHERE codFiscaleClienteRegistrato = ? AND tipoPrenotazione = ? OR tipoPrenotazione = ? "
-		    + "OR tipoPrenotazione = ? OR tipoPrenotazione = ?");
-	    List<String> servs = List.of("Massaggio","Fango","Bagno","Idromassaggio");
-	    myStm.setString(1, identifier);
-	    myStm.setString(2, servs.get(0));
-	    myStm.setString(3, servs.get(1));
-	    myStm.setString(4, servs.get(2));
-	    myStm.setString(5, servs.get(3));
+
+	    myStm = conn.prepareStatement("SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE  "
+		    + "RIGHT JOIN (SELECT dataInizio, codFiscaleCliente "
+		    + "FROM SOGGIORNO WHERE numeroCamera = ? AND soggiornante = ?) AS SOG "
+		    + "ON (codFiscaleClienteRegistrato = SOG.codFiscaleCliente AND dataInizioSoggiornoRegistrato = SOG.dataInizio) "
+		    + "AND (tipoPrenotazione = ? OR tipoPrenotazione = ? "
+		    + "OR tipoPrenotazione = ? OR tipoPrenotazione = ?)");
+
+	    List<String> servs = List.of("Massaggio", "Fango", "Bagno", "Idromassaggio");
+	    myStm.setInt(1, roomNumber);
+	    myStm.setBoolean(2, true);
+	    myStm.setString(3, servs.get(0));
+	    myStm.setString(4, servs.get(1));
+	    myStm.setString(5, servs.get(2));
+	    myStm.setString(6, servs.get(3));
 	    result = myStm.executeQuery();
 
 	    /*
@@ -349,13 +351,13 @@ public class EntertaimentServicePages {
 	     */
 	    this.textArea.setText("");
 	    while (result.next()) {
-		    this.textArea.append(result.getString(1) + "\t" +
-			    result.getString(2) + "\t" + result.getString(3) + "\n");
+		this.textArea
+			.append(result.getString(1) + "\t" + result.getString(2) + "\t" + result.getString(3) + "\n");
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
-	
+
     }
 
     /**
@@ -373,8 +375,7 @@ public class EntertaimentServicePages {
 	    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 		    this.logic.getOwnPassword());
 
-	    myStm = conn.prepareStatement(
-		    "SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
+	    myStm = conn.prepareStatement("SELECT tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
 		    + "WHERE codFiscaleClienteRegistrato = ? AND tipoPrenotazione = ?");
 	    myStm.setString(1, identifier);
 	    myStm.setString(2, tipoPrenotazione);
@@ -385,7 +386,7 @@ public class EntertaimentServicePages {
 	     */
 	    this.textArea.setText("");
 	    while (result.next()) {
-		    this.textArea.append(result.getString(1) + "\n");
+		this.textArea.append(result.getString(1) + "\n");
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();

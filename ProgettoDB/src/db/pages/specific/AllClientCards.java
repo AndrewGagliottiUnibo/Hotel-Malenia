@@ -59,7 +59,7 @@ public class AllClientCards {
 	frame.getContentPane().add(cardsViewScrollPane);
 
 	this.textAreaCard = new JTextArea();
-	textAreaCard.setEnabled(false);
+	textAreaCard.setEditable(false);
 	textAreaCard.setBackground(Color.BLACK);
 	textAreaCard.setForeground(Color.PINK);
 	textAreaCard.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -111,9 +111,9 @@ public class AllClientCards {
 		this.clearTextAreas();
 		result = this.fillPage(false);
 		while (result.next()) {
-			this.textAreaCard.append(result.getString(1) + "\n");
-			this.textAreaRoom.append(result.getString(2) + "\n");
-			this.textAreaSurname.append(result.getString(3) + "\n");
+		    this.textAreaCard.append(result.getString(1) + "\n");
+		    this.textAreaRoom.append(result.getString(2) + "\n");
+		    this.textAreaSurname.append(result.getString(3) + "\n");
 		}
 	    } catch (SQLException e1) {
 		e1.printStackTrace();
@@ -137,9 +137,9 @@ public class AllClientCards {
 		result = this.fillPage(true);
 		while (result.next()) {
 
-			this.textAreaCard.append(result.getString(1) + "\n");
-			this.textAreaRoom.append(result.getString(2) + "\n");
-			this.textAreaSurname.append(result.getString(3) + "\n");
+		    this.textAreaCard.append(result.getString(1) + "\n");
+		    this.textAreaRoom.append(result.getString(2) + "\n");
+		    this.textAreaSurname.append(result.getString(3) + "\n");
 		}
 	    } catch (SQLException e1) {
 		e1.printStackTrace();
@@ -174,7 +174,7 @@ public class AllClientCards {
 	roomViewScrollPane.setColumnHeaderView(lblNumeroCamera);
 
 	this.textAreaRoom = new JTextArea();
-	textAreaRoom.setEnabled(false);
+	textAreaRoom.setEditable(false);
 	textAreaRoom.setForeground(Color.PINK);
 	textAreaRoom.setFont(new Font("Verdana", Font.BOLD, 12));
 	textAreaRoom.setBackground(Color.BLACK);
@@ -192,6 +192,7 @@ public class AllClientCards {
 	surnameViewScrollPane.setColumnHeaderView(surnameLabel);
 
 	this.textAreaSurname = new JTextArea();
+	textAreaSurname.setEditable(false);
 	textAreaSurname.setForeground(Color.PINK);
 	textAreaSurname.setFont(new Font("Verdana", Font.BOLD, 12));
 	textAreaSurname.setBackground(Color.BLACK);

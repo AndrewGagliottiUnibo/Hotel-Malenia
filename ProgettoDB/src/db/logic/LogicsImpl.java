@@ -227,8 +227,8 @@ public class LogicsImpl implements Logic {
 	    myStm.setString(5, cellNumber);
 	    myStm.executeUpdate();
 
-	    myStm = conn.prepareStatement(
-		    "INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, durataSoggiorno, soggiornante, "
+	    myStm = conn
+		    .prepareStatement("INSERT INTO SOGGIORNO (dataInizio, codFiscaleCliente, dataFine, soggiornante, "
 			    + "offertaScelta, codScheda, numeroCamera, resoconto, tipologiaSoggiornoScelto, "
 			    + "meseSoggiornoScelto, annoSoggiornoScelto, codReceptionistInserente) "
 			    + "VALUES (?, ?, ?, true, ?, ?, ?, 0, ?, ?, ?, 10)");

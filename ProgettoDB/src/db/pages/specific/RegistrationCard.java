@@ -171,8 +171,9 @@ public class RegistrationCard {
 		    this.dateField.getText(), this.telField.getText(), this.beginningField.getText(),
 		    this.expireField.getText(), this.vacationField.getText(),
 		    Integer.parseInt(this.codCardField.getText()), Integer.parseInt(this.roomField.getText()),
-		    this.vacationField.getText(), this.monthField.getText(), Integer.parseInt(this.yearField.getText()), Integer.parseInt(this.daysField.getText()));
-	    
+		    this.vacationField.getText(), this.monthField.getText(), Integer.parseInt(this.yearField.getText()),
+		    Integer.parseInt(this.daysField.getText()));
+
 	    /*
 	     * Clearing fields.
 	     */
@@ -230,7 +231,7 @@ public class RegistrationCard {
 	roomField.setBounds(10, 381, 190, 20);
 	frmRegistraCliente.getContentPane().add(roomField);
 
-	lblExpire = new JLabel("Durata soggiorno");
+	lblExpire = new JLabel("Fine soggiorno");
 	lblExpire.setForeground(Color.ORANGE);
 	lblExpire.setFont(new Font("Verdana", Font.BOLD, 12));
 	lblExpire.setBounds(395, 142, 145, 14);
@@ -268,14 +269,14 @@ public class RegistrationCard {
 	yearField.setColumns(10);
 	yearField.setBounds(395, 381, 190, 20);
 	frmRegistraCliente.getContentPane().add(yearField);
-	
+
 	daysField = new JTextField();
 	daysField.setForeground(Color.BLACK);
 	daysField.setFont(new Font("Verdana", Font.PLAIN, 12));
 	daysField.setColumns(10);
 	daysField.setBounds(692, 257, 185, 20);
 	frmRegistraCliente.getContentPane().add(daysField);
-	
+
 	JLabel lblDaysOfReservations = new JLabel("Giorni di permanenza");
 	lblDaysOfReservations.setForeground(Color.MAGENTA);
 	lblDaysOfReservations.setFont(new Font("Verdana", Font.BOLD, 12));
