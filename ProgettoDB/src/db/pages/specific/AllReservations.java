@@ -88,10 +88,12 @@ public class AllReservations {
 		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
 		myStmt = myConn.prepareStatement(
-			"SELECT tipoPrenotazione, giorno, ora, codFiscaleClienteRegistrato, numeroCamera "
-				+ "FROM PRENOTAZIONE, SOGGIORNO WHERE tipoPrenotazione = ? "
-				+ "AND SOGGIORNO.soggiornante = true "
-				+ "AND PRENOTAZIONE.dataInizioSoggiornoRegistrato = SOGGIORNO.dataInizio");
+			"SELECT numeroCamera, tipoPrenotazione, giorno, ora, codFiscaleCliente FROM PRENOTAZIONE "
+				+ "JOIN (SELECT numeroCamera, codFiscaleCliente, dataInizio "
+				+ "FROM SOGGIORNO WHERE soggiornante = true) AS SOG "
+				+ "ON PRENOTAZIONE.codFiscaleClienteRegistrato = SOG.codFiscaleCliente "
+				+ "AND PRENOTAZIONE.dataInizioSoggiornoRegistrato = SOG.dataInizio "
+				+ "AND PRENOTAZIONE.tipoPrenotazione = ?");
 		myStmt.setString(1, this.reservationTypeField.getText());
 		myRs = myStmt.executeQuery();
 
@@ -132,9 +134,13 @@ public class AllReservations {
 	    try {
 		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
-		myStmt = myConn.prepareStatement("SELECT tipoPrenotazione, giorno, ora, codFiscaleClienteRegistrato "
-			+ "FROM PRENOTAZIONE, SOGGIORNO WHERE numeroCamera = ?" + "AND SOGGIORNO.soggiornante = true");
-		myStmt.setString(1, this.specificViewField.getText());
+		myStmt = myConn.prepareStatement(
+			"SELECT numeroCamera, tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
+				+ "JOIN (SELECT numeroCamera, codFiscaleCliente, dataInizio FROM SOGGIORNO "
+				+ "WHERE numeroCamera = ? AND soggiornante = true) AS SOG "
+				+ "ON PRENOTAZIONE.codFiscaleClienteRegistrato = SOG.codFiscaleCliente AND "
+				+ "PRENOTAZIONE.dataInizioSoggiornoRegistrato = SOG.dataInizio");
+		myStmt.setInt(1, Integer.parseInt(this.specificViewField.getText()));
 		myRs = myStmt.executeQuery();
 
 		this.specificViewField.setText("");
