@@ -135,7 +135,7 @@ public class AllReservations {
 		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schemahotel", "root",
 			this.logic.getOwnPassword());
 		myStmt = myConn.prepareStatement(
-			"SELECT numeroCamera, tipoPrenotazione, giorno, ora FROM PRENOTAZIONE "
+			"SELECT numeroCamera, tipoPrenotazione, giorno, ora, codFiscaleCliente FROM PRENOTAZIONE "
 				+ "JOIN (SELECT numeroCamera, codFiscaleCliente, dataInizio FROM SOGGIORNO "
 				+ "WHERE numeroCamera = ? AND soggiornante = true) AS SOG "
 				+ "ON PRENOTAZIONE.codFiscaleClienteRegistrato = SOG.codFiscaleCliente AND "
@@ -150,7 +150,8 @@ public class AllReservations {
 		    this.textArea.append(myRs.getString(1) + "\t");
 		    this.textArea.append(myRs.getString(2) + "\t");
 		    this.textArea.append(myRs.getString(3) + "\t");
-		    this.textArea.append(myRs.getString(4) + "\n");
+		    this.textArea.append(myRs.getString(4) + "\t");
+		    this.textArea.append(myRs.getString(5) + "\n");
 		}
 
 	    } catch (Exception exc) {
